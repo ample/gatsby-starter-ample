@@ -1,0 +1,3 @@
+# Ample's Gatsby Starter
+
+Write things ...
