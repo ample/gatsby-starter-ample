@@ -18,17 +18,11 @@ export const headers = () => (
   <Grid style={{ padding: "2rem 0rem" }}>
     <h2 className="text-center">Headers</h2>
     <Table>
-      <Header
-        tag="h1"
-        className="text-xl"
-        size="90px/50px"
-        desc="Home Jumbotron"
-      />
       <Header tag="h1" size="60px/40px" desc="Page Title" />
       <Header tag="h2" size="48px/34px" desc="Section Header" />
       <Header tag="h3" size="30px" desc="Sub-Section Header" />
       <Header tag="h4" size="21px" desc="" />
-      <Header tag="h5" size="16px" desc="Card & List Title" />
+      <Header tag="h5" size="16px" desc="Card &amp; List Title" />
     </Table>
   </Grid>
 )
@@ -43,38 +37,10 @@ export const utilityClasses = () => (
       General
     </h4>
     <Table className="text-crimson">
-      <Util name="text-center" />
-      <Util name="text-red" />
       <Util name="text-white" dark />
-      <Util name="text-montserrat" />
-      <Util name="text-crimson" />
       <Util name="newline" />
     </Table>
 
-    <div className="text-center">
-      <h4 className="text-center" style={{ marginTop: 70, marginBottom: 12 }}>
-        Text Size - Crimson
-      </h4>
-      <p>
-        These styles apply to <code>&lt;p></code> tags and containers with
-        <code>.text-crimson</code>
-      </p>
-    </div>
-    <Table className="text-crimson">
-      <Util name="text-sm" size="16px" />
-      <Util name="text-md (default)" size="18px" />
-      <Util name="text-lg" size="21px" />
-    </Table>
-
-    <div className="text-center">
-      <h4 className="text-center" style={{ marginTop: 70, marginBottom: 12 }}>
-        Text Size - Montserrat
-      </h4>
-      <p>
-        These styles apply to all elements <em>except</em> <code>&lt;p></code>{" "}
-        tags and containers with <code>.text-crimson</code>
-      </p>
-    </div>
     <Table>
       <Util name="text-sm" size="12px" />
       <Util name="text-md (default)" size="13px" />
@@ -155,7 +121,7 @@ const Util = props => (
     <td>
       <code>.{props.name}</code>
     </td>
-    <td style={{ backgroundColor: props.dark ? g.colors.gray900 : "" }}>
+    <td style={{ backgroundColor: props.dark ? g.colors.white : "" }}>
       <div className={props.name}>
         {props.size && (
           <>

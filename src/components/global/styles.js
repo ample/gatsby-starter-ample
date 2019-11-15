@@ -1,8 +1,7 @@
 import { css, createGlobalStyle } from "styled-components"
-import "@openfonts/crimson-pro_latin"
-import "@openfonts/montserrat_latin"
+// import "@openfonts/font-name"
 
-import * as normalize from "normalize.css"
+import "normalize.css"
 
 import * as g from "./variables"
 

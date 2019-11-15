@@ -4,8 +4,6 @@
   "description": "Ample Gatsby Starter",
   "version": "0.1.0",
   "dependencies": {
-    "@openfonts/crimson-pro_latin": "^1.43.0",
-    "@openfonts/montserrat_latin": "^1.43.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.16.1",
     "gatsby-image": "^2.2.29",
