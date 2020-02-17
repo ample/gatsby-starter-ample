@@ -4,9 +4,15 @@
   "description": "Ample Gatsby Starter",
   "version": "0.1.0",
   "dependencies": {
+    "babel-eslint": "^10.0.3",
     "docz": "latest",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
+    "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-catch-links": "^2.1.15",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-offline": "^3.0.27",
@@ -33,6 +39,7 @@
     "develop:clean": "gatsby clean && gatsby develop",
     "develop:with_host": "gatsby develop --open --host $HOSTNAME",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint:js-fix": "eslint -c .eslintrc.js . --fix",
     "serve": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
