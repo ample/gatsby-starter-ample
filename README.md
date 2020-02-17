@@ -28,7 +28,7 @@ This is the [_Gatsby Starter_](https://www.gatsbyjs.org/docs/creating-a-starter/
 In addition to (most of) what ships with the Gatsby default starer, this starter includes the following:
 
 - **Component Template:** The `.component-starter` directory is your starting point for building new components (see _Creating a new component_ guide in the section below).
-- **Storybook:** We've included and configured [Storybook.js](https://storybook.js.org/), including a few basic examples.
+- **Docz:** We've included and configured [Docz](https://www.docz.site), including a few basic examples.
 
 ## Guides
 
@@ -39,11 +39,9 @@ Here are some usage guides for how to get started with this starter:
 To add a new component, do the following:
 
 1. Copy `.component-starer` into `src/components` and rename the directory to match the name of your component.
-2. Rename any applicable files within the component to match your component's name.
-3. Adjust the `index.js` file to import and export the appropriate component.
-4. Choose which storybook file to use and delete the other, then customize the one you're using to your liking.
-5. Build the component!
-6. Document component usage in the `_notes.mdx` file. (Note: This feature uses [Storybook Docs](https://storybook.js.org/docs/basics/introduction/).)
+2. Replace all instances of `ComponentName` in `index.js`, `notes.mdx`, and `styles.module.scss` to match the name of the component.
+3. Build the component!
+4. Document component usage in the `notes.mdx` file. (Note: This feature uses [Docz Built-in Components](https://www.docz.site/docs/built-in-components).)
 
 ### Installing a CMS
 

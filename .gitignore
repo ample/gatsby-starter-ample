@@ -59,8 +59,8 @@ typings/
 .cache/
 public/
 
-# storybook build
-storybook-static
+# Docz
+.docz/
 
 # Mac files
 .DS_Store

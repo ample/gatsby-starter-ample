@@ -5,10 +5,10 @@ module.exports = {
     author: `@helloample`
   },
   plugins: [
+    `gatsby-theme-docz`,
     `gatsby-theme-ample-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
