@@ -1,0 +1,44 @@
+@use 'globals' as *;
+
+// --------------------------------------------------------
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: normal;
+  line-height: 1;
+}
+
+// --------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0;
+}
+
+h1 {
+  font-size: responsive 22px 36px;
+}
+
+h2 {
+  font-size: responsive 18px 18px;
+}
+
+a {
+  text-decoration: none;
+
+  @include hover {
+    text-decoration: underline;
+  }
+}
+
+// --------------------------------------------------------
+
+img {
+  max-width: 100%;
+}

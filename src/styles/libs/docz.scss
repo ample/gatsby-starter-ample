@@ -1,0 +1,36 @@
+div[data-testid='live-preview'] {
+  padding: 15px;
+}
+
+div[data-testid='playground'] {
+  margin-bottom: 16px !important;
+
+  div[data-testid='live-preview'] {
+    > * {
+      margin-right: 16px;
+
+      &:nth-last-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+div[data-testid='main-container'] {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+
+  .css-ueqitl {
+    color: var(--theme-ui-colors-props-highlight, #1fb6ff);
+  }
+}

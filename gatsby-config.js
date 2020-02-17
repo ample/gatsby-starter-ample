@@ -54,9 +54,42 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require(`postcss-normalize`)]
+      }
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require('sass')
+        implementation: require('sass'),
+        sourceMap: true,
+        cssLoaderOptions: {
+          localIdentName: '[local]-[hash:base64:3]',
+          sourceMap: true
+        },
+        postCssPlugins: [
+          require('postcss-responsive-type'),
+          require('postcss-pxtorem')({
+            propList: ['*', '!line-height'],
+            mediaQuery: true,
+            propWhiteList: [],
+            replace: true,
+            rootValue: 16
+          }),
+          require('postcss-preset-env')({
+            features: {
+              'custom-properties': {
+                preserve: false,
+                warnings: true
+              }
+            },
+            stage: 2
+          }),
+          require('autoprefixer')({
+            grid: 'autoplace'
+          })
+        ]
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
