@@ -41,6 +41,23 @@ module.exports = {
           failOnError: false
         }
       }
+    },
+    {
+      resolve: '@danbruegge/gatsby-plugin-stylelint',
+      options: {
+        files: '**/*.scss',
+        stages: ['develop'],
+        options: {
+          emitError: true,
+          emitWarning: true
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('sass')
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
