@@ -7,6 +7,8 @@
     "@danbruegge/gatsby-plugin-stylelint": "^4.0.0",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "babel-preset-gatsby": "^0.2.29",
     "classnames": "^2.2.6",
     "docz": "latest",
     "eslint": "^6.8.0",
@@ -27,6 +29,8 @@
     "gatsby-theme-ample-components": "https://github.com/ample/gatsby-theme-ample-components",
     "gatsby-theme-docz": "latest",
     "gatsby-transformer-sharp": "^2.3.7",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
     "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-pxtorem": "^4.0.1",
@@ -38,6 +42,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-test-renderer": "^16.12.0",
     "sass": "^1.25.0",
     "stylelint": "^13.2.0",
     "stylelint-formatter-pretty": "^1.1.4",
@@ -62,7 +67,8 @@
     "lint:styles:fix": "stylelint --config stylelint.config.js 'src/**/*.scss' --fix",
     "serve": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "jest",
+    "test:update": "jest --updateSnapshot"
   },
   "repository": {
     "type": "git",
