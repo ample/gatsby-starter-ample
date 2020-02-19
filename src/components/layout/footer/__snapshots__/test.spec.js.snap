@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer
+  className="footer"
+>
+  <hr />
+  And this is the footer.
+</footer>
+`;
