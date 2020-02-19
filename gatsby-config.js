@@ -5,7 +5,6 @@ module.exports = {
     author: `@helloample`
   },
   plugins: [
-    `gatsby-theme-docz`,
     `gatsby-theme-ample-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
@@ -18,6 +17,7 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    `gatsby-theme-docz`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -31,11 +31,11 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-eslint',
+      resolve: "gatsby-plugin-eslint",
       options: {
         test: /\.js$|\.jsx$/,
         exclude: /(node_modules|.cache|public)/,
-        stages: ['develop'],
+        stages: ["develop"],
         options: {
           emitWarning: true,
           failOnError: false
@@ -43,10 +43,10 @@ module.exports = {
       }
     },
     {
-      resolve: '@danbruegge/gatsby-plugin-stylelint',
+      resolve: "@danbruegge/gatsby-plugin-stylelint",
       options: {
-        files: '**/*.scss',
-        stages: ['develop'],
+        files: "**/*.scss",
+        stages: ["develop"],
         options: {
           emitError: true,
           emitWarning: true
@@ -54,7 +54,7 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-postcss',
+      resolve: "gatsby-plugin-postcss",
       options: {
         postCssPlugins: [require(`postcss-normalize`)]
       }
@@ -62,38 +62,35 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require('sass'),
+        implementation: require("sass"),
         sourceMap: true,
         cssLoaderOptions: {
-          localIdentName: '[local]-[hash:base64:3]',
+          localIdentName: "[local]-[hash:base64:3]",
           sourceMap: true
         },
         postCssPlugins: [
-          require('postcss-responsive-type'),
-          require('postcss-pxtorem')({
-            propList: ['*', '!line-height'],
+          require("postcss-responsive-type"),
+          require("postcss-pxtorem")({
+            propList: ["*", "!line-height"],
             mediaQuery: true,
             propWhiteList: [],
             replace: true,
             rootValue: 16
           }),
-          require('postcss-preset-env')({
+          require("postcss-preset-env")({
             features: {
-              'custom-properties': {
+              "custom-properties": {
                 preserve: false,
                 warnings: true
               }
             },
             stage: 2
           }),
-          require('autoprefixer')({
-            grid: 'autoplace'
+          require("autoprefixer")({
+            grid: "autoplace"
           })
         ]
       }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 }

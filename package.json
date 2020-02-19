@@ -55,8 +55,11 @@
     "develop:clean": "gatsby clean && gatsby develop",
     "develop:with_host": "gatsby develop --open --host $HOSTNAME",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint:js-fix": "eslint -c .eslintrc.js . --fix",
-    "lint:styles-fix": "stylelint --config stylelint.config.js 'src/**/*.scss' --fix",
+    "lint": "yarn lint:js && yarn lint:styles",
+    "lint:js": "eslint -c .eslintrc.js .",
+    "lint:js:fix": "eslint -c .eslintrc.js . --fix",
+    "lint:styles": "stylelint --config stylelint.config.js 'src/**/*.scss'",
+    "lint:styles:fix": "stylelint --config stylelint.config.js 'src/**/*.scss' --fix",
     "serve": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
