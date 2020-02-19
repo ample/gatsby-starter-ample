@@ -1,1 +1,18 @@
-export { default } from "./header"
+import React from 'react'
+// import PropTypes from "prop-types"
+import { Link } from 'gatsby-theme-ample-components'
+
+import styles from './styles.module.scss'
+
+const Header = () => (
+  <header className={styles.header}>
+    This is the header, and it has <Link to="/">a link that will get you home</Link>.
+    <hr />
+  </header>
+)
+
+Header.propTypes = {}
+
+Header.defaultProps = {}
+
+export default Header

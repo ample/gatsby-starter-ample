@@ -5,10 +5,10 @@ module.exports = {
     author: `@helloample`
   },
   plugins: [
+    `gatsby-theme-docz`,
     `gatsby-theme-ample-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -28,6 +28,68 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ['develop'],
+        options: {
+          emitWarning: true,
+          failOnError: false
+        }
+      }
+    },
+    {
+      resolve: '@danbruegge/gatsby-plugin-stylelint',
+      options: {
+        files: '**/*.scss',
+        stages: ['develop'],
+        options: {
+          emitError: true,
+          emitWarning: true
+        }
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require(`postcss-normalize`)]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('sass'),
+        sourceMap: true,
+        cssLoaderOptions: {
+          localIdentName: '[local]-[hash:base64:3]',
+          sourceMap: true
+        },
+        postCssPlugins: [
+          require('postcss-responsive-type'),
+          require('postcss-pxtorem')({
+            propList: ['*', '!line-height'],
+            mediaQuery: true,
+            propWhiteList: [],
+            replace: true,
+            rootValue: 16
+          }),
+          require('postcss-preset-env')({
+            features: {
+              'custom-properties': {
+                preserve: false,
+                warnings: true
+              }
+            },
+            stage: 2
+          }),
+          require('autoprefixer')({
+            grid: 'autoplace'
+          })
+        ]
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
