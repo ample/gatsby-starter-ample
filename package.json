@@ -70,8 +70,8 @@
     "lint:styles:fix": "stylelint --config stylelint.config.js 'src/**/*.scss' --fix",
     "serve": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest",
-    "test:update": "jest --updateSnapshot"
+    "test": "jest ./src",
+    "test:update": "jest ./src --updateSnapshot"
   },
   "repository": {
     "type": "git",
