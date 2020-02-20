@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react"
 // import PropTypes from "prop-types"
-import { Link } from 'gatsby-theme-ample-components'
+import { Link } from "gatsby-theme-ample-components"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const Header = () => (
-  <header className={styles.header}>
+  <header className={styles.root}>
     This is the header, and it has <Link to="/">a link that will get you home</Link>.
     <hr />
   </header>
