@@ -1,48 +1,25 @@
 # Ample's Gatsby Starter
 
-This is the [_Gatsby Starter_](https://www.gatsbyjs.org/docs/creating-a-starter/) that serves as the starting point for most Ample development projects. It is built from [Gatsby's Default Starter](https://github.com/gatsbyjs/gatsby-starter-default), with some of our pre-configured preferences to make getting started less cumbersome for you.
+This is the [_Gatsby Starter_](https://www.gatsbyjs.org/docs/creating-a-starter/) that serves as the starting point for most Ample development projects. It is built from [Gatsby's Default Starter](https://github.com/gatsbyjs/gatsby-starter-default), with our pre-configured preferences to make getting started less cumbersome for you.
 
 ## Quick Start
 
-1.  **Create a Gatsby site.**
+To start a new project from this template, run the following command:
 
-    Use the Gatsby CLI to create a new site, specifying this starter:
+    $ gatsby new [PROJECT_NAME] ample/gatsby-starter-ample
 
-        $ gatsby new my-project-name ample/gatsby-starter-ample
+Then navigate to the project:
 
-2.  **Start the dev server.**
+    $ yarn develop
 
-    Navigate into your new site's directory and start the dev server:
+That will start a development server at [http://localhost:8000](http://localhost:8000).
 
-        $ cd my-project-name/
-        $ yarn develop
+## Documentation
 
-3.  **Open the source code and start editing!**
+This starter uses [Docz](https://www.docz.site/) for documentation and (some) development. After getting the server up and running, visit [http://localhost:8000/docs](http://localhost:8000/docs) to get started. That page explains the features that ship with this starter.
 
-    Your site is now running at `http://localhost:8000`!
+You can also find more information about working with Gatsby within [Ample's Dev Playbook](https://dev-playbook.netlify.com/code/working-with-gatsby).
 
-    Open the `my-project-name` directory in VS Code and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## License
 
-## What's Included
-
-In addition to (most of) what ships with the Gatsby default starer, this starter includes the following:
-
-- **Component Template:** The `.component-starter` directory is your starting point for building new components (see _Creating a new component_ guide in the section below).
-- **Docz:** We've included and configured [Docz](https://www.docz.site), including a few basic examples.
-
-## Guides
-
-Here are some usage guides for how to get started with this starter:
-
-### Creating a new component
-
-To add a new component, do the following:
-
-1. Copy `.component-starer` into `src/components` and rename the directory to match the name of your component.
-2. Replace all instances of `ComponentName` in `index.js`, `notes.mdx`, and `styles.module.scss` to match the name of the component.
-3. Build the component!
-4. Document component usage in the `notes.mdx` file. (Note: This feature uses [Docz Built-in Components](https://www.docz.site/docs/built-in-components).)
-
-### Installing a CMS
-
-At this time, this starter makes no inference as to the CMS you will be working with. We will soon fill out this section with options for including some of the regular Ample CMS preferences.
+This project is distrubuted under the [MIT License](LICENSE.md).
