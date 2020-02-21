@@ -1,0 +1,15 @@
+// Color palette -- All colors variables should start with $color-
+// ---------------------------------------------------
+
+$color-black: #000;
+$color-white: #fff;
+$color-red: #ff0000;
+
+// Add each variable to the following :export for docz
+// ---------------------------------------------------
+
+:export {
+  color_black: $color-black;
+  color_red: $color-red;
+  color_white: $color-white;
+}
