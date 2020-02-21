@@ -1,4 +1,5 @@
 export default {
+  title: "Ample's Gatsby Starter",
   menu: [
     "Getting Started",
     "Styleguide",
