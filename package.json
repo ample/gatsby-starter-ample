@@ -15,6 +15,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.0",
+    "fs-extra": "^8.1.0",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-catch-links": "^2.1.15",
@@ -31,6 +32,7 @@
     "gatsby-transformer-sharp": "^2.3.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
+    "pluralize": "^8.0.0",
     "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-pxtorem": "^4.0.1",
@@ -47,7 +49,8 @@
     "stylelint": "^13.2.0",
     "stylelint-formatter-pretty": "^1.1.4",
     "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.14.2"
+    "stylelint-scss": "^3.14.2",
+    "yargs": "^15.1.0"
   },
   "keywords": [
     "ample",
@@ -67,8 +70,8 @@
     "lint:styles:fix": "stylelint --config stylelint.config.js 'src/**/*.scss' --fix",
     "serve": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest",
-    "test:update": "jest --updateSnapshot"
+    "test": "jest ./src",
+    "test:update": "jest ./src --updateSnapshot"
   },
   "repository": {
     "type": "git",

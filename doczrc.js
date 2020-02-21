@@ -1,8 +1,13 @@
 export default {
-  menu: ["Getting Started", "Style Guide", "Layout", "Components", "Utilities"],
-  ignore: ["README.md"],
+  menu: [
+    "Getting Started",
+    "Styleguide",
+    "Layout",
+    "Components",
+    "Sections",
+    "Templates",
+    "Helpers"
+  ],
   base: "/docs/",
-  themeConfig: {
-    initialColorMode: "dark"
-  }
+  src: "./src"
 }
