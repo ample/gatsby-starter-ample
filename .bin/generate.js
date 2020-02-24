@@ -3,32 +3,30 @@
 const fs = require("fs-extra")
 const pluralize = require("pluralize")
 
-let validCommand = false
-let compType = null
-
-const argv = require("yargs")
-  .command(["component <name>", "c"], "Generate a new component", () => {
-    compType = "component"
-    validCommand = true
-  })
-  .command(["section <name>", "s"], "Generate a new section", () => {
-    compType = "section"
-    validCommand = true
-  })
-  .command(["template <name>", "t"], "Generate a new template", () => {
-    compType = "template"
-    validCommand = true
-  })
-  .demandCommand(2, "You must specify type and name").argv
-
-if (!validCommand) {
-  console.log("Command not valid")
-  process.exit(1)
+const copyDir = (type, name) => {
+  const srcDir = `./.bin/templates/${type}`
+  const destDir = `./src/${pluralize(type)}/${name}`
+  fs.copySync(srcDir, destDir, { recursive: true })
 }
 
-const srcDir = `./.bin/templates/${compType}`
-const destDir = `./src/${pluralize(compType)}/${argv.name}`
+const copyFile = (tmpl, dest) => fs.copySync(`./.bin/templates/${tmpl}`, dest)
 
-fs.copySync(srcDir, destDir, { recursive: true })
+const argv = require("yargs")
+  .command(["component <name>", "c"], "Generate a new component", {}, argv =>
+    copyDir("component", argv.name)
+  )
+  .command(["section <name>", "s"], "Generate a new section", {}, argv =>
+    copyDir("section", argv.name)
+  )
+  .command(["template <name>", "t"], "Generate a new template", {}, argv =>
+    copyDir("template", argv.name)
+  )
+  .command(["fragment <name>", "f"], "Generate a new fragment", {}, argv =>
+    copyFile("fragment.js", `./src/fragments/${argv.name}-attributes.js`)
+  )
+  .demandCommand(2, "You must specify type and name").argv
+
+const validCommands = ["c", "component", "s", "section", "t", "template", "f", "fragment"]
+if (!validCommands.includes(argv._[0])) console.error("Command not valid")
 
 console.log("Done.")
