@@ -1,15 +1,12 @@
-// Color palette -- All colors variables should start with $color-
-// ---------------------------------------------------
+// All color variables are created in `src/styles/globals/_root`
+// and uses the $colors sass map located in `src/styles/globals/colors/map`
+//
+// :export also uses the $colors sass map and is used by docz to create '/docs/colors'
 
-$color-black: #000;
-$color-white: #fff;
-$color-red: #ff0000;
-
-// Add each variable to the following :export for docz
-// ---------------------------------------------------
+@use './map' as *;
 
 :export {
-  color_black: $color-black;
-  color_red: $color-red;
-  color_white: $color-white;
+  @each $color in $colors {
+    #{nth($color, 1)}: #{nth($color, 2)};
+  }
 }

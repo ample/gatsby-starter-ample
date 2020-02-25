@@ -1,0 +1,7 @@
+@use './colors/map' as *;
+
+:root {
+  @each $color in $colors {
+    --#{nth($color, 1)}: #{nth($color, 2)};
+  }
+}

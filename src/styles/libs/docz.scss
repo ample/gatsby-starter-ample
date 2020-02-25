@@ -36,25 +36,3 @@ div[data-testid='main-container'] {
 }
 
 // --------------------------------------------------------
-
-.colors {
-  display: flex;
-
-  .color {
-    border-radius: 4px;
-    height: 120px;
-    margin-bottom: 30px;
-    margin-right: 20px;
-    position: relative;
-    width: 120px;
-
-    span {
-      bottom: -30px;
-      display: block;
-      font-size: 15px;
-      position: absolute;
-      text-align: center;
-      width: 100%;
-    }
-  }
-}

@@ -1,0 +1,26 @@
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+
+  .color {
+    $size: 130px;
+
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
+    height: $size;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-top: 10px;
+    position: relative;
+    width: $size;
+
+    span {
+      bottom: -30px;
+      display: block;
+      font-size: 15px;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
