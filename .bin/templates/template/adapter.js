@@ -1,5 +1,5 @@
 import React from "react"
-// import { query } from "gatsby"
+// import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 import Template from "./"
