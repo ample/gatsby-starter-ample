@@ -15,9 +15,7 @@ TemplateAdapter.defaultProps = {}
 
 // export const query = graphql`
 //   query TemplateAdapterQuery {
-//     {
-//       # Query goes here ...
-//     }
+//     # Query goes here ...
 //   }
 // `
 
