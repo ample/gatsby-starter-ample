@@ -9,6 +9,9 @@ export default {
     "Templates",
     "Helpers"
   ],
+  themeConfig: {
+    showPlaygroundEditor: false
+  },
   base: "/docs/",
   src: "./src"
 }

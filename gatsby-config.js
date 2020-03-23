@@ -80,7 +80,7 @@ module.exports = {
           require("postcss-preset-env")({
             features: {
               "custom-properties": {
-                preserve: false,
+                preserve: true,
                 warnings: true
               }
             },
