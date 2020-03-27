@@ -2,12 +2,12 @@
   /* eslint-disable no-undef, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 }
 
-import React, { useState } from 'react'
-import classNames from 'classnames/bind'
-import styles from './styles.module.scss'
+import React, { useState } from "react"
+import classNames from "classnames/bind"
+import styles from "./styles.module.scss"
 
 const DebugMediaQueries = () => {
-  if (process.env.GATSBY_DEBUG_MEDIA_QUERIES !== 'true') return null
+  if (process.env.GATSBY_DEBUG_MEDIA_QUERIES !== "true") return null
 
   const [isOpen, setOpen] = useState(false)
 
