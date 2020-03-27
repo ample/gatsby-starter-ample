@@ -4,13 +4,15 @@ import PropTypes from "prop-types"
 import styles from "./styles.module.scss"
 
 const SectionName = ({ propName }) => (
-  <div className={styles.root}>
+  <div className={styles.section_name}>
     <p>{propName}</p>
   </div>
 )
 
 SectionName.propTypes = {
-  /** prop description here */
+  /**
+   * prop description here
+   */
   propName: PropTypes.string.isRequired
 }
 
