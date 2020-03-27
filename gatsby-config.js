@@ -2,12 +2,19 @@ module.exports = {
   siteMetadata: {
     title: `Ample's Gatsby Starter`,
     description: `The base for a new Ample development project.`,
-    author: `@helloample`
+    author: `@helloample`,
+    siteUrl: `https://www.site-url.com`
   },
   plugins: [
     `gatsby-theme-ample-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -91,6 +98,7 @@ module.exports = {
           })
         ]
       }
-    }
+    },
+    `gatsby-plugin-netlify`
   ]
 }

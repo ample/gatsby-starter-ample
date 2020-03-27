@@ -1,2 +1,3 @@
 [build]
   command = "yarn lint && yarn test && yarn clean && yarn build"
+  publish = "public"

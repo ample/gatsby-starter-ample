@@ -3,42 +3,38 @@ module.exports = {
     es6: true,
     browser: true,
     node: true,
-    jest: true,
+    jest: true
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-  ],
+  extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
   globals: {
-    __PATH_PREFIX__: true,
+    __PATH_PREFIX__: true
   },
   overrides: [
     {
-      files: ['**/*.js'],
-      excludedFiles: ['./**/*.stories.js', './**/*.spec.js'],
+      files: ["**/*.js"],
+      excludedFiles: ["./**/*.stories.js", "./**/*.spec.js"]
     },
     {
-      files: ['./src/pages/**/*.js', './src/templates/**/*.js'],
+      files: ["./src/pages/**/*.js", "./src/templates/**/*.js"],
       rules: {
-        'react/prop-types': 0,
-      },
-    },
+        "react/prop-types": 0
+      }
+    }
   ],
-  parser: 'babel-eslint',
+  parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
-  plugins: ['prettier', 'jsx-a11y'],
+  plugins: ["prettier", "jsx-a11y"],
   rules: {
-    'react/no-unescaped-entities': 'off',
-    'react/prop-types': [2, { ignore: ['className'] }],
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": [2, { ignore: ["className"] }]
   },
   settings: {
     react: {
-      version: 'detect',
-    },
-  },
+      version: "detect"
+    }
+  }
 }
