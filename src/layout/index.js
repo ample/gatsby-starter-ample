@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import Footer from "./footer"
 import Header from "./header"
-import DebugMediaQueries from "./debug/media-queries"
+import { DebugMediaQueries } from "gatsby-theme-ample-components"
 
 const Layout = ({ children }) => (
   <>
@@ -11,7 +11,7 @@ const Layout = ({ children }) => (
     <main>{children}</main>
     <Footer />
 
-    <DebugMediaQueries />
+    <DebugMediaQueries isShowing={process.env.GATSBY_DEBUG_MEDIA_QUERIES} />
   </>
 )
 
