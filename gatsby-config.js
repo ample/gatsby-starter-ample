@@ -61,12 +61,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-postcss",
-      options: {
-        postCssPlugins: [require(`postcss-normalize`)]
-      }
-    },
-    {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require("sass"),
@@ -76,9 +70,9 @@ module.exports = {
           sourceMap: true
         },
         postCssPlugins: [
+          require("postcss-normalize"),
           require("postcss-responsive-type"),
           require("postcss-pxtorem")({
-            propList: ["*", "!line-height"],
             mediaQuery: true,
             propWhiteList: [],
             replace: true,

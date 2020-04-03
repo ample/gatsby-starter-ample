@@ -11,10 +11,6 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.js"],
-      excludedFiles: ["./**/*.stories.js", "./**/*.spec.js"]
-    },
-    {
       files: ["./src/pages/**/*.js", "./src/templates/**/*.js"],
       rules: {
         "react/prop-types": 0
@@ -27,7 +23,7 @@ module.exports = {
       jsx: true
     }
   },
-  plugins: ["prettier", "jsx-a11y"],
+  plugins: ["prettier", "jsx-a11y", "jest"],
   rules: {
     "react/no-unescaped-entities": "off",
     "react/prop-types": [2, { ignore: ["className"] }]
