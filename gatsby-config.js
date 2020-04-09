@@ -24,7 +24,6 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    `gatsby-theme-docz`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
