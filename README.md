@@ -16,10 +16,12 @@ That will start a development server at [http://localhost:8000](http://localhost
 
 ## Documentation
 
-This starter uses [Docz](https://www.docz.site/) for documentation and (some) development. After getting the server up and running, visit [http://localhost:8000/docs](http://localhost:8000/docs) to get started. That page explains the features that ship with this starter.
+This starter uses [Storybook](https://storybook.js.org/) for documentation, development, and visual testing. To start the server in development, run the `storybook` command:
 
-You can also find more information about working with Gatsby within [Ample's Dev Playbook](https://dev-playbook.netlify.com/code/working-with-gatsby).
+    $ yarn storybook
+
+This will launch a browser at localhost:6006, running storybook. Documentation specific to this project can be found in Storybook. You can also find more information about working with Gatsby within [Ample's Dev Playbook](https://dev-playbook.netlify.com/code/working-with-gatsby).
 
 ## License
 
-This project is distrubuted under the [MIT License](LICENSE.md).
+This project is distributed under the [MIT License](LICENSE.md).
