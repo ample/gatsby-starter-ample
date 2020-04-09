@@ -74,6 +74,7 @@
     "develop:with_host": "yarn develop --open --host $HOSTNAME",
     "lint": "eslint -c .eslintrc.js . && stylelint --config stylelint.config.js 'src/**/*.scss'",
     "netlify:build": "yarn lint && yarn test && yarn clean && yarn build",
+    "netlify:build:with_storybook": "yarn netlify:build && yarn storybook:build && mv storybook-static public/storybook",
     "storybook": "yarn test --json --outputFile=.jest-test-results.json && start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "test:update": "yarn test --updateSnapshot",
