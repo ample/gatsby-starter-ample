@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-theme-ample-components`,
+    `gatsby-ample-redirects`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
