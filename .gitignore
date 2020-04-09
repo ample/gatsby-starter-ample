@@ -68,8 +68,5 @@ yarn-error.log
 .pnp.js
 .yarn-integrity
 
-# Jest output (used by Storybook)
-.jest-test-results.json
-
 # Storybook build
 storybook-static/

@@ -76,10 +76,10 @@
     "lint": "eslint -c .eslintrc.js ./src && stylelint --config stylelint.config.js './src/**/*.scss'",
     "netlify:build": "yarn lint && yarn test && yarn clean && yarn build",
     "netlify:build:with_storybook": "yarn netlify:build && yarn storybook:build && mv storybook-static public/storybook",
-    "storybook": "yarn test --json --outputFile=.jest-test-results.json && start-storybook -p 6006",
-    "storybook:build": "build-storybook",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook --quiet",
     "test:update": "yarn test --updateSnapshot",
-    "test": "jest ./src"
+    "test": "jest ./src --json --outputFile=.jest-test-results.json"
   },
   "repository": {
     "type": "git",
