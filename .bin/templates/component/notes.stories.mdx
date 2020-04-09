@@ -1,11 +1,8 @@
----
-name: Component Name
-menu: Components
-route: /docs/components/component-name
----
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks"
 
-import { Playground, Props } from "docz"
 import ComponentName from "./"
+
+<Meta title="Components/Component Name" component={ComponentName} />
 
 # Component Name
 
@@ -13,9 +10,9 @@ Component Description
 
 ## Usage
 
-<Playground>
+<Preview>
   <ComponentName propName="Hello World" />
-</Playground>
+</Preview>
 
 ## Properties
 
