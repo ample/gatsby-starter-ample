@@ -1,7 +1,32 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = ({ graphql, actions }) => {
+  return graphql(`
+    {
+      redirects: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/redirects//" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              source: title
+              permanent
+              destination
+              force
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    // ---------------------------------------- | Redirects
 
-// You can delete this file if you're not using it
+    result.data.redirects.edges.map(({ node }) => {
+      actions.createRedirect({
+        fromPath: node.frontmatter.source,
+        toPath: node.frontmatter.destination,
+        force: node.frontmatter.force,
+        redirectInBrowser: true,
+        isPermanent: node.frontmatter.permanent
+      })
+    })
+  })
+}
