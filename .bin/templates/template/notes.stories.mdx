@@ -1,11 +1,8 @@
----
-name: Template Name
-menu: Templates
-route: /docs/templates/template-name
----
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks"
 
-import { Playground, Props } from "docz"
 import TemplateName from "./"
+
+<Meta title="Templates/Template Name" component={TemplateName} />
 
 # Template Name
 
@@ -13,9 +10,9 @@ Template Description
 
 ## Usage
 
-<Playground>
+<Preview>
   <TemplateName propName="Hello World" />
-</Playground>
+</Preview>
 
 ## Properties
 

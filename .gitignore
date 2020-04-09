@@ -59,9 +59,6 @@ typings/
 .cache/
 public/
 
-# Docz
-.docz/
-
 # Mac files
 .DS_Store
 
@@ -70,3 +67,9 @@ yarn-error.log
 .pnp/
 .pnp.js
 .yarn-integrity
+
+# Jest output (used by Storybook)
+.jest-test-results.json
+
+# Storybook build
+storybook-static/

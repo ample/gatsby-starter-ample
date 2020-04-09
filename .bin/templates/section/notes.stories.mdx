@@ -1,11 +1,8 @@
----
-name: Section Name
-menu: Sections
-route: /docs/sections/section-name
----
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks"
 
-import { Playground, Props } from "docz"
 import SectionName from "./"
+
+<Meta title="Sections/Section Name" component={SectionName} />
 
 # Section Name
 
@@ -13,9 +10,9 @@ Section Description
 
 ## Usage
 
-<Playground>
+<Preview>
   <SectionName propName="Hello World" />
-</Playground>
+</Preview>
 
 ## Properties
 
