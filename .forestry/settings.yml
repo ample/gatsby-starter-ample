@@ -1,9 +1,9 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path:
-webhook_url:
-sections:
+admin_path: 
+webhook_url: 
+sections: 
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
