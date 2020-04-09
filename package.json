@@ -76,7 +76,7 @@
     "netlify:build": "yarn lint && yarn test && yarn clean && yarn build",
     "netlify:build:with_storybook": "yarn netlify:build && yarn storybook:build && mv storybook-static public/storybook",
     "storybook": "yarn test --json --outputFile=.jest-test-results.json && start-storybook -p 6006",
-    "storybook:build": "build-storybook",
+    "storybook:build": "build-storybook --quiet",
     "test:update": "yarn test --updateSnapshot",
     "test": "jest ./src"
   },
