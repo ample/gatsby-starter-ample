@@ -24,3 +24,5 @@ fields:
   description: Tells search engines that this redirect is permanent. Otherwise, it's
     considered temporary.
   default: true
+pages:
+- src/content/redirects/old.md
