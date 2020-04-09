@@ -2,7 +2,7 @@
 label: Redirect
 hide_body: true
 fields:
-- name: source
+- name: title
   type: text
   config:
     required: true
