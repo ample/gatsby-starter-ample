@@ -1,5 +1,6 @@
 .cache
-package.json
+.forestry/
 package-lock.json
-yarn.lock
+package.json
 public
+yarn.lock
