@@ -9,7 +9,7 @@ fields:
   label: Title
   description: This value is only for organization within the CMS and will not show
     up on the website.
-- name: style
+- name: config
   type: field_group
   config: {}
   fields:
@@ -30,13 +30,13 @@ fields:
     label: Text Align
     description: The default alignment of text within the container. If not set, it
       defaults to left. Some components can override this setting.
-  label: Style
-  description: Display option for the container.
+  description: Display options for the container.
+  label: Config
 - name: components
   type: blocks
   label: Components
   template_types:
-  - seo
+  - button
   config:
     min: 
     max: 
