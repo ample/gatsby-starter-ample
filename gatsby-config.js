@@ -54,6 +54,12 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: `gatsby-ample-markdown`,
+      options: {
+        suffix: "_src"
+      }
+    },
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,
