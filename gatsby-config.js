@@ -7,7 +7,11 @@ module.exports = {
   },
   plugins: [
     `gatsby-theme-ample-components`,
+    // Looks in src/content and passes every page (except index.md) to
+    // src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
     `gatsby-ample-pages`,
+    // Creates Gatsby and Netlify redirects for records in
+    // src/content/redirects. (See plugins/gatsby-ample-redirects.)
     `gatsby-ample-redirects`,
     `gatsby-plugin-react-helmet`,
     {
@@ -57,13 +61,20 @@ module.exports = {
     {
       resolve: `gatsby-ample-markdown`,
       options: {
+        // Every key in markdown files that end with this suffix will be
+        // processed as markdown and converted to HTML.
         suffix: "_md"
       }
     },
     {
       resolve: `gatsby-ample-images`,
       options: {
+        // Every key in markdown files that ends with this will be processed as
+        // an image ...
         suffix: "_src",
+        // If the value ends with one of these extensions. We avoid .svg files
+        // because they can't be processed and create issues with GraphQL
+        // queries.
         extensions: [".jpg", ".png"]
       }
     },
