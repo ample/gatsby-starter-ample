@@ -39,4 +39,4 @@ fields:
     to explicitly set meta tag values.
 pages:
 - src/content/pages/content-page.md
-- src/content/pages/home-page.md
+- src/content/pages/index.md
