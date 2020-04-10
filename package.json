@@ -76,6 +76,7 @@
     "develop": "gatsby develop",
     "develop:debug": "GATSBY_DEBUG_MEDIA_QUERIES=true yarn develop",
     "develop:with_host": "yarn develop --open --host $HOSTNAME",
+    "generate": "node lib/generate.js",
     "lint": "eslint -c .eslintrc.js ./src && stylelint --config stylelint.config.js './src/**/*.scss'",
     "netlify:build": "yarn lint && yarn test && yarn clean && yarn build",
     "netlify:build:with_storybook": "yarn netlify:build && yarn storybook:build && mv storybook-static public/storybook",
