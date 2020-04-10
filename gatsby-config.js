@@ -57,7 +57,14 @@ module.exports = {
     {
       resolve: `gatsby-ample-markdown`,
       options: {
-        suffix: "_src"
+        suffix: "_md"
+      }
+    },
+    {
+      resolve: `gatsby-ample-images`,
+      options: {
+        suffix: "_src",
+        extensions: [".jpg", ".png"]
       }
     },
     `gatsby-plugin-catch-links`,
