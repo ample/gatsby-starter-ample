@@ -19,12 +19,12 @@ fields:
     template: container
     label: Container
   config:
-    min:
-    max:
+    min: 
+    max: 
     labelField: title
   label: Sections
-  description: Sections are configurable groups of components that make up each page. You
-    can add as many sections and rearrange as needed.
+  description: Sections are configurable groups of components that make up each page.
+    You can add as many sections and rearrange as needed.
 - name: seo
   type: field_group
   config: {}
@@ -35,5 +35,7 @@ fields:
     template: seo
     label: SEO
   label: SEO
-  description: While there are sensible defaults, the SEO section
-    provides the option to explicitly set meta tag values.
+  description: While there are sensible defaults, the SEO section provides the option
+    to explicitly set meta tag values.
+pages:
+- src/content/pages/content-page.md
