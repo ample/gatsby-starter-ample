@@ -1,4 +1,39 @@
 ---
 label: Page
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: The URL for the page is created from the title. The title also serves
+    as the default meta title if the SEO section is left blank. Otherwise, the page
+    title is used for organization in the CMS.
+- name: sections
+  type: field_group_list
+  fields:
+  - name: container
+    type: include
+    config: {}
+    template: container
+    label: Container
+  config:
+    min:
+    max:
+    labelField: title
+  label: Sections
+  description: Sections make up the main section of each page. You
+    can add as many sections and rearrange as needed.
+- name: seo
+  type: field_group
+  config: {}
+  fields:
+  - name: seo
+    type: include
+    config: {}
+    template: seo
+    label: SEO
+  label: SEO
+  description: While there will be intelligent defaults in place, the SEO section
+    provides the option to explicitly set meta tag values.
