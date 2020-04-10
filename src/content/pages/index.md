@@ -24,7 +24,7 @@ seo:
     description: Home Page OG Description
     image_src: "/uploads/placeholder-image.jpg"
   twitter:
-    card: ''
+    card: summary
     title: Home Page Twitter Title
     description: Home Page Twitter Description
     image_src: "/uploads/placeholder-image.jpg"
