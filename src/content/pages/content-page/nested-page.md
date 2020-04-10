@@ -1,5 +1,5 @@
 ---
-title: About
+title: Nested Page
 sections:
 - title: Main Content
   components:
