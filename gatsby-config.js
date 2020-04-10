@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-theme-ample-components`,
+    `gatsby-ample-pages`,
     `gatsby-ample-redirects`,
     `gatsby-plugin-react-helmet`,
     {
