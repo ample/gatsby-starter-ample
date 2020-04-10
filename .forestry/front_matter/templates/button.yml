@@ -1,0 +1,22 @@
+---
+label: Button
+hide_body: true
+fields:
+- name: label
+  label: Label
+  type: text
+  description: The text within the button.
+- name: url
+  label: URL
+  type: text
+  description: The href of the button, or the URL where a click will direct the user.
+# - name: theme
+#   label: Theme
+#   type: select
+#   default: primary
+#   config:
+#     options:
+#     - primary
+#     - secondary
+#   description: There are two button options — primary and secondary. The default is
+#     a primary button.
