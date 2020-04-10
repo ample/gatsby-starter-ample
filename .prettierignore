@@ -1,6 +1,14 @@
+# Gatsby cache
 .cache
-.forestry/
+
+# Dependencies and auto-generated files
+node_modules/
 package-lock.json
-package.json
-public
 yarn.lock
+
+# Build directory
+public
+
+# CMS Content
+.forestry/
+src/content/
