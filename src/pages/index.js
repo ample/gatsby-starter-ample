@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 // import { flattenFrontmatter, normalizeImages } from "../helpers"
 import { normalizeSEO } from "../helpers"
 
-import SEO from "../components/seo"
+import SEO from "../utilities/seo"
 
 import Page from "../templates/page"
 
