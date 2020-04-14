@@ -7,10 +7,27 @@ module.exports = {
   },
   plugins: [
     `gatsby-theme-ample-components`,
+    // Looks in src/content and passes every page (except index.md) to
+    // src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
+    `gatsby-ample-pages`,
+    // Creates Gatsby and Netlify redirects for records in
+    // src/content/redirects. (See plugins/gatsby-ample-redirects.)
+    `gatsby-ample-redirects`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-catch-links`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/uploads`,
+        name: "uploads"
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,6 +35,50 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 1440
+            }
+          }
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-ample-markdown`,
+      options: {
+        // Every key in markdown files that end with this suffix will be
+        // processed as markdown and converted to HTML.
+        suffix: "_md"
+      }
+    },
+    {
+      resolve: `gatsby-ample-images`,
+      options: {
+        // Every key in markdown files that ends with this will be processed as
+        // an image ...
+        suffix: "_src",
+        // If the value ends with one of these extensions. We avoid .svg files
+        // because they can't be processed and create issues with GraphQL
+        // queries.
+        extensions: [".jpg", ".png"]
+      }
+    },
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

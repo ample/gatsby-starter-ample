@@ -1,0 +1,45 @@
+---
+label: Container
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: This value is only for organization within the CMS and will not show
+    up on the website.
+- name: config
+  type: field_group
+  config: {}
+  fields:
+  - name: text_align
+    type: select
+    default: ''
+    config:
+      required: false
+      options:
+      - left
+      - center
+      - right
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Text Align
+    description: The default alignment of text within the container. If not set, it
+      defaults to left. Some components can override this setting.
+  description: Display options for the container.
+  label: Config
+- name: components
+  type: blocks
+  label: Components
+  template_types:
+  - button
+  - content
+  - image
+  config:
+    min: 
+    max: 
+  description: 'Components that appear inside this container. '

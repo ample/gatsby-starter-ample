@@ -2,13 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import { normalizeSEO } from "../helpers"
+import { normalizeSEO } from "../../helpers"
 
-import SEO from "../utilities/seo"
+import SEO from "../../utilities/seo"
 
-import Page from "../templates/page"
+import Page from "./"
 
-const HomePageAdapter = ({ data, location }) => {
+const PageAdapter = ({ data, location }) => {
   let page = data.page.frontmatter
 
   const seo = normalizeSEO({
@@ -24,19 +24,19 @@ const HomePageAdapter = ({ data, location }) => {
   )
 }
 
-HomePageAdapter.propTypes = {
+PageAdapter.propTypes = {
   /** Data coming from markdown files. */
   data: PropTypes.shape({}).isRequired
 }
 
-HomePageAdapter.defaultProps = {}
+PageAdapter.defaultProps = {}
 
 export const query = graphql`
-  query HomePageAdapterQuery {
-    page: markdownRemark(fileAbsolutePath: { regex: "/content/pages/index.md/" }) {
+  query PageAdapterQuery($id: String!) {
+    page: markdownRemark(id: { eq: $id }) {
       ...PageAttributes
     }
   }
 `
 
-export default HomePageAdapter
+export default PageAdapter

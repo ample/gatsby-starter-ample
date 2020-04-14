@@ -1,0 +1,12 @@
+---
+label: Button
+hide_body: true
+fields:
+- name: label
+  label: Label
+  type: text
+  description: The text within the button.
+- name: url
+  label: URL
+  type: text
+  description: The href of the button, or the URL where a click will direct the user.

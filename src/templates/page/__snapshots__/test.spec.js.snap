@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTemplate renders correctly 1`] = `
+Array [
+  <header
+    className="root"
+  >
+    This is the header, and it has 
+    <a
+      href="/"
+    >
+      a link that will get you home
+    </a>
+    .
+    <hr />
+  </header>,
+  <main>
+    <div
+      className="page"
+    >
+      <h1 />
+    </div>
+  </main>,
+  <footer
+    className="footer"
+  >
+    <hr />
+    And this is the footer.
+  </footer>,
+]
+`;

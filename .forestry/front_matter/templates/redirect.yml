@@ -1,0 +1,28 @@
+---
+label: Redirect
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Source
+  description: The old URL.
+- name: destination
+  type: text
+  config:
+    required: true
+  label: Destination
+  description: The path at which the URL resolves. (i.e. Where do we end up?)
+- name: force
+  type: boolean
+  label: Force
+  description: Should the path be redirected even if the page exists?
+- name: permanent
+  type: boolean
+  label: Permanent
+  description: Tells search engines that this redirect is permanent. Otherwise, it's
+    considered temporary.
+  default: true
+pages:
+- src/content/redirects/old.md

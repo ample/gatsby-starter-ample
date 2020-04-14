@@ -1,0 +1,9 @@
+---
+label: Image
+hide_body: true
+fields:
+- name: image_src
+  type: file
+  config:
+    maxSize: 250
+  label: Image
