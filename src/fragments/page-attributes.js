@@ -15,11 +15,10 @@ export const PageAttributes = graphql`
         }
         components {
           template
-          image_src
           src: image {
             ...FluidImageAttributes
           }
-          body_md
+          body
           label
           url
         }

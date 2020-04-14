@@ -6,10 +6,11 @@ import { Image } from "gatsby-theme-ample-components"
 import styles from "./styles.module.scss"
 
 import Button from "../../components/button"
+import Content from "../../components/content"
 
 const componentMap = {
   button: Button,
-  // content: Content,
+  content: Content,
   image: Image
 }
 
@@ -25,7 +26,6 @@ const Container = ({ className, components, config, title }) => (
     </p>
     {components.map((comp, idx) => {
       const TagName = componentMap[comp.template]
-      console.log(comp)
       if (TagName) return <TagName key={idx} {...comp} />
       return (
         <p key={idx}>

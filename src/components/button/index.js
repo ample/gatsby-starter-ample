@@ -17,15 +17,15 @@ const Button = ({ className, label, url }) => {
 
 Button.propTypes = {
   /**
-   * Specifies additional class names
+   * Additional classes on the link element.
    */
   className: PropTypes.string,
   /**
-   * Specifies the button text
+   * Text rendered to the screen inside the button.
    */
   label: PropTypes.string.isRequired,
   /**
-   * Specifies where the button links
+   * The href attribute for the link rendered to the screen.
    */
   url: PropTypes.string.isRequired
 }
