@@ -5,12 +5,16 @@ import styles from "./styles.module.scss"
 
 import Layout from "../../layout"
 
+import Container from "../../sections/container"
+
 const PageTemplate = ({ children, sections, title }) => (
   <Layout>
     {children}
     <div className={styles.page}>
       <h1>{title}</h1>
-      <pre>{JSON.stringify(sections)}</pre>
+      {sections.map((section, idx) => (
+        <Container key={idx} {...section} />
+      ))}
     </div>
   </Layout>
 )
