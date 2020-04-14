@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Template renders correctly 1`] = `
+exports[`PageTemplate renders correctly 1`] = `
 Array [
   <header
     className="root"

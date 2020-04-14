@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Section from "./"
+import Container from "./"
 
-describe("Section", () => {
+describe("Container", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Section />).toJSON()
+    const tree = renderer.create(<Container components={[]} config={{}} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

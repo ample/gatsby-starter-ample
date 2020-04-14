@@ -5,7 +5,7 @@ import Component from "./"
 
 describe("Component", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Component />).toJSON()
+    const tree = renderer.create(<Component body="<p>Hello world</p>" />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

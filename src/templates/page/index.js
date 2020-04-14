@@ -28,6 +28,8 @@ PageTemplate.propTypes = {
   title: PropTypes.string
 }
 
-PageTemplate.defaultProps = {}
+PageTemplate.defaultProps = {
+  sections: []
+}
 
 export default PageTemplate

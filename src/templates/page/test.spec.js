@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Template from "./"
+import PageTemplate from "./"
 
-describe("Template", () => {
+describe("PageTemplate", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Template />).toJSON()
+    const tree = renderer.create(<PageTemplate sections={[]} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
