@@ -1,15 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames/bind"
+import { Image } from "gatsby-theme-ample-components"
 
 import styles from "./styles.module.scss"
 
 import Button from "../../components/button"
 
 const componentMap = {
-  button: Button
+  button: Button,
   // content: Content,
-  // image: Image,
+  image: Image
 }
 
 const Container = ({ className, components, config, title }) => (
@@ -24,6 +25,7 @@ const Container = ({ className, components, config, title }) => (
     </p>
     {components.map((comp, idx) => {
       const TagName = componentMap[comp.template]
+      console.log(comp)
       if (TagName) return <TagName key={idx} {...comp} />
       return (
         <p key={idx}>

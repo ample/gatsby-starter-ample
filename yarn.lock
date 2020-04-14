@@ -8950,6 +8950,15 @@ gatsby-image@^2.2.34:
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
+gatsby-image@^2.3.1:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.3.2.tgz#12e6cac9d6cc1a8152a35693ddf7729d5e59759f"
+  integrity sha512-xaFo2Bsox0aRvRXORLyYf9Rgzp/7aBR4aSmb8CuLLGs4c+IbeSlK0XofkLMZ9c52pxijVRfO3WLSVTB7dtHv+Q==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+    object-fit-images "^3.2.4"
+    prop-types "^15.7.2"
+
 gatsby-link@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.3.2.tgz#b0987dc63e54880afe20fa458ac6d14c2f4cc60c"
@@ -9176,7 +9185,7 @@ gatsby-telemetry@^1.2.3:
 
 gatsby-theme-ample-components@ample/gatsby-theme-ample-components:
   version "0.0.1"
-  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/420f7b5ee32f6b517cf6025497d53cebdec3a681"
+  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/08ce5b76cfab63cfe2a99ed8e51e38bd1fec27c8"
   dependencies:
     "@babel/polyfill" "^7.8.7"
     "@storybook/addon-a11y" "^5.3.18"
@@ -9188,7 +9197,9 @@ gatsby-theme-ample-components@ample/gatsby-theme-ample-components:
     classnames "^2.2.6"
     css-loader "^3.4.2"
     gatsby "^2.20.12"
+    gatsby-image "^2.3.1"
     gatsby-react-router-scroll "^2.2.1"
+    object-dig "^0.1.3"
     prop-types "^15.7.2"
     react "^16.13.1"
     react-dom "^16.13.1"
