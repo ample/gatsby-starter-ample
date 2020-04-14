@@ -4,7 +4,9 @@ import PropTypes from "prop-types"
 // import dig from "object-dig"
 
 // import { flattenFrontmatter, normalizeImages } from "../../helpers"
-// import { normalizeSEO } from "../../helpers"
+import { normalizeSEO } from "../../helpers"
+
+import SEO from "../../components/seo"
 
 import Page from "./"
 
@@ -13,26 +15,21 @@ const PageAdapter = ({ data, location }) => {
   let page = data.page.frontmatter
   // normalizeImages(page)
 
-  // const seo = normalizeSEO({
-  //   location: location,
-  //   overrides: page.seo,
-  //   defaults: { title: page.title }
-  // })
-
-  // console.log(seo)
-  // const seo = {
-  //   baseUrl: location.origin,
-  //   url: location.href,
-  //   ...page.seo,
-  //   title: dig(page, "seo", "title") || page.title,
-  //   image: dig(page, "seo", "image") || dig(page, "jumbotron", "image")
-  // }
+  const seo = normalizeSEO({
+    location: location,
+    overrides: page.seo,
+    page: { title: page.title }
+  })
 
   // return <Page jumbotron={page.jumbotron} sections={page.sections} seo={seo} />
 
   // console.log(page)
 
-  return <Page sections={page.sections} title={page.title} />
+  return (
+    <Page sections={page.sections} title={page.title}>
+      <SEO {...seo} />
+    </Page>
+  )
 }
 
 PageAdapter.propTypes = {

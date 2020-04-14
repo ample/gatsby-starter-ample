@@ -5,15 +5,19 @@ import styles from "./styles.module.scss"
 
 import Layout from "../../layout"
 
-const PageTemplate = ({ sections, title }) => (
+const PageTemplate = ({ children, sections, title }) => (
   <Layout>
+    {children}
     <div className={styles.page}>
       <h1>{title}</h1>
+      <pre>{JSON.stringify(sections)}</pre>
     </div>
   </Layout>
 )
 
 PageTemplate.propTypes = {
+  /** */
+  children: PropTypes.node,
   /** */
   sections: PropTypes.arrayOf(PropTypes.object),
   /** */
