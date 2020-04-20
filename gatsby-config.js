@@ -159,6 +159,13 @@ module.exports = {
         output: `/sitemap.xml`
       }
     },
-    `gatsby-plugin-netlify`
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/*": ["X-Frame-Options: SAMEORIGIN"]
+        }
+      }
+    }
   ]
 }
