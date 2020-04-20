@@ -78,9 +78,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "build": "yarn gatsby build",
+    "clean": "yarn gatsby clean",
+    "develop": "yarn gatsby develop",
     "develop:debug": "GATSBY_DEBUG_MEDIA_QUERIES=true yarn develop",
     "develop:with_host": "yarn develop --open --host $HOSTNAME",
     "generate": "node lib/generate.js",
