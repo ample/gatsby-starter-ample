@@ -1,2 +1,26 @@
+// --------------------------------------------------------
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// --------------------------------------------------------
+
 $font-size-base: 16px;
-$font-family-base: system-ui;
+
+// --------------------------------------------------------
+
+$font-fallback: system-ui;
+
+// --------------------------------------------------------
+
+$font-family-base: $font-fallback;
+$font-family-headings: $font-fallback;
+
+// --------------------------------------------------------
+
+// Create variables for the different font weight variations
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
