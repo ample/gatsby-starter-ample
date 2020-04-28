@@ -8,6 +8,10 @@ fields:
     required: true
   label: Source
   description: The old URL.
+- name: model
+  type: text
+  hidden: true
+  default: Redirect
 - name: destination
   type: text
   config:

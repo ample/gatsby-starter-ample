@@ -1,4 +1,5 @@
 ---
+model: Redirect
 permanent: false
 title: "/old"
 destination: "/new"
