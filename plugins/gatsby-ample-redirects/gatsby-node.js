@@ -1,9 +1,7 @@
 exports.createPages = ({ graphql, actions }) => {
   return graphql(`
     {
-      redirects: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/redirects//" } }
-      ) {
+      redirects: allMarkdownRemarkRedirect {
         edges {
           node {
             frontmatter {
@@ -17,8 +15,6 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    // ---------------------------------------- | Redirects
-
     result.data.redirects.edges.map(({ node }) => {
       actions.createRedirect({
         fromPath: node.frontmatter.source,

@@ -33,7 +33,7 @@ HomePageAdapter.defaultProps = {}
 
 export const query = graphql`
   query HomePageAdapterQuery {
-    page: markdownRemark(fileAbsolutePath: { regex: "/content/pages/index.md/" }) {
+    page: markdownRemarkPage(slugPath: { eq: "index" }) {
       ...PageAttributes
     }
   }

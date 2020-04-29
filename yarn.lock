@@ -9185,7 +9185,7 @@ gatsby-telemetry@^1.2.3:
 
 gatsby-theme-ample-components@ample/gatsby-theme-ample-components:
   version "0.0.1"
-  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/08ce5b76cfab63cfe2a99ed8e51e38bd1fec27c8"
+  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/e6937d19bf916a3329ecd9e4cda6c3d95d1f17e8"
   dependencies:
     "@babel/polyfill" "^7.8.7"
     "@storybook/addon-a11y" "^5.3.18"

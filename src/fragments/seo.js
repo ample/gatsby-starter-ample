@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 
 export const SEO = graphql`
-  fragment SEO on MarkdownRemarkFrontmatterSeo {
+  fragment SEO on MarkdownRemarkPageFrontmatterSeo {
     title
     description
     image_src

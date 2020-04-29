@@ -33,7 +33,7 @@ PageAdapter.defaultProps = {}
 
 export const query = graphql`
   query PageAdapterQuery($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
+    page: markdownRemarkPage(id: { eq: $id }) {
       ...PageAttributes
     }
   }

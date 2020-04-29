@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 
 export const PageAttributes = graphql`
-  fragment PageAttributes on MarkdownRemark {
+  fragment PageAttributes on MarkdownRemarkPage {
     id
     frontmatter {
       title

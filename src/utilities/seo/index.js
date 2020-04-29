@@ -24,7 +24,7 @@ const SEO = props => (
   <StaticQuery
     query={graphql`
       {
-        settings: markdownRemark(fileAbsolutePath: { regex: "/content/admin/seo.md/" }) {
+        settings: markdownRemarkAdminSeo {
           frontmatter {
             title_template
             default_image {
