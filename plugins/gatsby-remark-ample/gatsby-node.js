@@ -22,6 +22,7 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDig
   const imagesSuffix = "_src"
   const markdownSuffix = "_md"
   const modelField = "model"
+  const seoField = "seo"
 
   // The name of the model, which is the basis for creating the query.
   const contentType = lodash.get(node, `frontmatter.${modelField}`)
@@ -63,12 +64,18 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDig
     frontmatter: {}
   }
 
-  /**
-   * TODO: Figure out how to make SEO sections all the same type. Eventually it
-   * would be nice to do that across the board, through the configuration.
-   */
+  let seoData
 
   deepForEach(node.frontmatter, (value, key, _, keyPath) => {
+    if (keyPath === seoField) {
+      // Will still make the values available in frontmatter so they don't
+      // disappear (that would be confusing). But this sets us up to create a
+      // parent-child relationship so that we can use fragments more easily.
+      seoData = value
+    } else if (keyPath.split(".")[0] === seoField) {
+      return
+    }
+
     if (lodash.endsWith(key, markdownSuffix)) {
       const newPath = lodash.trimEnd(keyPath, markdownSuffix)
       lodash.set(newNode, `frontmatter.${newPath}`, processMarkdown(value))
@@ -96,6 +103,25 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDig
 
   actions.createNode(newNode)
   actions.createParentChildLink({ parent: node, child: newNode })
+
+  if (seoData) {
+    const seoNode = {
+      id: createNodeId(`${node.id} - SEO`),
+      children: [],
+      parent: newNode.id,
+      internal: {
+        // content: node.internal.content,
+        contentDigest: createContentDigest(seoData),
+        // mediaType: fileNode.internal.mediaType,
+        // description: fileNode.internal.description,
+        type: `SeoMeta`
+      },
+      data: seoData
+    }
+
+    actions.createNode(seoNode)
+    actions.createParentChildLink({ parent: newNode, child: seoNode })
+  }
 
   return newNode
 }

@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 export const PageAttributes = graphql`
   fragment PageAttributes on MarkdownRemarkPage {
     id
+    seo: childSeoMeta {
+      ...SEO
+    }
     frontmatter {
       title
-      seo {
-        ...SEO
-      }
       sections {
         title
         config {

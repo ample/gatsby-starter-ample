@@ -9,16 +9,16 @@ import SEO from "../../utilities/seo"
 import Page from "./"
 
 const PageAdapter = ({ data, location }) => {
-  let page = data.page.frontmatter
+  let { page } = data
 
   const seo = normalizeSEO({
     location: location,
-    overrides: page.seo,
-    page: { title: page.title }
+    overrides: page.seo.data,
+    page: { title: page.frontmatter.title }
   })
 
   return (
-    <Page sections={page.sections} title={page.title}>
+    <Page sections={page.frontmatter.sections} title={page.frontmatter.title}>
       <SEO {...seo} />
     </Page>
   )
