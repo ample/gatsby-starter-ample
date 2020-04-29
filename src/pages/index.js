@@ -2,27 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import { normalizeSEO } from "../helpers"
+import PageAdapter from "../templates/page/adapter"
 
-import SEO from "../utilities/seo"
-
-import Page from "../templates/page"
-
-const HomePageAdapter = ({ data, location }) => {
-  let { page } = data
-
-  const seo = normalizeSEO({
-    location: location,
-    overrides: page.seo.data,
-    page: { title: page.frontmatter.title }
-  })
-
-  return (
-    <Page sections={page.frontmatter.sections} title={page.frontmatter.title}>
-      <SEO {...seo} />
-    </Page>
-  )
-}
+const HomePageAdapter = ({ data, location }) => <PageAdapter data={data} location={location} />
 
 HomePageAdapter.propTypes = {
   /** Data coming from markdown files. */
