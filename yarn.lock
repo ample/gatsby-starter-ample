@@ -9109,6 +9109,15 @@ gatsby-react-router-scroll@^2.2.1:
     scroll-behavior "^0.9.12"
     warning "^3.0.0"
 
+gatsby-remark-ample@ample/gatsby-remark-ample:
+  version "1.0.0"
+  resolved "https://codeload.github.com/ample/gatsby-remark-ample/tar.gz/7545412e5af4e9559dd66ba8895a09b0e7c76ba2"
+  dependencies:
+    deep-for-each "^3.0.0"
+    lodash "^4.17.15"
+    remark "^12.0.0"
+    remark-html "^11.0.1"
+
 gatsby-remark-images@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.2.2.tgz#0b79255af0734d38966ff34461f111adc0a2b5dc"
@@ -9197,9 +9206,7 @@ gatsby-theme-ample-components@ample/gatsby-theme-ample-components:
     classnames "^2.2.6"
     css-loader "^3.4.2"
     gatsby "^2.20.12"
-    gatsby-image "^2.3.1"
     gatsby-react-router-scroll "^2.2.1"
-    object-dig "^0.1.3"
     prop-types "^15.7.2"
     react "^16.13.1"
     react-dom "^16.13.1"
