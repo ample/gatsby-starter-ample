@@ -1,120 +1,127 @@
 const deepForEach = require("deep-for-each")
 const lodash = require("lodash")
 const path = require("path")
-const remark = require("remark")
-const remarkHTML = require("remark-html")
 
+const getKeyType = require("./src/get-key-type")
 const getOptions = require("./src/get-options")
-
-/**
- * Convert markdown string to HTML string.
- */
-const processMarkdown = markdown =>
-  remark()
-    .use(remarkHTML)
-    .processSync(markdown)
-    .toString()
+const getPermalink = require("./src/get-permalink")
+const processMarkdown = require("./src/process-markdown")
+const processImage = require("./src/process-image")
 
 exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDigest }, options) => {
+  // Only process nodes that were created by gatsby-transformer-remark.
   if (lodash.get(node, "internal.type") !== "MarkdownRemark") return
 
+  // Combine options passed into the plugin with the sensible defaults for a
+  // comprehensive object of options.
   const args = getOptions(options)
 
-  // The name of the model, which is the basis for creating the query.
+  // The name of the model, which is the basis for creating the query. This is
+  // how queries are grouped together.
   const contentType = lodash.get(node, `frontmatter.${args.modelField}`)
+  // Stop processing if the content type is not a string of some length.
+  if (!lodash.isString(contentType) || lodash.isEmpty(contentType)) return
 
-  if (!contentType) return
-
-  // ---------------------------------------- | ...
-
-  const getPermalink = absPath => {
-    // Remove everything before the content directory.
-    let filePath = absPath.split(args.contentSrc).pop()
-    // Split the remaining path into its individual parts.
-    filePath = filePath.split(path.sep)
-    // Remove the first item (the content directory).
-    filePath.shift()
-    // Convert the path back into a string, and remove the extension.
-    return filePath.join(path.sep).replace(path.extname(absPath), "")
-  }
-
-  // ---------------------------------------- | ...
-
+  // Reference to the parent of the MarkdownRemark node, which should be a file.
   const fileNode = getNode(node.parent)
   if (lodash.get(fileNode, "internal.type") !== "File") return
 
+  // Initialize a new node object.
   const newNode = {
+    // Gatsby helps us create a unique ID for this node.
     id: createNodeId(`${node.id} - ${contentType}`),
+    // Children has to be an empty array for new objects.
     children: [],
+    // The parent is the node that was just created, the MarkdownRemark node.
     parent: node.id,
+    // We use a combination of the MarkdownRemark node, and its parent, the File
+    // node, to build out internal properties.
     internal: {
       content: node.internal.content,
       contentDigest: createContentDigest(node.internal.content),
       mediaType: fileNode.internal.mediaType,
       description: fileNode.internal.description,
+      // The type is the name of the model, appended to MarkdownRemark, to show
+      // that this is an extension of MarkdownRemark.
       type: `MarkdownRemark${contentType}`
     },
+    // slug is the filename without the extension.
     slug: path.basename(node.fileAbsolutePath, path.extname(node.fileAbsolutePath)),
-    slugPath: getPermalink(node.fileAbsolutePath),
+    // slugPath is the path to the file without the extension and the grouping
+    // content directory.
+    slugPath: getPermalink({
+      absoluteFilePath: node.fileAbsolutePath,
+      contentSrc: args.contentSrc
+    }),
+    // html persists from the MarkdownRemark node.
     html: node.html,
+    // Create an empty object for frontmatter, which is processed below.
     frontmatter: {}
   }
 
+  // Reference we use to know whether or not to create a child SEO node.
   let seoData
 
+  // Loop through each key-value pair in the frontmatter.
   deepForEach(node.frontmatter, (value, key, _, keyPath) => {
-    if (keyPath === args.seoField) {
-      // Will still make the values available in frontmatter so they don't
-      // disappear (that would be confusing). But this sets us up to create a
-      // parent-child relationship so that we can use fragments more easily.
-      seoData = value
-    } else if (keyPath.split(".")[0] === args.seoField) {
-      return
+    // Get type of the node. Most will be "default" and are simply passed
+    // through to the new node. Others get processed more specifical to their
+    // type.
+    const keyType = getKeyType({ keyPath: keyPath, options: args, value: value })
+    switch (keyType) {
+      // SEO keys simply set the seoData variable and are processed after the
+      // new node is created.
+      case "seo":
+        seoData = value
+        break
+      // Markdown keys are converted to HTML and stored as a new key without the
+      // suffix.
+      case "md": {
+        const newKeyPath = lodash.trimEnd(keyPath, args.markdownSuffix)
+        const newValue = processMarkdown(value)
+        if (newValue) lodash.set(newNode, `frontmatter.${newKeyPath}`, newValue)
+        break
+      }
+      // Image keys are converted to a relative path from the markdown file to
+      // the image, and stored as a new key without the suffix.
+      case "img": {
+        const newKeyPath = lodash.trimEnd(keyPath, args.imageSuffix)
+        const newValue = processImage({
+          absoluteFilePath: node.fileAbsolutePath,
+          imageSrcDir: args.imageSrc,
+          value: value
+        })
+        if (newValue) lodash.set(newNode, `frontmatter.${newKeyPath}`, newValue)
+        break
+      }
     }
-
-    if (lodash.endsWith(key, args.markdownSuffix)) {
-      const newPath = lodash.trimEnd(keyPath, args.markdownSuffix)
-      lodash.set(newNode, `frontmatter.${newPath}`, processMarkdown(value))
-    } else if (
-      lodash.endsWith(key, args.imageSuffix) &&
-      lodash.isString(value) &&
-      lodash.startsWith(value, "/") &&
-      args.imageExtensions.includes(path.extname(value))
-    ) {
-      const absImgPath = path.join(args.imageSrcDir, value)
-      // Absolute path to the directory in which the current node we're
-      // processing lives.
-      const absNodeDir = path.join(node.fileAbsolutePath, "..")
-      // Find the relative path from the current node to the image.
-      const relImgPath = path.relative(absNodeDir, absImgPath)
-      // Remove suffix from the key to get the new key.
-      const newKeyPath = lodash.trimEnd(keyPath, args.imageSuffix)
-      // Store the relative path from the current node to the image as the
-      // value for the new key.
-      if (relImgPath) lodash.set(newNode, `frontmatter.${newKeyPath}`, relImgPath)
-    }
-    // Set value
-    lodash.set(newNode, `frontmatter.${keyPath}`, value)
+    // If the key has a type (some keys are ignored), then we pass it through to
+    // the new node.
+    if (keyType) lodash.set(newNode, `frontmatter.${keyPath}`, value)
   })
 
+  // Create the new node.
   actions.createNode(newNode)
+  // Set the parent of the new node to the MarkdownRemark node.
   actions.createParentChildLink({ parent: node, child: newNode })
 
+  // Process an SEO node if the new node has SEO data attached to it.
   if (seoData) {
     const seoNode = {
       id: createNodeId(`${node.id} - SEO`),
       children: [],
+      // The parent is the new node we just created.
       parent: newNode.id,
       internal: {
-        // content: node.internal.content,
         contentDigest: createContentDigest(seoData),
-        // mediaType: fileNode.internal.mediaType,
-        // description: fileNode.internal.description,
         type: `SeoMeta`
       },
+      // SEO data is nested under a "data" object to avoid naming conflicts.
       data: seoData
     }
 
+    // Create SEO node and also create the parent-child relationship between the
+    // new node and the SEO node.
     actions.createNode(seoNode)
     actions.createParentChildLink({ parent: newNode, child: seoNode })
   }

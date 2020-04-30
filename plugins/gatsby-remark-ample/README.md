@@ -20,7 +20,7 @@ plugins: [
     options: {
       contentSrc: "src/content/",
       imageExtensions: [".jpg", ".png"],
-      imageSrcDir: path.join(__dirname, "./static"),
+      imageSrc: path.join(__dirname, "./static"),
       imageSuffix: "_src",
       markdownSuffix: "_md",
       modelField: "model",
@@ -32,9 +32,9 @@ plugins: [
 
 ### Options
 
-- `contentSrc`: The directory in which your markdown files live. This should be the topmost parent, as it can only be a single directory.
+- `contentSrc`: The directory in which your markdown files live. This should be the topmost parent, as it can only be a single directory. **There is a major assumption in this plugin — that your content is segmented within the `contentSrc` directory by another directory, presumably indicating its type.** (e.g. If pages go in `src/content/pages` and posts go in `src/content/posts`, then `src/content` is the `contentSrc` value.)
 - `imageExtensions`: An array of image file extensions that should be processed as images.
-- `imageSrcDir`: The directory that is treated as the root for image file paths.
+- `imageSrc`: The directory that is treated as the root for image file paths.
 - `imageSuffix`: The unique suffix on keys that should be processed as images.
 - `markdownSuffix`: The unique suffix on keys that should be processed as markdown.
 - `modelField`: The unique top-level property key that should be used as explicit instruction on which query the file should be available.
@@ -162,7 +162,7 @@ This is highly opinionated to work with content management systems that write im
 
 Because of that, this process is involved, optionated, and a little goofy. So let's look at how this transformation works:
 
-First, this plugin scans frontmatter for keys that end in the `imageSuffix` (default: `_src`). When it finds one, if the value is a string that ends in an acceptable extension, it next identifies the relative path from the markdown file to the physical image file. (That's where `imageSrcDir` comes in handy.) If all of these items come together, the plugin then writes the value to a key without the suffix.
+First, this plugin scans frontmatter for keys that end in the `imageSuffix` (default: `_src`). When it finds one, if the value is a string that ends in an acceptable extension, it next identifies the relative path from the markdown file to the physical image file. (That's where `imageSrc` comes in handy.) If all of these items come together, the plugin then writes the value to a key without the suffix.
 
 For example, if our markdown file had an `image_src` field:
 

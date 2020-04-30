@@ -5,7 +5,7 @@ module.exports = (overrides = {}) => {
   const defaults = {
     contentSrc: "src/content/",
     imageExtensions: [".jpg", ".png"],
-    imageSrcDir: path.join(__dirname, "../../../static"),
+    imageSrc: path.join(__dirname, "../../../static"),
     imageSuffix: "_src",
     markdownSuffix: "_md",
     modelField: "model",
