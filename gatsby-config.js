@@ -78,6 +78,19 @@ module.exports = {
         extensions: [".jpg", ".png"]
       }
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        // TODO: update project fonts here as well as in .storybook/preview-head.html
+        //
+        // google: {
+        //   families: ["Font Family"]
+        // },
+        // typekit: {
+        //   id: ["typekit-id"]
+        // }
+      }
+    },
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,

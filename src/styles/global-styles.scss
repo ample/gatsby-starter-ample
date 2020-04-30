@@ -4,9 +4,11 @@
 // --------------------------------------------------------
 
 body {
+  @include font-smoothing;
+
   font-family: $font-family-base;
   font-size: $font-size-base;
-  font-weight: normal;
+  font-weight: $font-weight-regular;
   line-height: 1;
 }
 
@@ -18,17 +20,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
+  font-weight: $font-weight-bold;
   margin: 0;
 }
 
 h1 {
-  font-size: responsive 22px 36px;
+  font-size: responsive 35px 60px;
 }
 
 h2 {
-  font-size: responsive 18px 18px;
+  font-size: responsive 30px 45px;
 }
+
+// --------------------------------------------------------
 
 a {
   text-decoration: none;
