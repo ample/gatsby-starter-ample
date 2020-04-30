@@ -1,8 +1,11 @@
+const path = require("path")
+
 module.exports = (overrides = {}) => {
   // Default options
   const defaults = {
     contentSrc: "src/content/",
     imageExtensions: [".jpg", ".png"],
+    imageSrcDir: path.join(__dirname, "../../../static"),
     imageSuffix: "_src",
     markdownSuffix: "_md",
     modelField: "model",

@@ -78,10 +78,10 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDig
     } else if (
       lodash.endsWith(key, args.imageSuffix) &&
       lodash.isString(value) &&
-      lodash.startsWith(value, "/uploads") &&
+      lodash.startsWith(value, "/") &&
       args.imageExtensions.includes(path.extname(value))
     ) {
-      const absImgPath = path.join(path.join(__dirname, "../../static"), value)
+      const absImgPath = path.join(args.imageSrcDir, value)
       // Absolute path to the directory in which the current node we're
       // processing lives.
       const absNodeDir = path.join(node.fileAbsolutePath, "..")
