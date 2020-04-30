@@ -2,11 +2,11 @@ const deepForEach = require("deep-for-each")
 const lodash = require("lodash")
 const path = require("path")
 
-const getKeyType = require("./src/get-key-type")
-const getOptions = require("./src/get-options")
-const getPermalink = require("./src/get-permalink")
-const processMarkdown = require("./src/process-markdown")
-const processImage = require("./src/process-image")
+const getKeyType = require("./utils/get-key-type")
+const getOptions = require("./utils/get-options")
+const getPermalink = require("./utils/get-permalink")
+const processMarkdown = require("./utils/process-markdown")
+const processImage = require("./utils/process-image")
 
 exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDigest }, options) => {
   // Only process nodes that were created by gatsby-transformer-remark.
