@@ -4,6 +4,8 @@ const path = require("path")
 const remark = require("remark")
 const remarkHTML = require("remark-html")
 
+const getOptions = require("./src/get-options")
+
 /**
  * Convert markdown string to HTML string.
  */
@@ -13,19 +15,13 @@ const processMarkdown = markdown =>
     .processSync(markdown)
     .toString()
 
-exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDigest }) => {
+exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDigest }, options) => {
   if (lodash.get(node, "internal.type") !== "MarkdownRemark") return
 
-  // TODO: Make these into configurable options.
-  const contentSrc = "src/content/"
-  const imageExtensions = [".jpg", ".png"]
-  const imagesSuffix = "_src"
-  const markdownSuffix = "_md"
-  const modelField = "model"
-  const seoField = "seo"
+  const args = getOptions(options)
 
   // The name of the model, which is the basis for creating the query.
-  const contentType = lodash.get(node, `frontmatter.${modelField}`)
+  const contentType = lodash.get(node, `frontmatter.${args.modelField}`)
 
   if (!contentType) return
 
@@ -33,7 +29,7 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDig
 
   const getPermalink = absPath => {
     // Remove everything before the content directory.
-    let filePath = absPath.split(contentSrc).pop()
+    let filePath = absPath.split(args.contentSrc).pop()
     // Split the remaining path into its individual parts.
     filePath = filePath.split(path.sep)
     // Remove the first item (the content directory).
@@ -67,23 +63,23 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDig
   let seoData
 
   deepForEach(node.frontmatter, (value, key, _, keyPath) => {
-    if (keyPath === seoField) {
+    if (keyPath === args.seoField) {
       // Will still make the values available in frontmatter so they don't
       // disappear (that would be confusing). But this sets us up to create a
       // parent-child relationship so that we can use fragments more easily.
       seoData = value
-    } else if (keyPath.split(".")[0] === seoField) {
+    } else if (keyPath.split(".")[0] === args.seoField) {
       return
     }
 
-    if (lodash.endsWith(key, markdownSuffix)) {
-      const newPath = lodash.trimEnd(keyPath, markdownSuffix)
+    if (lodash.endsWith(key, args.markdownSuffix)) {
+      const newPath = lodash.trimEnd(keyPath, args.markdownSuffix)
       lodash.set(newNode, `frontmatter.${newPath}`, processMarkdown(value))
     } else if (
-      lodash.endsWith(key, imagesSuffix) &&
+      lodash.endsWith(key, args.imageSuffix) &&
       lodash.isString(value) &&
       lodash.startsWith(value, "/uploads") &&
-      imageExtensions.includes(path.extname(value))
+      args.imageExtensions.includes(path.extname(value))
     ) {
       const absImgPath = path.join(path.join(__dirname, "../../static"), value)
       // Absolute path to the directory in which the current node we're
@@ -92,7 +88,7 @@ exports.onCreateNode = ({ node, actions, createNodeId, getNode, createContentDig
       // Find the relative path from the current node to the image.
       const relImgPath = path.relative(absNodeDir, absImgPath)
       // Remove suffix from the key to get the new key.
-      const newKeyPath = lodash.trimEnd(keyPath, imagesSuffix)
+      const newKeyPath = lodash.trimEnd(keyPath, args.imageSuffix)
       // Store the relative path from the current node to the image as the
       // value for the new key.
       if (relImgPath) lodash.set(newNode, `frontmatter.${newKeyPath}`, relImgPath)

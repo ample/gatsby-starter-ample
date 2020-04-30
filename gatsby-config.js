@@ -70,7 +70,18 @@ module.exports = {
      * Options are currently hard-coded into the plugin, which is local. (See
      * plugins/gatsby-remark-ample.)
      */
-    `gatsby-remark-ample`,
+    {
+      resolve: `gatsby-remark-ample`
+      // These are the default options:
+      // options: {
+      //   contentSrc: "src/content/",
+      //   imageExtensions: [".jpg", ".png"],
+      //   imageSuffix: "_src",
+      //   markdownSuffix: "_md",
+      //   modelField: "model",
+      //   seoField: "seo"
+      // }
+    },
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,
