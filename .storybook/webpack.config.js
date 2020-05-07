@@ -4,6 +4,11 @@ module.exports = ({ config }) => {
   // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
   config.module.rules[0].exclude = [/node_modules\/(?!(gatsby|gatsby-theme-ample-components)\/)/]
 
+  // Include local copy of gatsby-theme-ample-components
+  config.module.rules[0].include.push(
+    path.resolve(__dirname, "../../gatsby-theme-ample-components")
+  )
+
   // use installed babel-loader which is v8.0-beta (which is meant to work with @babel/core@7)
   config.module.rules[0].use[0].loader = require.resolve("babel-loader")
 
@@ -30,8 +35,10 @@ module.exports = ({ config }) => {
   // Support sass files with PostCSS plugins
   config.module.rules.push({
     test: /\.scss$/,
-    // use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
-    include: path.resolve(__dirname, "../"),
+    include: [
+      path.resolve(__dirname, "../"),
+      path.resolve(__dirname, "../../gatsby-theme-ample-components")
+    ],
     loaders: [
       require.resolve("style-loader"),
       {
