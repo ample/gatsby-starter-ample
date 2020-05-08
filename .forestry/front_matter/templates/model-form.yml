@@ -1,5 +1,5 @@
 ---
-label: Form - Component
+label: "[Model] Form"
 hide_body: true
 fields:
 - name: title

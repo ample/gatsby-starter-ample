@@ -1,5 +1,5 @@
 ---
-label: Container
+label: "[Section] Container"
 hide_body: true
 fields:
 - name: title
@@ -24,9 +24,9 @@ fields:
       - right
       source:
         type: simple
-        section: 
-        file: 
-        path: 
+        section:
+        file:
+        path:
     label: Text Align
     description: The default alignment of text within the container. If not set, it
       defaults to left. Some components can override this setting.
@@ -41,6 +41,6 @@ fields:
   - form
   - image
   config:
-    min: 
-    max: 
+    min:
+    max:
   description: 'Components that appear inside this container. '

@@ -1,5 +1,5 @@
 ---
-label: Page
+label: "[Template] Page"
 hide_body: true
 fields:
 - name: title
@@ -19,8 +19,8 @@ fields:
     template: container
     label: Container
   config:
-    min: 
-    max: 
+    min:
+    max:
     labelField: title
   label: Sections
   description: Sections are configurable groups of components that make up each page.
