@@ -19,8 +19,8 @@ fields:
     template: container
     label: Container
   config:
-    min:
-    max:
+    min: 
+    max: 
     labelField: title
   label: Sections
   description: Sections are configurable groups of components that make up each page.

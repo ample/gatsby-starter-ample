@@ -10,20 +10,28 @@ sections:
   create: all
   match: "**/*"
   templates:
-  - page
+  - template-page
+- type: directory
+  path: src/content/forms
+  label: Forms
+  create: documents
+  match: "**/*"
+  templates:
+  - model-form
 - type: directory
   path: src/content/redirects
   label: Redirects
   create: documents
   match: "**/*"
   templates:
-  - redirect
+  - model-redirect
 - type: directory
   path: src/content/admin
   label: Config
   create: none
   match: "**/*"
   templates:
+  - admin-references
   - admin-seo
 upload_dir: static/uploads
 public_path: "/uploads"
