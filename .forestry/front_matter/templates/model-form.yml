@@ -7,3 +7,5 @@ fields:
   type: text
   config:
     required: true
+pages:
+- src/content/forms/contact-form.md
