@@ -7,10 +7,12 @@ import styles from "./styles.module.scss"
 
 import Button from "../../components/button"
 import Content from "../../components/content"
+import Form from "../../components/form"
 
 const componentMap = {
   "component-button": Button,
   "component-content": Content,
+  "component-form": Form,
   "component-image": Image
 }
 

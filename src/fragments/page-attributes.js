@@ -15,12 +15,21 @@ export const PageAttributes = graphql`
         }
         components {
           template
+
+          # Button
+          label
+          url
+
+          # Content
+          body
+
+          # Form
+          form
+
+          # Image
           src: image {
             ...FluidImageAttributes
           }
-          body
-          label
-          url
         }
       }
     }
