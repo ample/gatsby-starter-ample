@@ -32,7 +32,7 @@ fields:
   - name: seo
     type: include
     config: {}
-    template: admin-seo
+    template: fragment-seo
     label: SEO
   label: SEO
   description: While there are sensible defaults, the SEO section provides the option
