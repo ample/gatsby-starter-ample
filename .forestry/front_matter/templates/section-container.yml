@@ -36,10 +36,10 @@ fields:
   type: blocks
   label: Components
   template_types:
-  - button
-  - content
-  - form
-  - image
+  - component-button
+  - component-content
+  - component-form
+  - component-image
   config:
     min: 
     max: 

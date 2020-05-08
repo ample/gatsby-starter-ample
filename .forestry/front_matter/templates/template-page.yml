@@ -19,8 +19,8 @@ fields:
     template: section-container
     label: Container
   config:
-    min:
-    max:
+    min: 
+    max: 
     labelField: title
   label: Sections
   description: Sections are configurable groups of components that make up each page.
@@ -38,6 +38,5 @@ fields:
   description: While there are sensible defaults, the SEO section provides the option
     to explicitly set meta tag values.
 pages:
-- src/content/pages/contact.md
 - src/content/pages/content-page.md
 - src/content/pages/index.md
