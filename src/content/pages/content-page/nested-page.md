@@ -3,7 +3,7 @@ title: Nested Page
 sections:
 - title: Main Content
   components:
-  - template: content
+  - template: component-content
     body_md: This is an example of a page that is nested under other pages.
   config:
     text_align: ''

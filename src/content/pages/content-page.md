@@ -3,7 +3,7 @@ title: Content Page
 sections:
 - title: Main Content
   components:
-  - template: content
+  - template: component-content
     body_md: |-
       # Heading 1
 

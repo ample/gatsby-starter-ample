@@ -16,11 +16,11 @@ fields:
   - name: container
     type: include
     config: {}
-    template: container
+    template: section-container
     label: Container
   config:
-    min: 
-    max: 
+    min:
+    max:
     labelField: title
   label: Sections
   description: Sections are configurable groups of components that make up each page.
@@ -32,7 +32,7 @@ fields:
   - name: seo
     type: include
     config: {}
-    template: seo
+    template: admin-seo
     label: SEO
   label: SEO
   description: While there are sensible defaults, the SEO section provides the option

@@ -9,9 +9,9 @@ import Button from "../../components/button"
 import Content from "../../components/content"
 
 const componentMap = {
-  button: Button,
-  content: Content,
-  image: Image
+  "component-button": Button,
+  "component-content": Content,
+  "component-image": Image
 }
 
 const Container = ({ className, components, config, title }) => (
