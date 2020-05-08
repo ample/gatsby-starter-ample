@@ -1,5 +1,6 @@
 ---
 title: Home Page
+model: page
 sections:
 - title: Main Content
   config:

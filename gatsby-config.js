@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Ample's Gatsby Starter`,
@@ -59,23 +61,15 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-ample-markdown`,
+      resolve: `gatsby-remark-ample`,
       options: {
-        // Every key in markdown files that end with this suffix will be
-        // processed as markdown and converted to HTML.
-        suffix: "_md"
-      }
-    },
-    {
-      resolve: `gatsby-ample-images`,
-      options: {
-        // Every key in markdown files that ends with this will be processed as
-        // an image ...
-        suffix: "_src",
-        // If the value ends with one of these extensions. We avoid .svg files
-        // because they can't be processed and create issues with GraphQL
-        // queries.
-        extensions: [".jpg", ".png"]
+        contentSrc: "src/content/",
+        imageExtensions: [".jpg", ".jpeg", ".png"],
+        imageSrc: path.join(__dirname, "static"),
+        imageSuffix: "_src",
+        markdownSuffix: "_md",
+        modelField: "model",
+        seoField: "seo"
       }
     },
     {

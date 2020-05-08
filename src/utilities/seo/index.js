@@ -27,9 +27,9 @@ const SEO = props => (
         settings: markdownRemark(fileAbsolutePath: { regex: "/content/admin/seo.md/" }) {
           frontmatter {
             title_template
-            default_image {
-              ...FluidImageAttributes
-            }
+            # default_image {
+            #   ...FluidImageAttributes
+            # }
           }
         }
       }

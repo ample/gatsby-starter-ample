@@ -1,5 +1,6 @@
 ---
 title: Content Page
+model: page
 sections:
 - title: Main Content
   components:

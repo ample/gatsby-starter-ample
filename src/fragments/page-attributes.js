@@ -15,9 +15,9 @@ export const PageAttributes = graphql`
         }
         components {
           template
-          src: image {
-            ...FluidImageAttributes
-          }
+          # src: image {
+          #   ...FluidImageAttributes
+          # }
           body
           label
           url
