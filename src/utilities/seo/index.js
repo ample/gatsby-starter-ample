@@ -24,19 +24,15 @@ const SEO = props => (
   <StaticQuery
     query={graphql`
       {
-        settings: markdownRemark(fileAbsolutePath: { regex: "/content/admin/seo.md/" }) {
-          frontmatter {
-            title_template
-            # default_image {
-            #   ...FluidImageAttributes
-            # }
+        settings: adminSeo {
+          title_template
+          default_image {
+            ...FluidImageAttributes
           }
         }
       }
     `}
-    render={data => (
-      <ThemeSEO {...transformData({ queryData: data.settings.frontmatter, srcProps: props })} />
-    )}
+    render={data => <ThemeSEO {...transformData({ queryData: data.settings, srcProps: props })} />}
   />
 )
 
