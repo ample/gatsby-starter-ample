@@ -1,6 +1,6 @@
 ---
 permanent: false
-model: redirect
+model: Redirect
 title: "/old"
 destination: "/new"
 force: false

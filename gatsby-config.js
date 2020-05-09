@@ -62,14 +62,17 @@ module.exports = {
     },
     {
       resolve: `gatsby-remark-ample`,
+      // Commented lines are the plugin's default options. Read more here:
+      // https://github.com/ample/gatsby-remark-ample
       options: {
-        contentSrc: "src/content/",
-        imageExtensions: [".jpg", ".jpeg", ".png"],
+        // contentSrc: "src/content/",
+        // imageExtensions: [".jpg", ".jpeg", ".png"],
         imageSrc: path.join(__dirname, "static"),
-        imageSuffix: "_src",
-        markdownSuffix: "_md",
-        modelField: "model",
-        seoField: "seo"
+        // imageSuffix: "_src",
+        // markdownSuffix: "_md",
+        // modelField: "model",
+        models: ["AdminReferences", "AdminSeo", "Page", "Redirect"]
+        // seoField: "seo"
       }
     },
     {
