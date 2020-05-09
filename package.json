@@ -40,6 +40,7 @@
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-sitemap": "^2.3.1",
     "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-remark-ample": "ample/gatsby-remark-ample",
     "gatsby-remark-images": "^3.2.2",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.1.40",
