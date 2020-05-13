@@ -12,6 +12,7 @@ fields:
   type: text
   hidden: true
   default: Redirect
+  label: Model
 - name: destination
   type: text
   config:

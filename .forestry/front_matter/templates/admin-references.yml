@@ -12,6 +12,7 @@ fields:
   type: text
   hidden: true
   default: AdminReferences
+  label: Model
 - name: twitter_cards
   type: list
   config:

@@ -11,5 +11,6 @@ fields:
   type: text
   hidden: true
   default: Form
+  label: Model
 pages:
 - src/content/forms/contact-form.md
