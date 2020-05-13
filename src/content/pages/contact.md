@@ -1,5 +1,6 @@
 ---
 title: Contact
+model: Page
 sections:
 - title: Form
   components:

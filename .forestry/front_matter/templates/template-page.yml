@@ -13,7 +13,7 @@ fields:
 - name: model
   type: text
   hidden: true
-  default: page
+  default: Page
 - name: sections
   type: field_group_list
   fields:

@@ -11,7 +11,7 @@ fields:
 - name: model
   type: text
   hidden: true
-  default: admin_seo
+  default: AdminSeo
 - name: title_template
   type: text
   config:

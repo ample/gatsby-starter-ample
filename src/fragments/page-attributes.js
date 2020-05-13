@@ -12,32 +12,23 @@ export const PageAttributes = graphql`
       config {
         text_align
       }
-      sections {
-        title
-        config {
-          text_align
-        }
-        components {
-          template
+      components {
+        template
 
-          # Button
-          label
-          url
-
-          # Content
-          body
-
-          # Form
-          form
-
-          # Image
-          src: image {
-            ...FluidImageAttributes
-          }
-        }
-        body
+        # Button
         label
         url
+
+        # Content
+        body
+
+        # Form
+        form
+
+        # Image
+        src: image {
+          ...FluidImageAttributes
+        }
       }
     }
   }

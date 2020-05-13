@@ -11,7 +11,7 @@ fields:
 - name: model
   type: text
   hidden: true
-  default: admin_references
+  default: AdminReferences
 - name: twitter_cards
   type: list
   config:

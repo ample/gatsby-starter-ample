@@ -11,7 +11,7 @@ fields:
 - name: model
   type: text
   hidden: true
-  default: redirect
+  default: Redirect
 - name: destination
   type: text
   config:
