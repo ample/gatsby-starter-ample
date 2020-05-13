@@ -1,5 +1,5 @@
 ---
 title: Contact Form
-# model: Form
+model: Form
 
 ---

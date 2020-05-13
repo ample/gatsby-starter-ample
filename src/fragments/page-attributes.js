@@ -23,7 +23,9 @@ export const PageAttributes = graphql`
         body
 
         # Form
-        form
+        form {
+          title
+        }
 
         # Image
         src: image {
