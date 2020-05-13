@@ -2848,12 +2848,7 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/preset-scss@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@storybook/preset-scss/-/preset-scss-1.0.2.tgz#6c993b972c6f599237082b55e12c875f0f66ab06"
-  integrity sha512-Kq+Y3H7qRBxocLW57V9HtQhrw9ZzmTodFCjf+OelMh1k6SZ7/FvJHb7mtWofafHcqq1tSQlNIgYMtHRDJ64WVg==
-
-"@storybook/react@5.3.18", "@storybook/react@^5.3.18":
+"@storybook/react@^5.3.18":
   version "5.3.18"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-5.3.18.tgz#c057b680924e188d44149c3d67dd31aead88b28a"
   integrity sha512-6yNg+phcrEqEjC2NOiu0mJuxbTwX7yzbkcusIn0S7N/KTXNO7CGvYjAkdjfw0gTLjfuVDZIjDQfoosslvfsj3w==
@@ -5711,7 +5706,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5, classnames@^2.2.6:
+classnames@^2.2.5:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -6467,7 +6462,7 @@ css-loader@^1.0.1:
     postcss-value-parser "^3.3.0"
     source-list-map "^2.0.0"
 
-css-loader@^3.0.0, css-loader@^3.4.2:
+css-loader@^3.0.0:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.5.1.tgz#db2b2336f4169edb68e6a829ad4fd36552647b77"
   integrity sha512-0G4CbcZzQ9D1Q6ndOfjFuMDo8uLYMu5vc9Abs5ztyHcKvmil6GJrMiNjzzi3tQvUF+mVRuDg7bE6Oc0Prolgig==
@@ -8950,15 +8945,6 @@ gatsby-image@^2.2.34:
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
-gatsby-image@^2.3.1:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.3.2.tgz#12e6cac9d6cc1a8152a35693ddf7729d5e59759f"
-  integrity sha512-xaFo2Bsox0aRvRXORLyYf9Rgzp/7aBR4aSmb8CuLLGs4c+IbeSlK0XofkLMZ9c52pxijVRfO3WLSVTB7dtHv+Q==
-  dependencies:
-    "@babel/runtime" "^7.8.7"
-    object-fit-images "^3.2.4"
-    prop-types "^15.7.2"
-
 gatsby-link@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.3.2.tgz#b0987dc63e54880afe20fa458ac6d14c2f4cc60c"
@@ -9117,6 +9103,15 @@ gatsby-react-router-scroll@^2.2.1:
     scroll-behavior "^0.9.12"
     warning "^3.0.0"
 
+gatsby-remark-ample@ample/gatsby-remark-ample:
+  version "0.2.0"
+  resolved "https://codeload.github.com/ample/gatsby-remark-ample/tar.gz/28f2bca64d15f28857e0ef8fe5441e88499921b1"
+  dependencies:
+    deep-for-each "^3.0.0"
+    lodash "^4.17.15"
+    remark "^12.0.0"
+    remark-html "^11.0.1"
+
 gatsby-remark-images@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.2.2.tgz#0b79255af0734d38966ff34461f111adc0a2b5dc"
@@ -9193,28 +9188,7 @@ gatsby-telemetry@^1.2.3:
 
 gatsby-theme-ample-components@ample/gatsby-theme-ample-components:
   version "0.0.1"
-  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/08ce5b76cfab63cfe2a99ed8e51e38bd1fec27c8"
-  dependencies:
-    "@babel/polyfill" "^7.8.7"
-    "@storybook/addon-a11y" "^5.3.18"
-    "@storybook/addon-docs" "^5.3.18"
-    "@storybook/addon-essentials" "^5.3.18"
-    "@storybook/addon-jest" "^5.3.18"
-    "@storybook/preset-scss" "^1.0.2"
-    "@storybook/react" "5.3.18"
-    classnames "^2.2.6"
-    css-loader "^3.4.2"
-    gatsby "^2.20.12"
-    gatsby-image "^2.3.1"
-    gatsby-react-router-scroll "^2.2.1"
-    object-dig "^0.1.3"
-    prop-types "^15.7.2"
-    react "^16.13.1"
-    react-dom "^16.13.1"
-    react-helmet "^5.2.1"
-    sass "^1.26.3"
-    sass-loader "^8.0.2"
-    style-loader "^1.1.3"
+  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/5c6445dd64ae61e396bf54395ff25ffdd40a0300"
 
 gatsby-transformer-remark@^2.7.1:
   version "2.7.1"
@@ -9256,7 +9230,7 @@ gatsby-transformer-sharp@^2.3.7:
     semver "^5.7.1"
     sharp "^0.23.4"
 
-gatsby@^2.20.12, gatsby@^2.20.14:
+gatsby@^2.20.14:
   version "2.20.14"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.20.14.tgz#63c2637605c6b394fc4b8255f69ccf244b8df2b5"
   integrity sha512-+5QAWaak1VaW+6dCa7dFlaZ8T+vM6z8k5zK4WpUTW6SLxyDgJLSOk4s3BkpElg9CK4tJvkueeQsCK+IRvTHFgw==
@@ -16357,7 +16331,7 @@ react-dom@^16.12.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-dom@^16.13.1, react-dom@^16.8.3:
+react-dom@^16.8.3:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -16578,7 +16552,7 @@ react@^16.12.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-react@^16.13.1, react@^16.8.0, react@^16.8.3:
+react@^16.8.0, react@^16.8.3:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -17634,28 +17608,10 @@ sass-loader@^7.3.1:
     pify "^4.0.1"
     semver "^6.3.0"
 
-sass-loader@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-8.0.2.tgz#debecd8c3ce243c76454f2e8290482150380090d"
-  integrity sha512-7o4dbSK8/Ol2KflEmSco4jTjQoV988bM82P9CZdmo9hR3RLnvNc0ufMNdMrB0caq38JQ/FgF4/7RcbcfKzxoFQ==
-  dependencies:
-    clone-deep "^4.0.1"
-    loader-utils "^1.2.3"
-    neo-async "^2.6.1"
-    schema-utils "^2.6.1"
-    semver "^6.3.0"
-
 sass@^1.26.0:
   version "1.26.0"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.26.0.tgz#58dd90f9a2ff6e3d953cf15bfb1cfd0823bed92d"
   integrity sha512-akOxgCUOjRtBUgKiWVYrUxKnDIN5+z/m7NKmav5RU9q4oXMVAXYStn1pXvTECyTIe6WupElREKgDRbFvHb2anA==
-  dependencies:
-    chokidar ">=2.0.0 <4.0.0"
-
-sass@^1.26.3:
-  version "1.26.3"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.26.3.tgz#412df54486143b76b5a65cdf7569e86f44659f46"
-  integrity sha512-5NMHI1+YFYw4sN3yfKjpLuV9B5l7MqQ6FlkTcC4FT+oHbBRUZoSjHrrt/mE0nFXJyY2kQtU9ou9HxvFVjLFuuw==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -17704,7 +17660,7 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-schema-utils@^2.0.1, schema-utils@^2.5.0, schema-utils@^2.6.1, schema-utils@^2.6.4, schema-utils@^2.6.5:
+schema-utils@^2.0.1, schema-utils@^2.5.0, schema-utils@^2.6.4, schema-utils@^2.6.5:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.6.5.tgz#c758f0a7e624263073d396e29cd40aa101152d8a"
   integrity sha512-5KXuwKziQrTVHh8j/Uxz+QUbxkaLW9X/86NBlx/gnKgtsZA2GIVMUn17qWhRFwF8jdYb3Dig5hRO/W5mZqy6SQ==
@@ -18779,7 +18735,7 @@ style-loader@^0.23.1:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
 
-style-loader@^1.0.0, style-loader@^1.1.3:
+style-loader@^1.0.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-1.1.3.tgz#9e826e69c683c4d9bf9db924f85e9abb30d5e200"
   integrity sha512-rlkH7X/22yuwFYK357fMN/BxYOorfnfq0eD7+vqlemSK4wEcejFF1dg4zxP0euBW8NrYx2WZzZ8PPFevr7D+Kw==

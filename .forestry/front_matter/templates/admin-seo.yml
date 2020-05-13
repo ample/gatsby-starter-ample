@@ -8,6 +8,10 @@ fields:
     required: false
   label: Title
   hidden: true
+- name: model
+  type: text
+  hidden: true
+  default: admin_seo
 - name: title_template
   type: text
   config:

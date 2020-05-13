@@ -1,5 +1,6 @@
 ---
 title: Nested Page
+model: Page
 sections:
 - title: Main Content
   components:

@@ -2,27 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import { normalizeSEO } from "../helpers"
+import Page from "../templates/page/adapter"
 
-import SEO from "../utilities/seo"
-
-import Page from "../templates/page"
-
-const HomePageAdapter = ({ data, location }) => {
-  let page = data.page.frontmatter
-
-  const seo = normalizeSEO({
-    location: location,
-    overrides: page.seo,
-    page: { title: page.title }
-  })
-
-  return (
-    <Page sections={page.sections} title={page.title}>
-      <SEO {...seo} />
-    </Page>
-  )
-}
+const HomePageAdapter = ({ data, location }) => <Page data={data} location={location} />
 
 HomePageAdapter.propTypes = {
   /** Data coming from markdown files. */
@@ -33,7 +15,7 @@ HomePageAdapter.defaultProps = {}
 
 export const query = graphql`
   query HomePageAdapterQuery {
-    page: markdownRemark(fileAbsolutePath: { regex: "/content/pages/index.md/" }) {
+    page(slugPath: { eq: "index" }) {
       ...PageAttributes
     }
   }

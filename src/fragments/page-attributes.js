@@ -1,12 +1,16 @@
 import { graphql } from "gatsby"
 
 export const PageAttributes = graphql`
-  fragment PageAttributes on MarkdownRemark {
+  fragment PageAttributes on Page {
     id
-    frontmatter {
+    title
+    seo {
+      ...SEO
+    }
+    sections {
       title
-      seo {
-        ...SEO
+      config {
+        text_align
       }
       sections {
         title
@@ -31,6 +35,9 @@ export const PageAttributes = graphql`
             ...FluidImageAttributes
           }
         }
+        body
+        label
+        url
       }
     }
   }

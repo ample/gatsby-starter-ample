@@ -9,7 +9,7 @@ import SEO from "../../utilities/seo"
 import Page from "./"
 
 const PageAdapter = ({ data, location }) => {
-  let page = data.page.frontmatter
+  let { page } = data
 
   const seo = normalizeSEO({
     location: location,
@@ -33,7 +33,7 @@ PageAdapter.defaultProps = {}
 
 export const query = graphql`
   query PageAdapterQuery($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
+    page: page(id: { eq: $id }) {
       ...PageAttributes
     }
   }
