@@ -1,8 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
+import parameterize from "parameterize-string"
 
 import styles from "../styles.module.scss"
 
+import SelectField from "./select"
 import TextField from "./text"
 import { textTypeOptions } from "./__config__"
 
@@ -11,19 +13,11 @@ import { textTypeOptions } from "./__config__"
 /**
  * Maps field types to field components.
  */
-let fieldMap = {}
+let fieldMap = {
+  Select: SelectField
+}
 // Dynamically add text field options from the config.
 textTypeOptions.map(opt => (fieldMap[opt] = TextField))
-
-/**
- * Takes a title string and converts it to a form-friendly name.
- */
-const toFieldName = str => {
-  return str
-    .toLowerCase()
-    .replace(/[ ]+/, "_")
-    .replace(/\W/g, "")
-}
 
 /**
  * Preps the props for passing them on to the various field components.
@@ -31,7 +25,7 @@ const toFieldName = str => {
 const normalizedFieldData = data => {
   return data.map(field => ({
     ...field,
-    name: field.name || toFieldName(field.title),
+    name: field.name || parameterize(field.title, { separator: "_" }),
     label: field.label || field.title,
     type: field.type || "Short Text",
     width: field.width || "full"

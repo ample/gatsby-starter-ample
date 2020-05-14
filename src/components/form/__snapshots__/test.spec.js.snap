@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form renders correctly 1`] = `
+<form
+  action="post"
+  className="form"
+  data-netlify="true"
+  name="Contact Form"
+>
+  <input
+    name="form-name"
+    type="hidden"
+    value="Contact Form"
+  />
+  <input
+    type="submit"
+    value="Submit"
+  />
+</form>
+`;

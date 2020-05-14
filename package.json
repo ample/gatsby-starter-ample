@@ -53,6 +53,7 @@
     "lodash.endswith": "^4.2.1",
     "lodash.unset": "^4.5.2",
     "object-dig": "^0.1.3",
+    "parameterize-string": "^1.0.1",
     "pluralize": "^8.0.0",
     "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "^6.7.0",

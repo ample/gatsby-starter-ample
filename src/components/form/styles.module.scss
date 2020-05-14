@@ -27,16 +27,45 @@
     flex-basis: 24%;
   }
 
-  input,
+  input:not([type='radio']),
+  select,
   textarea {
+    background-color: var(--color-white);
     border: 1px solid var(--color-gray);
+    border-radius: 0;
     font-size: 16px;
     padding: 8px;
     width: 100%;
   }
 
+  select {
+    appearance: none;
+  }
+
   textarea {
     height: 140px;
+  }
+
+  .radio_buttons {
+    margin-top: 8px;
+  }
+
+  .radio_button {
+    align-items: center;
+    display: flex;
+    margin-bottom: 4px;
+
+    input {
+      display: inline-block;
+      height: 14px;
+      margin-right: 4px;
+    }
+
+    label {
+      display: inline-block;
+      font-weight: normal;
+      margin: 0;
+    }
   }
 }
 
