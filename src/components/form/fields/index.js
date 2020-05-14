@@ -25,7 +25,7 @@ textTypeOptions.map(opt => (fieldMap[opt] = TextField))
 const normalizedFieldData = data => {
   return data.map(field => ({
     ...field,
-    name: field.name || parameterize(field.title, { separator: "_" }),
+    name: field.name || parameterize(field.title || "", { separator: "_" }),
     label: field.label || field.title,
     type: field.type || "Short Text",
     width: field.width || "full"
@@ -94,3 +94,5 @@ FormFields.propTypes = {
 FormFields.defaultProps = {}
 
 export default FormFields
+
+export { fieldMap, FormFields, normalizedFieldData }
