@@ -20,6 +20,7 @@ fields:
     - Phone Number
     - Date
     - Email
+    - Select
     source:
       type: simple
       section: 
@@ -64,4 +65,24 @@ fields:
   description: If using a dropdown or radio buttons, these are the options presented
     to the user in the order they are listed here.
   showOnly:
-    value: Short Text
+    value: Select
+    field: type
+- name: appearance
+  type: select
+  default: Dropdown
+  config:
+    required: false
+    options:
+    - Dropdown
+    - Radio Buttons
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Appearance
+  description: If using a select field, this determines how the field's options are
+    displayed.
+  showOnly:
+    field: type
+    value: Select
