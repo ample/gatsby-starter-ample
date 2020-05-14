@@ -1,5 +1,5 @@
 ---
-label: Content
+label: "[Component] Content"
 hide_body: true
 fields:
 - name: body_md

@@ -7,6 +7,9 @@ module.exports = {
     author: `@helloample`,
     siteUrl: `https://www.site-url.com`
   },
+  mapping: {
+    "Page.sections.components.form": "Form.filePath"
+  },
   plugins: [
     `gatsby-theme-ample-components`,
     // Looks in src/content and passes every page (except index.md) to
@@ -71,7 +74,8 @@ module.exports = {
         // imageSuffix: "_src",
         // markdownSuffix: "_md",
         // modelField: "model",
-        models: ["AdminReferences", "AdminSeo", "Page", "Redirect"]
+        models: ["AdminReferences", "AdminSeo", "Form", "Page", "Redirect"],
+        projectRoot: path.join(__dirname)
         // seoField: "seo"
       }
     },

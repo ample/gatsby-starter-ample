@@ -1,15 +1,17 @@
 ---
-title: Nested Page
+title: Contact
 model: Page
 sections:
-- title: Main Content
+- title: Form
   components:
-  - template: component-content
-    body_md: This is an example of a page that is nested under other pages.
+  - template: component-form
+    form: src/content/forms/contact-form.md
   config:
     text_align: ''
 seo:
   title: ''
+  title_template: ''
+  default_image_src: ''
   description: ''
   image_src: ''
   og:

@@ -1,5 +1,5 @@
 ---
-label: Container
+label: "[Section] Container"
 hide_body: true
 fields:
 - name: title
@@ -36,9 +36,10 @@ fields:
   type: blocks
   label: Components
   template_types:
-  - button
-  - content
-  - image
+  - component-button
+  - component-content
+  - component-form
+  - component-image
   config:
     min: 
     max: 

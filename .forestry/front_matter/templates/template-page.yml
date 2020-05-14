@@ -1,5 +1,5 @@
 ---
-label: Page
+label: "[Template] Page"
 hide_body: true
 fields:
 - name: title
@@ -13,18 +13,19 @@ fields:
 - name: model
   type: text
   hidden: true
-  default: page
+  default: Page
+  label: Model
 - name: sections
   type: field_group_list
   fields:
   - name: container
     type: include
     config: {}
-    template: container
+    template: section-container
     label: Container
   config:
-    min:
-    max:
+    min: 
+    max: 
     labelField: title
   label: Sections
   description: Sections are configurable groups of components that make up each page.
@@ -36,11 +37,12 @@ fields:
   - name: seo
     type: include
     config: {}
-    template: seo
+    template: fragment-seo
     label: SEO
   label: SEO
   description: While there are sensible defaults, the SEO section provides the option
     to explicitly set meta tag values.
 pages:
+- src/content/pages/contact.md
 - src/content/pages/content-page.md
 - src/content/pages/index.md

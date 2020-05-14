@@ -1,5 +1,5 @@
 ---
-label: Redirect
+label: "[Model] Redirect"
 hide_body: true
 fields:
 - name: title
@@ -11,7 +11,8 @@ fields:
 - name: model
   type: text
   hidden: true
-  default: redirect
+  default: Redirect
+  label: Model
 - name: destination
   type: text
   config:

@@ -1,5 +1,5 @@
 ---
-label: Admin - SEO
+label: "[Admin] SEO"
 hide_body: true
 fields:
 - name: title
@@ -11,7 +11,8 @@ fields:
 - name: model
   type: text
   hidden: true
-  default: admin_seo
+  default: AdminSeo
+  label: Model
 - name: title_template
   type: text
   config:

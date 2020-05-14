@@ -7,11 +7,13 @@ import styles from "./styles.module.scss"
 
 import Button from "../../components/button"
 import Content from "../../components/content"
+import Form from "../../components/form"
 
 const componentMap = {
-  button: Button,
-  content: Content,
-  image: Image
+  "component-button": Button,
+  "component-content": Content,
+  "component-form": Form,
+  "component-image": Image
 }
 
 const Container = ({ className, components, config, title }) => (
@@ -25,7 +27,14 @@ const Container = ({ className, components, config, title }) => (
       CONTAINER: <strong>{title}</strong>
     </p>
     {components.map((comp, idx) => {
+      // Name of the component to render comes from the componentMap above the
+      // component.
       const TagName = componentMap[comp.template]
+      // Drill a level deeper for forms to send the appropriate props.
+      if (comp.template === "component-form") comp = comp.form
+      // If there was a component in the map, render it, passing all the data to
+      // it. Otherwise, display that it's not supported. (This is meant for
+      // development purposes.)
       if (TagName) return <TagName key={idx} {...comp} />
       return (
         <p key={idx}>

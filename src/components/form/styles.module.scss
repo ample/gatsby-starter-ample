@@ -1,0 +1,84 @@
+@use '../../styles/global' as *;
+
+// ---------------------------------------- | Form
+
+// .form {
+// }
+
+// ---------------------------------------- | Group
+
+.form_field_group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+// ---------------------------------------- | Field Wrapper
+
+.form_field {
+  flex-basis: 100%;
+  margin-bottom: 12px;
+
+  &.width_half {
+    flex-basis: 49%;
+  }
+
+  &.width_quarter {
+    flex-basis: 24%;
+  }
+
+  input:not([type='radio']),
+  select,
+  textarea {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 0;
+    font-size: 16px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  select {
+    appearance: none;
+  }
+
+  textarea {
+    height: 140px;
+  }
+
+  .radio_buttons {
+    margin-top: 8px;
+  }
+
+  .radio_button {
+    align-items: center;
+    display: flex;
+    margin-bottom: 4px;
+
+    input {
+      display: inline-block;
+      height: 14px;
+      margin-right: 4px;
+    }
+
+    label {
+      display: inline-block;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+}
+
+// ---------------------------------------- | Label
+
+.form_label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+
+  abbr {
+    display: inline-block;
+    margin-left: 2px;
+  }
+}

@@ -1,5 +1,5 @@
 ---
-label: Image
+label: "[Component] Image"
 hide_body: true
 fields:
 - name: image_src
