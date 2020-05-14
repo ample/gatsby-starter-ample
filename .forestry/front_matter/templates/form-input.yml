@@ -11,19 +11,20 @@ fields:
     is submitted, so it should be unique.
 - name: type
   type: select
-  default: Text
+  default: Short Text
   config:
     required: true
     options:
-    - Text
+    - Short Text
+    - Long Text
     - Phone Number
     - Date
     - Email
     source:
       type: simple
-      section: 
-      file: 
-      path: 
+      section:
+      file:
+      path:
   label: Type
   description: The type of field to display, which often affects how it is validated.
 - name: label
@@ -47,9 +48,9 @@ fields:
     - quarter
     source:
       type: simple
-      section: 
-      file: 
-      path: 
+      section:
+      file:
+      path:
   label: Width
   description: The width of the form enables you to place multiple fields in the same
     row, or to have this field take up an entire row on the screen.
