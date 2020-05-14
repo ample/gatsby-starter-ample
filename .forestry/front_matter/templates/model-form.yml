@@ -41,9 +41,16 @@ fields:
       type: text
       config:
         required: true
+      label: Label
+      description: The label to display above the form field.
+    - name: name
+      type: text
+      config:
+        required: true
       label: Name
-      description: This is the name of property that gets passed through when the
-        form is submitted, so it should be unique.
+      description: The name of the field as it appears when submitted.<br><br><strong>Best
+        practice is to write the name in lowercase characters, substituting underscores
+        for spaces.</strong> (e.g. <em>first_name</em> not <em>First Name</em>)
     - name: type
       type: select
       default: Short Text
@@ -63,12 +70,6 @@ fields:
           path: 
       label: Type
       description: The type of field to display, which often affects how it is validated.
-    - name: label
-      type: text
-      config:
-        required: true
-      label: Label
-      description: The label appears above the form input.
     - name: required
       type: boolean
       label: Required
