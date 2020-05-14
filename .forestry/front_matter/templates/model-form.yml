@@ -19,98 +19,41 @@ fields:
   description: The text within the submit button, below the form.
   label: Button Label
   default: Submit
-- name: fields
+- name: field_groups
   type: field_group_list
   fields:
   - name: title
     type: text
     config:
       required: true
-    label: Name
-    description: This is the name of property that gets passed through when the form
-      is submitted, so it should be unique.
-  - name: type
-    type: select
-    default: Short Text
-    config:
-      required: true
-      options:
-      - Short Text
-      - Long Text
-      - Phone Number
-      - Date
-      - Email
-      - Select
-      source:
-        type: simple
-        section:
-        file:
-        path:
-    label: Type
-    description: The type of field to display, which often affects how it is validated.
-  - name: label
+    label: Title
+    description: The name of the group, only used for display purposes in the CMS.
+  - name: heading
     type: text
     config:
-      required: true
-    label: Label
-    description: The label appears above the form input.
-  - name: required
-    type: boolean
-    label: Required
-    description: If required, the field must be populated before the form can be submitted.
-  - name: width
-    type: select
-    default: full
-    config:
-      required: true
-      options:
-      - full
-      - half
-      - quarter
-      source:
-        type: simple
-        section:
-        file:
-        path:
-    label: Width
-    description: The width of the form enables you to place multiple fields in the same
-      row, or to have this field take up an entire row on the screen.
-  - name: options
-    type: list
-    config:
-      use_select: false
-      min:
-      max:
-    label: Options
-    description: If using a dropdown or radio buttons, these are the options presented
-      to the user in the order they are listed here.
-    showOnly:
-      value: Select
-      field: type
-  - name: appearance
-    type: select
-    default: Dropdown
-    config:
       required: false
-      options:
-      - Dropdown
-      - Radio Buttons
-      source:
-        type: simple
-        section:
-        file:
-        path:
-    label: Appearance
-    description: If using a select field, this determines how the field's options are
-      displayed.
-    showOnly:
-      field: type
-      value: Select
+    label: Heading
+    description: If given, the heading will be placed above the fields in the group.
+  - name: fields
+    type: field_group_list
+    fields:
+    - name: title
+      type: text
+      config:
+        required: false
+      label: Title
+    config:
+      min: 1
+      max: 
+      labelField: 
+    label: Fields
+    description: The fields to display in the form group, in the order they are listed
+      here.
   config:
-    min:
-    max:
-    labelField:
-  label: Fields
-  description: The fields to display in the form, in the order they are listed here.
+    min: 
+    max: 
+    labelField: 
+  label: Field Groups
+  description: Form fields are displayed in groups on screen.
 pages:
 - src/content/forms/contact-form.md
