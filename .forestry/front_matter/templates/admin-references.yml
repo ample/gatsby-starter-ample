@@ -18,7 +18,7 @@ fields:
   config:
     use_select: false
     min: '1'
-    max:
+    max: 
   label: Twitter Cards
   description: A list of the possible twitter card values. This applies to the Twitter
     SEO fields.
