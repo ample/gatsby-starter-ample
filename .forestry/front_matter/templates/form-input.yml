@@ -1,4 +1,55 @@
 ---
 label: "[Form] Input"
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Name
+  description: This is the name of property that gets passed through when the form
+    is submitted, so it should be unique.
+- name: type
+  type: select
+  default: Text
+  config:
+    required: true
+    options:
+    - Text
+    - Phone Number
+    - Date
+    - Email
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Type
+  description: The type of field to display, which often affects how it is validated.
+- name: label
+  type: text
+  config:
+    required: true
+  label: Label
+  description: The label appears above the form input.
+- name: required
+  type: boolean
+  label: Required
+  description: If required, the field must be populated before the form can be submitted.
+- name: width
+  type: select
+  default: full
+  config:
+    required: true
+    options:
+    - full
+    - half
+    - quarter
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Width
+  description: The width of the form enables you to place multiple fields in the same
+    row, or to have this field take up an entire row on the screen.
