@@ -46,11 +46,13 @@ fields:
     - name: name
       type: text
       config:
-        required: true
+        required: false
       label: Name
-      description: The name of the field as it appears when submitted.<br><br><strong>Best
-        practice is to write the name in lowercase characters, substituting underscores
-        for spaces.</strong> (e.g. <em>first_name</em> not <em>First Name</em>)
+      description: The name of the field as it appears when submitted. If not included,
+        the field will be submitted by down-casing the label and replacing spaces
+        with underscores.<br><br><strong>Best practice is to write the name in lowercase
+        characters, substituting underscores for spaces.</strong> (e.g. <em>first_name</em>
+        not <em>First Name</em>)
     - name: type
       type: select
       default: Short Text
