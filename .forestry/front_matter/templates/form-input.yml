@@ -22,9 +22,9 @@ fields:
     - Email
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Type
   description: The type of field to display, which often affects how it is validated.
 - name: label
@@ -48,9 +48,20 @@ fields:
     - quarter
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Width
   description: The width of the form enables you to place multiple fields in the same
     row, or to have this field take up an entire row on the screen.
+- name: options
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Options
+  description: If using a dropdown or radio buttons, these are the options presented
+    to the user in the order they are listed here.
+  showOnly:
+    value: Short Text
