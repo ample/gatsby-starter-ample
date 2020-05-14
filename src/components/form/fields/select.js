@@ -13,8 +13,8 @@ const FormFieldSelect = ({ appearance, label, name, required, options, width }) 
 
   if (appearance === "Dropdown") {
     fieldHtml = (
-      <select name={name} required={required}>
-        <option key="default" selected />
+      <select name={name} required={required} defaultValue="">
+        <option key="default" value="" />
         {options.map((option, idx) => (
           <option key={idx} value={option}>
             {option}
