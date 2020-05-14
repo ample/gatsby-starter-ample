@@ -14,21 +14,6 @@ field_groups:
     appearance: Dropdown
     label: First Name
     name: first_name
-  - title: Suite / Apt.
-    name: ''
-    type: Short Text
-    required: false
-    width: full
-    options: []
-    appearance: Dropdown
-  - title: Street Address
-    type: Short Text
-    label: Street Address
-    required: false
-    width: full
-    options: []
-    appearance: Dropdown
-    name: ''
   - title: Last Name
     type: Short Text
     label: Last Name
@@ -37,6 +22,21 @@ field_groups:
     options: []
     appearance: Dropdown
     name: ''
+  - title: Street Address
+    type: Short Text
+    label: Street Address
+    required: false
+    width: full
+    options: []
+    appearance: Dropdown
+    name: ''
+  - title: Suite / Apt.
+    name: ''
+    type: Short Text
+    required: false
+    width: full
+    options: []
+    appearance: Dropdown
   - title: City
     name: ''
     type: Short Text
