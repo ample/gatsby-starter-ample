@@ -6,6 +6,13 @@ field_groups:
 - title: Main
   heading: ''
   fields:
+  - title: Message
+    type: Long Text
+    label: Message
+    required: true
+    width: full
+    options: []
+    appearance: Dropdown
   - title: Last Name
     type: Short Text
     label: Last Name
