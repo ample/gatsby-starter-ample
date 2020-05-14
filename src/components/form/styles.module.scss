@@ -1,3 +1,55 @@
-// @use '../../styles/global' as *;
+@use '../../styles/global' as *;
 
-// .form {}
+// ---------------------------------------- | Form
+
+// .form {
+// }
+
+// ---------------------------------------- | Group
+
+.form_field_group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+// ---------------------------------------- | Field Wrapper
+
+.form_field {
+  flex-basis: 100%;
+  margin-bottom: 12px;
+
+  &.width_half {
+    flex-basis: 49%;
+  }
+
+  &.width_quarter {
+    flex-basis: 24%;
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--color-gray);
+    font-size: 16px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  textarea {
+    height: 140px;
+  }
+}
+
+// ---------------------------------------- | Label
+
+.form_label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+
+  abbr {
+    display: inline-block;
+    margin-left: 2px;
+  }
+}

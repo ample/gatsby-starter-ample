@@ -5,12 +5,12 @@ import classNames from "classnames/bind"
 import Label from "./label"
 import { widthOptions } from "./__config__"
 
-// import styles from "./styles.module.scss"
+import styles from "../styles.module.scss"
 
 const FormFieldShortText = ({ label, name, required, width }) => (
-  <div className={classNames("form_field_short_text", `width_${width}`)}>
+  <div className={classNames(styles.form_field, styles[`width_${width}`])}>
     <Label required={required}>{label}</Label>
-    <input type="text" name={name} required={required} />
+    <textarea name={name} required={required} />
   </div>
 )
 

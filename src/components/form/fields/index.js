@@ -1,18 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-// import styles from "./styles.module.scss"
+import styles from "../styles.module.scss"
 
-import ShortText from "./short-text"
+import TextField from "./text"
+import { textTypeOptions } from "./__config__"
 
 // ---------------------------------------- | Helpers
 
 /**
  * Maps field types to field components.
  */
-const fieldMap = {
-  "Short Text": ShortText
-}
+let fieldMap = {}
+// Dynamically add text field options from the config.
+textTypeOptions.map(opt => (fieldMap[opt] = TextField))
 
 /**
  * Takes a title string and converts it to a form-friendly name.
@@ -40,7 +41,7 @@ const normalizedFieldData = data => {
 // ---------------------------------------- | Component
 
 const FormFields = ({ fields, heading }) => (
-  <div>
+  <div className={styles.form_field_group}>
     {heading && <h2>{heading}</h2>}
 
     {normalizedFieldData(fields).map((field, idx) => {

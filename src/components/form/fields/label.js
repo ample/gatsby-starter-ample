@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-// import styles from "./styles.module.scss"
+import styles from "../styles.module.scss"
 
 const FormFieldLabel = ({ children, required }) => (
-  <label>
+  <label className={styles.form_label}>
     {children}
-    {required && " *"}
+    {required && <abbr>*</abbr>}
   </label>
 )
 
