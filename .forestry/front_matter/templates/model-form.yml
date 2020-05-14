@@ -12,5 +12,26 @@ fields:
   hidden: true
   default: Form
   label: Model
+- name: button_label
+  type: text
+  config:
+    required: false
+  description: The text within the submit button, below the form.
+  label: Button Label
+  default: Submit
+- name: fields
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Fields
+  description: The fields to display in the form, in the order they are listed here.
 pages:
 - src/content/forms/contact-form.md
