@@ -24,7 +24,7 @@ export const PageAttributes = graphql`
 
         # Form
         form {
-          title
+          ...FormAttributes
         }
 
         # Image
