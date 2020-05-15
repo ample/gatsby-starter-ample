@@ -10,9 +10,9 @@ export const FormAttributes = graphql`
       fields {
         label
         name
-        options
         required
         select_appearance
+        select_options
         solo
         text_appearance
         text_placeholder

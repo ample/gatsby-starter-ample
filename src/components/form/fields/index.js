@@ -26,6 +26,7 @@ const normalizedFieldData = data => {
     appearance: field[`${field.type}_appearance`],
     name: field.name || parameterize(field.title || "", { separator: "_" }),
     label: field.label || field.title,
+    options: field[`${field.type}_options`],
     placeholder: field[`${field.type}_placeholder`],
     type: field.type || "Short Text",
     validation: field[`${field.type}_validation`],
@@ -59,32 +60,55 @@ FormFields.propTypes = {
   fields: PropTypes.arrayOf(
     PropTypes.shape({
       /**
-       * Used for select field to determine whether to render radio buttons or a
-       * dropdown.
+       * Overrides the title for the label to place above the field.
        */
-      appearance: PropTypes.string,
-      /** Overrides the title for the label to place above the field. */
       label: PropTypes.string,
       /**
        * name attribute that gets submitted with the form data. Created from the
        * title if missing.
        */
       name: PropTypes.string,
-      /** Used by select fields to list options to choose. */
-      options: PropTypes.arrayOf(PropTypes.string),
       /**
        * Validates that the field is filled out before submitting, using HTML5
        * validation.
        */
       required: PropTypes.bool,
-      /** Fallback for the label and the name of the form. */
+      /**
+       * Controls the appearance of a select field (dropdown or radio buttons).
+       */
+      select_appearance: PropTypes.string,
+      /**
+       * Used by select fields to list options to choose.
+       */
+      select_options: PropTypes.arrayOf(PropTypes.string),
+      /**
+       * If true, the field will be placed on its own line, regardless of width.
+       */
+      solo: PropTypes.bool,
+      /**
+       * Controls the appearance of a text field (long v short).
+       */
+      text_appearance: PropTypes.string,
+      /**
+       * Placeholder text for text fields that have no value.
+       */
+      text_placeholder: PropTypes.string,
+      /**
+       * Controls the "type" attribute for short text fields.
+       */
+      text_validation: PropTypes.string,
+      /**
+       * Fallback for the label and the name of the form.
+       */
       title: PropTypes.string,
       /**
        * The type of field to display, which controls some of the other
        * properties.
        */
       type: PropTypes.string,
-      /** Controls how wide the field renders on screen. */
+      /**
+       * Controls how wide the field renders on screen.
+       */
       width: PropTypes.string
     })
   ).isRequired,

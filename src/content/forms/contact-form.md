@@ -10,7 +10,7 @@ field_groups:
     type: text
     required: true
     width: half
-    options: []
+    select_options: []
     label: First Name
     name: name
     text_appearance: short
@@ -23,7 +23,7 @@ field_groups:
     label: Email
     required: true
     width: half
-    options: []
+    select_options: []
     name: ''
     text_appearance: short
     text_validation: email
@@ -35,7 +35,7 @@ field_groups:
     label: Phone
     required: true
     width: half
-    options: []
+    select_options: []
     name: ''
     text_appearance: short
     text_validation: phone
@@ -47,7 +47,7 @@ field_groups:
     type: select
     required: true
     width: full
-    options:
+    select_options:
     - Female
     - Male
     text_appearance: ''
@@ -63,7 +63,7 @@ field_groups:
     label: Street Address
     required: false
     width: half
-    options: []
+    select_options: []
     name: ''
     text_appearance: short
     text_validation: ''
@@ -75,7 +75,7 @@ field_groups:
     type: text
     required: false
     width: half
-    options: []
+    select_options: []
     text_appearance: short
     text_validation: ''
     text_placeholder: ''
@@ -86,7 +86,7 @@ field_groups:
     type: text
     required: false
     width: half
-    options: []
+    select_options: []
     text_appearance: short
     text_validation: ''
     text_placeholder: ''
@@ -97,7 +97,7 @@ field_groups:
     type: select
     required: false
     width: quarter
-    options:
+    select_options:
     - Alabama
     - Alaska
     - Arizona
@@ -159,7 +159,7 @@ field_groups:
     type: text
     required: false
     width: quarter
-    options: []
+    select_options: []
     text_appearance: short
     text_validation: ''
     text_placeholder: ''
@@ -173,7 +173,7 @@ field_groups:
     label: Message
     required: true
     width: full
-    options: []
+    select_options: []
     name: ''
     text_appearance: long
     text_validation: ''

@@ -47,6 +47,17 @@ describe("normalizedFieldData", () => {
     const result = normalizedFieldData([{ title: "Hello World" }])
     expect(result[0].label).toEqual("Hello World")
   })
+  // --- options ---
+  it("does not set validation for text fields", () => {
+    const input = [{ type: "text", select_options: ["A", "B", "C"] }]
+    const result = normalizedFieldData(input)
+    expect(result[0].options).toEqual(undefined)
+  })
+  it("sets options for select fields", () => {
+    const input = [{ type: "select", select_options: ["A", "B", "C"] }]
+    const result = normalizedFieldData(input)
+    expect(result[0].options).toEqual(["A", "B", "C"])
+  })
   // --- placeholder ---
   it("sets placeholder for text fields", () => {
     const result = normalizedFieldData([{ type: "text", text_placeholder: "Hello World" }])
@@ -90,7 +101,6 @@ describe("normalizedFieldData", () => {
     const input = {
       label: "The Label",
       name: "The Name",
-      options: ["A", "B", "C"],
       required: true,
       title: "The Title",
       type: "select",
