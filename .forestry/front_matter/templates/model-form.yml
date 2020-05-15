@@ -55,23 +55,99 @@ fields:
         not <em>First Name</em>)
     - name: type
       type: select
-      default: Short Text
+      default: Text
       config:
         required: true
         options:
-        - Short Text
-        - Long Text
-        - Phone
-        - Date
-        - Email
+        - Text
         - Select
         source:
           type: simple
-          section:
-          file:
-          path:
+          section: 
+          file: 
+          path: 
       label: Type
-      description: The type of field to display, which often affects how it is validated.
+      description: The type of field to display. You can further adjust the appearance
+        in the fields below.
+    - name: text_appearance
+      type: select
+      default: Short
+      config:
+        required: false
+        options:
+        - Short
+        - Long
+        source:
+          type: simple
+          section: 
+          file: 
+          path: 
+      label: Appearance (Text)
+      description: Affects the appearance of a text field. Enables you to choose long-form
+        or short-form text.
+      showOnly:
+        field: type
+        value: Text
+    - name: text_validation
+      type: select
+      default: ''
+      config:
+        required: false
+        options:
+        - Email
+        - Phone
+        source:
+          type: simple
+          section: 
+          file: 
+          path: 
+      label: Validation (Text)
+      description: Add further validation to your text field by choosing one of the
+        preconfigured options.
+      showOnly:
+        field: type
+        value: Text
+    - name: placeholder
+      type: text
+      config:
+        required: false
+      label: Placeholder (Text)
+      description: A placeholder is muted text that sits in a field when the field
+        is empty.
+      showOnly:
+        field: type
+        value: Text
+    - name: select_appearance
+      type: select
+      default: Dropdown
+      config:
+        required: false
+        options:
+        - Dropdown
+        - Radio Buttons
+        source:
+          type: simple
+          section: 
+          file: 
+          path: 
+      label: Appearance (Select)
+      description: If using a select field, this determines how the field's options
+        are displayed.
+      showOnly:
+        field: type
+        value: Select
+    - name: options
+      type: list
+      config:
+        use_select: false
+        min: 
+        max: 
+      label: Options (Select)
+      description: If using a dropdown or radio buttons, these are the options presented
+        to the user in the order they are listed here.
+      showOnly:
+        value: Select
+        field: type
     - name: required
       type: boolean
       label: Required
@@ -88,54 +164,29 @@ fields:
         - quarter
         source:
           type: simple
-          section:
-          file:
-          path:
+          section: 
+          file: 
+          path: 
       label: Width
       description: The width of the form enables you to place multiple fields in the
         same row, or to have this field take up an entire row on the screen.
-    - name: options
-      type: list
-      config:
-        use_select: false
-        min:
-        max:
-      label: Options
-      description: If using a dropdown or radio buttons, these are the options presented
-        to the user in the order they are listed here.
-      showOnly:
-        value: Select
-        field: type
-    - name: appearance
-      type: select
-      default: Dropdown
-      config:
-        required: false
-        options:
-        - Dropdown
-        - Radio Buttons
-        source:
-          type: simple
-          section:
-          file:
-          path:
-      label: Appearance
-      description: If using a select field, this determines how the field's options
-        are displayed.
-      showOnly:
-        field: type
-        value: Select
+    - name: solo
+      type: boolean
+      label: Render field in its own row?
+      description: This provides the ability to choose a width that is less than full,
+        but to enforce that this field is the only one that appears in its row, pushing
+        other fields down the page.
     config:
       min: 1
-      max:
-      labelField:
+      max: 
+      labelField: 
     label: Fields
     description: The fields to display in the form group, in the order they are listed
       here.
   config:
-    min:
-    max:
-    labelField:
+    min: 
+    max: 
+    labelField: 
   label: Field Groups
   description: Form fields are displayed in groups on screen.
 pages:
