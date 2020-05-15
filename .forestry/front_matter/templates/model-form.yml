@@ -89,7 +89,7 @@ fields:
           path: 
       label: Appearance (Text)
       description: Affects the appearance of a text field. Enables you to choose long-form
-        or short-form text.
+        or short-form text. The default is short.
       showOnly:
         field: type
         value: Text
@@ -137,7 +137,7 @@ fields:
           path: 
       label: Appearance (Select)
       description: If using a select field, this determines how the field's options
-        are displayed.
+        are displayed. The default is a dropdown.
       showOnly:
         field: type
         value: Select
