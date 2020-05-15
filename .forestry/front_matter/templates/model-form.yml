@@ -61,15 +61,15 @@ fields:
         options:
         - Short Text
         - Long Text
-        - Phone Number
+        - Phone
         - Date
         - Email
         - Select
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Type
       description: The type of field to display, which often affects how it is validated.
     - name: required
@@ -88,9 +88,9 @@ fields:
         - quarter
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Width
       description: The width of the form enables you to place multiple fields in the
         same row, or to have this field take up an entire row on the screen.
@@ -98,8 +98,8 @@ fields:
       type: list
       config:
         use_select: false
-        min: 
-        max: 
+        min:
+        max:
       label: Options
       description: If using a dropdown or radio buttons, these are the options presented
         to the user in the order they are listed here.
@@ -116,9 +116,9 @@ fields:
         - Radio Buttons
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Appearance
       description: If using a select field, this determines how the field's options
         are displayed.
@@ -127,15 +127,15 @@ fields:
         value: Select
     config:
       min: 1
-      max: 
-      labelField: 
+      max:
+      labelField:
     label: Fields
     description: The fields to display in the form group, in the order they are listed
       here.
   config:
-    min: 
-    max: 
-    labelField: 
+    min:
+    max:
+    labelField:
   label: Field Groups
   description: Form fields are displayed in groups on screen.
 pages:

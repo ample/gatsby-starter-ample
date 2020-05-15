@@ -10,7 +10,7 @@ import styles from "../styles.module.scss"
 const fieldTypeMap = {
   Date: "text",
   Email: "email",
-  "Phone Number": "tel",
+  Phone: "tel",
   "Long Text": null,
   "Short Text": "text"
 }
