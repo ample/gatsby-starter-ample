@@ -53,6 +53,11 @@ fields:
         with underscores.<br><br><strong>Best practice is to write the name in lowercase
         characters, substituting underscores for spaces.</strong> (e.g. <em>first_name</em>
         not <em>First Name</em>)
+    - name: required
+      type: boolean
+      label: Required
+      description: If required, the field must be populated before the form can be
+        submitted.
     - name: type
       type: select
       default: Text
@@ -148,11 +153,6 @@ fields:
       showOnly:
         value: Select
         field: type
-    - name: required
-      type: boolean
-      label: Required
-      description: If required, the field must be populated before the form can be
-        submitted.
     - name: width
       type: select
       default: full
