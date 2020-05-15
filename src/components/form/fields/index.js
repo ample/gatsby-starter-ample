@@ -6,7 +6,6 @@ import styles from "../styles.module.scss"
 
 import SelectField from "./select"
 import TextField from "./text"
-import { textTypeOptions } from "./__config__"
 
 // ---------------------------------------- | Helpers
 
@@ -14,10 +13,9 @@ import { textTypeOptions } from "./__config__"
  * Maps field types to field components.
  */
 let fieldMap = {
-  Select: SelectField
+  select: SelectField,
+  text: TextField
 }
-// Dynamically add text field options from the config.
-textTypeOptions.map(opt => (fieldMap[opt] = TextField))
 
 /**
  * Preps the props for passing them on to the various field components.
@@ -25,9 +23,12 @@ textTypeOptions.map(opt => (fieldMap[opt] = TextField))
 const normalizedFieldData = data => {
   return data.map(field => ({
     ...field,
+    appearance: field[`${field.type}_appearance`],
     name: field.name || parameterize(field.title || "", { separator: "_" }),
     label: field.label || field.title,
+    placeholder: field[`${field.type}_placeholder`],
     type: field.type || "Short Text",
+    validation: field[`${field.type}_validation`],
     width: field.width || "full"
   }))
 }

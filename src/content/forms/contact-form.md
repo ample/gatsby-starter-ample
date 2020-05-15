@@ -7,101 +7,94 @@ field_groups:
   heading: Personal Info
   fields:
   - title: Name
-    type: Text
+    type: text
     required: true
     width: half
     options: []
-    appearance: Dropdown
     label: First Name
     name: name
-    text_appearance: Short
+    text_appearance: short
     text_validation: ''
-    placeholder: ''
+    text_placeholder: ''
     select_appearance: ''
     solo: true
   - title: Email
-    type: Text
+    type: text
     label: Email
     required: true
     width: half
     options: []
-    appearance: Dropdown
     name: ''
-    text_appearance: Short
-    text_validation: Email
-    placeholder: ''
+    text_appearance: short
+    text_validation: email
+    text_placeholder: ''
     select_appearance: ''
     solo: false
   - title: Phone
-    type: Text
+    type: text
     label: Phone
     required: true
     width: half
     options: []
-    appearance: Dropdown
     name: ''
-    text_appearance: Short
-    text_validation: Phone
-    placeholder: "(xxx) xxx-xxxx"
+    text_appearance: short
+    text_validation: phone
+    text_placeholder: "(xxx) xxx-xxxx"
     select_appearance: ''
     solo: false
   - title: Gender
     name: gender
-    type: Select
+    type: select
     required: true
     width: full
     options:
     - Female
     - Male
-    appearance: Radio Buttons
     text_appearance: ''
     text_validation: ''
-    placeholder: ''
-    select_appearance: Radio Buttons
+    text_placeholder: ''
+    select_appearance: radio
     solo: false
 - title: Address
   heading: Address
   fields:
   - title: Street Address
-    type: Text
+    type: text
     label: Street Address
     required: false
     width: half
     options: []
-    appearance: Dropdown
     name: ''
-    text_appearance: Short
+    text_appearance: short
     text_validation: ''
-    placeholder: ''
+    text_placeholder: ''
     select_appearance: ''
     solo: false
   - title: Suite / Apt.
     name: ''
-    type: Text
+    type: text
     required: false
     width: half
     options: []
-    appearance: Dropdown
-    text_appearance: Short
+    text_appearance: short
     text_validation: ''
-    placeholder: ''
+    text_placeholder: ''
     select_appearance: ''
     solo: false
   - title: City
     name: ''
-    type: Text
+    type: text
     required: false
     width: half
     options: []
-    appearance: Dropdown
-    text_appearance: Short
+    text_appearance: short
     text_validation: ''
-    placeholder: ''
+    text_placeholder: ''
     select_appearance: ''
     solo: false
   - title: State
     name: ''
-    type: Select
+    type: select
     required: false
     width: quarter
     options:
@@ -156,38 +149,35 @@ field_groups:
     - West Virginia
     - Wisconsin
     - Wyoming
-    appearance: Dropdown
     text_appearance: ''
     text_validation: ''
-    placeholder: ''
-    select_appearance: Dropdown
+    text_placeholder: ''
+    select_appearance: dropdown
     solo: false
   - title: Zip Code
     name: zip
-    type: Text
+    type: text
     required: false
     width: quarter
     options: []
-    appearance: Dropdown
-    text_appearance: Short
+    text_appearance: short
     text_validation: ''
-    placeholder: ''
+    text_placeholder: ''
     select_appearance: ''
     solo: false
 - title: Message
   heading: Message
   fields:
   - title: Message
-    type: Text
+    type: text
     label: Message
     required: true
     width: full
     options: []
-    appearance: Dropdown
     name: ''
-    text_appearance: Long
+    text_appearance: long
     text_validation: ''
-    placeholder: ''
+    text_placeholder: ''
     select_appearance: ''
     solo: false
 

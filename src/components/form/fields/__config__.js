@@ -1,5 +1,6 @@
-const selectAppearanceOptions = ["Dropdown", "Radio Buttons"]
-const textTypeOptions = ["Short Text", "Long Text", "Phone", "Date", "Email"]
+const selectAppearanceOptions = ["dropdown", "radio"]
+const textAppearanceOptions = ["long", "short"]
+const textValidationOptions = ["email", "phone"]
 const widthOptions = ["full", "half", "quarter"]
 
-export { selectAppearanceOptions, textTypeOptions, widthOptions }
+export { selectAppearanceOptions, textAppearanceOptions, textValidationOptions, widthOptions }
