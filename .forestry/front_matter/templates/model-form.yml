@@ -110,8 +110,8 @@ fields:
       description: Add further validation to your text field by choosing one of the
         preconfigured options.
       showOnly:
-        field: type
-        value: Text
+        field: text_appearance
+        value: Short
     - name: placeholder
       type: text
       config:
