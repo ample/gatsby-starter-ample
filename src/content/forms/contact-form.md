@@ -3,8 +3,8 @@ title: Contact Form
 model: Form
 button_label: Submit
 field_groups:
-- title: Main
-  heading: ''
+- title: Personal Info
+  heading: Personal Info
   fields:
   - title: First Name
     type: Short Text
@@ -22,6 +22,34 @@ field_groups:
     options: []
     appearance: Dropdown
     name: ''
+  - title: Email
+    type: Email
+    label: Email
+    required: true
+    width: half
+    options: []
+    appearance: Dropdown
+    name: ''
+  - title: Phone
+    type: Phone
+    label: Phone
+    required: true
+    width: half
+    options: []
+    appearance: Dropdown
+    name: ''
+  - title: Gender
+    name: gender
+    type: Select
+    required: true
+    width: full
+    options:
+    - 'Female'
+    - 'Male'
+    appearance: Radio Buttons
+- title: Address
+  heading: Address
+  fields:
   - title: Street Address
     type: Short Text
     label: Street Address
@@ -109,6 +137,9 @@ field_groups:
     width: quarter
     options: []
     appearance: Dropdown
+- title: Message
+  heading: Message
+  fields:
   - title: Message
     type: Long Text
     label: Message
@@ -117,14 +148,5 @@ field_groups:
     options: []
     appearance: Dropdown
     name: ''
-  - title: Are you over 21 years old?
-    name: above_age
-    type: Select
-    required: true
-    width: full
-    options:
-    - 'Yes'
-    - 'No'
-    appearance: Radio Buttons
 
 ---
