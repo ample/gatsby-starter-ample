@@ -53,30 +53,106 @@ fields:
         with underscores.<br><br><strong>Best practice is to write the name in lowercase
         characters, substituting underscores for spaces.</strong> (e.g. <em>first_name</em>
         not <em>First Name</em>)
-    - name: type
-      type: select
-      default: Short Text
-      config:
-        required: true
-        options:
-        - Short Text
-        - Long Text
-        - Phone Number
-        - Date
-        - Email
-        - Select
-        source:
-          type: simple
-          section: 
-          file: 
-          path: 
-      label: Type
-      description: The type of field to display, which often affects how it is validated.
     - name: required
       type: boolean
       label: Required
       description: If required, the field must be populated before the form can be
         submitted.
+    - name: type
+      type: select
+      default: text
+      config:
+        required: true
+        options:
+        - text
+        - select
+        source:
+          type: simple
+          section:
+          file:
+          path:
+      label: Type
+      description: The type of field to display. You can further adjust the appearance
+        in the fields below.
+    - name: text_appearance
+      type: select
+      default: short
+      config:
+        required: false
+        options:
+        - short
+        - long
+        source:
+          type: simple
+          section:
+          file:
+          path:
+      label: Appearance (Text)
+      description: Affects the appearance of a text field. Enables you to choose long-form
+        or short-form text. The default is short.
+      showOnly:
+        field: type
+        value: text
+    - name: text_validation
+      type: select
+      default: ''
+      config:
+        required: false
+        options:
+        - email
+        - phone
+        source:
+          type: simple
+          section:
+          file:
+          path:
+      label: Validation (Text)
+      description: Add further validation to your text field by choosing one of the
+        preconfigured options.
+      showOnly:
+        field: text_appearance
+        value: short
+    - name: text_placeholder
+      type: text
+      config:
+        required: false
+      label: Placeholder (Text)
+      description: A placeholder is muted text that sits in a field when the field
+        is empty.
+      showOnly:
+        field: type
+        value: text
+    - name: select_appearance
+      type: select
+      default: dropdown
+      config:
+        required: false
+        options:
+        - dropdown
+        - radio
+        source:
+          type: simple
+          section:
+          file:
+          path:
+      label: Appearance (Select)
+      description: If using a select field, this determines how the field's options
+        are displayed. The default is a dropdown.
+      showOnly:
+        field: type
+        value: select
+    - name: select_options
+      type: list
+      config:
+        use_select: false
+        min:
+        max:
+      label: Options (Select)
+      description: If using a dropdown or radio buttons, these are the options presented
+        to the user in the order they are listed here.
+      showOnly:
+        value: select
+        field: type
     - name: width
       type: select
       default: full
@@ -88,54 +164,29 @@ fields:
         - quarter
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Width
       description: The width of the form enables you to place multiple fields in the
         same row, or to have this field take up an entire row on the screen.
-    - name: options
-      type: list
-      config:
-        use_select: false
-        min: 
-        max: 
-      label: Options
-      description: If using a dropdown or radio buttons, these are the options presented
-        to the user in the order they are listed here.
-      showOnly:
-        value: Select
-        field: type
-    - name: appearance
-      type: select
-      default: Dropdown
-      config:
-        required: false
-        options:
-        - Dropdown
-        - Radio Buttons
-        source:
-          type: simple
-          section: 
-          file: 
-          path: 
-      label: Appearance
-      description: If using a select field, this determines how the field's options
-        are displayed.
-      showOnly:
-        field: type
-        value: Select
+    - name: solo
+      type: boolean
+      label: Render field in its own row?
+      description: This provides the ability to choose a width that is less than full,
+        but to enforce that this field is the only one that appears in its row, pushing
+        other fields down the page.
     config:
       min: 1
-      max: 
-      labelField: 
+      max:
+      labelField:
     label: Fields
     description: The fields to display in the form group, in the order they are listed
       here.
   config:
-    min: 
-    max: 
-    labelField: 
+    min:
+    max:
+    labelField:
   label: Field Groups
   description: Form fields are displayed in groups on screen.
 pages:

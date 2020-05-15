@@ -9188,7 +9188,7 @@ gatsby-telemetry@^1.2.3:
 
 gatsby-theme-ample-components@ample/gatsby-theme-ample-components:
   version "0.0.1"
-  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/d96b0a92ffad9724c19429f368dde5516064fd84"
+  resolved "https://codeload.github.com/ample/gatsby-theme-ample-components/tar.gz/9728a7d5b7fd3a74ed96033eb5c03f58925be543"
 
 gatsby-transformer-remark@^2.7.1:
   version "2.7.1"

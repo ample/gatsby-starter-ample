@@ -8,10 +8,10 @@ import { selectAppearanceOptions, widthOptions } from "./__config__"
 
 import styles from "../styles.module.scss"
 
-const FormFieldSelect = ({ appearance, label, name, required, options, width }) => {
+const FormFieldSelect = ({ appearance, label, name, required, options, solo, width }) => {
   let fieldHtml
 
-  if (appearance === "Dropdown") {
+  if (appearance === "dropdown") {
     fieldHtml = (
       <select name={name} required={required} defaultValue="">
         <option key="default" value="" />
@@ -22,7 +22,7 @@ const FormFieldSelect = ({ appearance, label, name, required, options, width }) 
         ))}
       </select>
     )
-  } else if (appearance === "Radio Buttons") {
+  } else if (appearance === "radio") {
     fieldHtml = (
       <div className={styles.radio_buttons}>
         {options.map((option, idx) => {
@@ -40,8 +40,10 @@ const FormFieldSelect = ({ appearance, label, name, required, options, width }) 
     )
   }
 
+  const classes = classNames(styles.form_field, styles[`width_${width}`], { [styles.solo]: solo })
+
   return (
-    <div className={classNames(styles.form_field, styles[`width_${width}`])}>
+    <div className={classes}>
       <Label required={required}>{label}</Label>
       {fieldHtml}
     </div>
@@ -59,6 +61,8 @@ FormFieldSelect.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   /** Force that a value exists before submitting.*/
   required: PropTypes.bool,
+  /** Enforce that the field sits on its own line, regardless of width.*/
+  solo: PropTypes.bool,
   /** Controls how wide the field renders on screen. */
   width: PropTypes.oneOf(widthOptions).isRequired
 }

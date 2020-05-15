@@ -8,11 +8,15 @@ export const FormAttributes = graphql`
     field_groups {
       heading
       fields {
-        appearance
         label
         name
-        options
         required
+        select_appearance
+        select_options
+        solo
+        text_appearance
+        text_placeholder
+        text_validation
         title
         type
         width
