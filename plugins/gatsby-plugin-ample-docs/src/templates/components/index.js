@@ -4,7 +4,8 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import lodash from "lodash"
 import { Helmet } from "react-helmet"
-import * as path from "path"
+
+import styles from "./styles.module.scss"
 
 const isPresent = str => {
   if (!str) return false
@@ -25,8 +26,8 @@ const getCompHeading = comp => {
 
 const ComponentsTemplate = ({ data }) => {
   const components = data.components.edges.map(({ node: comp }, idx) => (
-    <div key={idx}>
-      <h2 id={getCompDir(comp)}>
+    <div key={idx} className={styles.comp_section}>
+      <h2 id={getCompDir(comp)} className={styles.comp_heading}>
         <a href={`#${getCompDir(comp)}`}>{getCompHeading(comp)}</a>
       </h2>
       <MDXRenderer>{comp.body}</MDXRenderer>
@@ -34,12 +35,12 @@ const ComponentsTemplate = ({ data }) => {
   ))
 
   return (
-    <>
+    <div className={styles.components_template}>
       <Helmet>
         <title>Components Playground</title>
       </Helmet>
       {components}
-    </>
+    </div>
   )
 }
 
