@@ -93,7 +93,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook --quiet",
     "test:update": "yarn test --updateSnapshot",
-    "test": "jest ./src --json --outputFile=.jest-test-results.json"
+    "test": "jest --json --outputFile=.jest-test-results.json"
   },
   "repository": {
     "type": "git",
