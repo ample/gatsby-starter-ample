@@ -4,17 +4,32 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import lodash from "lodash"
 import { Helmet } from "react-helmet"
+import * as path from "path"
+
+const isPresent = str => {
+  if (!str) return false
+  return str.length > 0
+}
+
+const getCompDir = comp => {
+  const pgPathParts = comp.fileAbsolutePath.split("/")
+  return pgPathParts[pgPathParts.indexOf("playground.mdx") - 1]
+}
+
+const getCompHeading = comp => {
+  // If title was passed in via frontmatter, use that.
+  if (isPresent(lodash.get(comp, "frontmatter.title"))) return comp.frontmatter.title
+  // Otherwise, titleize the playground's parent directory.
+  return lodash.startCase(lodash.toLower(getCompDir(comp)))
+}
 
 const ComponentsTemplate = ({ data }) => {
-  const components = data.components.edges.map(({ node }, idx) => (
+  const components = data.components.edges.map(({ node: comp }, idx) => (
     <div key={idx}>
-      {console.log(node)}
-      {lodash.get(node, "frontmatter.title") && (
-        <h2 id={node.id}>
-          <a href={`#${node.id}`}>{node.frontmatter.title}</a>
-        </h2>
-      )}
-      <MDXRenderer>{node.body}</MDXRenderer>
+      <h2 id={getCompDir(comp)}>
+        <a href={`#${getCompDir(comp)}`}>{getCompHeading(comp)}</a>
+      </h2>
+      <MDXRenderer>{comp.body}</MDXRenderer>
     </div>
   ))
 
