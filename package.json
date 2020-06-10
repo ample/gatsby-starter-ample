@@ -6,6 +6,8 @@
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@danbruegge/gatsby-plugin-stylelint": "^4.0.0",
+    "@mdx-js/mdx": "^1.6.5",
+    "@mdx-js/react": "^1.6.5",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
@@ -25,6 +27,7 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-manifest": "^2.2.31",
+    "gatsby-plugin-mdx": "^1.2.15",
     "gatsby-plugin-netlify": "^2.2.1",
     "gatsby-plugin-offline": "^3.0.27",
     "gatsby-plugin-react-helmet": "^3.1.13",

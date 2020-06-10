@@ -18,12 +18,14 @@ module.exports = {
     // Creates Gatsby and Netlify redirects for records in
     // src/content/redirects. (See plugins/gatsby-ample-redirects.)
     `gatsby-ample-redirects`,
+    //
+    `gatsby-plugin-ample-docs`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/uploads`,
-        name: "uploads"
+        name: `uploads`,
+        path: `${__dirname}/static/uploads`
       }
     },
     {
