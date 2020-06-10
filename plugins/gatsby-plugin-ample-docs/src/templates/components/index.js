@@ -7,22 +7,29 @@ import { Helmet } from "react-helmet"
 
 import styles from "./styles.module.scss"
 
-const isPresent = str => {
-  if (!str) return false
-  return str.length > 0
-}
+import { isPresent } from "../../helpers"
 
+// ---------------------------------------- | Helpers
+
+/**
+ * Extracts the parent directory from the components file path.
+ */
 const getCompDir = comp => {
   const pgPathParts = comp.fileAbsolutePath.split("/")
   return pgPathParts[pgPathParts.indexOf("playground.mdx") - 1]
 }
 
+/**
+ * Determines the appropriate section heading for each component.
+ */
 const getCompHeading = comp => {
   // If title was passed in via frontmatter, use that.
   if (isPresent(lodash.get(comp, "frontmatter.title"))) return comp.frontmatter.title
   // Otherwise, titleize the playground's parent directory.
   return lodash.startCase(lodash.toLower(getCompDir(comp)))
 }
+
+// ---------------------------------------- | Component
 
 const ComponentsTemplate = ({ data }) => {
   const components = data.components.edges.map(({ node: comp }, idx) => (
@@ -70,3 +77,5 @@ export const query = graphql`
 `
 
 export default ComponentsTemplate
+
+export { getCompDir, getCompHeading }
