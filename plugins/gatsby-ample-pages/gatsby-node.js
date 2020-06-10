@@ -1,4 +1,5 @@
 const path = require("path")
+const getPagePath = require("./lib/get-page-path")
 
 exports.createPages = ({ graphql, actions }) => {
   return graphql(`
@@ -13,9 +14,12 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    result.data.pages.edges.map(({ node: page }) => {
+    // Reference to all pages.
+    const pages = result.data.pages.edges.map(({ node }) => node)
+    // Loop through each page and create it.
+    pages.map(page => {
       actions.createPage({
-        path: page.slugPath,
+        path: getPagePath(page, pages),
         component: path.resolve("./src/templates/page/adapter.js"),
         context: {
           id: page.id
