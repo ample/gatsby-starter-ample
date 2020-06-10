@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import lodash from "lodash"
+import { Helmet } from "react-helmet"
 
 const ComponentsTemplate = ({ data }) => {
   const components = data.components.edges.map(({ node }, idx) => (
@@ -17,7 +18,14 @@ const ComponentsTemplate = ({ data }) => {
     </div>
   ))
 
-  return <>{components}</>
+  return (
+    <>
+      <Helmet>
+        <title>Components Playground</title>
+      </Helmet>
+      {components}
+    </>
+  )
 }
 
 ComponentsTemplate.propTypes = {
