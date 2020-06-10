@@ -82,7 +82,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
-        // TODO: update project fonts here as well as in .storybook/preview-head.html
+        // TODO: Update project fonts.
         //
         // google: {
         //   families: ["Font Family"]
