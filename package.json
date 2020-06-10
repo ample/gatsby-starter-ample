@@ -86,6 +86,7 @@
     "develop": "yarn gatsby develop",
     "develop:debug": "GATSBY_DEBUG_MEDIA_QUERIES=true yarn develop",
     "develop:with_host": "yarn develop --open --host $HOSTNAME",
+    "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0",
     "generate": "node lib/generate.js",
     "lint": "eslint -c .eslintrc.js ./src && stylelint --config stylelint.config.js './src/**/*.scss'",
     "netlify:build": "yarn lint && yarn test && yarn clean && yarn build",
