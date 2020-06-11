@@ -48,6 +48,7 @@
     "gatsby-transformer-remark": "^2.7.1",
     "gatsby-transformer-sharp": "^2.3.7",
     "identity-obj-proxy": "^3.0.0",
+    "intersection-observer": "^0.10.0",
     "jest": "^25.1.0",
     "lodash": "^4.17.15",
     "lodash.endswith": "^4.2.1",
