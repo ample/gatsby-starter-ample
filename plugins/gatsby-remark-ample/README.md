@@ -347,7 +347,3 @@ The intention here was to not remove the original field reference to the SEO dat
   }
 }
 ```
-
-## License
-
-This project is distributed under the [MIT License](license.md).
