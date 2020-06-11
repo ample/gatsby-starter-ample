@@ -2,14 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import lodash from "lodash"
 import { Helmet } from "react-helmet"
 
 import styles from "./styles.module.scss"
 
 import { getParentDir, getTitle } from "../../helpers"
-
-// ---------------------------------------- | Component
 
 const ComponentsPlayground = ({ data }) => {
   const components = data.components.edges.map(({ node: comp }, idx) => (
@@ -24,7 +21,7 @@ const ComponentsPlayground = ({ data }) => {
   return (
     <div className={styles.components_template}>
       <Helmet>
-        <title>Components Playground</title>
+        <title>Components | Ample Playground</title>
       </Helmet>
       {components}
     </div>
@@ -41,7 +38,9 @@ ComponentsPlayground.defaultProps = {}
 
 export const query = graphql`
   query ComponentsPlaygroundQuery {
-    components: allMdx(filter: { fileAbsolutePath: { regex: "//components/.*/playground.mdx/" } }) {
+    components: allMdx(
+      filter: { fileAbsolutePath: { regex: "//src/components/.*/playground.mdx/" } }
+    ) {
       edges {
         node {
           body
