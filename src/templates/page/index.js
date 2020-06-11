@@ -20,11 +20,17 @@ const PageTemplate = ({ children, sections, title }) => (
 )
 
 PageTemplate.propTypes = {
-  /** */
+  /**
+   * Components to inject before the page content.
+   */
   children: PropTypes.node,
-  /** */
+  /**
+   * An array of containers that get mapped to the <Container /> component.
+   */
   sections: PropTypes.arrayOf(PropTypes.object),
-  /** */
+  /**
+   * Title of the page, displayed as the page's <h1> value.
+   */
   title: PropTypes.string
 }
 
