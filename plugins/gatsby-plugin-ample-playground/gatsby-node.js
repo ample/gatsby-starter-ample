@@ -1,6 +1,8 @@
 const path = require("path")
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }, pluginOptions = {}) => {
+  if (pluginOptions.disable) return
+
   const pathPrefix = "__playground__"
   const templatePathPrefix = `${pathPrefix}/templates`
 

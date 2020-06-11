@@ -12,14 +12,27 @@ module.exports = {
   },
   plugins: [
     `gatsby-theme-ample-components`,
-    // Looks in src/content and passes every page (except index.md) to
-    // src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
+    /**
+     * Looks in src/content and passes every page (except index.md) to
+     * src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
+     */
     `gatsby-ample-pages`,
-    // Creates Gatsby and Netlify redirects for records in
-    // src/content/redirects. (See plugins/gatsby-ample-redirects.)
+    /**
+     * Creates Gatsby and Netlify redirects for records in
+     * src/content/redirects. (See plugins/gatsby-ample-redirects.)
+     */
     `gatsby-ample-redirects`,
-    // Creates playgrounds from .mdx files in src/templates and src/components.
-    `gatsby-plugin-ample-playground`,
+    /**
+     * Creates playgrounds from .mdx files in src/templates and src/components.
+     */
+    {
+      resolve: `gatsby-plugin-ample-playground`,
+      options: {
+        // Setting GATSBY_PLAYGROUND_DISABLED="true" disables the playground
+        // build.
+        disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
