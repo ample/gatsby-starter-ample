@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DebugMediaQueries renders correctly 1`] = `
+<div
+  className="debug"
+  onClick={[Function]}
+>
+  <div
+    className="debug_media_queries"
+  />
+</div>
+`;
