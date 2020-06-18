@@ -1,7 +1,6 @@
 import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks"
 
 import SEO from "./"
-import { SEO as CompLibSEO } from "gatsby-theme-ample-components"
 
 <Meta title="Utilities/SEO" component={SEO} />
 
@@ -9,18 +8,10 @@ import { SEO as CompLibSEO } from "gatsby-theme-ample-components"
 
 The SEO component is used by template adapters to render meta tags into the head of the page.
 
-It is built upon the [component library's SEO component](https://gatsby-theme-ample-components.netlify.com/?path=/docs/components-seo--page). And it is used in conjunction with the [`normalizeSEO` helper](/?path=/docs/helpers-normalize-seo--page).
-
-This utility takes normalized SEO data from the page level, then interjects global defaults, such as a title template and a fallback image. It then does a bit more cleanup and passes the data onto the Component Library's SEO component for it to render the meta tags in the head of the page. Note that the global defaults are configurable in the CMS under _Config_ > _SEO_.
+This utility takes normalized SEO data from the page level, then interjects global defaults, such as a title template and a fallback image. It then does a bit more cleanup and passes the data onto the SEO component for it to render the meta tags in the head of the page. Note that the global defaults are configurable in the CMS under _Config_ > _SEO_.
 
 ## Properties
 
 The props for the local utility are listed below. But, as long as you're using the `normalizeSEO` helper in the adapter, these you won't have to worry about structuring everything perfectly for this component.
 
 <Props of={SEO} />
-
-## Component Library
-
-The transformed data ultimately should be structured to be passed on to the Component Library's SEO component. That component uses these properties.
-
-<Props of={CompLibSEO} />
