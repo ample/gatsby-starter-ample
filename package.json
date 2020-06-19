@@ -83,7 +83,7 @@
     "build": "yarn gatsby build",
     "clean": "yarn gatsby clean",
     "develop": "yarn gatsby develop",
-    "develop:debug": "GATSBY_DEBUG_MEDIA_QUERIES=true yarn develop",
+    "develop:debug": "yarn run test && GATSBY_DEBUG_MEDIA_QUERIES=true yarn develop",
     "develop:with_host": "yarn develop --open --host $HOSTNAME",
     "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0",
     "generate": "node lib/generate.js",
@@ -92,8 +92,7 @@
     "netlify:build:with_storybook": "yarn netlify:build && yarn storybook:build && mv storybook-static public/storybook",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook --quiet",
-    "test:update": "yarn test --updateSnapshot",
-    "test": "jest --json --outputFile=.jest-test-results.json"
+    "test": "jest --json --updateSnapshot --outputFile=.jest-test-results.json"
   },
   "repository": {
     "type": "git",
