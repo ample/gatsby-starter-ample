@@ -94,12 +94,9 @@ exports[`LinkList renders horizontal lists correctly 1`] = `
   <li>
     <a
       className="button button"
-      href=""
       rel="noopener"
       target="_blank"
-    >
-      Quisque interdum
-    </a>
+    />
   </li>
 </ul>
 `;
