@@ -38,9 +38,13 @@ const Dropdown = ({ children, className }) => {
 }
 
 Dropdown.propTypes = {
-  /** Element(s) to render to the screen */
+  /**
+   * Element(s) to render to the screen
+   */
   children: PropTypes.node.isRequired,
-  /** CSS class to apply to the wrapping element */
+  /**
+   * CSS class to apply to the wrapping element
+   */
   className: PropTypes.string
 }
 

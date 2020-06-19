@@ -20,16 +20,26 @@ const DropdownMenu = ({ className, items }) => {
 }
 
 DropdownMenu.propTypes = {
-  /** CSS class to apply to the wrapping element */
+  /**
+   * CSS class to apply to the wrapping element
+   */
   className: PropTypes.string,
-  /** An array of items to render in the dropdown menu */
+  /**
+   * An array of items to render in the dropdown menu
+   */
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      /** CSS class(es) to apply to the individual element */
+      /**
+       * CSS class(es) to apply to the individual element
+       */
       className: PropTypes.string,
-      /** Label for list item */
+      /**
+       * Label for list item
+       */
       label: PropTypes.string.isRequired,
-      /** URL for list item (href attribute) */
+      /**
+       * URL for list item (href attribute)
+       */
       url: PropTypes.string.isRequired
     })
   ).isRequired

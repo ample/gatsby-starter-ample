@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames/bind"
-import { Image } from "gatsby-theme-ample-components"
 
 import styles from "./styles.module.scss"
 
 import Button from "../../components/button"
 import Content from "../../components/content"
 import Form from "../../components/form"
+import Image from "../../components/image"
 
 const componentMap = {
   "component-button": Button,

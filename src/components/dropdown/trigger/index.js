@@ -11,9 +11,13 @@ const DropdownTrigger = ({ children, className }) => (
 )
 
 DropdownTrigger.propTypes = {
-  /** Element(s) to render as the trigger */
+  /**
+   * Element(s) to render as the trigger
+   */
   children: PropTypes.node.isRequired,
-  /** CSS class to apply to the wrapping element */
+  /**
+   * CSS class to apply to the wrapping element
+   */
   className: PropTypes.string
 }
 
