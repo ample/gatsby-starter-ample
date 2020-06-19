@@ -17,6 +17,9 @@ module.exports = {
     // Creates Gatsby and Netlify redirects for records in
     // src/content/redirects. (See plugins/gatsby-ample-redirects.)
     `gatsby-ample-redirects`,
+    // Adds a debugger for media queries
+    // src/layout. (See plugins/gatsby-ample-debuggers.)
+    `gatsby-ample-debuggers`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
