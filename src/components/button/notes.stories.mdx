@@ -1,0 +1,21 @@
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks"
+
+import Button from "./"
+
+<Meta title="Components/Button" component={Button} />
+
+# Button
+
+A button is a styled link. It accepts a `url` and `label` and renders a clickable object on the screen. It will also accept a `className` property, which can be used to customize styling.
+
+## Usage
+
+<Preview>
+  <Story name="Button">
+    <Button label="Hello World" url="/" />
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Button} />

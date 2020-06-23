@@ -1,0 +1,43 @@
+import Image from "./"
+import { Meta, Preview, Props, Story } from "@storybook/addon-docs/blocks"
+
+import fluidSrc from "./__fixtures__/fluid"
+import nativeSrc from "./__fixtures__/native"
+
+<Meta title="Components/Image" component={Image} />
+
+# Image
+
+The image tag is a utility wrapper that determines how to properly render an image. It also provides the ability to set a background texture (example below).
+
+## Usage
+
+The `src` attribute is what tells the image component how to render the image. See below for examples.
+
+### Gatsby Image
+
+If the `src` is a properly-formatted object, it will be rendered using [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/). This occurs if the object contains a key called `childImageSharp`, which itself contains either a `fluid` or `fixed` object.
+
+<Preview>
+  <Story name="Gatsby Image">
+    <Image src={fluidSrc} />
+  </Story>
+</Preview>
+
+_Note: See fixtures for the structure of the props passed to this example._
+
+### Native Image
+
+If `src` is a string, it renders a native image, passing along any custom props directly to that `<img ... />` element. This is useful when using SVG images, as they are not transformed into objects during the build.
+
+**This approach should only be used when working with images that Gatsby Image does not transform, like SVG files.**
+
+<Preview>
+  <Story name="Native Image">
+    <Image src={nativeSrc} />
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Image} />

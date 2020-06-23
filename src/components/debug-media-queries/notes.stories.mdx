@@ -1,0 +1,41 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+
+import DebugMediaQueries from "./"
+
+<Meta title="Components/Debug Media Queries" component={DebugMediaQueries} />
+
+# Debug Media Queries
+
+This component provides a quick way to find the current media query for faster local development.
+
+## Usage
+
+This component is used in [Ample's Gatsby starter](https://github.com/ample/gatsby-starter-ample) and is available through the following command:
+
+_There is no preview for this component because it is a tool for layouts._
+
+```
+yarn run develop:debug
+```
+
+_The media query debugger is located in the bottom left of the browser durning local development_
+
+## Properties
+
+<Props of={DebugMediaQueries} />
+
+### Usage for other projects
+
+> Add the following to the `layout` of your Gatsby Project:
+>
+> ```
+> import { DebugMediaQueries } from "gatsby-theme-ample-components"
+>
+> <DebugMediaQueries isShowing={process.env.GATSBY_DEBUG_MEDIA_QUERIES} />
+> ```
+>
+> Add the following script to `package.json`:
+>
+> ```
+> "develop:debug": "GATSBY_DEBUG_MEDIA_QUERIES=true gatsby develop",
+> ```

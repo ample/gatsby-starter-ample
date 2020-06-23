@@ -11,7 +11,6 @@ module.exports = {
     "Page.sections.components.form": "Form.filePath"
   },
   plugins: [
-    `gatsby-theme-ample-components`,
     /**
      * Looks in src/content and passes every page (except index.md) to
      * src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
