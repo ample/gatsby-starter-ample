@@ -1,0 +1,17 @@
+import LinkList from "./"
+
+import horizontalFixture from "./__fixtures__/horizontal.json"
+import verticalFixture from "./__fixtures__/vertical.json"
+
+# Link List
+
+## Horizontal
+
+<div style={{ height: "200px" }}>
+  <LinkList links={horizontalFixture} />
+</div>
+
+
+## Vertical
+
+<LinkList heading={verticalFixture.label} links={verticalFixture.links} vertical />

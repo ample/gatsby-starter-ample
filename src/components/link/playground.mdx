@@ -1,0 +1,16 @@
+import Link from "./"
+import { ExternalLink, InternalLink } from "./"
+
+# Link
+
+The `<Link />` component determines whether the route passed to it is an internal or external link, and wraps the component appropriately.
+
+If an internal link, the component renders [Gatsby's `<Link />` component](https://www.gatsbyjs.org/docs/gatsby-link/), otherwise it renders an anchor tag.
+
+## Usage
+
+<Link to="/components/link">I'm an internal link</Link>
+
+<Link to="https://ample.co">
+  <em>And I'm external</em>
+</Link>
