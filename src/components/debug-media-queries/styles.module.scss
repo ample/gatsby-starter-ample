@@ -1,0 +1,82 @@
+@use 'sass:map';
+
+// ---------------------------------------------------------
+
+$media-queries: (
+  smallest: 0,
+  x-small-lowest: 360px,
+  x-small: 400px,
+  x-small-highest: 480px,
+  small-lowest: 600px,
+  small: 720px,
+  small-highest: 840px,
+  medium-lowest: 960px,
+  medium: 1040px,
+  medium-highest: 1140px,
+  large-lowest: 1280px,
+  large: 1440px,
+  large-highest: 1600px,
+  x-large-lowest: 1920px,
+  x-large: 2560px,
+  x-large-highest: 3360px
+);
+
+// ---------------------------------------------------------
+
+$background-color: rgba(0, 0, 0, 0.8);
+$content-color: #ded;
+$size: 44px;
+$z-index-debug: 4;
+
+// ---------------------------------------------------------
+
+.debug {
+  align-items: center;
+  background-color: $background-color;
+  bottom: 0;
+  display: flex;
+  font-family: system-ui;
+  height: $size;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  transition: width 0.3s ease-in-out;
+  width: 0;
+  z-index: $z-index-debug;
+
+  &:after {
+    background-color: transparent;
+    border-color: transparent transparent transparent $background-color;
+    border-style: solid;
+    border-width: $size 0 0 $size;
+    content: '';
+    display: block;
+    position: absolute;
+    right: -$size;
+  }
+
+  &.is_showing {
+    width: 100vw;
+  }
+}
+
+.debug_media_queries {
+  font-size: 0;
+  opacity: 0;
+  transition: opacity 0.5s 0.1s ease-in-out;
+
+  .is_showing & {
+    color: $content-color;
+    font-size: 12px;
+    opacity: 1;
+  }
+
+  @each $mq in $media-queries {
+    @media screen and (min-width: nth($mq, 2)) {
+      &::after {
+        content: '#{nth($mq, 1)} - min-width: #{nth($mq, 2)}';
+      }
+    }
+  }
+}

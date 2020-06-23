@@ -1,0 +1,7 @@
+@use '../../styles/global' as *;
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}

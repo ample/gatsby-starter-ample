@@ -1,15 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames/bind"
-import { Link } from "gatsby-theme-ample-components"
 
 import styles from "./styles.module.scss"
 
-const Button = ({ className, label, url }) => {
+import Link from "../link"
+
+const Button = ({ className, label, onClick, url }) => {
   const classes = classNames(styles.button, { [className]: className })
 
   return (
-    <Link to={url} className={classes}>
+    <Link to={url} className={classes} onClick={onClick}>
       {label}
     </Link>
   )
@@ -24,6 +25,10 @@ Button.propTypes = {
    * Text rendered to the screen inside the button.
    */
   label: PropTypes.string.isRequired,
+  /**
+   * Specifies a click Function and uses the button element
+   */
+  onClick: PropTypes.func,
   /**
    * The href attribute for the link rendered to the screen.
    */

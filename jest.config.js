@@ -13,7 +13,7 @@ module.exports = {
     `<rootDir>/.bin`,
     `<rootDir>/lib`
   ],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-theme-ample-components)/)`],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
   globals: {
     __PATH_PREFIX__: ``
   },

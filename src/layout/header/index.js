@@ -1,6 +1,6 @@
 import React from "react"
 // import PropTypes from "prop-types"
-import { Link } from "gatsby-theme-ample-components"
+import Link from "../../components/link"
 
 import styles from "./styles.module.scss"
 
