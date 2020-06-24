@@ -8,13 +8,32 @@ exports.createPages = ({ graphql, actions }, pluginOptions = {}) => {
 
   return graphql(`
     {
-      templates: allMdx(
-        filter: { fileAbsolutePath: { regex: "/src/templates/.*/playground.mdx/" } }
+      components: allMdx(
+        filter: { fileAbsolutePath: { regex: "//src/components/.*/playground.mdx/" } }
+        sort: { fields: [fileAbsolutePath], order: ASC }
       ) {
         edges {
           node {
-            id
+            body
             fileAbsolutePath
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+
+      templates: allMdx(
+        filter: { fileAbsolutePath: { regex: "/src/templates/.*/playground.mdx/" } }
+        sort: { fields: [fileAbsolutePath], order: ASC }
+      ) {
+        edges {
+          node {
+            fileAbsolutePath
+            body
+            frontmatter {
+              title
+            }
           }
         }
       }
@@ -27,7 +46,7 @@ exports.createPages = ({ graphql, actions }, pluginOptions = {}) => {
         path: `${templatePathPrefix}/${path.dirname(filePath)}`,
         component: path.join(__dirname, "./src/templates/template/index.js"),
         context: {
-          id: template.id
+          template: template
         }
       })
     })
@@ -36,13 +55,19 @@ exports.createPages = ({ graphql, actions }, pluginOptions = {}) => {
     actions.createPage({
       path: `/${templatePathPrefix}`,
       component: path.join(__dirname, "./src/templates/template-list/index.js"),
-      context: { pathPrefix: templatePathPrefix }
+      context: {
+        pathPrefix: templatePathPrefix,
+        templates: result.data.templates.edges.map(({ node }) => node)
+      }
     })
 
     // Create components playground.
     actions.createPage({
       path: `/${pathPrefix}/components`,
-      component: path.join(__dirname, "./src/templates/components/index.js")
+      component: path.join(__dirname, "./src/templates/components/index.js"),
+      context: {
+        components: result.data.components.edges.map(({ node }) => node)
+      }
     })
   })
 }
