@@ -25,7 +25,7 @@ module.exports = {
      * Creates playgrounds from .mdx files in src/templates and src/components.
      */
     {
-      resolve: `gatsby-plugin-ample-playground`,
+      resolve: `gatsby-ample-playground`,
       options: {
         // Setting GATSBY_PLAYGROUND_DISABLED="true" disables the playground
         // build.
