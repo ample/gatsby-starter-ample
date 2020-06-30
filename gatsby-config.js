@@ -16,6 +16,7 @@ module.exports = {
       options: {
         aliases: {
           components: `./src/components`,
+          templates: `./src/templates`,
           root: `./`
         }
       }
