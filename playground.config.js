@@ -5,11 +5,11 @@ import * as Page from "templates/page"
 export default {
   title: "Ample Playground",
   components: {
-    button: Button
-    // button: {
-    //   component: Button,
-    //   maxWidth: "300px"
-    // }
+    // button: Button
+    button: {
+      ...Button,
+      maxWidth: "300px"
+    }
   },
   templates: {
     page: Page

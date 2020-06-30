@@ -15,8 +15,7 @@ const ComponentsPlayground = () => {
 
   const components = Object.entries(config.components).map((cfg, idx) => {
     const compName = cfg[0]
-    const compModule = cfg[1].__esModule ? cfg[1] : cfg[1].component
-    const { component: Component, fixtures } = compModule
+    const { component: Component, fixtures } = cfg[1]
 
     return (
       <div
