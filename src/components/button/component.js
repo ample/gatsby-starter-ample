@@ -6,12 +6,12 @@ import styles from "./styles.module.scss"
 
 import Link from "../link"
 
-const Button = ({ className, label, onClick, url }) => {
+const Button = ({ children, className, onClick, to }) => {
   const classes = classNames(styles.button, { [className]: className })
 
   return (
-    <Link to={url} className={classes} onClick={onClick}>
-      {label}
+    <Link to={to} className={classes} onClick={onClick}>
+      {children}
     </Link>
   )
 }
@@ -24,7 +24,7 @@ Button.propTypes = {
   /**
    * Text rendered to the screen inside the button.
    */
-  label: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   /**
    * Specifies a click Function and uses the button element
    */
@@ -32,7 +32,7 @@ Button.propTypes = {
   /**
    * The href attribute for the link rendered to the screen.
    */
-  url: PropTypes.string.isRequired
+  to: PropTypes.string.isRequired
 }
 
 Button.defaultProps = {}

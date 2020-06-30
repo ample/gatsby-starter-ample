@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 
 import Variations from "../../components/variations"
 
-import * as config from "../../../../../ample-config"
+import * as config from "root/ample-config"
 
 import styles from "./styles.module.scss"
 
