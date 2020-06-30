@@ -3,7 +3,10 @@ import * as Button from "./src/components/button"
 export default {
   title: "Ample Playground",
   components: {
-    button: Button
+    button: {
+      component: Button,
+      maxWidth: "300px"
+    }
   },
   themes: {
     default: "#FFFFFF",

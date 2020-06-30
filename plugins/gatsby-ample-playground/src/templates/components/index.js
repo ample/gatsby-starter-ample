@@ -13,15 +13,19 @@ const ComponentsPlayground = () => {
     lodash.get(config, "themes.default") || "transparent"
   )
 
-  const components = Object.entries(config.components).map((comp, idx) => {
-    const compName = comp[0]
-    const { component, fixtures } = comp[1]
-    const Component = component
+  const components = Object.entries(config.components).map((cfg, idx) => {
+    const compName = cfg[0]
+    const compModule = cfg[1].__esModule ? cfg[1] : cfg[1].component
+    const { component: Component, fixtures } = compModule
 
     return (
-      <div key={idx} className={styles.comp_section}>
+      <div
+        key={idx}
+        className={styles.comp_section}
+        style={{ maxWidth: cfg[1].maxWidth || "100%" }}
+      >
         <h2 id={compName} className={styles.comp_heading}>
-          <a href={`#${compName}`}>{component.name}</a>
+          <a href={`#${compName}`}>{Component.name}</a>
         </h2>
         <Variations component={Component} data={fixtures} />
       </div>
