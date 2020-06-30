@@ -9,14 +9,24 @@ import config from "root/playground.config"
 const TemplatesPlayground = () => {
   if (Object.entries(config.templates || {}).length === 0) return "Could not find templates"
 
-  let templates = Object.entries(config.templates).map((cfg, idx) => {
+  let templates = []
+
+  Object.entries(config.templates).map((cfg, idx) => {
     const TagName = cfg[1].template
-    const props = lodash.get(cfg[1], "fixtures.default")
-    const key = cfg[0]
-    return { name: key, template: <TagName key={idx} {...props} /> }
+    const templateName = lodash.startCase(lodash.toLower(cfg[0]))
+
+    Object.entries(cfg[1].fixtures || {}).map(fixture => {
+      const fixtureName = lodash.startCase(lodash.toLower(fixture[0]))
+      templates.push({
+        name: `${templateName}: ${fixtureName}`,
+        template: <TagName key={idx} {...fixture[1]} />
+      })
+    })
   })
 
   const [currentTemplate, setCurrentTemplate] = useState(templates[0])
+
+  if (!currentTemplate) return "No template"
 
   return (
     <>

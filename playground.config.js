@@ -12,8 +12,7 @@ export default {
     // }
   },
   templates: {
-    page: Page,
-    other_page: Page
+    page: Page
   },
   themes: {
     default: "#FFFFFF",
