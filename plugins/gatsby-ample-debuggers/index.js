@@ -1,3 +1,3 @@
-import DebugMediaQueries from "./debug-media-queries"
+import DebugMediaQueries from "./src/components/debug-media-queries"
 
 export { DebugMediaQueries }
