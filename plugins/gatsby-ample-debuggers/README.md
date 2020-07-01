@@ -1,8 +1,10 @@
-# Debug Media Queries
+# Debuggers
+
+## Debug Media Queries
 
 This plugin provides a quick way to find the current media query for faster local development.
 
-## Usage
+### Usage
 
 ```
 yarn run develop:debug
