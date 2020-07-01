@@ -1,18 +1,6 @@
-import React, { Fragment } from "react"
-import PropTypes from "prop-types"
-import icons from "./icons"
+import component from "./component"
+import fixtures from "./fixtures"
 
-const Icon = ({ name }) => {
-  return <Fragment>{icons[name]}</Fragment>
-}
+export default component
 
-Icon.propTypes = {
-  /**
-   * Specifies the name of the icon
-   */
-  name: PropTypes.string.isRequired
-}
-
-Icon.defaultProps = {}
-
-export default Icon
+export { component, fixtures }
