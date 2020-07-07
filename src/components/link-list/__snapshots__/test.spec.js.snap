@@ -2,7 +2,7 @@
 
 exports[`LinkList renders horizontal lists correctly 1`] = `
 <ul
-  className="cl_link_list"
+  className="link_list"
 >
   <li>
     <a
@@ -103,7 +103,7 @@ exports[`LinkList renders horizontal lists correctly 1`] = `
 
 exports[`LinkList renders vertical lists correctly 1`] = `
 <ul
-  className="cl_link_list cl_link_list_is_vertical"
+  className="link_list is_vertical"
 >
   <li>
     <strong>
