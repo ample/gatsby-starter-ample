@@ -12,6 +12,7 @@ describe("Footer", () => {
           copyright="2020, All Rights Reserved"
           menus={footer_test_data.menus}
           policy_links={footer_test_data.policy_links}
+          social_links={footer_test_data.social_links}
         />
       )
       .toJSON()
