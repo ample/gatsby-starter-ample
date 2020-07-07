@@ -4,7 +4,145 @@ exports[`Footer renders correctly 1`] = `
 <footer
   className="footer"
 >
-  <hr />
-  And this is the footer.
+  <div>
+    <div
+      className="logo"
+    >
+      <a
+        href="/"
+      >
+        <svg
+          viewBox="0 0 292.642 340.529"
+        >
+          <g>
+            <g>
+              <path
+                d="M183.017 315.94c-3.61-15.747 6.689-33.17 25.385-42.987 18.688-9.808 71.15-37.94 71.15-37.94l6.924 30.535c7.247 31.714-15.002 64.002-49.693 72.163-21.475 5.048-47.37 6.178-53.766-21.771zM111.27 323.753a91.566 91.566 0 005.675 16.776 157.222 157.222 0 014.916-305.155L275.019 0l17.623 76.35c-27.351-16.405-63.045-22.577-99.318-14.165-49.635 11.526-86.344 46.89-96.898 87.81a37.41 37.41 0 00-.275 17.44 38.338 38.338 0 0046 28.69c36.188-8.401 18.127-57.647 66.273-68.83 32.638-7.577 49.863 11.45 52.235 21.703l3.484 14.981-91.261 43.758a118.729 118.729 0 00-34.66 24.665c-23.498 24.543-34.659 58.132-26.953 91.351z"
+                fill="#fff"
+              />
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+    <ul
+      className="link_list is_vertical"
+    >
+      <li>
+        <strong>
+          Quisque
+        </strong>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Vestibulum vitae
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Pellentesque tempor venenatis
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Fusce molestie
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Etiam in lacinia dolor
+        </a>
+      </li>
+    </ul>
+    <ul
+      className="link_list is_vertical"
+    >
+      <li>
+        <strong>
+          Vestibulum
+        </strong>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Fusce molestie
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Pellentesque venenatis
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Vestibulum vitae
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          lacinia dolor
+        </a>
+      </li>
+    </ul>
+    <ul
+      className="link_list"
+    >
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Privacy Policy
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          rel="noopener"
+          target="_blank"
+        >
+          Terms of Service
+        </a>
+      </li>
+    </ul>
+    <small
+      className="copyright"
+    >
+      © 
+      2020, All Rights Reserved
+    </small>
+  </div>
 </footer>
 `;
