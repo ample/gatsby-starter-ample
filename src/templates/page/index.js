@@ -7,11 +7,10 @@ import Layout from "../../layout"
 
 import Container from "../../sections/container"
 
-const PageTemplate = ({ children, sections, title }) => (
+const PageTemplate = ({ children, sections }) => (
   <Layout>
     {children}
     <div className={styles.page}>
-      <h1>{title}</h1>
       {sections.map((section, idx) => (
         <Container key={idx} {...section} />
       ))}
@@ -23,9 +22,9 @@ PageTemplate.propTypes = {
   /** */
   children: PropTypes.node,
   /** */
-  sections: PropTypes.arrayOf(PropTypes.object),
+  sections: PropTypes.arrayOf(PropTypes.object)
   /** */
-  title: PropTypes.string
+  // title: PropTypes.string
 }
 
 PageTemplate.defaultProps = {

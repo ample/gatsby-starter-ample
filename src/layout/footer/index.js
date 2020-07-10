@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Logo from "./../../components/logo"
 import Link from "./../../components/link"
 import LinkList from "./../../components/link-list"
+import Logo from "./../../components/logo"
 import SocialNav from "./../../components/social-nav"
 
 import styles from "./styles.module.scss"

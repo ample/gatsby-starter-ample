@@ -4,12 +4,19 @@ import PropTypes from "prop-types"
 import Footer from "./footer"
 import Header from "./header"
 import DebugMediaQueries from "../components/debug-media-queries"
+
 import { footer_test_data } from "./footer/__fixtures__"
+import { header_test_data } from "./header/__fixtures__"
 
 const Layout = ({ children }) => (
   <>
-    <Header />
+    <Header
+      main_navigation={header_test_data.main_navigation}
+      top_navigation={header_test_data.top_navigation}
+    />
+
     <main>{children}</main>
+
     <Footer
       copyright="2020, All Rights Reserved"
       menus={footer_test_data.menus}
