@@ -15,7 +15,12 @@ module.exports = {
     "at-rule-name-space-after": "always",
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
-    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        ignoreAtRules: ["if", "else"]
+      }
+    ],
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-before": "always",
     "block-no-empty": true,
