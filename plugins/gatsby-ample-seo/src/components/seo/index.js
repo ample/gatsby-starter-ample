@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-import { getImageUrl } from "../../helpers/normalize-seo"
+import { getImageUrl } from "./../../helpers/normalize-seo"
 
 const transformData = ({ queryData, srcProps }) => {
   let props = {

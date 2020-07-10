@@ -14,6 +14,9 @@ module.exports = {
     // Looks in src/content and passes every page (except index.md) to
     // src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
     `gatsby-ample-pages`,
+    // Creates meta tags for every page
+    // src/templates/page/adapter.js. (See plugins/gatsby-ample-seo.)
+    `gatsby-ample-seo`,
     // Creates Gatsby and Netlify redirects for records in
     // src/content/redirects. (See plugins/gatsby-ample-redirects.)
     `gatsby-ample-redirects`,

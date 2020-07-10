@@ -1,7 +1,3 @@
-import { Meta } from "@storybook/addon-docs/blocks"
-
-<Meta title="Helpers/Normalize SEO" />
-
 # Normalize SEO
 
 The `normalizeSEO` function provides a means for template adapters to pull together dynamic data, combine it with the current location object, and use it to build an object that can be passed on to the [SEO utility](/?path=/docs/utilities-seo--page).

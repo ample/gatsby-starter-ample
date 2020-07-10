@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import { normalizeSEO } from "../../helpers"
+import { normalizeSEO } from "../../../plugins/gatsby-ample-seo"
 
-import SEO from "../../components/seo"
+import { SEO } from "../../../plugins/gatsby-ample-seo"
 
 import Page from "./"
 
