@@ -4,7 +4,7 @@
 
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import classNames from "classnames/bind"
+import classNames from "classnames"
 
 import styles from "./styles.module.scss"
 
