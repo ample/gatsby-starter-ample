@@ -9,8 +9,8 @@ import Link from "../link"
 import styles from "./styles.module.scss"
 
 const LinkList = ({ activeClassName, className, heading, links = [], vertical }) => {
-  const classes = classNames(styles.cl_link_list, className, {
-    [styles[`cl_link_list_is_vertical`]]: vertical
+  const classes = classNames(styles.link_list, className, {
+    [styles[`is_vertical`]]: vertical
   })
 
   return (
