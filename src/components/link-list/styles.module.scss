@@ -1,12 +1,12 @@
 @use '../../styles/global' as *;
 
-.cl_link_list {
+.link_list {
   @include reset-list;
 
   align-items: center;
   display: flex;
 
-  &_is_vertical {
+  &.is_vertical {
     align-items: start;
     flex-direction: column;
   }
