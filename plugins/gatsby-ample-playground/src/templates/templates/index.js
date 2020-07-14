@@ -4,8 +4,6 @@ import lodash from "lodash"
 
 import config from "root/playground.config"
 
-// import styles from "./styles.module.scss"
-
 const TemplatesPlayground = () => {
   if (Object.entries(config.templates || {}).length === 0) return "Could not find templates"
 
