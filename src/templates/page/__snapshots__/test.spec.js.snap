@@ -167,7 +167,9 @@ Array [
   <main>
     <div
       className="page"
-    />
+    >
+      <h1 />
+    </div>
   </main>,
   <footer
     className="footer"

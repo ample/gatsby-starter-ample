@@ -25,8 +25,12 @@ const PageAdapter = ({ data, location }) => {
 }
 
 PageAdapter.propTypes = {
-  /** Data coming from markdown files. */
-  data: PropTypes.shape({}).isRequired
+  /**
+   * Data coming from markdown files.
+   */
+  data: PropTypes.shape({
+    page: PropTypes.object
+  }).isRequired
 }
 
 PageAdapter.defaultProps = {}
