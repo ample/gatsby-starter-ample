@@ -1,4 +1,4 @@
-# gatsby-plugin-ample-playground
+# gatsby-ample-playground
 
 The Ample Playground plugin automatically creates playgrounds for components and templates. It's built to streamline our development process.
 

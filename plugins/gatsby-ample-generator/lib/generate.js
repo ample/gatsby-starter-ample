@@ -6,7 +6,7 @@ const pluralize = require("pluralize")
 
 const copyDir = (type, name) => {
   const srcDir = path.join(__dirname, `templates/${type}`)
-  const destDir = path.join(__dirname, `../src/${pluralize(type)}/${name}`)
+  const destDir = path.join(__dirname, `../../../src/${pluralize(type)}/${name}`)
   fs.copySync(srcDir, destDir, { recursive: true })
 }
 
