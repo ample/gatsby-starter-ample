@@ -3,17 +3,19 @@ import PropTypes from "prop-types"
 
 import styles from "./styles.module.scss"
 
-const ComponentName = ({ propName }) => (
-  <div className={styles.component_name}>
-    <p>{propName}</p>
-  </div>
-)
+const ComponentName = ({ name }) => {
+  return (
+    <div className={styles.component_name}>
+      <p>{name}</p>
+    </div>
+  )
+}
 
 ComponentName.propTypes = {
   /**
-   * prop description here
+   * Brief description of the "name" prop ...
    */
-  propName: PropTypes.string.isRequired
+  name: PropTypes.string
 }
 
 ComponentName.defaultProps = {}

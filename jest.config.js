@@ -11,7 +11,8 @@ module.exports = {
     `\\.cache`,
     `<rootDir>.*/public`,
     `<rootDir>/.bin`,
-    `<rootDir>/lib`
+    `<rootDir>/lib`,
+    `<rootDir>/plugins/gatsby-ample-generator/lib`
   ],
   transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-plugin-mdx)/)`],
   globals: {
