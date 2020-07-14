@@ -88,7 +88,7 @@
     "lint": "eslint -c .eslintrc.js ./src && stylelint --config stylelint.config.js './src/**/*.scss'",
     "netlify:build": "yarn lint && yarn test && yarn clean && yarn build",
     "test:update": "yarn test --updateSnapshot",
-    "test": "jest --json --outputFile=.jest-test-results.json"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
