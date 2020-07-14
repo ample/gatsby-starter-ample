@@ -105,7 +105,6 @@ module.exports = {
         icon: `src/images/ample-icon.png`
       }
     },
-    `gatsby-ample-linters`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {

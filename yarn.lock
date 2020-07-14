@@ -1358,13 +1358,6 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@danbruegge/gatsby-plugin-stylelint@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@danbruegge/gatsby-plugin-stylelint/-/gatsby-plugin-stylelint-4.0.0.tgz#1a1b384eb0e92861fda474376f3a8d7a9e8a7e63"
-  integrity sha512-MpPNZjDhnV8UOgUwe9vApLWGoeqZKdDhLiDGp4oW8CxR6ig421RbOqAJicgLwRV3l1dATesv0sC31bQjxjCZTQ==
-  dependencies:
-    stylelint-bare-webpack-plugin "^2.0.0"
-
 "@egoist/vue-to-react@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@egoist/vue-to-react/-/vue-to-react-1.1.0.tgz#83c884b8608e8ee62e76c03e91ce9c26063a91ad"
@@ -8976,11 +8969,6 @@ gatsby-plugin-catch-links@^2.1.15:
     "@babel/runtime" "^7.7.6"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-eslint@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-eslint/-/gatsby-plugin-eslint-2.0.8.tgz#1ff7f546a427d274dc2de3932ba29822aae330c3"
-  integrity sha512-vAMy37povmQJNg6ZxY78fkWR3pKwG8MNMhO3u+4vXj2MYT5avhFvHPJTAb126ZCuygf30gAWlpwbV50zP894Jw==
-
 gatsby-plugin-google-analytics@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.2.2.tgz#b4d2a10e1863bb4c92084a1778c4a2aab53292f5"
@@ -9451,13 +9439,6 @@ get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
-
-get-value@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/get-value/-/get-value-3.0.1.tgz#5efd2a157f1d6a516d7524e124ac52d0a39ef5a8"
-  integrity sha512-mKZj9JLQrwMBtj5wxi6MH8Z5eSKaERpAwjg43dPtlGI1ZVEgH/qC7T8/6R2OBSUA+zzHBZgICsVJaEIV2tKTDA==
-  dependencies:
-    isobject "^3.0.1"
 
 getpass@^0.1.1:
   version "0.1.7"
@@ -13473,11 +13454,6 @@ mkdirp@^0.5.3:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
-
-module-available@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/module-available/-/module-available-1.0.6.tgz#dd7265eeec1158791ea5305a16c1ac6731980f44"
-  integrity sha1-3XJl7uwRWHkepTBaFsGsZzGYD0Q=
 
 moment@^2.24.0:
   version "2.24.0"
@@ -18767,18 +18743,6 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
-
-stylelint-bare-webpack-plugin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-bare-webpack-plugin/-/stylelint-bare-webpack-plugin-2.0.0.tgz#b9c0f18c732333c5a7aca48abd8664eb7ba156f0"
-  integrity sha512-s0vO/G+uwxp8xJ6GvGqhvTkuhsqeZkb/AIvsGmpvCeS1P5yG1htjT1iLH7S5KfTBggYGTI/c2OY+AiVxRuUYAw==
-  dependencies:
-    chalk "^3.0.0"
-    get-value "^3.0.1"
-    is-plain-object "^3.0.0"
-    lodash "^4.17.15"
-    module-available "^1.0.6"
-    webpack-merge "^4.2.2"
 
 stylelint-formatter-pretty@^1.1.4:
   version "1.1.4"
