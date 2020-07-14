@@ -1,21 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
+import fixtures from "./fixtures"
+import template from "./template"
 
-import styles from "./styles.module.scss"
+export default template
 
-const TemplateName = ({ propName }) => (
-  <div className={styles.template_name}>
-    <p>{propName}</p>
-  </div>
-)
-
-TemplateName.propTypes = {
-  /**
-   * prop description here
-   */
-  propName: PropTypes.string.isRequired
-}
-
-TemplateName.defaultProps = {}
-
-export default TemplateName
+export { template, fixtures }
