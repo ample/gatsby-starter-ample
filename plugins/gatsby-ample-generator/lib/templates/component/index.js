@@ -1,21 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
+import component from "./component"
+import fixtures from "./fixtures"
 
-import styles from "./styles.module.scss"
+export default component
 
-const ComponentName = ({ propName }) => (
-  <div className={styles.component_name}>
-    <p>{propName}</p>
-  </div>
-)
-
-ComponentName.propTypes = {
-  /**
-   * prop description here
-   */
-  propName: PropTypes.string.isRequired
-}
-
-ComponentName.defaultProps = {}
-
-export default ComponentName
+export { component, fixtures }
