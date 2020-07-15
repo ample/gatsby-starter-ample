@@ -1,3 +1,102 @@
-.root {
+@use '../../styles/global' as *;
+
+.header {
+  background-color: #ccc;
+  position: relative;
+
+  &.navigation_is_showing {
+    background-color: #ccc;
+    height: 100vh;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: $z-index-plus-three;
+  }
+
+  @include media($full-navigation) {
+    padding: 30px 0;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+
+    @include media($full-navigation) {
+      @include container;
+
+      flex-direction: row;
+      position: relative;
+      z-index: $z-index-plus-one;
+    }
+  }
+}
+
+// --------------------------------------------------------- | logo
+
+.logo_container {
+  @include media($full-navigation, down) {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  @include media($full-navigation) {
+    margin-right: 30px;
+    width: 170px;
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+.menu_button {
+  @include media($full-navigation, down) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media($full-navigation) {
+    display: none;
+  }
+}
+
+// --------------------------------------------------------- | navigation
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  @include media($full-navigation, down) {
+    height: 0;
+    overflow: hidden;
+    padding: 0 $global-padding;
+  }
+
+  .navigation_is_showing & {
+    height: 100vh;
+    overflow: scroll;
+  }
+}
+
+.main_navigation,
+.top_navigation {
+  align-self: flex-end;
+  display: flex;
+}
+
+.main_navigation {
   //
+}
+
+.top_navigation {
+  margin-bottom: 15px;
 }

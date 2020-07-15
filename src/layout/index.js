@@ -3,14 +3,21 @@ import PropTypes from "prop-types"
 
 import Footer from "./footer"
 import Header from "./header"
-import DebugMediaQueries from "../components/debug-media-queries"
+import { DebugMediaQueries } from "../../plugins/gatsby-ample-debuggers"
+
+import { footer_test_data } from "./footer/__fixtures__"
+import { header_test_data } from "./header/__fixtures__"
 
 import Card from "./../components/card"
 import Grid from "./../components/grid"
 
 const Layout = ({ children }) => (
   <>
-    <Header />
+    <Header
+      main_navigation={header_test_data.main_navigation}
+      top_navigation={header_test_data.top_navigation}
+    />
+
     <main>{children}</main>
 
     <Grid layout="one_third">
@@ -46,7 +53,12 @@ const Layout = ({ children }) => (
       />
     </Grid>
 
-    <Footer />
+    <Footer
+      copyright="2020, All Rights Reserved"
+      menus={footer_test_data.menus}
+      policy_links={footer_test_data.policy_links}
+      social_links={footer_test_data.social_links}
+    />
 
     <DebugMediaQueries isShowing={process.env.GATSBY_DEBUG_MEDIA_QUERIES} />
   </>

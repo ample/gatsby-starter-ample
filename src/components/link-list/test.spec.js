@@ -3,18 +3,15 @@ import renderer from "react-test-renderer"
 
 import LinkList from "."
 
-import horizontalFixture from "./__fixtures__/horizontal.json"
-import verticalFixture from "./__fixtures__/vertical.json"
+import fixtures from "./fixtures"
 
 describe("LinkList", () => {
   it("renders horizontal lists correctly", () => {
-    const tree = renderer.create(<LinkList links={horizontalFixture} />).toJSON()
+    const tree = renderer.create(<LinkList {...fixtures.horizontal} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
   it("renders vertical lists correctly", () => {
-    const tree = renderer
-      .create(<LinkList heading={verticalFixture.label} links={verticalFixture.links} vertical />)
-      .toJSON()
+    const tree = renderer.create(<LinkList {...fixtures.vertical} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
