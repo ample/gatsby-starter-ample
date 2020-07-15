@@ -3,8 +3,7 @@
 exports[`Button renders correctly 1`] = `
 <a
   className="button"
-  href="/"
->
-  Hello World
-</a>
+  rel="noopener"
+  target="_blank"
+/>
 `;
