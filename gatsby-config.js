@@ -11,18 +11,46 @@ module.exports = {
     "Page.sections.components.form": "Form.filePath"
   },
   plugins: [
-    // Looks in src/content and passes every page (except index.md) to
-    // src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
+    {
+      resolve: `gatsby-alias-imports`,
+      options: {
+        aliases: {
+          components: `./src/components`,
+          templates: `./src/templates`,
+          root: `./`
+        }
+      }
+    },
+    /**
+     * Looks in src/content and passes every page (except index.md) to
+     * src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
+     */
     `gatsby-ample-pages`,
-    // Creates Gatsby and Netlify redirects for records in
-    // src/content/redirects. (See plugins/gatsby-ample-redirects.)
+    /**
+     * Creates Gatsby and Netlify redirects for records in
+     * src/content/redirects. (See plugins/gatsby-ample-redirects.)
+     */
     `gatsby-ample-redirects`,
+    /**
+     * Creates playgrounds from .mdx files in src/templates and src/components.
+     */
+    {
+      resolve: `gatsby-ample-playground`,
+      options: {
+        // Setting GATSBY_PLAYGROUND_DISABLED="true" disables the playground
+        // build.
+        disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
+      }
+    },
+    // Adds a debugger for media queries
+    // src/layout. (See plugins/gatsby-ample-debuggers.)
+    `gatsby-ample-debuggers`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/uploads`,
-        name: "uploads"
+        name: `uploads`,
+        path: `${__dirname}/static/uploads`
       }
     },
     {
@@ -81,7 +109,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
-        // TODO: update project fonts here as well as in .storybook/preview-head.html
+        // TODO: Update project fonts.
         //
         // google: {
         //   families: ["Font Family"]

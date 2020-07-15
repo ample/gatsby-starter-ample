@@ -1,8 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import validFluidSrc from "./__fixtures__/fluid"
-import validFixedSrc from "./__fixtures__/fixed"
+import fixtures from "./fixtures"
 
 import Image from "./"
 
@@ -19,7 +18,7 @@ describe("Image", () => {
     expect(tree).toBeNull()
   })
   it("will render with a proper fluid image", () => {
-    const tree = renderer.create(<Image src={validFluidSrc} alt="alt ..." />).toJSON()
+    const tree = renderer.create(<Image src={fixtures.fluid} alt="alt ..." />).toJSON()
     expect(tree).toMatchSnapshot()
   })
   it("will render with a proper fluid image and a default alt attribute", () => {
@@ -27,7 +26,7 @@ describe("Image", () => {
     expect(tree).toMatchSnapshot()
   })
   it("will render with a proper fixed image", () => {
-    const tree = renderer.create(<Image src={validFixedSrc} alt="alt ..." />).toJSON()
+    const tree = renderer.create(<Image src={fixtures.fixed} alt="alt ..." />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

@@ -1,3 +1,5 @@
-// @use '../../styles/global' as *;
+@use '../../styles/global' as *;
 
-// .page {}
+.page {
+  padding-bottom: 40px;
+}
