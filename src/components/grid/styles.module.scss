@@ -43,7 +43,7 @@ $margin-bottom: 30px;
   // -------------------------------------------------------- | Grid item width
 
   &.layout_is {
-    &_one_fourth {
+    &_1\/4 {
       @include grid($small-lowest);
 
       @include media($medium-lowest) {
@@ -51,7 +51,7 @@ $margin-bottom: 30px;
       }
     }
 
-    &_one_third {
+    &_1\/3 {
       @include grid($small-lowest);
 
       @include media($small-highest) {
@@ -59,7 +59,7 @@ $margin-bottom: 30px;
       }
     }
 
-    &_one_half {
+    &_1\/2 {
       @include grid($small-lowest, false);
 
       @include media($small) {

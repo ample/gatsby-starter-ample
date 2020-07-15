@@ -25,7 +25,7 @@ Grid.propTypes = {
   /**
    * Specifies the width of each grid item within the grid on larger screens
    */
-  layout: PropTypes.oneOf(["one_third", "one_fourth", "one_half"])
+  layout: PropTypes.oneOf(["1/4", "1/3", "1/2"])
 }
 
 Grid.defaultProps = {

@@ -20,7 +20,7 @@ const Layout = ({ children }) => (
 
     <main>{children}</main>
 
-    <Grid layout="one_third">
+    <Grid layout="1/3">
       <Card
         heading="In ad eiusmod"
         button={{
