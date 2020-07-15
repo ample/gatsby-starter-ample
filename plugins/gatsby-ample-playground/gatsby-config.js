@@ -14,6 +14,7 @@ module.exports = {
           "**/*.jsx",
           "**/*.png",
           "**/*.scss",
+          "**/*.snap",
           "**/*.svg",
           "**/*.ts",
           "**/*.tsx"
