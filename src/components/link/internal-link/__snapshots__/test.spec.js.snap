@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InternalLink renders correctly 1`] = `
+<a
+  className=""
+  href="/"
+  onClick={null}
+>
+  Hello World
+</a>
+`;

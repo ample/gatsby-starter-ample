@@ -53,7 +53,7 @@ FormFieldText.propTypes = {
   /** Enforce that the field sits on its own line, regardless of width.*/
   solo: PropTypes.bool,
   /** Controls the "type" attribute for short-form text fields. */
-  validation: PropTypes.oneOf(textValidationOptions).isRequired,
+  validation: PropTypes.oneOf([...textValidationOptions, ""]),
   /** Controls how wide the field renders on screen. */
   width: PropTypes.oneOf(widthOptions).isRequired
 }

@@ -3,11 +3,11 @@ import renderer from "react-test-renderer"
 
 import DropdownMenu from "./"
 
-import fixture from "./__fixtures__/dropdown_menu.json"
+import fixtures from "./fixtures.js"
 
 describe("DropdownMenu", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<DropdownMenu items={fixture} />).toJSON()
+    const tree = renderer.create(<DropdownMenu {...fixtures.simple_menu} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

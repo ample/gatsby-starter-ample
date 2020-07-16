@@ -1,0 +1,58 @@
+.template {
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #efefef;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    color: #333;
+    font-size: 1rem;
+  }
+}
+
+.theme_toggle {
+  list-style-type: none;
+  margin: 0;
+  position: absolute;
+  right: 1rem;
+  top: calc(50% - 0.75rem);
+
+  li {
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+
+  button {
+    border: none;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+    }
+
+    &.active {
+      outline: 2px solid blue;
+    }
+  }
+}
+
+.comp_wrapper {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.comp_section {
+  margin-bottom: 40px;
+}
+
+.comp_heading {
+  margin-bottom: 20px;
+}

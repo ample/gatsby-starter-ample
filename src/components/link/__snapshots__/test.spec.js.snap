@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link renders correctly 1`] = `
+exports[`Link renders external link correctly 1`] = `
 <a
-  href="/"
+  href="https://ample.co"
+  rel="noopener"
+  target="_blank"
 >
-  Hello
+  <em>
+    And I'm external
+  </em>
+</a>
+`;
+
+exports[`Link renders internal link correctly 1`] = `
+<a
+  href="/components/link"
+>
+  I'm an internal link
 </a>
 `;
