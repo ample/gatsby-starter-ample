@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownTrigger renders correctly 1`] = `
+<span
+  className="dropdown_trigger"
+>
+  Trigger
+</span>
+`;

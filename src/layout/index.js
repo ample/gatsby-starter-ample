@@ -6,13 +6,13 @@ import Header from "./header"
 import { DebugMediaQueries } from "../../plugins/gatsby-ample-debuggers"
 
 import { footer_test_data } from "./footer/__fixtures__"
-import { header_test_data } from "./header/__fixtures__"
+import { fixtures as header_fixture } from "./header/navigation/fixtures"
 
 const Layout = ({ children }) => (
   <>
     <Header
-      main_navigation={header_test_data.main_navigation}
-      top_navigation={header_test_data.top_navigation}
+      main_navigation={header_fixture.main_navigation}
+      top_navigation={header_fixture.top_navigation}
     />
 
     <main>{children}</main>

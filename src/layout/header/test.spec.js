@@ -2,15 +2,15 @@ import React from "react"
 import renderer from "react-test-renderer"
 
 import Header from "./"
-import { header_test_data } from "./__fixtures__"
+import { fixtures } from "./navigation/fixtures"
 
 describe("Header", () => {
   it("renders correctly", () => {
     const tree = renderer
       .create(
         <Header
-          main_navigation={header_test_data.main_navigation}
-          top_navigation={header_test_data.top_navigation}
+          main_navigation={fixtures.main_navigation}
+          top_navigation={fixtures.top_navigation}
         />
       )
       .toJSON()

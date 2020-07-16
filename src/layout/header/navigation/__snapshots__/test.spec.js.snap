@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation renders navigation correctly 1`] = `
+<ul
+  className="navigation"
+>
+  <li>
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      Duis
+    </a>
+  </li>
+  <li>
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      Cupidatat
+    </a>
+  </li>
+  <li>
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      Ullamco
+    </a>
+  </li>
+  <li>
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      Labore
+    </a>
+  </li>
+  <li>
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      Consectetur
+    </a>
+  </li>
+  <li>
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      Pariatur
+    </a>
+  </li>
+</ul>
+`;

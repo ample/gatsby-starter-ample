@@ -1,0 +1,13 @@
+@use '../../../styles/global' as *;
+
+.navigation {
+  @include reset-list;
+
+  align-items: center;
+  display: flex;
+
+  &.is_vertical {
+    align-items: start;
+    flex-direction: column;
+  }
+}
