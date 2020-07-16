@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Link from "../link"
-import Icon from "../icon"
+import Link from "../../../components/link"
+import Icon from "../../../components/icon"
 import styles from "./styles.module.scss"
 
 const SocialNav = ({ links }) => (

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Link from "./../../components/link"
 import LinkList from "./../../components/link-list"
 import Logo from "./../../components/logo"
-import SocialNav from "./../../components/social-nav"
+import SocialNav from "./social-nav"
 
 import styles from "./styles.module.scss"
 
