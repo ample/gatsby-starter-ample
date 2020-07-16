@@ -2,7 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 
 import SocialNav from "."
-import { footer_test_data } from "./../../layout/footer/__fixtures__"
+import { footer_test_data } from "./../fixtures"
 
 describe("SocialNav", () => {
   it("renders correctly", () => {
