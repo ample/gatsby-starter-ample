@@ -4,7 +4,6 @@ import * as Form from "components/form"
 import * as Icon from "components/icon"
 import * as Image from "components/image"
 import * as Link from "components/link"
-import * as LinkList from "components/link-list"
 
 import * as Page from "templates/page"
 
@@ -16,8 +15,7 @@ export default {
     form: Form,
     icon: Icon,
     image: Image,
-    link: Link,
-    link_list: LinkList
+    link: Link
   },
   templates: {
     page: Page
