@@ -174,7 +174,7 @@ Array [
     </div>
   </main>,
   <div
-    className="grid layout_is_one_third"
+    className="grid layout_is_1/3"
   >
     <div
       className="card theme_1"
@@ -192,12 +192,9 @@ Array [
       />
       <a
         className="button"
-        href="#"
         rel="noopener"
         target="_blank"
-      >
-        Learn more
-      </a>
+      />
     </div>
     <div
       className="card theme_2"
@@ -215,12 +212,9 @@ Array [
       />
       <a
         className="button"
-        href="#"
         rel="noopener"
         target="_blank"
-      >
-        Learn more
-      </a>
+      />
     </div>
     <div
       className="card theme_1"
@@ -238,12 +232,9 @@ Array [
       />
       <a
         className="button"
-        href="#"
         rel="noopener"
         target="_blank"
-      >
-        Learn more
-      </a>
+      />
     </div>
   </div>,
   <footer
