@@ -3,18 +3,17 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import classNames from "classnames"
 import dig from "object-dig"
+import lodash from "lodash"
+import path from "path"
 
 import styles from "./styles.module.scss"
 
-const Image = ({ alt, className, src, ...props }) => {
-  const defaultAltAttribute = image =>
-    image
-      .split("/")
-      .pop()
-      .split(".")
-      .slice(0, -1)
-      .join(".")
+export const defaultAltAttribute = image => {
+  const filename = path.basename(image, path.extname(image))
+  return lodash.startCase(filename)
+}
 
+const Image = ({ alt, className, src, ...props }) => {
   const classes = classNames(styles.image, { [className]: className })
 
   // ---------------------------------------- | Gastby Image

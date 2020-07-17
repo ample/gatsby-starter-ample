@@ -3,7 +3,10 @@ import renderer from "react-test-renderer"
 
 import fixtures from "./fixtures"
 
-import Image from "./"
+import Image from "."
+import { defaultAltAttribute } from "./component"
+
+// ---------------------------------------- | Component
 
 describe("Image", () => {
   it("renders correctly", () => {
@@ -28,5 +31,14 @@ describe("Image", () => {
   it("will render with a proper fixed image", () => {
     const tree = renderer.create(<Image src={fixtures.fixed} alt="alt ..." />).toJSON()
     expect(tree).toMatchSnapshot()
+  })
+})
+
+// ---------------------------------------- | Alt Attribute
+
+describe("defaultAltAttribute", () => {
+  it("creates a humanized version of a URL string", () => {
+    const filename = "/uploads/image-01.jpg"
+    expect(defaultAltAttribute(filename)).toEqual("Image 01")
   })
 })
