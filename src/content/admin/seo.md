@@ -11,6 +11,7 @@ defaults:
     title: Site Title
     description: Some generic description of the site to fall back on ...
     image_src: "/uploads/placeholder-image.jpg"
+    type: website
   twitter:
     card: summary
     title: Site Title
