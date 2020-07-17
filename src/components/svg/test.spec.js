@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Icon from "."
+import SVG from "."
 
-describe("Icon", () => {
+describe("SVG", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Icon name="star" />).toJSON()
+    const tree = renderer.create(<SVG name="bars" />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

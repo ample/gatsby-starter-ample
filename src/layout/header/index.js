@@ -2,10 +2,9 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Icon from "./../../components/icon"
 import Link from "./../../components/link"
 import LinkList from "./../../components/link-list"
-import Logo from "./../../components/logo"
+import SVG from "../../components/svg"
 
 import styles from "./styles.module.scss"
 
@@ -31,12 +30,12 @@ const Header = ({ main_navigation, top_navigation }) => {
       <div>
         <div className={styles.logo_container}>
           <Link className={styles.logo} to="/">
-            <Logo name="ample" />
+            <SVG name="logo" />
           </Link>
 
           <button className={styles.menu_button} onClick={smallScreenMenuClick}>
             <span>Menu</span>
-            {!menuIsOpen ? <Icon name="bars" /> : <Icon name="close" />}
+            {!menuIsOpen ? <SVG name="bars" /> : <SVG name="close" />}
           </button>
         </div>
 

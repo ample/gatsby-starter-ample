@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 
 import Link from "./../../components/link"
 import LinkList from "./../../components/link-list"
-import Logo from "./../../components/logo"
-import SocialNav from "./../../components/social-nav"
+import SocialNav from "./social-nav"
+import SVG from "./../../components/svg"
 
 import styles from "./styles.module.scss"
 
@@ -13,7 +13,7 @@ const Footer = ({ copyright, menus, policy_links, social_links }) => (
     <div>
       <div className={styles.logo}>
         <Link to="/">
-          <Logo name="ample_teardrop" />
+          <SVG name="logo" />
         </Link>
       </div>
 
