@@ -12,9 +12,9 @@ defaults:
     description: Some generic description of the site to fall back on ...
     image_src: "/uploads/placeholder-image.jpg"
   twitter:
-    card: ''
-    title: ''
-    description: ''
-    image_src: ''
+    card: summary
+    title: Site Title
+    description: Some generic description of the site to fall back on ...
+    image_src: "/uploads/placeholder-image.jpg"
 
 ---
