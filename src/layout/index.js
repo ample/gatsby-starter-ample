@@ -7,7 +7,7 @@ import { DebugMediaQueries } from "../../plugins/gatsby-ample-debuggers"
 
 import footer_menu_fixtures from "./footer/link-list/fixtures"
 import { footer_test_data } from "./footer/fixtures"
-import { fixtures as header_fixture } from "./header/navigation/fixtures"
+import header_fixture from "./header/navigation/fixtures"
 
 import Card from "./../components/card"
 import Grid from "./../components/grid"
