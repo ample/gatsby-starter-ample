@@ -1,23 +1,43 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
-import classNames from "classnames/bind"
+import classNames from "classnames"
 import dig from "object-dig"
+import lodash from "lodash"
+import path from "path"
+
 import styles from "./styles.module.scss"
 
+export const defaultAltAttribute = image => {
+  const filename = path.basename(image, path.extname(image))
+  return lodash.startCase(filename)
+}
+
 const Image = ({ alt, className, src, ...props }) => {
-  const classes = classNames(styles.cl_image, { [className]: className })
+  const classes = classNames(styles.image, { [className]: className })
 
   // ---------------------------------------- | Gastby Image
 
   if (dig(src, "childImageSharp", "fluid") || dig(src, "childImageSharp", "fixed")) {
-    return <Img className={classes} alt={alt} {...src.childImageSharp} />
+    let imageName = dig(src, "childImageSharp", "fluid", "src")
+
+    if (dig(src, "childImageSharp", "fixed")) {
+      imageName = dig(src, "childImageSharp", "fixed", "src")
+    }
+
+    return (
+      <Img
+        className={classes}
+        alt={alt || defaultAltAttribute(imageName)}
+        {...src.childImageSharp}
+      />
+    )
   }
 
   // ---------------------------------------- | Native Image
 
   if (typeof src === "string") {
-    return <img className={classes} src={src} alt={alt} {...props} />
+    return <img className={classes} src={src} alt={alt || defaultAltAttribute(src)} {...props} />
   }
 
   // ---------------------------------------- | Invalid src

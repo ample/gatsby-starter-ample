@@ -67,3 +67,6 @@ yarn-error.log
 .pnp/
 .pnp.js
 .yarn-integrity
+
+# jest
+.jest-test-results.json
