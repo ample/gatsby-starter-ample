@@ -22,7 +22,7 @@ describe("Image", () => {
     expect(tree).toMatchSnapshot()
   })
   it("will render with a proper fluid image and a default alt attribute", () => {
-    const tree = renderer.create(<Image src={validFluidSrc} />).toJSON()
+    const tree = renderer.create(<Image src={fixtures.fluid} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
   it("will render with a proper fixed image", () => {
