@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image renders correctly 1`] = `
+<img
+  alt="Image from https://placehold.it"
+  className="image"
+  src="https://via.placeholder.com/300"
+/>
+`;
+
+exports[`Image will render with a proper fixed image 1`] = `null`;
+
+exports[`Image will render with a proper fluid image 1`] = `null`;
+
+exports[`Image will render with a proper fluid image and a default alt attribute 1`] = `null`;

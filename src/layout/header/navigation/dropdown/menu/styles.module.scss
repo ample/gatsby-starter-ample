@@ -1,0 +1,15 @@
+@use '../../../../../styles/global' as *;
+
+.is_showing .dropdown_menu {
+  display: block;
+}
+
+.dropdown_menu {
+  display: none;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 100%;
+  z-index: $z-index-plus-three;
+}

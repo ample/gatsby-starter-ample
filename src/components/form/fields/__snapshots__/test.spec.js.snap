@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormFields renders correctly 1`] = `
+<div
+  className="form_field_group"
+/>
+`;

@@ -1,0 +1,26 @@
+---
+label: "[Admin] References"
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  hidden: true
+- name: model
+  type: text
+  hidden: true
+  default: AdminReferences
+  label: Model
+- name: twitter_cards
+  type: list
+  config:
+    use_select: false
+    min: '1'
+    max: 
+  label: Twitter Cards
+  description: A list of the possible twitter card values. This applies to the Twitter
+    SEO fields.
+pages:
+- src/content/admin/references.md

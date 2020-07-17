@@ -1,0 +1,13 @@
+---
+label: "[Component] Content"
+hide_body: true
+fields:
+- name: body_md
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Body

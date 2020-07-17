@@ -1,0 +1,13 @@
+@use '../../../styles/global' as *;
+
+.social_nav {
+  display: flex;
+
+  svg {
+    $size: 20px;
+
+    fill: var(--color-black);
+    height: $size;
+    width: $size;
+  }
+}

@@ -1,0 +1,22 @@
+@use '../../styles/global' as *;
+
+.footer {
+  background-color: #ccc;
+  padding: 30px 0;
+
+  > div {
+    @include container;
+  }
+}
+
+// ---------------------------------------------------------
+
+.logo {
+  margin-bottom: 30px;
+  width: 100px;
+}
+
+.copyright {
+  display: block;
+  text-align: center;
+}

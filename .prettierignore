@@ -1,0 +1,14 @@
+# Gatsby cache
+.cache
+
+# Dependencies and auto-generated files
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build directory
+public
+
+# CMS Content
+.forestry/
+src/content/

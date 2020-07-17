@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenu renders correctly 1`] = `
+<ul
+  className="dropdown_menu"
+>
+  <li>
+    <a
+      href="/"
+    >
+      List Item #1
+    </a>
+  </li>
+  <li>
+    <a
+      href="/"
+    >
+      List Item #2
+    </a>
+  </li>
+  <li>
+    <a
+      href="/"
+    >
+      List Item #3
+    </a>
+  </li>
+</ul>
+`;

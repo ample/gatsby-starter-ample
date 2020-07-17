@@ -1,0 +1,58 @@
+@use 'global/root';
+@use 'global' as *;
+
+// --------------------------------------------------------
+
+body {
+  @include font-smoothing;
+
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: 1;
+}
+
+// --------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-bold;
+  margin: 0;
+}
+
+h1 {
+  font-size: responsive 35px 60px;
+}
+
+h2 {
+  font-size: responsive 30px 45px;
+}
+
+// --------------------------------------------------------
+
+a {
+  text-decoration: none;
+
+  @include hover {
+    text-decoration: underline;
+  }
+}
+
+// ---------------------------------------------------------
+
+button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+
+// --------------------------------------------------------
+
+img {
+  max-width: 100%;
+}

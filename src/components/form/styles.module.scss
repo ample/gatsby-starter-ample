@@ -1,0 +1,124 @@
+@use '../../styles/global' as *;
+
+$form-field-gutter: 40px;
+
+// ---------------------------------------- | Form
+
+// .form {}
+
+// ---------------------------------------- | Group
+
+.form_field_group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$form-field-gutter / 2) 24px;
+
+  h2 {
+    margin: 0 ($form-field-gutter / 2) 8px;
+    width: 100%;
+  }
+}
+
+// ---------------------------------------- | Field Wrapper
+
+.form_field {
+  flex-basis: 100%;
+  margin: 0 ($form-field-gutter / 2) 18px;
+
+  &.width_half {
+    @include media($small) {
+      flex-basis: calc(50% - #{$form-field-gutter});
+    }
+  }
+
+  &.width_quarter {
+    @include media($small) {
+      flex-basis: calc(25% - #{$form-field-gutter});
+    }
+  }
+
+  &.solo {
+    flex-basis: 100%;
+
+    &.width_half {
+      label,
+      input:not([type='radio']),
+      select,
+      textarea {
+        @include media($small) {
+          width: calc(50% - #{$form-field-gutter / 2});
+        }
+      }
+    }
+
+    &.width_quarter {
+      label,
+      input:not([type='radio']),
+      select,
+      textarea {
+        @include media($small) {
+          width: calc(25% - #{$form-field-gutter / 1.33333});
+        }
+      }
+    }
+  }
+
+  input:not([type='radio']),
+  select,
+  textarea {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 0;
+    font-size: 16px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='cccccc'/></g></svg>");
+    background-position: right 8px top 50%;
+    background-repeat: no-repeat;
+    background-size: 14px;
+  }
+
+  textarea {
+    height: 140px;
+  }
+
+  .radio_buttons {
+    margin-top: 8px;
+  }
+
+  .radio_button {
+    align-items: center;
+    display: flex;
+    margin-bottom: 4px;
+
+    input {
+      display: inline-block;
+      height: 14px;
+      margin-right: 4px;
+    }
+
+    label {
+      display: inline-block;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+}
+
+// ---------------------------------------- | Label
+
+.form_label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+
+  abbr {
+    display: inline-block;
+    margin-left: 2px;
+  }
+}
