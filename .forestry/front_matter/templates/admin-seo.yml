@@ -13,6 +13,13 @@ fields:
   hidden: true
   default: AdminSeo
   label: Model
+- name: title_template
+  type: text
+  config:
+    required: false
+  label: Title Template
+  description: The title template will inject the current page where "%s" while the
+    rest of the content is static.
 - name: defaults
   type: field_group
   config: {}
