@@ -1,26 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
 
-import { getImageUrl } from "../../helpers/normalize-seo"
-
-const transformData = ({ queryData, srcProps }) => {
-  let props = {
-    ...srcProps,
-    titleTemplate: queryData.title_template
-  }
-
-  // Don't need to send the baseUrl.
-  delete props.baseUrl
-
-  // Fill in missing image.
-  if (!props.imageUrl) props.imageUrl = getImageUrl(srcProps.baseUrl, queryData.default_image)
-
-  return props
-}
-
-const SeoTags = ({ description, og, imageUrl, title, titleTemplate, twitter, url }) => (
+const SEO = ({ description, og, imageUrl, title, titleTemplate, twitter, url }) => (
   <Helmet title={title} titleTemplate={titleTemplate || title}>
     {imageUrl && <meta name="image" content={imageUrl} />}
     {description && <meta name="description" content={description} />}
@@ -43,7 +25,7 @@ const SeoTags = ({ description, og, imageUrl, title, titleTemplate, twitter, url
   </Helmet>
 )
 
-SeoTags.propTypes = {
+SEO.propTypes = {
   /**
    * Meta description. Serves as a backup for og:description and
    * twitter:description.
@@ -89,48 +71,9 @@ SeoTags.propTypes = {
   url: PropTypes.string.isRequired
 }
 
-SeoTags.defaultProps = {
+SEO.defaultProps = {
   og: {},
   twitter: {}
 }
 
-const SEO = props => (
-  <StaticQuery
-    query={graphql`
-      {
-        settings: adminSeo {
-          title_template
-          default_image {
-            ...FluidImageAttributes
-          }
-        }
-      }
-    `}
-    render={data => <SeoTags {...transformData({ queryData: data.settings, srcProps: props })} />}
-  />
-)
-
-SEO.propTypes = {
-  baseUrl: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  imageUrl: PropTypes.string,
-  og: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    imageUrl: PropTypes.string
-  }),
-  title: PropTypes.string.isRequired,
-  twitter: PropTypes.shape({
-    card: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    imageUrl: PropTypes.string
-  }),
-  url: PropTypes.string.isRequired
-}
-
-SEO.defaultProps = {}
-
 export default SEO
-
-export { transformData }

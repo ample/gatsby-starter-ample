@@ -1,6 +1,14 @@
 import { graphql } from "gatsby"
 
 export const SEO = graphql`
+  fragment SeoImageAttributes on File {
+    childImageSharp {
+      fixed(width: 1200, height: 628) {
+        src
+      }
+    }
+  }
+
   fragment SEO on SeoMeta {
     title
     description

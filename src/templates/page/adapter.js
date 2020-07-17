@@ -1,25 +1,24 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import lodash from "lodash"
 
-import { normalizeSEO } from "../../helpers"
-
-import SEO from "../../components/seo"
+import SEO from "../../../plugins/gatsby-ample-seo"
 
 import Page from "./"
 
 const PageAdapter = ({ data, location }) => {
   let { page } = data
 
-  const seo = normalizeSEO({
+  const seoData = {
+    ...page.seo,
     location: location,
-    overrides: page.seo,
-    page: { title: page.title }
-  })
+    title: lodash.get(page, "seo.title") || page.title
+  }
 
   return (
     <Page sections={page.sections} title={page.title}>
-      <SEO {...seo} />
+      <SEO {...seoData} />
     </Page>
   )
 }

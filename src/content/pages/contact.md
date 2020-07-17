@@ -11,7 +11,6 @@ sections:
 seo:
   title: ''
   title_template: ''
-  default_image_src: ''
   description: ''
   image_src: ''
   og:
