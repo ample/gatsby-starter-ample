@@ -2,6 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 
 import Header from "./"
+
 import { fixtures } from "./navigation/fixtures"
 
 describe("Header", () => {

@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "dependencies": {
     "@babel/core": "^7.9.0",
-    "@danbruegge/gatsby-plugin-stylelint": "^4.0.0",
     "@mdx-js/mdx": "^1.6.5",
     "@mdx-js/react": "^1.6.5",
     "autoprefixer": "^9.6.1",
@@ -27,7 +26,6 @@
     "gatsby-alias-imports": "^1.0.4",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-catch-links": "^2.1.15",
-    "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-mdx": "^1.2.15",
