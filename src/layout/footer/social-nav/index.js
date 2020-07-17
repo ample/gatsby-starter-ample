@@ -1,15 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Link from "../link"
-import Icon from "../icon"
+import Link from "../../../components/link"
+import SVG from "../../../components/svg"
+
 import styles from "./styles.module.scss"
 
 const SocialNav = ({ links }) => (
   <nav className={styles.social_nav}>
     {links.map((link, index) => (
       <Link to={link.url} key={index}>
-        <Icon name={link.icon} />
+        <SVG name={link.icon} />
       </Link>
     ))}
   </nav>
