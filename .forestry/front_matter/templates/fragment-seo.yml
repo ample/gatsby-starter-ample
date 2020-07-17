@@ -40,7 +40,9 @@ fields:
         section: config
         file: src/content/admin/references.md
         path: og_types
-    label: Card Type
+    label: Type
+    description: The og:type value. Read more <a href="https://ogp.me/" title="" target="_blank">here</a>.
+      These options are editable in in the <em>Config &gt; References</em>.
   - name: title
     type: text
     config:
@@ -81,6 +83,9 @@ fields:
         file: src/content/admin/references.md
         path: twitter_cards
     label: Card Type
+    description: The type of twitter card. Read more <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards"
+      title="" target="_blank">here</a>. These options are editable in in the <em>Config
+      &gt; References</em>.
   - name: title
     type: text
     config:
