@@ -29,6 +29,18 @@ fields:
   type: field_group
   config: {}
   fields:
+  - name: type
+    type: select
+    default: ''
+    config:
+      required: false
+      options: []
+      source:
+        type: documents
+        section: config
+        file: src/content/admin/references.md
+        path: og_types
+    label: Card Type
   - name: title
     type: text
     config:
