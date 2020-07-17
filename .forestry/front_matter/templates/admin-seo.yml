@@ -13,19 +13,15 @@ fields:
   hidden: true
   default: AdminSeo
   label: Model
-- name: title_template
-  type: text
-  config:
-    required: true
-  description: The title template will inject the current page where "%s" while the
-    rest of the content is static.
-  label: Title Template
-- name: default_image_src
-  type: file
-  config:
-    maxSize: 250
-  label: Default Image
-  description: When there is no obvious fallback for a page's meta image, we'll use
-    this one instead.
+- name: defaults
+  type: field_group
+  config: {}
+  fields:
+  - name: seo_fragment
+    type: include
+    config: {}
+    template: fragment-seo
+    label: SEO Fragment
+  label: Defaut Values
 pages:
 - src/content/admin/seo.md
