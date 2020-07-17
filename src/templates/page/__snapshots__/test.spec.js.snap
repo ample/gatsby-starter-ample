@@ -243,7 +243,8 @@ Array [
       className="card theme_1"
     >
       <img
-        className="cl_image"
+        alt="Placeholder Image"
+        className="image"
         src="/uploads/placeholder-image.jpg"
       />
       <div
@@ -263,7 +264,8 @@ Array [
       className="card theme_2"
     >
       <img
-        className="cl_image"
+        alt="Placeholder Image"
+        className="image"
         src="/uploads/placeholder-image.jpg"
       />
       <div
@@ -283,7 +285,8 @@ Array [
       className="card theme_1"
     >
       <img
-        className="cl_image"
+        alt="Placeholder Image"
+        className="image"
         src="/uploads/placeholder-image.jpg"
       />
       <div

@@ -1,4 +1,4 @@
-export const fixtures = {
+export default {
   main_navigation: [
     { url: "#", label: "Reprehenderit" },
     { url: "#", label: "Officia sint" },
