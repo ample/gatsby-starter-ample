@@ -2,7 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 
 import Footer from "./"
-import { footer_test_data } from "./__fixtures__"
+import { footer_test_data } from "./fixtures"
 
 describe("Footer", () => {
   it("renders correctly", () => {

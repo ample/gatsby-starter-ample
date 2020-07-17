@@ -5,8 +5,8 @@ import Footer from "./footer"
 import Header from "./header"
 import { DebugMediaQueries } from "../../plugins/gatsby-ample-debuggers"
 
-import { footer_test_data } from "./footer/__fixtures__"
-import { header_test_data } from "./header/__fixtures__"
+import { footer_test_data } from "./footer/fixtures"
+import { header_test_data } from "./header/fixtures"
 
 import Card from "./../components/card"
 import Grid from "./../components/grid"

@@ -2,7 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 
 import Header from "./"
-import { header_test_data } from "./__fixtures__"
+import { header_test_data } from "./fixtures"
 
 describe("Header", () => {
   it("renders correctly", () => {

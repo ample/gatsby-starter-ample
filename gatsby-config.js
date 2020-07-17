@@ -1,3 +1,4 @@
+const postcssConfig = require("./postcss.config")
 const path = require("path")
 
 module.exports = {
@@ -133,59 +134,15 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-eslint",
-      options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
-        stages: ["develop"],
-        options: {
-          emitWarning: true,
-          failOnError: false
-        }
-      }
-    },
-    {
-      resolve: "@danbruegge/gatsby-plugin-stylelint",
-      options: {
-        files: "**/*.scss",
-        stages: ["develop"],
-        options: {
-          emitError: true,
-          emitWarning: true
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require("sass"),
-        sourceMap: true,
         cssLoaderOptions: {
           localIdentName: "[local]-[hash:base64:3]",
           sourceMap: true
         },
-        postCssPlugins: [
-          require("postcss-normalize"),
-          require("postcss-responsive-type"),
-          require("postcss-pxtorem")({
-            mediaQuery: true,
-            propWhiteList: [],
-            replace: true,
-            rootValue: 16
-          }),
-          require("postcss-preset-env")({
-            features: {
-              "custom-properties": {
-                preserve: true,
-                warnings: true
-              }
-            },
-            stage: 2
-          }),
-          require("autoprefixer")({
-            grid: "autoplace"
-          })
-        ]
+        implementation: require("sass"),
+        postCssPlugins: postcssConfig,
+        sourceMap: true
       }
     },
     {
