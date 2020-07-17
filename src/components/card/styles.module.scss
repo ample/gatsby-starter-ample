@@ -1,0 +1,17 @@
+@use '../../styles/global' as *;
+
+.card {
+  // theme: theme 1
+  // ---------------------------------------------------------
+
+  &.theme_1 {
+    background-color: green;
+  }
+
+  // theme: theme 2
+  // ---------------------------------------------------------
+
+  &.theme_2 {
+    background-color: red;
+  }
+}
