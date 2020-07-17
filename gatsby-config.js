@@ -27,10 +27,11 @@ module.exports = {
      * src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
      */
     `gatsby-ample-pages`,
-    /**
-     * Creates Gatsby and Netlify redirects for records in
-     * src/content/redirects. (See plugins/gatsby-ample-redirects.)
-     */
+    // Creates meta tags for every page
+    // src/templates/page/adapter.js. (See plugins/gatsby-ample-seo.)
+    `gatsby-ample-seo`,
+    // Creates Gatsby and Netlify redirects for records in
+    // src/content/redirects. (See plugins/gatsby-ample-redirects.)
     `gatsby-ample-redirects`,
     /**
      * Creates playgrounds from .mdx files in src/templates and src/components.
