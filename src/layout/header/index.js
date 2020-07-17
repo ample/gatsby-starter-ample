@@ -3,8 +3,9 @@ import PropTypes from "prop-types"
 import classNames from "classnames"
 
 import Link from "./../../components/link"
-import LinkList from "./../../components/link-list"
 import SVG from "../../components/svg"
+
+import Navigation from "./navigation"
 
 import styles from "./styles.module.scss"
 
@@ -40,8 +41,8 @@ const Header = ({ main_navigation, top_navigation }) => {
         </div>
 
         <div className={styles.navigation}>
-          <LinkList className={styles.top_navigation} links={top_navigation} />
-          <LinkList className={styles.main_navigation} links={main_navigation} />
+          <Navigation className={styles.top_navigation} links={top_navigation} />
+          <Navigation className={styles.main_navigation} links={main_navigation} />
         </div>
       </div>
     </header>

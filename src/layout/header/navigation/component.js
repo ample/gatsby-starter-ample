@@ -1,26 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classNames from "classnames/bind"
+import classNames from "classnames"
 
-import Button from "../button"
-import { Dropdown, DropdownMenu, DropdownTrigger } from "../dropdown"
-import Link from "../link"
+import Button from "../../../components/button"
+import { Dropdown, DropdownMenu, DropdownTrigger } from "./dropdown"
+import Link from "../../../components/link"
 
 import styles from "./styles.module.scss"
 
-const LinkList = ({ activeClassName, className, heading, links = [], vertical }) => {
-  const classes = classNames(styles.link_list, className, {
+const Navigation = ({ activeClassName, className, links = [], vertical }) => {
+  const classes = classNames(styles.navigation, className, {
     [styles[`is_vertical`]]: vertical
   })
 
   return (
     <ul className={classes}>
-      {heading && (
-        <li>
-          <strong>{heading}</strong>
-        </li>
-      )}
-
       {links.map((item, index) => {
         if (item.children && item.children.length > 0) {
           return (
@@ -58,7 +52,7 @@ const LinkList = ({ activeClassName, className, heading, links = [], vertical })
   )
 }
 
-LinkList.propTypes = {
+Navigation.propTypes = {
   /**
    * Specifies an active class name, passed on to the <Link /> component
    */
@@ -67,10 +61,6 @@ LinkList.propTypes = {
    * CSS class(es) applied to the wrapping element
    */
   className: PropTypes.string,
-  /**
-   * Heading rendered before the items, typically only used in vertical lists
-   */
-  heading: PropTypes.string,
   /**
    * An array of link objects used to build the list
    */
@@ -95,8 +85,8 @@ LinkList.propTypes = {
   vertical: PropTypes.bool
 }
 
-LinkList.defaultProps = {
+Navigation.defaultProps = {
   vertical: false
 }
 
-export default LinkList
+export default Navigation

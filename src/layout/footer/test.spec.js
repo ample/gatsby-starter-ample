@@ -2,6 +2,8 @@ import React from "react"
 import renderer from "react-test-renderer"
 
 import Footer from "./"
+
+import menu_fixtures from "./link-list/fixtures"
 import { footer_test_data } from "./fixtures"
 
 describe("Footer", () => {
@@ -10,7 +12,7 @@ describe("Footer", () => {
       .create(
         <Footer
           copyright="2020, All Rights Reserved"
-          menus={footer_test_data.menus}
+          menus={menu_fixtures.menus}
           policy_links={footer_test_data.policy_links}
           social_links={footer_test_data.social_links}
         />

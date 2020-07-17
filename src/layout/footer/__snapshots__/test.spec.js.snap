@@ -26,7 +26,7 @@ exports[`Footer renders correctly 1`] = `
       </a>
     </div>
     <ul
-      className="link_list is_vertical"
+      className="link_list"
     >
       <li>
         <strong>
@@ -71,7 +71,7 @@ exports[`Footer renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      className="link_list is_vertical"
+      className="link_list"
     >
       <li>
         <strong>

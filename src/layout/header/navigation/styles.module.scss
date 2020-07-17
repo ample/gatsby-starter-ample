@@ -1,6 +1,6 @@
-@use '../../styles/global' as *;
+@use '../../../styles/global' as *;
 
-.link_list {
+.navigation {
   @include reset-list;
 
   align-items: center;

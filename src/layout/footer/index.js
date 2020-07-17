@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Link from "./../../components/link"
-import LinkList from "./../../components/link-list"
+import LinkList from "./link-list"
 import SocialNav from "./social-nav"
 import SVG from "./../../components/svg"
 
