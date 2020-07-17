@@ -21,7 +21,7 @@ fields:
 - name: image_src
   type: file
   config:
-    maxSize: 250
+    maxSize: 64
   label: Image
   description: The meta image. If left blank, the page will try to find an intelligent
     default.
@@ -46,7 +46,7 @@ fields:
   - name: image_src
     type: file
     config:
-      maxSize: 250
+      maxSize: 64
     label: Image
   label: Open Graph
   description: Open Graph tags are used by Facebook and many other services to add
@@ -86,7 +86,7 @@ fields:
   - name: image_src
     type: file
     config:
-      maxSize: 250
+      maxSize: 64
     label: Image
   label: Twitter
   description: Twitter tags are used by ... well, Twitter. They add preview content
