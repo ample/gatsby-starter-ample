@@ -29,7 +29,7 @@ Grid.propTypes = {
 }
 
 Grid.defaultProps = {
-  layout: "one_half"
+  layout: "1/2"
 }
 
 export default Grid
