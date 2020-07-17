@@ -3,7 +3,7 @@ import renderer from "react-test-renderer"
 
 import Header from "./"
 
-import { fixtures } from "./navigation/fixtures"
+import fixtures from "./navigation/fixtures"
 
 describe("Header", () => {
   it("renders correctly", () => {
