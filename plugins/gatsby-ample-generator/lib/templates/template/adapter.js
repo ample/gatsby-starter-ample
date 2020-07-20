@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import { normalizeSEO } from "../../helpers"
 
-import SEO from "../../components/seo"
+import SEO from "~components/seo"
 
 import Template from "./template"
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import styles from "./styles.module.scss"
 
-import Layout from "../../layout"
+import Layout from "~layout"
 
 import Container from "../../sections/container"
 

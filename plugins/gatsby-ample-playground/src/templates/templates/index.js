@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import lodash from "lodash"
 
-import config from "root/playground.config"
+import config from "~root/playground.config"
 
 const TemplatesPlayground = () => {
   if (Object.entries(config.templates || {}).length === 0) return "Could not find templates"

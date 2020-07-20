@@ -16,9 +16,12 @@ module.exports = {
       resolve: `gatsby-alias-imports`,
       options: {
         aliases: {
-          components: `./src/components`,
-          templates: `./src/templates`,
-          root: `./`
+          "~components": `./src/components`,
+          "~layout": `./src/layout`,
+          "~root": `./`,
+          "~templates": `./src/templates`,
+          "gatsby-ample-debuggers": "./plugins/gatsby-ample-debuggers",
+          "gatsby-ample-seo": "./plugins/gatsby-ample-seo"
         }
       }
     },

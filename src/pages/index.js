@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import Page from "../templates/page/adapter"
+import Page from "~templates/page/adapter"
 
 const HomePageAdapter = ({ data, location }) => <Page data={data} location={location} />
 

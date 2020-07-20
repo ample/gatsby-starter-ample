@@ -1,11 +1,11 @@
-import * as Button from "components/button"
-// import * as Dropdown from "components/dropdown"
-import * as Form from "components/form"
-import * as Image from "components/image"
-import * as Link from "components/link"
-import * as SVG from "components/svg"
+import * as Button from "~components/button"
+// import * as Dropdown from "~components/dropdown"
+import * as Form from "~components/form"
+import * as Image from "~components/image"
+import * as Link from "~components/link"
+import * as SVG from "~components/svg"
 
-import * as Page from "templates/page"
+import * as Page from "~templates/page"
 
 export default {
   title: "Ample Playground",
