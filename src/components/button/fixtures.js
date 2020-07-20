@@ -4,5 +4,9 @@ export default {
   default: {
     children: faker.lorem.words(2),
     to: faker.internet.url()
+  },
+  fixed: {
+    children: "Hello World",
+    to: "/"
   }
 }

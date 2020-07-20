@@ -1,12 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import SocialNav from "."
-import { footer_test_data } from "./../fixtures"
+import { component as SocialNav, fixtures } from "."
 
 describe("SocialNav", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<SocialNav links={footer_test_data.social_links} />).toJSON()
+    const tree = renderer.create(<SocialNav {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

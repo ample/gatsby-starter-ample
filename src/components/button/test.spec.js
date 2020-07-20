@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Button from "./"
+import { component as Button, fixtures } from "."
 
 describe("Button", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Button label="Hello World" url="/" />).toJSON()
+    const tree = renderer.create(<Button {...fixtures.fixed} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
