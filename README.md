@@ -14,9 +14,22 @@ Then navigate to the project:
 
 That will start a development server at [http://localhost:8000](http://localhost:8000).
 
-## Documentation
+## Alias Imports
 
-TBD ...
+This project support alias imports through [the gatsby-alias-imports plugin](https://www.gatsbyjs.org/packages/gatsby-alias-imports/). This provides a means for being able to import components without needing to know exactly where you are in the tree. It can make moving items around a little less painful.
+
+The convention is as follows:
+
+- Aliases to project-specific files should be prepended with a `~` character.
+- Aliases to plugins can treat them as though they are packages.
+
+Unfortunately, for seamless integration across the board, we have to configure aliases for every place in which we're going to use them, which means _at least_ Gatsby, VS Code, and Jest. Therefore, they are replicated (with the appropriate syntax) in:
+
+- `gatsby-config.js`
+- `jest.config.js`
+- `jsconfig.json`
+
+If you wish to add an alias to your project, make sure to touch all appropriate config files.
 
 ## Linters
 
@@ -31,4 +44,4 @@ Run `yarn run lint` to ensure there are no linter errors or warnings before comm
 
 ## License
 
-This project is distributed under the [MIT License](LICENSE.md).
+gatsby-starter-ample is distributed under the [MIT License](LICENSE.md).
