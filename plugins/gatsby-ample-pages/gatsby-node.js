@@ -4,7 +4,7 @@ const getPagePath = require("./lib/get-page-path")
 exports.createPages = ({ graphql, actions }) => {
   return graphql(`
     {
-      pages: allPage(filter: { slugPath: { ne: "index" } }) {
+      pages: allPage {
         edges {
           node {
             id
@@ -20,7 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
     pages.map(page => {
       actions.createPage({
         path: getPagePath(page, pages),
-        component: path.resolve("./src/templates/page/adapter.js"),
+        component: path.join(__dirname, "./src/templates/page/adapter.js"),
         context: {
           id: page.id
         }

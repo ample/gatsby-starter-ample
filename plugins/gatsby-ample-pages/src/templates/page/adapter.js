@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import { normalizeSEO, SEO } from "@plugins/gatsby-ample-seo"
 
-import Page from "./"
+// import Page from "./"
 
 const PageAdapter = ({ data, location }) => {
   let { page } = data
@@ -15,11 +15,16 @@ const PageAdapter = ({ data, location }) => {
     page: { title: page.title }
   })
 
-  return (
-    <Page sections={page.sections} title={page.title}>
-      <SEO {...seo} />
-    </Page>
-  )
+  console.log(page)
+  console.log(seo)
+
+  return <p>Hello World</p>
+
+  // return (
+  //   <Page sections={page.sections} title={page.title}>
+  //     <SEO {...seo} />
+  //   </Page>
+  // )
 }
 
 PageAdapter.propTypes = {
@@ -27,7 +32,14 @@ PageAdapter.propTypes = {
    * Data coming from markdown files.
    */
   data: PropTypes.shape({
-    page: PropTypes.object
+    page: PropTypes.object.isRequired
+  }).isRequired,
+  /**
+   * Location object, sent from gatsby-node.js
+   */
+  location: PropTypes.shape({
+    href: PropTypes.string.isRequired,
+    origin: PropTypes.string.isRequired
   }).isRequired
 }
 
