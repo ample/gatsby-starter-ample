@@ -25,9 +25,9 @@ fields:
     - flexible
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Layout
   description: The layout affects how the page appears on the website, along with
     the fields visible here.
@@ -72,12 +72,12 @@ fields:
       template: section-container
       label: Container
     config:
-      min:
-      max:
+      min: 
+      max: 
       labelField: title
     label: Sections
-    description: Sections are configurable groups of components that make up each page.
-      You can add as many sections and rearrange as needed.
+    description: Sections are configurable groups of components that make up each
+      page. You can add as many sections and rearrange as needed.
 - name: seo
   type: field_group
   config: {}
