@@ -25,9 +25,9 @@ fields:
     - flexible
     source:
       type: simple
-      section: 
-      file: 
-      path: 
+      section:
+      file:
+      path:
   label: Layout
   description: The layout affects how the page appears on the website, along with
     the fields visible here.
@@ -41,7 +41,7 @@ fields:
       required: false
     label: Heading
     description: The main heading on the page.
-  - name: body
+  - name: body_md
     type: textarea
     default: ''
     config:
@@ -72,8 +72,8 @@ fields:
       template: section-container
       label: Container
     config:
-      min: 
-      max: 
+      min:
+      max:
       labelField: title
     label: Sections
     description: Sections are configurable groups of components that make up each

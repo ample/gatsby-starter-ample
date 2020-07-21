@@ -1,6 +1,7 @@
-import fixtures from "./fixtures"
-import template from "./template"
+import BasicPage from "./basic"
+import FlexiblePage from "./flexible"
 
-export default template
-
-export { template, fixtures }
+export const layoutMap = {
+  basic: BasicPage,
+  flexible: FlexiblePage
+}

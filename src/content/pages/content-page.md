@@ -17,7 +17,7 @@ seo:
 layout: basic
 layout_basic:
   heading: Basic Page
-  body: |-
+  body_md: |-
     # Heading 1
 
     Aliqua Lorem ullamco in incididunt labore irure.

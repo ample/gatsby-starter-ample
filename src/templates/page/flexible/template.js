@@ -5,9 +5,9 @@ import styles from "./styles.module.scss"
 
 import Layout from "@src/layout"
 
-import Container from "../../sections/container"
+import Container from "@src/sections/container"
 
-const PageTemplate = ({ children, sections, title }) => (
+const FlexiblePage = ({ children, sections, title }) => (
   <Layout>
     {children}
     <div className={styles.page}>
@@ -19,7 +19,7 @@ const PageTemplate = ({ children, sections, title }) => (
   </Layout>
 )
 
-PageTemplate.propTypes = {
+FlexiblePage.propTypes = {
   /**
    * Components to inject before the page content.
    */
@@ -34,8 +34,8 @@ PageTemplate.propTypes = {
   title: PropTypes.string
 }
 
-PageTemplate.defaultProps = {
+FlexiblePage.defaultProps = {
   sections: []
 }
 
-export default PageTemplate
+export default FlexiblePage

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import { normalizeSEO, SEO } from "@plugins/gatsby-ample-seo"
 
-// import Page from "./"
+import { layoutMap } from "@src/templates/page"
 
 const PageAdapter = ({ data, location }) => {
   let { page } = data
@@ -15,16 +15,20 @@ const PageAdapter = ({ data, location }) => {
     page: { title: page.title }
   })
 
-  console.log(page)
-  console.log(seo)
+  const pageData = {
+    ...page,
+    ...page[`layout_${page.layout}`]
+  }
 
-  return <p>Hello World</p>
+  const TemplateTagName = layoutMap[page.layout]
 
-  // return (
-  //   <Page sections={page.sections} title={page.title}>
-  //     <SEO {...seo} />
-  //   </Page>
-  // )
+  if (!TemplateTagName) return <p>Could not find mapping for {page.layout} layout.</p>
+
+  return (
+    <TemplateTagName {...pageData}>
+      <SEO {...seo} />
+    </TemplateTagName>
+  )
 }
 
 PageAdapter.propTypes = {

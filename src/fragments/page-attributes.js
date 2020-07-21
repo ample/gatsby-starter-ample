@@ -4,32 +4,45 @@ export const PageAttributes = graphql`
   fragment PageAttributes on Page {
     id
     title
+    layout
     seo {
       ...SEO
     }
-    sections {
-      title
-      config {
-        text_align
-      }
-      components {
-        template
 
-        # Button
-        label
-        url
+    # --- Basic ---
 
-        # Content
-        body
+    layout_basic {
+      heading
+      body
+    }
 
-        # Form
-        form {
-          ...FormAttributes
+    # --- Flexible ---
+
+    layout_flexible {
+      sections {
+        title
+        config {
+          text_align
         }
+        components {
+          template
 
-        # Image
-        src: image {
-          ...FluidImageAttributes
+          # Button
+          label
+          url
+
+          # Content
+          body
+
+          # Form
+          form {
+            ...FormAttributes
+          }
+
+          # Image
+          src: image {
+            ...FluidImageAttributes
+          }
         }
       }
     }
