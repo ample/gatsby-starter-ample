@@ -1,13 +1,15 @@
 ---
 title: Contact
 model: Page
-sections:
-- title: Form
-  components:
-  - template: component-form
-    form: src/content/forms/contact-form.md
-  config:
-    text_align: ''
+layout: flexible
+layout_flexible:
+  sections:
+  - title: Form
+    components:
+    - template: component-form
+      form: src/content/forms/contact-form.md
+    config:
+      text_align: ''
 seo:
   title: ''
   title_template: ''
