@@ -7,7 +7,7 @@ import fixtures from "./fixtures"
 
 describe("LinkList", () => {
   it("renders link list correctly", () => {
-    const tree = renderer.create(<LinkList menus={fixtures.vertical} />).toJSON()
+    const tree = renderer.create(<LinkList {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

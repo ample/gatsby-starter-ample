@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Link from "../link"
-import Button from "../button"
-import Image from "../image"
+import Link from "@src/components/link"
+import Button from "@src/components/button"
+import Image from "@src/components/image"
 
 import styles from "./styles.module.scss"
 
@@ -17,7 +17,7 @@ const Card = ({ body, button, image, theme, url }) => {
     <div className={classes}>
       {image && <Image src={image} />}
       {body && <div dangerouslySetInnerHTML={{ __html: body }} />}
-      {button && <Button label={button.label} url={button.url} />}
+      {button && <Button to={button.url}>{button.label}</Button>}
     </div>
   )
 

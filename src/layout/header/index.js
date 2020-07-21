@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Link from "./../../components/link"
-import SVG from "../../components/svg"
+import Link from "@src/components/link"
+import SVG from "@src/components/svg"
 
 import Navigation from "./navigation"
 

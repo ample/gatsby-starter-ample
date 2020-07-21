@@ -233,7 +233,9 @@ Array [
     <div
       className="page"
     >
-      <h1 />
+      <h1>
+        Default Page
+      </h1>
     </div>
   </main>,
   <div
@@ -256,9 +258,12 @@ Array [
       />
       <a
         className="button"
+        href="#"
         rel="noopener"
         target="_blank"
-      />
+      >
+        Learn more
+      </a>
     </div>
     <div
       className="card theme_2"
@@ -277,9 +282,12 @@ Array [
       />
       <a
         className="button"
+        href="#"
         rel="noopener"
         target="_blank"
-      />
+      >
+        Learn more
+      </a>
     </div>
     <div
       className="card theme_1"
@@ -298,9 +306,12 @@ Array [
       />
       <a
         className="button"
+        href="#"
         rel="noopener"
         target="_blank"
-      />
+      >
+        Learn more
+      </a>
     </div>
   </div>,
   <footer
