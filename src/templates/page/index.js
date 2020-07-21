@@ -1,7 +1,9 @@
-import BasicPage from "./basic"
-import FlexiblePage from "./flexible"
+import * as basic from "./basic"
+import * as flexible from "./flexible"
 
-export const layoutMap = {
-  basic: BasicPage,
-  flexible: FlexiblePage
+export const layouts = {
+  basic: basic,
+  flexible: flexible
 }
+
+export default layouts

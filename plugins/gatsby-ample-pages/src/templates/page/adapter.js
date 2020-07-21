@@ -1,10 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import lodash from "lodash"
 
 import { normalizeSEO, SEO } from "@plugins/gatsby-ample-seo"
 
-import { layoutMap } from "@src/templates/page"
+import { layouts as pageLayouts } from "@src/templates/page"
 
 const PageAdapter = ({ data, location }) => {
   let { page } = data
@@ -20,7 +21,7 @@ const PageAdapter = ({ data, location }) => {
     ...page[`layout_${page.layout}`]
   }
 
-  const TemplateTagName = layoutMap[page.layout]
+  const TemplateTagName = lodash.get(pageLayouts, `${page.layout}.template`)
 
   if (!TemplateTagName) return <p>Could not find mapping for {page.layout} layout.</p>
 

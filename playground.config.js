@@ -5,7 +5,7 @@ import * as Image from "@src/components/image"
 import * as Link from "@src/components/link"
 import * as SVG from "@src/components/svg"
 
-import * as Page from "@src/templates/page"
+import { layouts as pageLayouts } from "@src/templates/page"
 
 export default {
   title: "Ample Playground",
@@ -18,7 +18,8 @@ export default {
     svg: SVG
   },
   templates: {
-    page: Page
+    basic_page: pageLayouts.basic,
+    flexible_page: pageLayouts.flexible
   },
   themes: {
     default: "#FFFFFF",

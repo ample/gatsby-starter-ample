@@ -1,12 +1,17 @@
 export default {
-  // default: {
-  //   children: null,
-  //   sections: [],
-  //   title: "Default Page"
-  // },
-  // another_one: {
-  //   children: null,
-  //   sections: [],
-  //   title: "Another Page"
-  // }
+  default: {
+    children: null,
+    sections: [
+      {
+        title: "Main Content",
+        components: [
+          {
+            template: "component-content",
+            body: "<p>Hello World</p>"
+          }
+        ]
+      }
+    ],
+    title: "Default Page"
+  }
 }
