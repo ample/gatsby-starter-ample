@@ -15,6 +15,53 @@ fields:
   hidden: true
   default: Page
   label: Model
+- name: layout
+  type: select
+  default: basic
+  config:
+    required: true
+    options:
+    - basic
+    - flexible
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Layout
+  description: The layout affects how the page appears on the website, along with
+    the fields visible here.
+- name: layout_basic
+  type: field_group
+  config: {}
+  fields:
+  - name: heading
+    type: text
+    config:
+      required: false
+    label: Heading
+    description: The main heading on the page.
+  - name: body
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Body
+    description: The main content area.
+  label: Basic Page Content
+  showOnly:
+    field: layout
+    value: basic
+- name: layout_flexible
+  type: field_group
+  config: {}
+  label: Flexible Page Content
+  showOnly:
+    field: layout
+    value: flexible
 - name: sections
   type: field_group_list
   fields:
