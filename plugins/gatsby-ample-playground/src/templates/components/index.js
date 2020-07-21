@@ -4,7 +4,7 @@ import lodash from "lodash"
 
 import Variations from "../../components/variations"
 
-import config from "~root/playground.config"
+import config from "@root/playground.config"
 
 import styles from "./styles.module.scss"
 

@@ -18,10 +18,11 @@ That will start a development server at [http://localhost:8000](http://localhost
 
 This project support alias imports through [the gatsby-alias-imports plugin](https://www.gatsbyjs.org/packages/gatsby-alias-imports/). This provides a means for being able to import components without needing to know exactly where you are in the tree. It can make moving items around a little less painful.
 
-The convention is as follows:
+The convention is to treat directories in our project like [NPM scopes](https://docs.npmjs.com/about-scopes). The scope is prepended with a `@` character. There are three prefixes supported out of the box:
 
-- Aliases to project-specific files should be prepended with a `~` character.
-- Aliases to plugins can treat them as though they are packages.
+- `@plugins` maps to `./plugins`
+- `@root` maps to `./`
+- `@src` maps to `./src`
 
 Unfortunately, for seamless integration across the board, we have to configure aliases for every place in which we're going to use them, which means _at least_ Gatsby, VS Code, and Jest. Therefore, they are replicated (with the appropriate syntax) in:
 
@@ -29,7 +30,7 @@ Unfortunately, for seamless integration across the board, we have to configure a
 - `jest.config.js`
 - `jsconfig.json`
 
-If you wish to add an alias to your project, make sure to touch all appropriate config files.
+If you wish to add a custom alias to your project, make sure to touch all appropriate config files.
 
 ## Linters
 

@@ -25,10 +25,10 @@ The playground configuration file lives at the root of the project at `playgroun
 A single default export is all that is expected from this file. Here is an example, with the keys explained below:
 
 ```js
-import * as Button from "~components/button"
-import * as Card from "~components/card"
+import * as Button from "@src/components/button"
+import * as Card from "@src/components/card"
 
-import * as Page from "~templates/page"
+import * as Page from "@src/templates/page"
 
 export default {
   title: "Ample Playground",

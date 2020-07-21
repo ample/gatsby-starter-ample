@@ -4,10 +4,10 @@ import classNames from "classnames/bind"
 
 import styles from "./styles.module.scss"
 
-import Button from "~components/button"
-import Content from "~components/content"
-import Form from "~components/form"
-import Image from "~components/image"
+import Button from "@src/components/button"
+import Content from "@src/components/content"
+import Form from "@src/components/form"
+import Image from "@src/components/image"
 
 const componentMap = {
   "component-button": Button,

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Layout from "~layout"
+import Layout from "@src/layout"
 
 import styles from "./styles.module.scss"
 

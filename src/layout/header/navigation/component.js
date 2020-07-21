@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Button from "~components/button"
+import Button from "@src/components/button"
 import { Dropdown, DropdownMenu, DropdownTrigger } from "./dropdown"
-import Link from "~components/link"
+import Link from "@src/components/link"
 
 import styles from "./styles.module.scss"
 

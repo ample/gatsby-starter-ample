@@ -3,7 +3,7 @@ import renderer from "react-test-renderer"
 
 import SVG from "."
 
-import MediaQueryDebugger from "gatsby-ample-seo/src/components/seo"
+import MediaQueryDebugger from "@plugins/gatsby-ample-seo/src/components/seo"
 
 describe("SVG", () => {
   it("renders correctly", () => {

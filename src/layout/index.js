@@ -3,13 +3,13 @@ import PropTypes from "prop-types"
 
 import Footer from "./footer"
 import Header from "./header"
-import { DebugMediaQueries } from "gatsby-ample-debuggers"
+import { DebugMediaQueries } from "@plugins/gatsby-ample-debuggers"
 
 import footer_test_data from "./footer/fixtures"
 import header_fixture from "./header/navigation/fixtures"
 
-import Card from "~components/card"
-import Grid from "~components/grid"
+import Card from "@src/components/card"
+import Grid from "@src/components/grid"
 
 const Layout = ({ children }) => (
   <>

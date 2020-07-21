@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Link from "~components/link"
-import Button from "~components/button"
-import Image from "~components/image"
+import Link from "@src/components/link"
+import Button from "@src/components/button"
+import Image from "@src/components/image"
 
 import styles from "./styles.module.scss"
 
