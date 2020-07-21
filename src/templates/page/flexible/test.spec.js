@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import { template as PageTemplate, fixtures } from "."
+import { template as FlexiblePage, fixtures } from "."
 
-describe("PageTemplate", () => {
+describe("FlexiblePage", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<PageTemplate {...fixtures.default} />).toJSON()
+    const tree = renderer.create(<FlexiblePage {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

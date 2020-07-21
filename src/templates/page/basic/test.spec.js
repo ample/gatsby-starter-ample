@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import { template as PageTemplate, fixtures } from "."
+import { template as BasicPage, fixtures } from "."
 
-describe("PageTemplate", () => {
+describe("BasicPage", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<PageTemplate {...fixtures.default} />).toJSON()
+    const tree = renderer.create(<BasicPage {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
