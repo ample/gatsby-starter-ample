@@ -101,7 +101,7 @@ layout_basic:
 
     ###### Heading 6
 
-    Culpa aliquip sint nostrud ex commodo eiusmod magna ullamco adipisicing. Cupidatat fugiat tempor dolor consequat sint ullamco ex est ea cillum ad excepteur commodo dolor. Commodo voluptate dolore Lorem deserunt in sunt dolor non occaecat quis minim laboris. Eu adipisicing quis deserunt cupidatat veniam tempor sint laboris. Labore enim officia velit nisi velit Lorem magna magna. Id amet pariatur culpa commodo dolore elit sunt elit. Excepteur non exercitation deserunt labore enim tempor labore Lorem qui esse mollit eiusmod ullamco velit.
+    Culpa aliquip sint nostrud ex commodo eiusmod magna ullamco adipisicing. Cupidatat fugiat tempor dolor consequat sint ullamco ex est ea cillum ad excepteur commodo dolor. [Commodo voluptate dolore](https://www.helloample.com/) Lorem deserunt in sunt dolor non occaecat quis minim laboris. _Eu adipisicing quis deserunt_ cupidatat veniam tempor sint laboris. Labore enim officia velit nisi velit Lorem magna magna. Id amet **pariatur culpa commodo** dolore elit sunt elit. Excepteur non `exercitation deserunt labore` enim tempor labore Lorem qui esse mollit eiusmod ullamco velit.
 
     Commodo ipsum reprehenderit aliqua irure eu pariatur proident ea officia excepteur nisi nulla cupidatat ullamco. Ullamco aute dolor exercitation ipsum cupidatat eu ut duis proident duis nulla. Dolore reprehenderit nostrud ut consequat. Deserunt excepteur incididunt officia sint laborum. Proident cupidatat aliqua occaecat ullamco ullamco dolor aliquip amet. Amet eu eu sunt duis.
 
