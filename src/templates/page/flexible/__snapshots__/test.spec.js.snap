@@ -239,12 +239,6 @@ Array [
       <div
         className="container"
       >
-        <p>
-          CONTAINER: 
-          <strong>
-            Main Content
-          </strong>
-        </p>
         <div
           className="content"
           dangerouslySetInnerHTML={
