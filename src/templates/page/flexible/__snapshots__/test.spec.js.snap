@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageTemplate renders correctly 1`] = `
+exports[`FlexiblePage renders correctly 1`] = `
 Array [
   <header
     className="header"
@@ -236,6 +236,18 @@ Array [
       <h1>
         Default Page
       </h1>
+      <div
+        className="container"
+      >
+        <div
+          className="content"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Hello World</p>",
+            }
+          }
+        />
+      </div>
     </div>
   </main>,
   <div

@@ -1,5 +1,5 @@
 export default {
-  form_example: {
+  default: {
     title: "Contact Form",
     model: "Form",
     button_label: "Submit",

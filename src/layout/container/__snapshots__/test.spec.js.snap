@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form renders correctly 1`] = `
+exports[`Component renders properly with valid props 1`] = `
+<a
+  className="button"
+  href="/"
+>
+  Hello World
+</a>
+`;
+
+exports[`Component transforms data (using form as an example) 1`] = `
 <form
   action="post"
   className="form"
@@ -491,4 +500,23 @@ exports[`Form renders correctly 1`] = `
     value="Submit"
   />
 </form>
+`;
+
+exports[`Container does not cause errors without props 1`] = `
+<div
+  className="container"
+/>
+`;
+
+exports[`Container renders with one component 1`] = `
+<div
+  className="container"
+>
+  <a
+    className="button"
+    href="/"
+  >
+    Hello World
+  </a>
+</div>
 `;

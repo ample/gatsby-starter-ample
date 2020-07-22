@@ -1,6 +1,9 @@
-import fixtures from "./fixtures"
-import template from "./template"
+import * as basic from "./basic"
+import * as flexible from "./flexible"
 
-export default template
+export const layouts = {
+  basic: basic,
+  flexible: flexible
+}
 
-export { template, fixtures }
+export default layouts

@@ -15,21 +15,69 @@ fields:
   hidden: true
   default: Page
   label: Model
-- name: sections
-  type: field_group_list
-  fields:
-  - name: container
-    type: include
-    config: {}
-    template: section-container
-    label: Container
+- name: layout
+  type: select
+  default: basic
   config:
-    min: 
-    max: 
-    labelField: title
-  label: Sections
-  description: Sections are configurable groups of components that make up each page.
-    You can add as many sections and rearrange as needed.
+    required: true
+    options:
+    - basic
+    - flexible
+    source:
+      type: simple
+      section:
+      file:
+      path:
+  label: Layout
+  description: The layout affects how the page appears on the website, along with
+    the fields visible here.
+- name: layout_basic
+  type: field_group
+  config: {}
+  fields:
+  - name: heading
+    type: text
+    config:
+      required: false
+    label: Heading
+    description: The main heading on the page.
+  - name: body_md
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Body
+    description: The main content area.
+  label: Basic Page Content
+  showOnly:
+    field: layout
+    value: basic
+- name: layout_flexible
+  type: field_group
+  config: {}
+  label: Flexible Page Content
+  showOnly:
+    field: layout
+    value: flexible
+  fields:
+  - name: containers
+    type: field_group_list
+    fields:
+    - name: container
+      type: include
+      config: {}
+      template: section-container
+      label: Container
+    config:
+      min:
+      max:
+      labelField: title
+    label: Containers
+    description: Containers are configurable groups of components that make up each
+      page. You can add as many containers and rearrange as needed.
 - name: seo
   type: field_group
   config: {}
