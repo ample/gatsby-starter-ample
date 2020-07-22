@@ -63,7 +63,7 @@ fields:
     field: layout
     value: flexible
   fields:
-  - name: sections
+  - name: containers
     type: field_group_list
     fields:
     - name: container
@@ -75,9 +75,9 @@ fields:
       min:
       max:
       labelField: title
-    label: Sections
-    description: Sections are configurable groups of components that make up each
-      page. You can add as many sections and rearrange as needed.
+    label: Containers
+    description: Containers are configurable groups of components that make up each
+      page. You can add as many containers and rearrange as needed.
 - name: seo
   type: field_group
   config: {}

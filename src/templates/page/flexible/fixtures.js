@@ -1,7 +1,7 @@
 export default {
   default: {
     children: null,
-    sections: [
+    containers: [
       {
         title: "Main Content",
         components: [

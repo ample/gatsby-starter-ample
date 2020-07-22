@@ -5,14 +5,14 @@ import styles from "./styles.module.scss"
 
 import Layout from "@src/layout"
 
-import Container from "@src/sections/container"
+import Container from "@src/layout/container"
 
-const FlexiblePage = ({ children, sections, title }) => (
+const FlexiblePage = ({ children, containers, title }) => (
   <Layout>
     {children}
     <div className={styles.page}>
       <h1>{title}</h1>
-      {sections.map((section, idx) => (
+      {containers.map((section, idx) => (
         <Container key={idx} {...section} />
       ))}
     </div>
@@ -27,7 +27,7 @@ FlexiblePage.propTypes = {
   /**
    * An array of containers that get mapped to the <Container /> component.
    */
-  sections: PropTypes.arrayOf(PropTypes.object),
+  containers: PropTypes.arrayOf(PropTypes.object),
   /**
    * Title of the page, displayed as the page's <h1> value.
    */
@@ -35,7 +35,7 @@ FlexiblePage.propTypes = {
 }
 
 FlexiblePage.defaultProps = {
-  sections: []
+  containers: []
 }
 
 export default FlexiblePage

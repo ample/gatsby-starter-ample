@@ -70,6 +70,6 @@ layout_basic:
 
     ![](/uploads/placeholder-image.jpg)
 layout_flexible:
-  sections: []
+  containers: []
 
 ---

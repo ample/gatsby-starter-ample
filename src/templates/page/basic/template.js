@@ -30,8 +30,6 @@ BasicPage.propTypes = {
   heading: PropTypes.string
 }
 
-BasicPage.defaultProps = {
-  sections: []
-}
+BasicPage.defaultProps = {}
 
 export default BasicPage

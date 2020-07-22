@@ -19,7 +19,7 @@ export const PageAttributes = graphql`
     # --- Flexible ---
 
     layout_flexible {
-      sections {
+      containers {
         title
         config {
           text_align

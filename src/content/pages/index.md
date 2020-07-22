@@ -3,7 +3,7 @@ title: Home Page
 model: Page
 layout: flexible
 layout_flexible:
-  sections:
+  containers:
   - title: Main Content
     config:
       text_align: center

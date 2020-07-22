@@ -3,7 +3,7 @@ title: Contact
 model: Page
 layout: flexible
 layout_flexible:
-  sections:
+  containers:
   - title: Form
     components:
     - template: component-form
