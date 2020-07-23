@@ -93,4 +93,5 @@ fields:
 pages:
 - src/content/pages/contact.md
 - src/content/pages/content-page.md
+- src/content/pages/flexible-page-columns.md
 - src/content/pages/index.md
