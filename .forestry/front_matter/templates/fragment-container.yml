@@ -9,6 +9,19 @@ fields:
   label: Title
   description: This value is only for organization within the CMS and will not show
     up on the website.
+- name: columns
+  type: field_group_list
+  fields:
+  - name: column
+    type: include
+    config: {}
+    template: fragment-column
+    label: Column
+  config:
+    min: 1
+    max: 
+    labelField: title
+  label: Columns
 - name: config
   type: field_group
   config: {}
@@ -26,23 +39,10 @@ fields:
       - '120'
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: Bottom Spacing
     description: The number of pixels the next container should be pushed down.
   description: Display options for the container.
   label: Container Config
-- name: columns
-  type: field_group_list
-  fields:
-  - name: column
-    type: include
-    config: {}
-    template: fragment-column
-    label: Column
-  config:
-    min: 1
-    max:
-    labelField: title
-  label: Columns
