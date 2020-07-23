@@ -24,6 +24,8 @@ type Page implements Node @infer {
   title: String
   image: File @fileByRelativePath
   components: [Component]
+  components_exp: [Component]
+  component_map: Component
 }`
     expect(result.includes(expCompResult)).toEqual(true)
   })

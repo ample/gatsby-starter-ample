@@ -505,18 +505,19 @@ exports[`Component transforms data (using form as an example) 1`] = `
 exports[`Container does not cause errors without props 1`] = `
 <div
   className="container"
-/>
+>
+  <div
+    className="content"
+  />
+</div>
 `;
 
 exports[`Container renders with one component 1`] = `
 <div
   className="container"
 >
-  <a
-    className="button"
-    href="/"
-  >
-    Hello World
-  </a>
+  <div
+    className="content"
+  />
 </div>
 `;
