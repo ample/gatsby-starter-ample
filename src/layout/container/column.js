@@ -9,6 +9,7 @@ import Component from "./component"
 const Column = ({ className, components, config }) => {
   const wrapperClasses = classNames(styles.column, {
     [className]: className,
+    [`mb-${config.margin_bottom}`]: config.margin_bottom,
     [`text-${config.text_align}`]: config.text_align,
     [styles[`col_width_${config.width}`]]: config.width
   })
@@ -35,6 +36,7 @@ Column.propTypes = {
    * An object that controls the styling of the container on screen.
    */
   config: PropTypes.shape({
+    margin_bottom: PropTypes.string,
     text_align: PropTypes.oneOf(["left", "center", "right", ""]),
     width: PropTypes.oneOf(["full", "1/4", "1/3", "1/2", "2/3", "3/4", ""])
   })

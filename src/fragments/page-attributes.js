@@ -27,6 +27,7 @@ export const PageAttributes = graphql`
         columns {
           title
           config {
+            margin_bottom
             text_align
             width
           }

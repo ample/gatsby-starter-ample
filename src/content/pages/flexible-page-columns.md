@@ -184,6 +184,7 @@ layout_flexible:
 
           This represents a column that is full-width, sitting on top of a column that is 2/3 width with a 1/3 sidebar.
       config:
+        margin_bottom: "20"
         width: full
         text_align: ''
     - title: Main

@@ -62,5 +62,25 @@ fields:
     label: Text Align
     description: The default alignment of text within the components in this column.
       If not set, it defaults to left. Some components can override this setting.
+  - name: margin_bottom
+    type: select
+    default: '0'
+    config:
+      required: false
+      options:
+      - '0'
+      - '40'
+      - '60'
+      - '80'
+      - '120'
+      source:
+        type: simple
+        section:
+        file:
+        path:
+    label: Bottom Spacing
+    description: The number of pixels the next piece of content should be pushed down. Note that
+      there are controls for spacing elsewhere, including on the container. It is recommended you
+      only use this field if you are adjusting spacing _within_ a container.
   description: Display options for the column.
   label: Column Config
