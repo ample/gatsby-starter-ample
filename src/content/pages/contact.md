@@ -4,7 +4,7 @@ model: Page
 layout: flexible
 layout_flexible:
   containers:
-  - title: Form
+  - title: Form Container
     config:
       margin_bottom: '40'
     columns:
