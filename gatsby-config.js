@@ -23,6 +23,11 @@ module.exports = {
       }
     },
     /**
+     * Uses schema.yml at the root of the project to explicitly declare GraphQL
+     * schema. (See plugins/gatsby-ample-schema.)
+     */
+    `gatsby-ample-schema`,
+    /**
      * Looks in src/content and passes every page (except index.md) to
      * src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
      */

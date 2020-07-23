@@ -9,6 +9,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type SeoMetaOg @infer {
       description: String
+      image_src: String
       image: File @fileByRelativePath
       title: String
     }
@@ -16,12 +17,14 @@ exports.createSchemaCustomization = ({ actions }) => {
     type SeoMetaTwitter @infer {
       card: String
       description: String
+      image_src: String
       image: File @fileByRelativePath
       title: String
     }
 
     type SeoMeta implements Node @infer {
       description: String
+      image_src: String
       image: File @fileByRelativePath
       og: SeoMetaOg
       title: String
