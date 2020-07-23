@@ -38,18 +38,8 @@ fields:
   config: {}
   label: Columns
   fields:
-  - name: columns
-    type: field_group_list
-    fields:
-    - name: column
-      type: include
-      config: {}
-      template: fragment-column
-      label: Column
-    config:
-      min: 
-      max: 
-      labelField: title
-    label: Columns
-    description: Containers are organized by columns. And inside the columns you can
-      add components.
+  - name: column
+    type: include
+    config: {}
+    template: fragment-column
+    label: Column
