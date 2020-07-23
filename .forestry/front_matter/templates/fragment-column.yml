@@ -9,6 +9,18 @@ fields:
   label: Title
   description: This value is only for organization within the CMS and will not show
     up on the website.
+- name: components
+  type: blocks
+  label: Components
+  template_types:
+  - component-button
+  - component-content
+  - component-form
+  - component-image
+  config:
+    min: 
+    max: 
+  description: 'Components that appear inside this container. '
 - name: config
   type: field_group
   config: {}
@@ -27,11 +39,12 @@ fields:
       - full
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: Column Width
-    description: The width determines how much of the entire horizontal width of the container the column fills.
+    description: The width determines how much of the entire horizontal width of the
+      container the column fills.
   - name: text_align
     type: select
     default: ''
@@ -43,23 +56,11 @@ fields:
       - right
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: Text Align
-    description: The default alignment of text within the components in this column. If not set, it
-      defaults to left. Some components can override this setting.
+    description: The default alignment of text within the components in this column.
+      If not set, it defaults to left. Some components can override this setting.
   description: Display options for the container.
   label: Config
-- name: components
-  type: blocks
-  label: Components
-  template_types:
-  - component-button
-  - component-content
-  - component-form
-  - component-image
-  config:
-    min:
-    max:
-  description: 'Components that appear inside this container. '
