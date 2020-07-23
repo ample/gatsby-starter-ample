@@ -6,9 +6,9 @@ layout_flexible:
   containers:
   - title: Form
     config:
-      margin_bottom: "40"
+      margin_bottom: '40'
     columns:
-    - title: Main
+    - title: Main Column
       components:
       - template: component-form
         form: src/content/forms/contact-form.md
@@ -30,5 +30,8 @@ seo:
     title: ''
     description: ''
     image_src: ''
+layout_basic:
+  heading: ''
+  body_md: ''
 
 ---
