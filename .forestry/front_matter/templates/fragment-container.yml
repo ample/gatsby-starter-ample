@@ -34,12 +34,15 @@ fields:
   description: Display options for the container.
   label: Config
 - name: columns
-  type: field_group
-  config: {}
-  label: Columns
+  type: field_group_list
   fields:
   - name: column
     type: include
     config: {}
     template: fragment-column
     label: Column
+  config:
+    min: 1
+    max: 
+    labelField: 
+  label: Columns
