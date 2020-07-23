@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://www.site-url.com`
   },
   mapping: {
-    "Page.layout_flexible.containers.components.form": "Form.filePath"
+    "Page.layout_flexible.containers.columns.components.form": "Form.filePath"
   },
   plugins: [
     {

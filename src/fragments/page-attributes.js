@@ -22,26 +22,33 @@ export const PageAttributes = graphql`
       containers {
         title
         config {
-          text_align
+          margin_bottom
         }
-        components {
-          template
-
-          # Button
-          label
-          url
-
-          # Content
-          body
-
-          # Form
-          form {
-            ...FormAttributes
+        columns {
+          title
+          config {
+            text_align
+            width
           }
+          components {
+            template
 
-          # Image
-          src: image {
-            ...FluidImageAttributes
+            # Button
+            label
+            url
+
+            # Content
+            body
+
+            # Form
+            form {
+              ...FormAttributes
+            }
+
+            # Image
+            src: image {
+              ...FluidImageAttributes
+            }
           }
         }
       }
