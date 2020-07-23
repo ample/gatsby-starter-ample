@@ -1,5 +1,5 @@
 ---
-label: "[Section] Container"
+label: "[Fragment] Container"
 hide_body: true
 fields:
 - name: title
@@ -13,34 +13,42 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: text_align
+  - name: margin_bottom
     type: select
-    default: ''
+    default: "0"
     config:
       required: false
       options:
-      - left
-      - center
-      - right
+      - "0"
+      - "40"
+      - "60"
+      - "80"
+      - "120"
       source:
         type: simple
-        section: 
-        file: 
-        path: 
-    label: Text Align
-    description: The default alignment of text within the container. If not set, it
-      defaults to left. Some components can override this setting.
+        section:
+        file:
+        path:
+    label: Bottom Spacing
+    description: The number of pixels the next container should be pushed down.
   description: Display options for the container.
   label: Config
-- name: components
-  type: blocks
-  label: Components
-  template_types:
-  - component-button
-  - component-content
-  - component-form
-  - component-image
-  config:
-    min: 
-    max: 
-  description: 'Components that appear inside this container. '
+- name: columns
+  type: field_group
+  config: {}
+  label: Columns
+  fields:
+  - name: columns
+    type: field_group_list
+    fields:
+    - name: column
+      type: include
+      config: {}
+      template: fragment-column
+      label: Column
+    config:
+      min:
+      max:
+      labelField: title
+    label: Columns
+    description: Containers are organized by columns. And inside the columns you can add components.

@@ -1,0 +1,65 @@
+---
+label: "[Fragment] Column"
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: This value is only for organization within the CMS and will not show
+    up on the website.
+- name: config
+  type: field_group
+  config: {}
+  fields:
+  - name: width
+    type: select
+    default: full
+    config:
+      required: false
+      options:
+      - 1/4
+      - 1/3
+      - 1/2
+      - 2/3
+      - 3/4
+      - full
+      source:
+        type: simple
+        section:
+        file:
+        path:
+    label: Column Width
+    description: The width determines how much of the entire horizontal width of the container the column fills.
+  - name: text_align
+    type: select
+    default: ''
+    config:
+      required: false
+      options:
+      - left
+      - center
+      - right
+      source:
+        type: simple
+        section:
+        file:
+        path:
+    label: Text Align
+    description: The default alignment of text within the components in this column. If not set, it
+      defaults to left. Some components can override this setting.
+  description: Display options for the container.
+  label: Config
+- name: components
+  type: blocks
+  label: Components
+  template_types:
+  - component-button
+  - component-content
+  - component-form
+  - component-image
+  config:
+    min:
+    max:
+  description: 'Components that appear inside this container. '
