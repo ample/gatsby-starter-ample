@@ -25,9 +25,9 @@ fields:
     - flexible
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Layout
   description: The layout affects how the page appears on the website, along with
     the fields visible here.
@@ -72,8 +72,8 @@ fields:
       template: fragment-container
       label: Container
     config:
-      min:
-      max:
+      min: 
+      max: 
       labelField: title
     label: Containers
     description: Containers are configurable groups of components that make up each
