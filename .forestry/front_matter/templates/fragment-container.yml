@@ -26,13 +26,13 @@ fields:
       - '120'
       source:
         type: simple
-        section: 
-        file: 
-        path: 
+        section:
+        file:
+        path:
     label: Bottom Spacing
     description: The number of pixels the next container should be pushed down.
   description: Display options for the container.
-  label: Config
+  label: Container Config
 - name: columns
   type: field_group_list
   fields:
@@ -43,6 +43,6 @@ fields:
     label: Column
   config:
     min: 1
-    max: 
-    labelField: 
+    max:
+    labelField: title
   label: Columns

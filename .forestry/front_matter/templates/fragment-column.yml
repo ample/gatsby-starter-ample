@@ -18,8 +18,8 @@ fields:
   - component-form
   - component-image
   config:
-    min: 
-    max: 
+    min:
+    max:
   description: 'Components that appear inside this container. '
 - name: config
   type: field_group
@@ -39,9 +39,9 @@ fields:
       - full
       source:
         type: simple
-        section: 
-        file: 
-        path: 
+        section:
+        file:
+        path:
     label: Column Width
     description: The width determines how much of the entire horizontal width of the
       container the column fills.
@@ -56,11 +56,11 @@ fields:
       - right
       source:
         type: simple
-        section: 
-        file: 
-        path: 
+        section:
+        file:
+        path:
     label: Text Align
     description: The default alignment of text within the components in this column.
       If not set, it defaults to left. Some components can override this setting.
-  description: Display options for the container.
-  label: Config
+  description: Display options for the column.
+  label: Column Config
