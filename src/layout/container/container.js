@@ -9,14 +9,16 @@ import Column from "./column"
 const Container = ({ className, columns, config }) => {
   const wrapperClasses = classNames(styles.container, {
     [className]: className,
-    [`text-${config.margin_bottom}`]: config.margin_bottom
+    [`mb-${config.margin_bottom}`]: config.margin_bottom
   })
 
   return (
     <div className={wrapperClasses}>
-      {columns.map((column, idx) => (
-        <Column key={idx} {...column} />
-      ))}
+      <div className={styles.content}>
+        {columns.map((column, idx) => (
+          <Column key={idx} {...column} />
+        ))}
+      </div>
     </div>
   )
 }

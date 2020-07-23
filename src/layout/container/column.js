@@ -9,7 +9,8 @@ import Component from "./component"
 const Column = ({ className, components, config }) => {
   const wrapperClasses = classNames(styles.column, {
     [className]: className,
-    [`text-${config.text_align}`]: config.text_align
+    [`text-${config.text_align}`]: config.text_align,
+    [styles[`col_width_${config.width}`]]: config.width
   })
 
   return (
@@ -35,7 +36,7 @@ Column.propTypes = {
    */
   config: PropTypes.shape({
     text_align: PropTypes.oneOf(["left", "center", "right", ""]),
-    width: PropTypes.oneOf(["full", "1/4", "1/3", "1/2", "2/3", "3/4"])
+    width: PropTypes.oneOf(["full", "1/4", "1/3", "1/2", "2/3", "3/4", ""])
   })
 }
 
