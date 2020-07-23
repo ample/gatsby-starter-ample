@@ -20,7 +20,7 @@ fields:
   config:
     min:
     max:
-  description: 'Components that appear inside this container. '
+  description: 'Components that appear inside this column.'
 - name: config
   type: field_group
   config: {}
