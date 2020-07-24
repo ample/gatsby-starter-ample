@@ -7,7 +7,9 @@
     label: String
     url: String
     body: String
-    form: Form
+    form:
+      type: map
+      name: Form
     image: File
 
 - type: ColumnConfig

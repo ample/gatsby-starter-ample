@@ -17,7 +17,7 @@ type Component @infer {
 }`
     expect(result.includes(expCompResult)).toEqual(true)
   })
-  it("adds node and image appendix", () => {
+  it("adds node and image appendix, and skips maps", () => {
     const result = parseSchema(schema)
     const expCompResult = `
 type Page implements Node @infer {
@@ -25,7 +25,6 @@ type Page implements Node @infer {
   image: File @fileByRelativePath
   components: [Component]
   components_exp: [Component]
-  component_map: Component
 }`
     expect(result.includes(expCompResult)).toEqual(true)
   })

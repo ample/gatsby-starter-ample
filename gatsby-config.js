@@ -8,9 +8,6 @@ module.exports = {
     author: `@helloample`,
     siteUrl: `https://www.site-url.com`
   },
-  mapping: {
-    "Page.layout_flexible.containers.columns.components.form": "Form.filePath"
-  },
   plugins: [
     {
       resolve: `gatsby-alias-imports`,
