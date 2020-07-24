@@ -1,6 +1,49 @@
-// @use '../../styles/global' as *;
+@use '../../styles/global' as *;
+
+$column-gutter: 40px;
+
+// ---------------------------------------- | Container
 
 .container {
-  margin: 0 auto;
-  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px + $column-gutter;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -($column-gutter / 2);
+    margin-right: -($column-gutter / 2);
+    width: 100%;
+  }
+}
+
+// ---------------------------------------- | Content
+
+.column {
+  margin-left: $column-gutter / 2;
+  margin-right: $column-gutter / 2;
+  width: 100%;
+
+  &.col_width_1\/4 {
+    width: calc(25% - #{$column-gutter});
+  }
+
+  &.col_width_1\/3 {
+    width: calc(33.333% - #{$column-gutter});
+  }
+
+  &.col_width_1\/2 {
+    width: calc(50% - #{$column-gutter});
+  }
+
+  &.col_width_2\/3 {
+    width: calc(66.666% - #{$column-gutter});
+  }
+
+  &.col_width_3\/4 {
+    width: calc(75% - #{$column-gutter});
+  }
 }

@@ -1,0 +1,57 @@
+---
+# --- Containers & Shared ---
+
+- type: Component
+  fields:
+    template: String
+    label: String
+    url: String
+    body: String
+    form:
+      type: map
+      name: Form
+    image: File
+
+- type: ColumnConfig
+  fields:
+    margin_bottom: String
+    text_align: String
+    width: String
+
+- type: Column
+  fields:
+    title: String
+    config: ColumnConfig
+    components: "[Component]"
+
+- type: ContainerConfig
+  fields:
+    margin_bottom: String
+
+- type: Container
+  fields:
+    title: String
+    config: ContainerConfig
+    columns: "[Column]"
+
+# --- Page Layouts ---
+
+- type: BasicPage
+  fields:
+    heading: String
+    body: String
+
+- type: FlexiblePage
+  fields:
+    containers: "[Container]"
+
+# --- Page ---
+
+- type: Page
+  node: true
+  fields:
+    layout: String
+    seo: SeoMeta
+    title: String
+    layout_basic: BasicPage
+    layout_flexible: FlexiblePage

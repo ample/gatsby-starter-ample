@@ -1,0 +1,15 @@
+- type: Component
+  fields:
+    title: String
+- type: Page
+  node: true
+  fields:
+    title: String
+    image: File
+    components: "[Component]"
+    components_exp:
+      type: array
+      name: Component
+    component_map:
+      type: map
+      name: Component

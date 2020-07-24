@@ -9,42 +9,13 @@ export const PageAttributes = graphql`
       ...SEO
     }
 
-    # --- Basic ---
+    # --- Layouts ---
 
     layout_basic {
-      heading
-      body
+      ...BasicPageAttributes
     }
-
-    # --- Flexible ---
-
     layout_flexible {
-      containers {
-        title
-        config {
-          text_align
-        }
-        components {
-          template
-
-          # Button
-          label
-          url
-
-          # Content
-          body
-
-          # Form
-          form {
-            ...FormAttributes
-          }
-
-          # Image
-          src: image {
-            ...FluidImageAttributes
-          }
-        }
-      }
+      ...FlexiblePageAttributes
     }
   }
 `

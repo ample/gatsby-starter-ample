@@ -4,19 +4,21 @@ import classNames from "classnames/bind"
 
 import styles from "./styles.module.scss"
 
-import Component from "./component"
+import Column from "./column"
 
-const Container = ({ className, components, config }) => {
+const Container = ({ className, columns, config }) => {
   const wrapperClasses = classNames(styles.container, {
     [className]: className,
-    [`text-${config.text_align}`]: config.text_align
+    [`mb-${config.margin_bottom}`]: config.margin_bottom
   })
 
   return (
     <div className={wrapperClasses}>
-      {components.map((comp, idx) => (
-        <Component key={idx} data={comp} />
-      ))}
+      <div className={styles.content}>
+        {columns.map((column, idx) => (
+          <Column key={idx} {...column} />
+        ))}
+      </div>
     </div>
   )
 }
@@ -27,19 +29,19 @@ Container.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * An array of component objects that get passed on to the <Component />.
+   * An array of column objects that get passed on to the <Column />.
    */
-  components: PropTypes.arrayOf(PropTypes.object),
+  columns: PropTypes.arrayOf(PropTypes.object),
   /**
-   * An object that controls the styling of the container on screen.
+   * An object that controls the styling of the outer container on screen.
    */
   config: PropTypes.shape({
-    text_align: PropTypes.oneOf(["left", "center", "right", ""])
+    margin_bottom: PropTypes.string
   })
 }
 
 Container.defaultProps = {
-  components: [],
+  columns: [],
   config: {}
 }
 

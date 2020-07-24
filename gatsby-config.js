@@ -8,9 +8,6 @@ module.exports = {
     author: `@helloample`,
     siteUrl: `https://www.site-url.com`
   },
-  mapping: {
-    "Page.layout_flexible.containers.components.form": "Form.filePath"
-  },
   plugins: [
     {
       resolve: `gatsby-alias-imports`,
@@ -22,6 +19,11 @@ module.exports = {
         }
       }
     },
+    /**
+     * Uses schema.yml at the root of the project to explicitly declare GraphQL
+     * schema. (See plugins/gatsby-ample-schema.)
+     */
+    `gatsby-ample-schema`,
     /**
      * Looks in src/content and passes every page (except index.md) to
      * src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
