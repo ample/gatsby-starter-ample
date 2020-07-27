@@ -2,14 +2,6 @@ const lodash = require("lodash")
 
 const getFieldDef = require("./get-field-dev")
 
-// TODOS:
-
-//   1. Don't register maps in the type definition (remove null objects from fields list) -- fix failing spec
-//   2. Get the form relationship working
-//   3. Add docs to README in schema plugin
-//   4. Get build passing
-//   5. Move code into Vigilant repo
-
 const getTypeDef = type => {
   return `
 type ${type.type}${type.node ? " implements Node" : ""} @infer {
