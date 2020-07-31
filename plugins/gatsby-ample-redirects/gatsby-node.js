@@ -1,4 +1,6 @@
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }, pluginOptions = {}) => {
+  if (pluginOptions.disable) return
+
   return graphql(`
     {
       redirects: allRedirect {
