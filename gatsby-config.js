@@ -46,7 +46,8 @@ module.exports = {
       }
     },
     /**
-     * Creates playgrounds from .mdx files in src/templates and src/components.
+     * Creates playgrounds from components and templates. (See
+     * plugins/gatsby-ample-playground.)
      */
     {
       resolve: `gatsby-ample-playground`,
