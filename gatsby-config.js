@@ -32,9 +32,19 @@ module.exports = {
     // Creates meta tags for every page
     // src/templates/page/adapter.js. (See plugins/gatsby-ample-seo.)
     `gatsby-ample-seo`,
-    // Creates Gatsby and Netlify redirects for records in
-    // src/content/redirects. (See plugins/gatsby-ample-redirects.)
-    `gatsby-ample-redirects`,
+    /**
+     * Creates Gatsby and Netlify redirects for records in
+     * src/content/redirects. (See plugins/gatsby-ample-redirects.)
+     */
+    {
+      resolve: `gatsby-ample-redirects`,
+      options: {
+        // Setting GATSBY_REDIRECTS_DISABLED="true" disables redirects. This
+        // applies to both in-app redirects and those written to _redirects for
+        // use by Netlify.
+        disable: process.env.GATSBY_REDIRECTS_DISABLED === "true"
+      }
+    },
     /**
      * Creates playgrounds from .mdx files in src/templates and src/components.
      */
