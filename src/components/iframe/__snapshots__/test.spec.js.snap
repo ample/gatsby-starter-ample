@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Iframe renders correctly 1`] = `
+<div
+  className="iframe_container"
+>
+  <iframe
+    src="/"
+    title="FPO iframe"
+  />
+</div>
+`;

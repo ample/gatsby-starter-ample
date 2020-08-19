@@ -1,0 +1,13 @@
+@use '../../styles/global' as *;
+
+.iframe_container {
+  padding-bottom: 50%;
+  position: relative;
+  width: 100%;
+
+  iframe {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}
