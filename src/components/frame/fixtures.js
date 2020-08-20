@@ -1,6 +1,6 @@
 export default {
   default: {
     src: "/",
-    title: "FPO iframe"
+    title: "FPO Frame"
   }
 }

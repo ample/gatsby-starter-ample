@@ -1,7 +1,7 @@
 import * as Button from "@src/components/button"
 // import * as Dropdown from "@src/components/dropdown"
 import * as Form from "@src/components/form"
-import * as Iframe from "@src/components/iframe"
+import * as Frame from "@src/components/frame"
 import * as Image from "@src/components/image"
 import * as Link from "@src/components/link"
 import * as SVG from "@src/components/svg"
@@ -14,7 +14,7 @@ export default {
     button: Button,
     // dropdown: Dropdown, --> Having issue with the dropdown
     form: Form,
-    iframe: Iframe,
+    frame: Frame,
     image: Image,
     link: Link,
     svg: SVG
