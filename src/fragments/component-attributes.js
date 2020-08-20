@@ -17,8 +17,12 @@ export const ComponentAttributes = graphql`
       ...FormAttributes
     }
 
+    # Frame
+    src
+    margin_bottom
+
     # Image
-    src: image {
+    image {
       ...FluidImageAttributes
     }
   }

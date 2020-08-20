@@ -4,13 +4,14 @@
 - type: Component
   fields:
     template: String
-    label: String
-    url: String
     body: String
     form:
       type: map
       name: Form
     image: File
+    label: String
+    src: String
+    url: String
 
 - type: ColumnConfig
   fields:
