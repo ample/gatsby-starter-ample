@@ -16,6 +16,7 @@ fields:
   - component-button
   - component-content
   - component-form
+  - component-frame
   - component-image
   config:
     min:
