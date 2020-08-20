@@ -91,6 +91,7 @@ fields:
   description: While there are sensible defaults, the SEO section provides the option
     to explicitly set meta tag values.
 pages:
+- src/content/pages/careers.md
 - src/content/pages/contact.md
 - src/content/pages/content-page.md
 - src/content/pages/flexible-page-columns.md
