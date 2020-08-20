@@ -11,8 +11,8 @@ export default {
     components: [
       {
         template: "component-button",
-        children: "Hello World",
-        to: "/"
+        label: "Hello World",
+        url: "/"
       }
     ],
     config: {}
