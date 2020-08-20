@@ -1,7 +1,7 @@
 export default input => {
   return {
     ...input,
-    children: input.label,
-    to: input.url
+    children: input.children || input.label,
+    to: input.to || input.url
   }
 }
