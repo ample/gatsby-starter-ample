@@ -234,7 +234,7 @@ Array [
       className="page"
     >
       <h1>
-        Default Page
+        Flexible Page
       </h1>
       <div
         className="container"
