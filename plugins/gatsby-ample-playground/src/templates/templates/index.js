@@ -1,29 +1,47 @@
-import React, { useState } from "react"
+import React from "react"
+import PropTypes from "prop-types"
+import { navigate } from "gatsby"
 import { Helmet } from "react-helmet"
-import lodash from "lodash"
+
+import find from "lodash/find"
+import kebabCase from "lodash/kebabCase"
+import startCase from "lodash/startCase"
+import toLower from "lodash/toLower"
 
 import config from "@root/playground.config"
 
-const TemplatesPlayground = () => {
+const TemplatesPlayground = ({ location }) => {
+  // Render nothing if there are no templates configured.
   if (Object.entries(config.templates || {}).length === 0) return "Could not find templates"
 
   let templates = []
 
+  // Build a collection of template objects.
   Object.entries(config.templates).map((cfg, idx) => {
     const TagName = cfg[1].template
-    const templateName = lodash.startCase(lodash.toLower(cfg[0]))
+    const templateName = startCase(toLower(cfg[0]))
 
     Object.entries(cfg[1].fixtures || {}).map(fixture => {
-      const fixtureName = lodash.startCase(lodash.toLower(fixture[0]))
+      const fixtureName = startCase(toLower(fixture[0]))
+      const displayName = `${templateName}: ${fixtureName}`
       templates.push({
-        name: `${templateName}: ${fixtureName}`,
+        name: displayName,
+        slug: kebabCase(displayName),
         template: <TagName key={idx} {...fixture[1]} />
       })
     })
   })
 
-  const [currentTemplate, setCurrentTemplate] = useState(templates[0])
+  // Find the current template using a hash in the URL.
+  const currentTemplate = find(templates, t => t.slug && t.slug === location.hash.slice(1))
 
+  // If there is no hash or current template, navigate to the first template in
+  // the collection.
+  if (typeof window !== "undefined" && (!location.hash || !currentTemplate)) {
+    navigate(`${location.pathname}#${templates[0].slug}`)
+  }
+
+  // If there is still no template, render a simple message.
   if (!currentTemplate) return "No template"
 
   return (
@@ -35,7 +53,9 @@ const TemplatesPlayground = () => {
       <ul>
         {templates.map((template, idx) => (
           <li key={idx}>
-            <button onClick={() => setCurrentTemplate(template)}>{template.name}</button>
+            <button onClick={() => navigate(`${location.pathname}#${template.slug}`)}>
+              {template.name}
+            </button>
           </li>
         ))}
       </ul>
@@ -47,7 +67,15 @@ const TemplatesPlayground = () => {
   )
 }
 
-TemplatesPlayground.propTypes = {}
+TemplatesPlayground.propTypes = {
+  /**
+   * Location object sent from Gatsby.
+   */
+  location: PropTypes.shape({
+    hash: PropTypes.string,
+    pathname: PropTypes.string
+  })
+}
 
 TemplatesPlayground.defaultProps = {}
 
