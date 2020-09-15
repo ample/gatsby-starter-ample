@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Helmet } from "react-helmet"
-import lodash from "lodash"
+import get from "lodash/get"
+import startCase from "lodash/startCase"
+import toLower from "lodash/toLower"
 
 import Variations from "../../components/variations"
 
@@ -9,9 +11,7 @@ import config from "@root/playground.config"
 import styles from "./styles.module.scss"
 
 const ComponentsPlayground = () => {
-  const [currentColor, setCurrentColor] = useState(
-    lodash.get(config, "themes.default") || "transparent"
-  )
+  const [currentColor, setCurrentColor] = useState(get(config, "themes.default") || "transparent")
 
   const components = Object.entries(config.components).map((cfg, idx) => {
     const compName = cfg[0]
@@ -24,7 +24,7 @@ const ComponentsPlayground = () => {
         style={{ maxWidth: cfg[1].maxWidth || "100%" }}
       >
         <h2 id={compName} className={styles.comp_heading}>
-          <a href={`#${compName}`}>{Component.name}</a>
+          <a href={`#${compName}`}>{startCase(toLower(compName))}</a>
         </h2>
         <Variations component={Component} data={fixtures} />
       </div>
