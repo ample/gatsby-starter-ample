@@ -12,6 +12,6 @@ export default {
         ]
       }
     ],
-    title: "Default Page"
+    title: "Flexible Page"
   }
 }
