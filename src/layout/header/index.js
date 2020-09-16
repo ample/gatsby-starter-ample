@@ -10,6 +10,8 @@ import Navigation from "./navigation"
 import styles from "./styles.module.scss"
 
 const Header = ({ main_navigation, top_navigation }) => {
+  // ------------------------------------------------------ | Mobile Menu
+
   const [menuIsOpen, setMenu] = useState(false)
 
   const smallScreenMenuClick = () => {
@@ -22,9 +24,13 @@ const Header = ({ main_navigation, top_navigation }) => {
     }
   }
 
+  // ------------------------------------------------------ | Classes
+
   const classes = classNames(styles.header, {
     [styles.navigation_is_showing]: menuIsOpen
   })
+
+  // ------------------------------------------------------ | Component
 
   return (
     <header className={classes}>
@@ -40,7 +46,7 @@ const Header = ({ main_navigation, top_navigation }) => {
           </button>
         </div>
 
-        <div className={styles.navigation}>
+        <div className={styles.navigation_container}>
           <Navigation className={styles.top_navigation} links={top_navigation} />
           <Navigation className={styles.main_navigation} links={main_navigation} />
         </div>

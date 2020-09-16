@@ -1,33 +1,30 @@
 @use '../../styles/global' as *;
 
+// ---------------------------------------------------------
+
 .header {
   background-color: #ccc;
-  position: relative;
+  width: 100%;
 
   &.navigation_is_showing {
-    background-color: #ccc;
     height: 100vh;
     overflow: scroll;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100vw;
-    z-index: $z-index-plus-three;
-  }
-
-  @include media($full-navigation) {
-    padding: 30px 0;
   }
 
   > div {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     @include media($full-navigation) {
-      @include container;
+      @include container-header;
 
       flex-direction: row;
-      position: relative;
-      z-index: $z-index-plus-one;
+      justify-content: flex-end;
+      overflow: visible;
     }
   }
 }
@@ -35,68 +32,85 @@
 // --------------------------------------------------------- | logo
 
 .logo_container {
+  display: flex;
+  justify-content: space-between;
+
   @include media($full-navigation, down) {
-    @include container;
+    @include container-header;
 
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px;
     width: 100%;
-  }
-
-  @include media($full-navigation) {
-    margin-right: 30px;
-    width: 170px;
   }
 }
 
 .logo {
-  width: 100px;
+  svg {
+    width: 60px;
+
+    @include media($small-highest) {
+      width: 100px;
+    }
+  }
 }
 
-.menu_button {
-  @include media($full-navigation, down) {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
+// --------------------------------------------------------- | smaller screen buttons
 
+.menu_button {
   @include media($full-navigation) {
     display: none;
   }
+
+  span {
+    @include screen-reader-only;
+  }
 }
 
-// --------------------------------------------------------- | navigation
+// --------------------------------------------------------- | navigation container
 
-.navigation {
+.navigation_container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  height: 0;
 
-  @include media($full-navigation, down) {
-    height: 0;
-    overflow: hidden;
-    padding: 0 $global-padding;
+  @include media($full-navigation) {
+    height: auto;
   }
 
   .navigation_is_showing & {
-    height: 100vh;
+    height: 100%;
     overflow: scroll;
   }
 }
 
+// --------------------------------------------------------- | main and top navigation
+
 .main_navigation,
 .top_navigation {
-  align-self: flex-end;
-  display: flex;
+  @include media($full-navigation) {
+    justify-content: flex-end;
+  }
+
+  li {
+    @include media($full-navigation, down) {
+      width: 100%;
+    }
+  }
 }
 
 .main_navigation {
-  //
+  flex-wrap: wrap;
+
+  @include media($full-navigation) {
+    flex-wrap: nowrap;
+  }
 }
 
 .top_navigation {
-  margin-bottom: 15px;
+  flex-direction: column;
+  order: 2;
+
+  @include media($full-navigation) {
+    flex-direction: row;
+    order: unset;
+  }
 }
