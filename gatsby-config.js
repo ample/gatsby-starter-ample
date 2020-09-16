@@ -60,6 +60,9 @@ module.exports = {
     // Adds a debugger for media queries
     // src/layout. (See plugins/gatsby-ample-debuggers.)
     `gatsby-ample-debuggers`,
+    // Adds linters for local development
+    // (See plugins/gatsby-ample-linters.)
+    `gatsby-ample-linters`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
