@@ -2,15 +2,16 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
-import menuStyles from "./menu/styles.module.scss"
+import Link from "@src/components/link"
+import SVG from "@src/components/svg"
 
-const Dropdown = ({ children, className }) => {
+import styles from "./styles.module.scss"
+
+const Dropdown = ({ items, label }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const classes = classNames(styles.dropdown, {
-    [menuStyles.is_showing]: isOpen,
-    [className]: className
+    [styles.is_showing]: isOpen
   })
 
   const handleMouseEnter = () => {
@@ -29,7 +30,18 @@ const Dropdown = ({ children, className }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {children}
+      <div className={styles.dropdown_trigger}>
+        {label}
+        <SVG name="arrow-down" />
+      </div>
+
+      <ul className={styles.dropdown_menu}>
+        {items.map((item, idx) => (
+          <li key={idx} className={item.className}>
+            <Link to={item.url}>{item.label}</Link>
+          </li>
+        ))}
+      </ul>
     </span>
   )
 }
@@ -38,11 +50,11 @@ Dropdown.propTypes = {
   /**
    * Element(s) to render to the screen
    */
-  children: PropTypes.node.isRequired,
+  items: PropTypes.array.isRequired,
   /**
-   * CSS class to apply to the wrapping element
+   * Dropdown label
    */
-  className: PropTypes.string
+  label: PropTypes.string.isRequired
 }
 
 export default Dropdown

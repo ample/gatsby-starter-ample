@@ -3,5 +3,73 @@
 .dropdown {
   display: flex;
   flex-direction: column;
-  position: relative;
+
+  @include media($full-navigation) {
+    background-color: transparent;
+    position: relative;
+    transition: background-color 0ms ease-out 0.5s;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.is_showing {
+    @include media($full-navigation) {
+      background-color: var(--color-white);
+      transition: background-color 0.3s ease-in;
+    }
+  }
+}
+
+// --------------------------------------------------------- // Trigger
+
+.dropdown_trigger {
+  padding: 18px 0 19px;
+
+  @include media($full-navigation) {
+    padding: 11px 0 8px;
+  }
+
+  svg {
+    margin-left: 6px;
+    transition: transform 300ms;
+  }
+
+  .is_showing & {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+// --------------------------------------------------------- // Menu
+
+.dropdown_menu {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 22px;
+  transition: max-height 1s ease-out;
+
+  @include media($full-navigation) {
+    background-color: var(--color-white);
+    left: 0;
+    min-width: 300px;
+    padding-left: 0;
+    position: absolute;
+    top: 35px;
+    transition: max-height 0.5s ease-out 0s;
+    width: 100%;
+    z-index: $z-index-plus-two;
+  }
+
+  .is_showing & {
+    max-height: 1000px;
+    transition: max-height 1.5s ease-in;
+
+    @include media($full-navigation) {
+      max-height: 600px;
+      transition: max-height 0.5s ease-in 0.2s;
+    }
+  }
 }

@@ -140,25 +140,7 @@ exports[`Header renders correctly 1`] = `
             rel="noopener"
             target="_blank"
           >
-            Lacinia dolor
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            rel="noopener"
-            target="_blank"
-          >
             Consequat 
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            rel="noopener"
-            target="_blank"
-          >
-            Voluptate nostrud
           </a>
         </li>
         <li>
@@ -169,11 +151,21 @@ exports[`Header renders correctly 1`] = `
             role="button"
             tabIndex={0}
           >
-            <span
+            <div
               className="dropdown_trigger"
             >
               Suspendisse semper
-            </span>
+              <svg
+                height={8}
+                viewBox="0 0 11 8"
+                width={11}
+              >
+                <path
+                  d="M9.524.724l1.262 1.263L5.393 7.38 0 1.987 1.263.724l4.13 4.131z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
             <ul
               className="dropdown_menu"
             >
@@ -214,7 +206,9 @@ exports[`Header renders correctly 1`] = `
             </ul>
           </span>
         </li>
-        <li>
+        <li
+          className="nav-button"
+        >
           <a
             className="button button"
             href="#"

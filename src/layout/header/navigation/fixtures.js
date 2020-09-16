@@ -3,9 +3,7 @@ export default {
     { url: "#", label: "Reprehenderit" },
     { url: "#", label: "Officia sint" },
     { url: "#", label: "Veniam " },
-    { url: "#", label: "Lacinia dolor" },
     { url: "#", label: "Consequat " },
-    { url: "#", label: "Voluptate nostrud" },
     {
       url: "#",
       label: "Suspendisse semper",
