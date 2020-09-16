@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["./node_modules/prettier-stylelint/config.js"],
+  extends: ["stylelint-config-prettier"],
   plugins: ["stylelint-order", "stylelint-scss"],
   ignoreFiles: ["**/*.js"],
   rules: {
