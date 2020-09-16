@@ -229,7 +229,9 @@ Array [
       </div>
     </div>
   </header>,
-  <main>
+  <main
+    className=""
+  >
     <div
       className="page"
     >
