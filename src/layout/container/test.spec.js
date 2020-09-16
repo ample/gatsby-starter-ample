@@ -32,10 +32,4 @@ describe("Component", () => {
     expect(tree).not.toEqual(null)
     expect(tree).toMatchSnapshot()
   })
-  it("transforms data (using form as an example)", () => {
-    const tree = renderer.create(<Component data={fixtures.form.components[0]} />).toJSON()
-    expect(tree).not.toEqual(null)
-    expect(tree.children[0].type).toEqual("input")
-    expect(tree).toMatchSnapshot()
-  })
 })
