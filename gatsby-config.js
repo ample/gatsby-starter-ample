@@ -157,6 +157,7 @@ module.exports = {
           localIdentName: "[local]-[hash:base64:3]",
           sourceMap: true
         },
+        fiber: require("fibers"),
         implementation: require("sass"),
         postCssPlugins: postcssConfig,
         sourceMap: true
