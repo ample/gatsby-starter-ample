@@ -24,7 +24,7 @@ const Navigation = ({ activeClassName, className, links = [], vertical }) => {
           )
         } else if (item.button) {
           return (
-            <li className="nav-button" key={index}>
+            <li className={styles.nav_button} key={index}>
               <Button
                 className={classNames(styles[item.className])}
                 to={item.url}
