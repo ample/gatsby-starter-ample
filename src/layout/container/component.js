@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import componentMap from "./component-map"
-import transformers from "./transformers"
 
 const Component = ({ data }) => {
   // If no data was passed, render nothing.
@@ -18,12 +17,8 @@ const Component = ({ data }) => {
     return null
   }
 
-  // Transform the data, if necessary.
-  const transformer = transformers[data.template]
-  const compData = transformer ? transformer(data) : { ...data }
-
   // Render the component
-  return <TagName {...compData} />
+  return <TagName {...data} />
 }
 
 Component.propTypes = {

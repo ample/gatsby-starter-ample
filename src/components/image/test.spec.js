@@ -1,10 +1,21 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import fixtures from "./fixtures"
-
-import Image from "."
+import Image, { fixtures, transformer } from "."
 import { defaultAltAttribute } from "./component"
+
+// ---------------------------------------- | Controller
+
+describe("Image Controller", () => {
+  it("renders correctly", () => {
+    const tree = renderer.create(<Image {...fixtures.native} />).toJSON()
+    expect(tree.props.src).toEqual(fixtures.native.src)
+  })
+  it("transforms props", () => {
+    const tree = renderer.create(<Image image={fixtures.native.src} />).toJSON()
+    expect(tree.props.src).toEqual(fixtures.native.src)
+  })
+})
 
 // ---------------------------------------- | Component
 
@@ -40,5 +51,26 @@ describe("defaultAltAttribute", () => {
   it("creates a humanized version of a URL string", () => {
     const filename = "/uploads/image-01.jpg"
     expect(defaultAltAttribute(filename)).toEqual("Image 01")
+  })
+})
+
+// ---------------------------------------- | Transformer
+
+describe("Image Transformer", () => {
+  it("sets children from label", () => {
+    const result = transformer({ image: "/hello-world.jpg" })
+    expect(result.src).toEqual("/hello-world.jpg")
+  })
+  it("keeps the original props", () => {
+    const result = transformer({ image: "/hello-world.jpg" })
+    expect(result.image).toEqual("/hello-world.jpg")
+  })
+  it("brings along other props", () => {
+    const result = transformer({ image: "/hello-world.jpg", hello: "world" })
+    expect(result.hello).toEqual("world")
+  })
+  it("gives precedence to the correct props", () => {
+    const result = transformer({ image: "/hello-world.jpg", src: "/real-image.png" })
+    expect(result.src).toEqual("/real-image.png")
   })
 })
