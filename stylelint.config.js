@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["./node_modules/prettier-stylelint/config.js"],
+  extends: ["stylelint-config-prettier"],
   plugins: ["stylelint-order", "stylelint-scss"],
   ignoreFiles: ["**/*.js"],
   rules: {
@@ -64,12 +64,6 @@ module.exports = {
     "function-parentheses-newline-inside": "always-multi-line",
     "function-parentheses-space-inside": "never-single-line",
     "function-whitespace-after": "always",
-    indentation: [
-      2,
-      {
-        indentInsideParens: "once-at-root-twice-in-block"
-      }
-    ],
     "length-zero-no-unit": true,
     linebreaks: "unix",
     "no-duplicate-at-import-rules": true,

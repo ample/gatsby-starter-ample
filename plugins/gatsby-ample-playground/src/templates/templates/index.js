@@ -1,7 +1,12 @@
-import React from "react"
+{
+  /* eslint-disable no-undef, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+}
+
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { navigate } from "gatsby"
 import { Helmet } from "react-helmet"
+import classNames from "classnames"
 
 import find from "lodash/find"
 import kebabCase from "lodash/kebabCase"
@@ -10,7 +15,19 @@ import toLower from "lodash/toLower"
 
 import config from "@root/playground.config"
 
+import styles from "./styles.module.scss"
+
 const TemplatesPlayground = ({ location }) => {
+  const [isOpen, setOpen] = useState(false)
+
+  const classes = classNames(styles.template_list_container, isOpen, {
+    [styles.is_showing]: isOpen
+  })
+
+  const handleClick = () => {
+    setOpen(!isOpen)
+  }
+
   // Render nothing if there are no templates configured.
   if (Object.entries(config.templates || {}).length === 0) return "Could not find templates"
 
@@ -50,17 +67,17 @@ const TemplatesPlayground = ({ location }) => {
         <title>{currentTemplate.name} | Ample Playground</title>
       </Helmet>
 
-      <ul>
-        {templates.map((template, idx) => (
-          <li key={idx}>
-            <button onClick={() => navigate(`${location.pathname}#${template.slug}`)}>
-              {template.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      <hr />
+      <div className={classes} onClick={handleClick}>
+        <ul className={styles.template_list}>
+          {templates.map((template, idx) => (
+            <li key={idx}>
+              <button onClick={() => navigate(`${location.pathname}#${template.slug}`)}>
+                {template.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       {currentTemplate.template}
     </>

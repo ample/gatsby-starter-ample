@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import classNames from "classnames"
 
 import Button from "@src/components/button"
-import { Dropdown, DropdownMenu, DropdownTrigger } from "./dropdown"
+import { Dropdown } from "./dropdown"
 import Link from "@src/components/link"
 
 import styles from "./styles.module.scss"
@@ -19,16 +19,17 @@ const Navigation = ({ activeClassName, className, links = [], vertical }) => {
         if (item.children && item.children.length > 0) {
           return (
             <li key={index}>
-              <Dropdown key={index}>
-                <DropdownTrigger>{item.label}</DropdownTrigger>
-                <DropdownMenu items={item.children} />
-              </Dropdown>
+              <Dropdown key={index} items={item.children} label={item.label} />
             </li>
           )
         } else if (item.button) {
           return (
-            <li key={index}>
-              <Button className={item.className} to={item.url}>
+            <li className={styles.nav_button} key={index}>
+              <Button
+                className={classNames(styles[item.className])}
+                to={item.url}
+                theme={item.theme}
+              >
                 {item.label}
               </Button>
             </li>

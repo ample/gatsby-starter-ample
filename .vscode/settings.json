@@ -1,12 +1,13 @@
 {
+  "AllAutocomplete.wordListFiles": ["src/styles/global/_colors.scss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "files.encoding": "utf8",
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  }
+  "files.trimTrailingWhitespace": true
 }

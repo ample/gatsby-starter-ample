@@ -4,14 +4,16 @@
 
 .header {
   background-color: #efefef;
-  margin-bottom: 3rem;
   padding: 1rem;
   position: relative;
   text-align: center;
 
   h1 {
     color: #333;
-    font-size: 1rem;
+    font-family: system-ui;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
   }
 }
 
@@ -39,7 +41,7 @@
     }
 
     &.active {
-      outline: 2px solid blue;
+      outline: 3px solid #b5b5b5;
     }
   }
 }
@@ -50,9 +52,46 @@
 }
 
 .comp_section {
-  margin-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 120px;
 }
 
 .comp_heading {
-  margin-bottom: 20px;
+  font-family: system-ui;
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0;
+
+  a {
+    color: #8a8989;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 120px;
+
+    &:hover {
+      color: #797979;
+      text-decoration: none;
+    }
+  }
+}
+
+:global {
+  .comp-item {
+    margin-bottom: 40px;
+
+    &:last-of-type:not(:only-of-type) {
+      margin-bottom: 0;
+    }
+  }
+
+  .comp-item-heading {
+    color: #8a8989;
+    font-family: system-ui;
+    font-size: 18px;
+    font-weight: 300;
+
+    &:after {
+      content: ':';
+    }
+  }
 }

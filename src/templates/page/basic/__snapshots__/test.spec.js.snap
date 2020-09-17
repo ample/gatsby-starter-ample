@@ -34,9 +34,9 @@ Array [
             Menu
           </span>
           <svg
-            height={19}
+            height={21}
             viewBox="0 0 448 512"
-            width={24}
+            width={26}
           >
             <path
               d="M442 114H6a6 6 0 01-6-6V84a6 6 0 016-6h436a6 6 0 016 6v24a6 6 0 01-6 6zm0 160H6a6 6 0 01-6-6v-24a6 6 0 016-6h436a6 6 0 016 6v24a6 6 0 01-6 6zm0 160H6a6 6 0 01-6-6v-24a6 6 0 016-6h436a6 6 0 016 6v24a6 6 0 01-6 6z"
@@ -45,7 +45,7 @@ Array [
         </button>
       </div>
       <div
-        className="navigation"
+        className="navigation_container"
       >
         <ul
           className="navigation top_navigation"
@@ -141,25 +141,7 @@ Array [
               rel="noopener"
               target="_blank"
             >
-              Lacinia dolor
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              rel="noopener"
-              target="_blank"
-            >
               Consequat 
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              rel="noopener"
-              target="_blank"
-            >
-              Voluptate nostrud
             </a>
           </li>
           <li>
@@ -170,11 +152,21 @@ Array [
               role="button"
               tabIndex={0}
             >
-              <span
+              <div
                 className="dropdown_trigger"
               >
                 Suspendisse semper
-              </span>
+                <svg
+                  height={8}
+                  viewBox="0 0 11 8"
+                  width={11}
+                >
+                  <path
+                    d="M9.524.724l1.262 1.263L5.393 7.38 0 1.987 1.263.724l4.13 4.131z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </div>
               <ul
                 className="dropdown_menu"
               >
@@ -215,7 +207,9 @@ Array [
               </ul>
             </span>
           </li>
-          <li>
+          <li
+            className="nav_button"
+          >
             <a
               className="button button"
               href="#"
@@ -229,7 +223,9 @@ Array [
       </div>
     </div>
   </header>,
-  <main>
+  <main
+    className=""
+  >
     <div
       className="basic_page"
     >

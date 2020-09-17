@@ -6,7 +6,7 @@ import styles from "./styles.module.scss"
 
 import Column from "./column"
 
-const Container = ({ className, columns, config }) => {
+const Container = ({ className, children, columns, config }) => {
   const wrapperClasses = classNames(styles.container, {
     [className]: className,
     [`mb-${config.margin_bottom}`]: config.margin_bottom
@@ -15,9 +15,9 @@ const Container = ({ className, columns, config }) => {
   return (
     <div className={wrapperClasses}>
       <div className={styles.content}>
-        {columns.map((column, idx) => (
-          <Column key={idx} {...column} />
-        ))}
+        {children}
+
+        {columns && columns.map((column, idx) => <Column key={idx} {...column} />)}
       </div>
     </div>
   )
@@ -28,6 +28,10 @@ Container.propTypes = {
    * A CSS class adding to the wrapping element.
    */
   className: PropTypes.string,
+  /**
+   * For use in templates when more control is needed.
+   */
+  children: PropTypes.node,
   /**
    * An array of column objects that get passed on to the <Column />.
    */

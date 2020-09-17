@@ -3,11 +3,23 @@
 .navigation {
   @include reset-list;
 
-  align-items: center;
   display: flex;
 
-  &.is_vertical {
-    align-items: flex-start;
-    flex-direction: column;
+  a {
+    display: inline-block;
+
+    @include hover {
+      text-decoration: none;
+    }
+  }
+
+  li {
+    margin-bottom: 0;
   }
 }
+
+// --------------------------------------------------------
+
+// .nav_button {
+//   //
+// }
