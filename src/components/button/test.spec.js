@@ -18,7 +18,7 @@ describe("Button Controller", () => {
 
 describe("Button Component", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Component {...fixtures.fixed} />).toJSON()
+    const tree = renderer.create(<Component {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
