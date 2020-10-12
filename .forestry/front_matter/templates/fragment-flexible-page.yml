@@ -1,0 +1,19 @@
+---
+label: "[Fragment] Flexible Page"
+hide_body: true
+fields:
+- name: containers
+  type: field_group_list
+  fields:
+  - name: container
+    type: include
+    config: {}
+    template: fragment-container
+    label: Container
+  config:
+    min:
+    max:
+    labelField: title
+  label: Containers
+  description: Containers are configurable groups of components that make up each
+    page. You can add as many containers and rearrange as needed.

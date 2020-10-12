@@ -1,5 +1,6 @@
 ---
 model: Page
+published: true
 layout: flexible
 title: Flexible Page - Columns
 layout_basic:

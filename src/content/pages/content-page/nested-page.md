@@ -1,6 +1,7 @@
 ---
 title: Nested Page
 model: Page
+published: true
 seo:
   title: ''
   description: ''

@@ -1,7 +1,7 @@
 ---
-title: Content Page
+title: Content Page in Draft Mode
 model: Page
-published: true
+published: false
 seo:
   title: ''
   description: ''

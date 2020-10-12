@@ -1,0 +1,20 @@
+---
+label: "[Fragment] Basic Page"
+hide_body: true
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+  description: The main heading on the page.
+- name: body_md
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Body
+  description: The main content area.
