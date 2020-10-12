@@ -1,5 +1,6 @@
 const deepForEach = require("deep-for-each")
-const lodash = require("lodash")
+const set = require("lodash/set")
+const trimEnd = require("lodash/trimEnd")
 
 const getKeyType = require("./get-key-type")
 const processImage = require("./process-image")
@@ -24,21 +25,21 @@ module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
       // Markdown keys are converted to HTML and stored as a new key without the
       // suffix.
       case "md": {
-        const newKeyPath = lodash.trimEnd(keyPath, options.markdownSuffix)
+        const newKeyPath = trimEnd(keyPath, options.markdownSuffix)
         const newValue = processMarkdown(value)
-        if (newValue) lodash.set(frontmatter, newKeyPath, newValue)
+        if (newValue) set(frontmatter, newKeyPath, newValue)
         break
       }
       // Image keys are converted to a relative path from the markdown file to
       // the image, and stored as a new key without the suffix.
       case "img": {
-        const newKeyPath = lodash.trimEnd(keyPath, options.imageSuffix)
+        const newKeyPath = trimEnd(keyPath, options.imageSuffix)
         const newValue = processImage({
           absoluteFilePath: node.fileAbsolutePath,
           imageSrcDir: options.imageSrc,
           value: value
         })
-        if (newValue) lodash.set(frontmatter, newKeyPath, newValue)
+        if (newValue) set(frontmatter, newKeyPath, newValue)
         break
       }
     }

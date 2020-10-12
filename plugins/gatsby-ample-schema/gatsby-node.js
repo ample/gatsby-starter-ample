@@ -1,4 +1,4 @@
-const lodash = require("lodash")
+const find = require("lodash/find")
 
 const loadSchema = require("./lib/load-schema")
 const parseSchema = require("./lib/parse-schema")
@@ -31,7 +31,7 @@ exports.createSchemaCustomization = ({ actions, getNodesByType, schema }) => {
             if (!source[f.name] || source[f.name].length === 0) return null
             // Otherwise, find the node by the filePath attribute (set by
             // gatsby-remark-ample), and return the object.
-            return lodash.find(getNodesByType(f.type), obj => obj.filePath === source[f.name])
+            return find(getNodesByType(f.type), obj => obj.filePath === source[f.name])
           }
         }
       })
