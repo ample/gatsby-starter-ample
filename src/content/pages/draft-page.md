@@ -1,5 +1,5 @@
 ---
-title: Content Page in Draft Mode
+title: "[DRAFT] Content Page"
 model: Page
 published: false
 seo:
