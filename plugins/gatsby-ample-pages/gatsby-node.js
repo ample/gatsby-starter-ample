@@ -8,6 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             id
+            published
             slugPath
           }
         }
@@ -15,8 +16,12 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     // Reference to all pages.
-    const pages = result.data.pages.edges.map(({ node }) => node)
-    // Loop through each page and create it.
+    let pages = result.data.pages.edges.map(({ node }) => node)
+    // Filter out drafts if enabled.
+    if (process.env.GATSBY_PAGES_PUBLISH_MODE) {
+      pages = pages.filter(page => page.published)
+    }
+    // Loop through each of the remaining pages and create them.
     pages.map(page => {
       actions.createPage({
         path: getPagePath(page, pages),

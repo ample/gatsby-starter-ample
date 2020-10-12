@@ -1,6 +1,7 @@
 ---
 title: Home Page
 model: Page
+published: true
 layout: flexible
 layout_flexible:
   containers:

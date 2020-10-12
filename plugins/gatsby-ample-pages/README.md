@@ -31,3 +31,7 @@ That adapter file is heavily documented, but the gist is that, for any given pag
 4. Pass the data onto that layout.
 
 The idea here is that we are simply _wrapping_ static templates from the source project, such that the source project can be developed outside the context of dynamic pages.
+
+### Publishing Workflow
+
+The pages plugin also supports a published/draft mode on pages. Pages have a `published` field on them. To have unpublished pages ignored, set a `GATSBY_PAGES_PUBLISH_MODE` environment variable to some truthy value. Otherwise, all pages will be rendered.

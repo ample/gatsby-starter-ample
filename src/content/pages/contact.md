@@ -1,6 +1,7 @@
 ---
 title: Contact
 model: Page
+published: true
 layout: flexible
 layout_flexible:
   containers:
