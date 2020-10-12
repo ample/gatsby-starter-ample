@@ -11,8 +11,8 @@ fields:
     template: fragment-container
     label: Container
   config:
-    min:
-    max:
+    min: 
+    max: 
     labelField: title
   label: Containers
   description: Containers are configurable groups of components that make up each

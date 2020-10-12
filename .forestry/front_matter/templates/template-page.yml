@@ -18,8 +18,8 @@ fields:
 - name: published
   type: boolean
   label: Published
-  description: Published pages are visible in production, while unpublished pages are
-    not. All pages are available in preview.
+  description: Published pages are visible in production, while unpublished pages
+    are not. All pages are available in preview.
   default: false
 - name: layout
   type: select
@@ -31,9 +31,9 @@ fields:
     - flexible
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Layout
   description: The layout affects how the page appears on the website, along with
     the fields visible here.
