@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import lodash from "lodash"
+import get from "lodash/get"
 
 import { normalizeSEO, SEO } from "@plugins/gatsby-ample-seo"
 
@@ -30,7 +30,7 @@ const PageAdapter = ({ data, location }) => {
 
   // Pull in the page layouts from the source project and look for the React
   // component to render for this page's layout.
-  const TemplateTagName = lodash.get(pageLayouts, `${page.layout}.template`)
+  const TemplateTagName = get(pageLayouts, `${page.layout}.template`)
 
   // If it doesn't exist, simply return a message that the mapping didn't exist.
   if (!TemplateTagName) return <p>Could not find mapping for {page.layout} layout.</p>

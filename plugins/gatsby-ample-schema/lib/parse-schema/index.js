@@ -1,11 +1,11 @@
-const lodash = require("lodash")
+const compact = require("lodash/compact")
 
 const getFieldDef = require("./get-field-dev")
 
 const getTypeDef = type => {
   return `
 type ${type.type}${type.node ? " implements Node" : ""} @infer {
-  ${lodash.compact(Object.entries(type.fields).map(data => getFieldDef(...data))).join("\n  ")}
+  ${compact(Object.entries(type.fields).map(data => getFieldDef(...data))).join("\n  ")}
 }`
 }
 
