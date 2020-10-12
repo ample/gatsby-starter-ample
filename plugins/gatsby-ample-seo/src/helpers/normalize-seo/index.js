@@ -1,7 +1,7 @@
 import deepForEach from "deep-for-each"
 import dig from "object-dig"
-import endsWith from "lodash.endswith"
-import unset from "lodash.unset"
+import endsWith from "lodash/endsWith"
+import unset from "lodash/unset"
 
 /**
  * Function to extract path from value, whether it's an object or a string.

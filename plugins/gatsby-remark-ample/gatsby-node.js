@@ -1,4 +1,5 @@
-const lodash = require("lodash")
+const get = require("lodash/get")
+const set = require("lodash/set")
 const path = require("path")
 
 const getOptions = require("./utils/get-options")
@@ -46,7 +47,7 @@ exports.createSchemaCustomization = ({ actions }, options) => {
 
 exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, options) => {
   // Only process nodes that were created by gatsby-transformer-remark.
-  if (lodash.get(node, "internal.type") !== "MarkdownRemark") return
+  if (get(node, "internal.type") !== "MarkdownRemark") return
 
   // Combine options passed into the plugin with the sensible defaults for a
   // comprehensive object of options.
@@ -54,7 +55,7 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
 
   // Extract the content type so we can set the type of child nodes, which
   // translate to the new frontmatter field, too.
-  const model = lodash.get(node, `frontmatter.${args.modelField}`)
+  const model = get(node, `frontmatter.${args.modelField}`)
 
   // If the model was not specified, then don't try to create the node because
   // the type is unknown.
@@ -128,7 +129,7 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
     }
     // Create the SEO node, then set the new node's frontmatter to the new SEO node.
     actions.createNode(seoNode)
-    lodash.set(newNode, "seo", seoNode)
+    set(newNode, "seo", seoNode)
   }
 
   // Create the new node and build a relationship to the parent, so we can use

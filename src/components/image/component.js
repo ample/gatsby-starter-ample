@@ -3,14 +3,14 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import classNames from "classnames"
 import dig from "object-dig"
-import lodash from "lodash"
+import startCase from "lodash/startCase"
 import path from "path"
 
 import styles from "./styles.module.scss"
 
 export const defaultAltAttribute = image => {
   const filename = path.basename(image, path.extname(image))
-  return lodash.startCase(filename)
+  return startCase(filename)
 }
 
 const Image = ({ alt, className, src, ...props }) => {
