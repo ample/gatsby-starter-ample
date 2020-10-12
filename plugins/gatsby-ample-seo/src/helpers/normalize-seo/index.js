@@ -1,6 +1,6 @@
 import deepForEach from "deep-for-each"
 import dig from "object-dig"
-import endsWith from "lodash/endswith"
+import endsWith from "lodash/endsWith"
 import unset from "lodash/unset"
 
 /**
