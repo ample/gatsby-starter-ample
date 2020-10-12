@@ -14,18 +14,18 @@ exports.createSchemaCustomization = ({ actions }, options) => {
 
   // Set the predictable type definitions.
   let typeDefs = `
-    interface ModelFrontmatter {
+    interface ModelFrontmatter @infer {
       id: ID!
       slug: String
       slugPath: String
       filePath: String
     }
 
-    type MarkdownRemarkFields implements Node {
+    type MarkdownRemarkFields implements Node @infer {
       processed_frontmatter: ModelFrontmatter
     }
 
-    type SeoMeta implements Node {
+    type SeoMeta implements Node @infer {
       id: ID!
     }
   `
@@ -35,7 +35,7 @@ exports.createSchemaCustomization = ({ actions }, options) => {
   // is not yet in place.)
   for (let model of args.models) {
     typeDefs += `
-      type ${model} implements Node & ModelFrontmatter {
+      type ${model} implements Node & ModelFrontmatter @infer {
         id: ID!
         seo: SeoMeta
       }
