@@ -2,11 +2,11 @@ const remark = require("remark")
 const remarkHTML = require("remark-html")
 const visit = require("unist-util-visit")
 
-module.exports = (markdown) =>
+module.exports = markdown =>
   remark()
     .use(remarkHTML)
-    .use(() => (tree) =>
-      visit(tree, "link", (node) => {
+    .use(() => tree =>
+      visit(tree, "link", node => {
         // Check if link is external by checking if the "url" attribute starts with http.
         if (node.url.startsWith("http")) {
           if (!node.data) {
