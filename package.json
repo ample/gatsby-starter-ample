@@ -88,7 +88,7 @@
     "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0",
     "generate": "node plugins/gatsby-ample-generator/lib/generate",
     "lint": "eslint -c .eslintrc.js ./src && stylelint --config stylelint.config.js './src/**/*.scss'",
-    "netlify:build": "yarn lint && yarn test && GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn build --log-pages",
+    "netlify:build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn build --log-pages",
     "test:update": "yarn test --updateSnapshot",
     "test": "jest"
   },
