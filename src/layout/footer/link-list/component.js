@@ -15,7 +15,7 @@ const LinkList = ({ activeClassName, heading, links = [] }) => (
 
     {links.map((item, index) => {
       return (
-        <li>
+        <li key={index}>
           <Link
             activeClassName={activeClassName}
             className={item.className}
