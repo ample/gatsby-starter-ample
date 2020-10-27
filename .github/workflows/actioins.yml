@@ -1,9 +1,9 @@
-name: Run Tests
+name: CI
 
 on: push
 
 jobs:
-  run:
+  run-linters:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,8 +15,16 @@ jobs:
         with:
           node-version: 12
 
-      - name: Install Node.js dependencies
+      - name: Install Node modules
         run: yarn
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
+          prettier: true
+          stylelint: true
 
       - name: Run Jest
         run: yarn test
