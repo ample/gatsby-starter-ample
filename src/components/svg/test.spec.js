@@ -1,14 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import SVG from "."
-
-import MediaQueryDebugger from "@plugins/gatsby-ample-seo/src/components/seo"
+import { component as SVG, fixtures } from "."
 
 describe("SVG", () => {
   it("renders correctly", () => {
-    MediaQueryDebugger
-    const tree = renderer.create(<SVG name="bars" />).toJSON()
+    const tree = renderer.create(<SVG {...fixtures.arrow_down} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
