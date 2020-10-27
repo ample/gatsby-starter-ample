@@ -1,5 +1,5 @@
 import * as Button from "@src/components/button"
-// import * as Dropdown from "@src/components/dropdown"
+import * as Card from "@src/components/card"
 import * as Form from "@src/components/form"
 import * as Frame from "@src/components/frame"
 import * as Image from "@src/components/image"
@@ -12,7 +12,7 @@ export default {
   title: "Ample Playground",
   components: {
     button: Button,
-    // dropdown: Dropdown, --> Having issue with the dropdown
+    card: Card,
     form: Form,
     frame: Frame,
     image: Image,

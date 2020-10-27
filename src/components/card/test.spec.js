@@ -1,13 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Card from "./"
+import { component as Card, fixtures } from "."
 
 describe("Card", () => {
   it("renders correctly", () => {
-    const tree = renderer
-      .create(<Card image={{ src: "/uploads/placeholder-image.jpg", alt: "placeholder image" }} />)
-      .toJSON()
+    const tree = renderer.create(<Card {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
