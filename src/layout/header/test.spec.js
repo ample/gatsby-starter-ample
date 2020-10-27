@@ -1,9 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Header from "./"
-
-import fixtures from "./navigation/fixtures"
+import { component as Header, fixtures } from "."
 
 describe("Header", () => {
   it("renders correctly", () => {
