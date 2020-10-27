@@ -1,27 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import classNames from "classnames/bind"
+import component from "./component"
+import fixtures from "./fixtures"
 
-import styles from "./styles.module.scss"
+export default component
 
-const Content = ({ body, className }) => (
-  <div
-    className={classNames(styles.content, { [className]: className })}
-    dangerouslySetInnerHTML={{ __html: body }}
-  />
-)
-
-Content.propTypes = {
-  /**
-   * HTML string to be rendered to the page.
-   */
-  body: PropTypes.string.isRequired,
-  /**
-   * Additional classes placed on the wrapping element.
-   */
-  className: PropTypes.string
-}
-
-Content.defaultProps = {}
-
-export default Content
+export { component, fixtures }

@@ -1,11 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Component from "./"
+import { component as Component, fixtures } from "."
 
-describe("Component", () => {
+describe("Content", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Component body="<p>Hello world</p>" />).toJSON()
+    const tree = renderer.create(<Component {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
