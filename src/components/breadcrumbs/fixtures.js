@@ -1,6 +1,7 @@
 export default {
   default: {
     links: [
+      { icon: "home", label: "Home", url: "#" },
       { label: "Lorem", url: "#" },
       { label: "ipsum", url: "#" },
       { label: "dolor", url: "#" },
