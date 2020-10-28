@@ -163,12 +163,13 @@ module.exports = {
         sourceMap: true
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: ""
-      }
-    },
+    // TODO: Add google analytics trackingId.
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: ""
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
