@@ -1,0 +1,22 @@
+@use '../../styles/global' as *;
+
+// ---------------------------------------------------------
+
+.breadcrumbs {
+  @include reset-list;
+
+  font-size: 13px;
+
+  li {
+    display: inline;
+
+    &:not(:last-of-type) {
+      &::after {
+        content: attr(data-separator);
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs renders correctly 1`] = `
+<ul
+  className="breadcrumbs"
+>
+  <li
+    data-separator="/"
+  >
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      Lorem
+    </a>
+  </li>
+  <li
+    data-separator="/"
+  >
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      ipsum
+    </a>
+  </li>
+  <li
+    data-separator="/"
+  >
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      dolor
+    </a>
+  </li>
+  <li
+    data-separator="/"
+  >
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      sit
+    </a>
+  </li>
+  <li
+    data-separator="/"
+  >
+    <a
+      href="#"
+      rel="noopener"
+      target="_blank"
+    >
+      amet
+    </a>
+  </li>
+</ul>
+`;
