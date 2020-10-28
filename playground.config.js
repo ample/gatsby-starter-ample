@@ -1,3 +1,4 @@
+import * as Breadcrumbs from "@src/components/breadcrumbs"
 import * as Button from "@src/components/button"
 // import * as Dropdown from "@src/components/dropdown"
 import * as Form from "@src/components/form"
@@ -11,6 +12,7 @@ import { layouts as pageLayouts } from "@src/templates/page"
 export default {
   title: "Ample Playground",
   components: {
+    breadcrumbs: Breadcrumbs,
     button: Button,
     // dropdown: Dropdown, --> Having issue with the dropdown
     form: Form,
