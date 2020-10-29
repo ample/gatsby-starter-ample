@@ -3,13 +3,11 @@ import PropTypes from "prop-types"
 
 import styles from "./styles.module.scss"
 
-const ComponentName = ({ name }) => {
-  return (
-    <div className={styles.component_name}>
-      <p>{name}</p>
-    </div>
-  )
-}
+const ComponentName = ({ name }) => (
+  <div className={styles.component_name}>
+    <p>{name}</p>
+  </div>
+)
 
 ComponentName.propTypes = {
   /**
