@@ -1,6 +1,6 @@
 import * as Breadcrumbs from "@src/components/breadcrumbs"
 import * as Button from "@src/components/button"
-// import * as Dropdown from "@src/components/dropdown"
+import * as Card from "@src/components/card"
 import * as Form from "@src/components/form"
 import * as Frame from "@src/components/frame"
 import * as Heading from "@src/components/heading"
@@ -15,7 +15,7 @@ export default {
   components: {
     breadcrumbs: Breadcrumbs,
     button: Button,
-    // dropdown: Dropdown, --> Having issue with the dropdown
+    card: Card,
     form: Form,
     frame: Frame,
     heading: Heading,

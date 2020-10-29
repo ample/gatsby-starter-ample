@@ -1,5 +1,6 @@
 export default {
   default: {
+    copyright: "2020, All Rights Reserved",
     menus: [
       {
         label: "Quisque",

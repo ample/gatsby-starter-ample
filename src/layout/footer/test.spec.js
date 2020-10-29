@@ -1,15 +1,11 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Footer from "./"
-
-import fixtures from "./fixtures"
+import { component as Footer, fixtures } from "."
 
 describe("Footer", () => {
   it("renders correctly", () => {
-    const tree = renderer
-      .create(<Footer copyright="2020, All Rights Reserved" {...fixtures.default} />)
-      .toJSON()
+    const tree = renderer.create(<Footer {...fixtures.default} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

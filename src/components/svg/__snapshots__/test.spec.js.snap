@@ -2,12 +2,13 @@
 
 exports[`SVG renders correctly 1`] = `
 <svg
-  height={21}
-  viewBox="0 0 448 512"
-  width={26}
+  height={8}
+  viewBox="0 0 11 8"
+  width={11}
 >
   <path
-    d="M442 114H6a6 6 0 01-6-6V84a6 6 0 016-6h436a6 6 0 016 6v24a6 6 0 01-6 6zm0 160H6a6 6 0 01-6-6v-24a6 6 0 016-6h436a6 6 0 016 6v24a6 6 0 01-6 6zm0 160H6a6 6 0 01-6-6v-24a6 6 0 016-6h436a6 6 0 016 6v24a6 6 0 01-6 6z"
+    d="M9.524.724l1.262 1.263L5.393 7.38 0 1.987 1.263.724l4.13 4.131z"
+    fillRule="evenodd"
   />
 </svg>
 `;

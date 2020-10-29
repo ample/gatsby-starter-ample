@@ -1,9 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Link from "."
-
-import fixtures from "./fixtures"
+import { component as Link, fixtures } from "."
 
 describe("Link", () => {
   it("renders internal link correctly", () => {

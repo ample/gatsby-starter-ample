@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classNames from "classnames/bind"
+import classNames from "classnames"
 
 import Label from "./label"
 import { textAppearanceOptions, textValidationOptions, widthOptions } from "./__config__"
