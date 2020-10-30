@@ -1,20 +1,46 @@
+@use 'sass:color';
+
+// ---------------------------------------------------------
+
 :global {
   .dark-mode,
   .light-mode {
-    --playground-background: #fff;
+    --color-blue: #0095df;
+    --color-gray-lightest: #fafafa;
+    --color-gray-lighter: #eaecef;
+    --color-gray-light: #ccc;
+    --color-gray: #a6a6a6;
+    --color-grayish-blue: #303947;
+    --color-white: #fff;
+    --playground-background: var(--color-gray-lightest);
+    --playground-component-box-shadow: 0 1px 4px 0 var(--color-gray-light);
+    --playground-component-bottom-border: 2px solid var(--color-gray-light);
     --playground-component-name: #777575;
     --playground-component-variation-name: #8a8989;
+    --playground-component-variation-name-border: #8a8989;
     --playground-font-family: system-ui;
-    --playground-header-background: #efefef;
+    --playground-header-background: var(--color-gray-lighter);
+    --playground-logo: var(--color-blue);
+    --playground-shadow: var(--color-gray-light);
+    --playground-svg: var(--color-blue);
     --playground-text: #333;
-    --playground-shadow: #ccc;
-    --playground-svg: #0095df;
-    --playground-toggle: #303947;
+    --playground-toggle: var(--color-gray);
+    --playground-toggle-shadow: 0 0 10px var(--color-gray-lighter);
   }
 
   .dark-mode {
-    --playground-background: #303947;
-    --playground-toggle: #eaecef;
+    --playground-background: var(--color-gray-light);
+    --playground-header-background: var(--color-grayish-blue);
+    --playground-component-bottom-border: 2px solid var(--color-grayish-blue);
+    --playground-component-box-shadow: 0 1px 4px 0 var(--color-gray);
+    --playground-component-name: var(--color-grayish-blue);
+    --playground-component-variation-name: var(--playground-component-name);
+    --playground-component-variation-name-border: #686f7b;
+    --playground-logo: var(--color-gray-lighter);
+    --playground-svg: var(--color-grayish-blue);
+    --playground-text: var(--color-gray-lighter);
+    --playground-toggle: var(--color-gray-lighter);
+    --playground-toggle-shadow: 0 0 3px var(--color-gray-light);
   }
 }
 
@@ -26,7 +52,7 @@
 
   &_header {
     align-items: center;
-    background-color: var(--playground-header-bg);
+    background-color: var(--playground-header-background);
     box-shadow: 0 3px 15px 0 var(--playground-shadow);
     color: var(--playground-text);
     display: flex;
@@ -41,6 +67,10 @@
 
     .logo {
       width: 60px;
+
+      svg {
+        fill: var(--playground-logo);
+      }
     }
   }
 }
@@ -48,7 +78,7 @@
 // ---------------------------------------------------------
 
 .component {
-  box-shadow: 0 1px 4px 0 var(--playground-shadow);
+  box-shadow: var(--playground-component-box-shadow);
 
   &_name {
     font-size: 32px;
@@ -70,7 +100,7 @@
   }
 
   &:after {
-    border-bottom: 2px solid var(--playground-shadow);
+    border-bottom: var(--playground-component-bottom-border);
     content: '';
     display: block;
     margin: 0 auto;
@@ -97,7 +127,7 @@
     position: relative;
 
     &:after {
-      border-bottom: 1px solid var(--playground-shadow);
+      border-bottom: 1px solid var(--playground-component-variation-name-border);
       bottom: -8px;
       content: '';
       display: block;
@@ -131,7 +161,7 @@
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 50%;
-    box-shadow: 0 0 30px var(--playground-shadow);
+    box-shadow: var(--playground-toggle-shadow);
     content: '';
     height: $circle-size;
     left: 0;
