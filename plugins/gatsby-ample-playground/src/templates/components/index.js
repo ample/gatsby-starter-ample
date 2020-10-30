@@ -1,64 +1,58 @@
-import React, { useState } from "react"
+import React from "react"
 import { Helmet } from "react-helmet"
-import get from "lodash/get"
 import startCase from "lodash/startCase"
 import toLower from "lodash/toLower"
+import useDarkMode from "use-dark-mode"
 
 import Variations from "../../components/variations"
 
 import config from "@root/playground.config"
 
+import Image from "@src/components/image"
+import Link from "@src/components/link"
+
+import icon from "@src/images/favicon.png"
+
 import styles from "./styles.module.scss"
 
 const ComponentsPlayground = () => {
-  const [currentColor, setCurrentColor] = useState(get(config, "themes.default") || "transparent")
+  const darkMode = useDarkMode(false)
 
   const components = Object.entries(config.components).map((cfg, idx) => {
     const compName = cfg[0]
     const { component: Component, fixtures } = cfg[1]
 
     return (
-      <div
+      <section
         key={idx}
-        className={styles.comp_section}
+        className={styles.component}
         style={{ maxWidth: cfg[1].maxWidth || "100%" }}
       >
-        <h2 id={compName} className={styles.comp_heading}>
+        <h2 id={compName} className={styles.component_name}>
           <a href={`#${compName}`}>{startCase(toLower(compName))}</a>
         </h2>
         <Variations component={Component} data={fixtures} />
-      </div>
+      </section>
     )
   })
 
   const title = `Components | ${config.title || "Ample Playground"}`
 
   return (
-    <div className={styles.template} style={{ backgroundColor: currentColor }}>
+    <main className={styles.playground}>
       <Helmet>
         <title>{title}</title>
       </Helmet>
 
-      <div className={styles.header}>
+      <header className={styles.playground_header}>
+        <Link to="/" className={styles.logo}>
+          <Image src={icon} alt="logo" />
+        </Link>
         <h1>{title}</h1>
+      </header>
 
-        {config.themes && (
-          <ul className={styles.theme_toggle}>
-            {Object.values(config.themes).map((color, idx) => (
-              <li key={idx}>
-                <button
-                  className={currentColor === color ? styles.active : null}
-                  onClick={() => setCurrentColor(color)}
-                  style={{ backgroundColor: color }}
-                />
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      <div className={styles.comp_wrapper}>{components}</div>
-    </div>
+      {components}
+    </main>
   )
 }
 
