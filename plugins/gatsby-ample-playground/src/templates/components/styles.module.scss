@@ -8,6 +8,13 @@
     --playground-header-background: #efefef;
     --playground-text: #333;
     --playground-shadow: #ccc;
+    --playground-svg: #0095df;
+    --playground-toggle: #303947;
+  }
+
+  .dark-mode {
+    --playground-background: #303947;
+    --playground-toggle: #eaecef;
   }
 }
 
@@ -104,6 +111,54 @@
 
     &.full {
       padding: 0;
+    }
+  }
+}
+
+// ---------------------------------------------------------
+
+.toggle_theme {
+  $pill-size: 28px;
+  $circle-size: 36px;
+
+  background-color: var(--playground-toggle);
+  border-radius: 16px;
+  height: $pill-size;
+  position: relative;
+  width: $pill-size * 2;
+
+  &:before {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--playground-shadow);
+    content: '';
+    height: $circle-size;
+    left: 0;
+    position: absolute;
+    top: ($pill-size - $circle-size) / 2;
+    transition: 0.3s;
+    width: $circle-size;
+  }
+
+  svg {
+    fill: var(--playground-svg);
+    left: 6px;
+    position: absolute;
+    top: ($pill-size - ($circle-size / 1.5)) / 2;
+    transition: 0.3s;
+    width: $circle-size / 1.5;
+    z-index: 1;
+  }
+
+  &.dark_mode {
+    &::before,
+    svg {
+      transform: translateX(20px);
+    }
+
+    svg {
+      left: 5px;
     }
   }
 }
