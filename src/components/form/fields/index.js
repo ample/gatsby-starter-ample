@@ -36,13 +36,13 @@ const normalizedFieldData = data => {
 
 // ---------------------------------------- | Component
 
-const FormFields = ({ fields, heading }) => (
+const FormFields = ({ fields, formHandler, heading }) => (
   <div className={styles.form_field_group}>
     {heading && <h2>{heading}</h2>}
 
     {normalizedFieldData(fields).map((field, idx) => {
       const TagName = fieldMap[field.type]
-      if (TagName) return <TagName key={idx} {...field} />
+      if (TagName) return <TagName key={idx} {...field} formHandler={formHandler} />
       return (
         <div key={idx}>
           <p>
@@ -112,7 +112,13 @@ FormFields.propTypes = {
       width: PropTypes.string
     })
   ).isRequired,
-  /** An optional heading to display above the fields. */
+  /**
+   * A method that handles updating the form's data object on change.
+   */
+  formHandler: PropTypes.func,
+  /**
+   * An optional heading to display above the fields.
+   */
   heading: PropTypes.string
 }
 

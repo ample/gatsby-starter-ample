@@ -12,7 +12,7 @@ layout_flexible:
     - title: Main Column
       components:
       - template: component-form
-        form: src/content/forms/contact-form.md
+        form: src/content/forms/simple-form.md
       config:
         width: 1/2
         text_align: ''
