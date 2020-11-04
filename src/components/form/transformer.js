@@ -23,7 +23,7 @@ const normalizeField = field => {
 export default input => {
   // If the input object has a form key-value pair, that becomes the form
   // object.
-  let form = input.form ? input.form : input
+  let form = input.form ? { ...input.form } : { ...input }
 
   // This normalizes all field data to ensure that labels, names, and other
   // required attributes are populated before being sent to the form. This
