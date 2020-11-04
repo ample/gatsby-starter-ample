@@ -147,7 +147,7 @@ module.exports = {
         background_color: `#0095df`,
         theme_color: `#0095df`,
         display: `minimal-ui`,
-        icon: `src/images/ample-icon.png`
+        icon: `src/images/favicon.png`
       }
     },
     {
