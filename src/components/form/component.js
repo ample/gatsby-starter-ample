@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import PropTypes from "prop-types"
 import axios from "axios"
 import flatMap from "lodash/flatMap"
@@ -9,47 +9,62 @@ import FormFieldGroup from "./fields"
 import styles from "./styles.module.scss"
 
 // TODO:
-// - [ ] Move normalizedFieldData into the transformer.
-// - [ ] Clean up fields/index
-// - [ ] Adjust specs
-// - [ ] Initialize the "formData" object as having keys representing all values in the form.
-// - [ ] Update object onChange (this should already be happening)
-// - [ ] Use axios to submit to the function
-// - [ ] Add a form state to help front-enders with easy way to manage appearance
+// - [✔️] Move normalizedFieldData into the transformer.
+// - [✔️] Clean up fields/index
+// - [✔️] Initialize the "formData" object as having keys representing all values in the form.
+// - [✔️] Update object onChange (this should already be happening)
+// - [✔️] Use axios to submit to the function
+// - [✔️] Add a form state to help front-enders with easy way to manage appearance
 // - [ ] Fix specs
 
 const Form = ({ button_label, className, title, field_groups }) => {
-  // const formFieldNames = Object.fromEntries(
-  //   field_groups.fields.map(({ name }) => [name, undefined])
-  // )
-
+  // Set the initial form data as an object which contains all field names as
+  // keys, and each value as undefined.
   const fieldNames = flatMap(field_groups.map(group => group.fields)).map(({ name }) => name)
-  console.log(fieldNames)
-  const [formData, setFormData] = useState({})
+  const initialFormData = {
+    _meta: { title: title },
+    data: Object.fromEntries(fieldNames.map(x => [x, undefined]))
+  }
+  const [formData, setFormData] = useState(initialFormData)
 
+  // Controls the form's current state.
+  const [formState, setFormState] = useState(null)
+
+  // Form DOM element.
+  const formEl = useRef(null)
+
+  /**
+   * This function gets passed down to the fields. Each field component is
+   * responsible for calling this function when its value changes.
+   *
+   * @param {string} name Name of the field
+   * @param {string} value Current value of the field
+   */
   const formDataHandler = (name, value) => {
-    setFormData({ ...formData, [name]: value })
+    setFormData({ ...formData, data: { ...formData.data, [name]: value } })
   }
 
+  /**
+   * Sends the current data object to the function.
+   *
+   * @param {object} event onSubmit event object
+   */
   const handleSubmit = event => {
+    // Set the form state to loading.
+    setFormState("loading")
+    // Prevent the form from being submitted via default browser request.
     event.preventDefault()
-    // console.log(event.target)
-    // console.log(event.target.elements)
-
-    console.log(formData)
-
-    // const fields = [...event.target.elements]
-
-    // fields.map(obj => {
-    //   console.log(obj.name, obj.value)
-    // })
-
-    // console.log("SUBMITTING FORM ...")
-
-    // axios.post("/.netlify/functions/submit-form", {}).then(result => {
-    //   console.log("RESPONSE RECEIVED.")
-    //   console.log(result)
-    // })
+    // Submit form data to the function for processing.
+    axios
+      .post("/.netlify/functions/submit-form", formData)
+      .then(() => {
+        setFormState("success")
+        formEl.current.reset()
+      })
+      .catch(err => {
+        setFormState("error")
+        console.error(err)
+      })
   }
 
   return (
@@ -59,9 +74,11 @@ const Form = ({ button_label, className, title, field_groups }) => {
       })}
       // action="post"
       // data-netlify="true"
+      ref={formEl}
       onSubmit={handleSubmit}
       name={title}
     >
+      <p>Current Form State: {formState || "null"}</p>
       <input type="hidden" name="form-name" value={title} />
       {field_groups.map((group, idx) => (
         <FormFieldGroup key={idx} {...group} formHandler={formDataHandler} />

@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import parameterize from "parameterize-string"
 
 import styles from "../styles.module.scss"
 
@@ -17,30 +16,13 @@ let fieldMap = {
   text: TextField
 }
 
-/**
- * Preps the props for passing them on to the various field components.
- */
-const normalizedFieldData = data => {
-  return data.map(field => ({
-    ...field,
-    appearance: field[`${field.type}_appearance`],
-    name: field.name || parameterize(field.title || "", { separator: "_" }),
-    label: field.label || field.title,
-    options: field[`${field.type}_options`],
-    placeholder: field[`${field.type}_placeholder`],
-    type: field.type || "Short Text",
-    validation: field[`${field.type}_validation`],
-    width: field.width || "full"
-  }))
-}
-
 // ---------------------------------------- | Component
 
 const FormFields = ({ fields, formHandler, heading }) => (
   <div className={styles.form_field_group}>
     {heading && <h2>{heading}</h2>}
 
-    {normalizedFieldData(fields).map((field, idx) => {
+    {fields.map((field, idx) => {
       const TagName = fieldMap[field.type]
       if (TagName) return <TagName key={idx} {...field} formHandler={formHandler} />
       return (
@@ -126,4 +108,4 @@ FormFields.defaultProps = {}
 
 export default FormFields
 
-export { fieldMap, FormFields, normalizedFieldData }
+export { fieldMap, FormFields }
