@@ -1,5 +1,6 @@
 ---
 title: Simple Form
+driver: netlify
 model: Form
 button_label: Submit
 field_groups:

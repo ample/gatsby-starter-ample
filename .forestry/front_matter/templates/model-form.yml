@@ -12,6 +12,22 @@ fields:
   hidden: true
   default: Form
   label: Model
+- name: driver
+  type: select
+  default: netlify
+  config:
+    required: true
+    options:
+    - local_success
+    - local_error
+    - netlify
+    source:
+      type: simple
+      section:
+      file:
+      path:
+  label: Form Service
+  description: This is the service that will store this form's data.
 - name: button_label
   type: text
   config:
@@ -68,9 +84,9 @@ fields:
         - select
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Type
       description: The type of field to display. You can further adjust the appearance
         in the fields below.
@@ -84,9 +100,9 @@ fields:
         - long
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Appearance (Text)
       description: Affects the appearance of a text field. Enables you to choose long-form
         or short-form text. The default is short.
@@ -103,9 +119,9 @@ fields:
         - phone
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Validation (Text)
       description: Add further validation to your text field by choosing one of the
         preconfigured options.
@@ -132,9 +148,9 @@ fields:
         - radio
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Appearance (Select)
       description: If using a select field, this determines how the field's options
         are displayed. The default is a dropdown.
@@ -145,8 +161,8 @@ fields:
       type: list
       config:
         use_select: false
-        min: 
-        max: 
+        min:
+        max:
       label: Options (Select)
       description: If using a dropdown or radio buttons, these are the options presented
         to the user in the order they are listed here.
@@ -164,9 +180,9 @@ fields:
         - quarter
         source:
           type: simple
-          section: 
-          file: 
-          path: 
+          section:
+          file:
+          path:
       label: Width
       description: The width of the form enables you to place multiple fields in the
         same row, or to have this field take up an entire row on the screen.
@@ -178,15 +194,15 @@ fields:
         other fields down the page.
     config:
       min: 1
-      max: 
-      labelField: 
+      max:
+      labelField:
     label: Fields
     description: The fields to display in the form group, in the order they are listed
       here.
   config:
-    min: 
-    max: 
-    labelField: 
+    min:
+    max:
+    labelField:
   label: Field Groups
   description: Form fields are displayed in groups on screen.
 pages:

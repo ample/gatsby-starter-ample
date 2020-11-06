@@ -1,6 +1,7 @@
 ---
 title: Contact Form
 model: Form
+driver: netlify
 button_label: Submit
 field_groups:
 - title: Personal Info
