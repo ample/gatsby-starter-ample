@@ -11,7 +11,6 @@ module.exports = async formData => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     data: qs.stringify(data)
   }
-  console.log(axiosOptions)
   // Make the request.
   return axios(axiosOptions)
 }
