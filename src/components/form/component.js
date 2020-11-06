@@ -63,6 +63,7 @@ const Form = ({ button_label, className, driver, title, field_groups }) => {
       className={classNames(styles.form, {
         [className]: className
       })}
+      action="/"
       data-netlify={driver === "netlify"}
       ref={formEl}
       onSubmit={handleSubmit}
