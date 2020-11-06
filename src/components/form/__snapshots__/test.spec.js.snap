@@ -3,6 +3,7 @@
 exports[`Form Component renders correctly 1`] = `
 <form
   className="form"
+  data-netlify={false}
   name="Contact Form"
   onSubmit={[Function]}
 >

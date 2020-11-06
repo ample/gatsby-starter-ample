@@ -8,25 +8,6 @@ import FormFieldGroup from "./fields"
 
 import styles from "./styles.module.scss"
 
-// TODO:
-// - [✔️] Move normalizedFieldData into the transformer.
-// - [✔️] Clean up fields/index
-// - [✔️] Initialize the "formData" object as having keys representing all values in the form.
-// - [✔️] Update object onChange (this should already be happening)
-// - [✔️] Use axios to submit to the function
-// - [✔️] Add a form state to help front-enders with easy way to manage appearance
-// - [✔️] Fix specs
-// - [✔️] Separate function handlers from source files
-// - [✔️] Abstract form submission process as a source file
-// - [✔️] Abstract form submission drivers
-// - [✔️] Add a driver option for the CMS
-// - [✔️] Add a driver for netlify
-// - [✔️] Add a driver for local success
-// - [✔️] Add a driver for local error
-// - [ ] Test that Netlify functions work (i.e. that new forms get picked up)
-// - [ ] Double-check that the playground is working okay and error-free for the form component
-// - [ ] Hand off to Jeff for cleaning up the front end.
-
 const Form = ({ button_label, className, driver, title, field_groups }) => {
   // Set the initial form data as an object which contains all field names as
   // keys, and each value as undefined.
