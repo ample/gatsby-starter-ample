@@ -124,7 +124,7 @@ module.exports = {
         // imageSuffix: "_src",
         // markdownSuffix: "_md",
         // modelField: "model",
-        models: ["AdminReferences", "AdminSeo", "Form", "Page", "Redirect"],
+        models: ["AdminReferences", "AdminSeo", "AdminTrainingVideos", "Form", "Page", "Redirect"],
         projectRoot: path.join(__dirname)
         // seoField: "seo"
       }
