@@ -3,7 +3,7 @@ const path = require("path")
 exports.createPages = ({ actions: { createPage } }) => {
   createPage({
     path: "/admin",
-    component: path.join(__dirname, "./src/templates/dashboard/index.js"),
+    component: path.join(__dirname, "./src/views/app.js"),
     context: {}
   })
 }

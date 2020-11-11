@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import { handleLogin, isLoggedIn } from "../../services/auth"
 
-const LoginTemplate = () => {
+const LoginView = () => {
   if (isLoggedIn()) {
-    navigate(`/admin/training`)
+    navigate(`/admin`)
   }
 
   const [user, setUser] = useState({ username: ``, password: `` })
@@ -16,7 +16,9 @@ const LoginTemplate = () => {
   const handleSubmit = event => {
     event.preventDefault()
     const success = handleLogin(user)
-    console.log({ success })
+    if (success) {
+      navigate(`/admin`)
+    }
   }
 
   return (
@@ -37,4 +39,4 @@ const LoginTemplate = () => {
   )
 }
 
-export default LoginTemplate
+export default LoginView

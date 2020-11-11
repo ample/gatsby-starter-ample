@@ -32,5 +32,7 @@ export const isLoggedIn = () => {
 
 export const logout = callback => {
   setUser({})
-  callback()
+  if (typeof callback === "function") {
+    callback()
+  }
 }
