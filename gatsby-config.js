@@ -57,6 +57,11 @@ module.exports = {
         disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
       }
     },
+    /** */
+    {
+      resolve: `gatsby-ample-dashboard`,
+      options: {}
+    },
     // Adds a debugger for media queries
     // src/layout. (See plugins/gatsby-ample-debuggers.)
     `gatsby-ample-debuggers`,

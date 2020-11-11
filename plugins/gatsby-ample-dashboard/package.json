@@ -1,0 +1,6 @@
+{
+  "name": "gatsby-ample-dashboard",
+  "dependencies": {
+    "gatsby-plugin-create-client-paths": "^2.3.13"
+  }
+}
