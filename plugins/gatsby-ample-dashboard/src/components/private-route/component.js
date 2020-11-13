@@ -1,10 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { navigate } from "gatsby"
-import { isLoggedIn } from "../../services/auth"
+import { useAuth0 } from "@auth0/auth0-react"
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
-  if (!isLoggedIn() && location.pathname !== `/admin/login`) {
+  const { isAuthenticated } = useAuth0()
+
+  if (!isAuthenticated && location.pathname !== `/admin/login`) {
     navigate("/admin/login")
     return null
   }
