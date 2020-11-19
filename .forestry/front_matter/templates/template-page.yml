@@ -21,6 +21,12 @@ fields:
   description: Published pages are visible in production, while unpublished pages
     are not. All pages are available in preview.
   default: false
+- name: exclude_from_sitemap
+  type: boolean
+  label: Exclude from Sitemap
+  description: All published pages are included in the sitemap by default. Selecting
+    this option removes this page from the sitemap.
+  default: false
 - name: layout
   type: select
   default: basic
@@ -31,9 +37,9 @@ fields:
     - flexible
     source:
       type: simple
-      section: 
-      file: 
-      path: 
+      section:
+      file:
+      path:
   label: Layout
   description: The layout affects how the page appears on the website, along with
     the fields visible here.
