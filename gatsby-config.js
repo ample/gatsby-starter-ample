@@ -120,8 +120,9 @@ module.exports = {
         // markdownSuffix: "_md",
         // modelField: "model",
         models: ["AdminReferences", "AdminSeo", "Form", "Page", "Redirect"],
+        plugins: ["gatsby-ample-pages"],
         projectRoot: path.join(__dirname)
-        // seoField: "seo"
+        // seoField: "seo",
       }
     },
     {
