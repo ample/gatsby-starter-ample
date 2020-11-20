@@ -146,8 +146,6 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
   // Run the initNode API.
   pluginAPIs.initNode.map(func => (newNode = func(newNode)))
 
-  console.log("NEW NODE", newNode)
-
   // Create the new node and build a relationship to the parent, so we can use
   // childMarkdownRemark to get to html and other useful attributes.
   actions.createNode(newNode)
