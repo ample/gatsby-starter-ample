@@ -70,8 +70,6 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
     process.exit(1)
   }
 
-  // console.log(pluginAPIs)
-
   // Set the initial state of the frontmatter to be processed as the slug,
   // slugPath, and filePath, along with the frontmatter from the MarkdownRemark
   // node.

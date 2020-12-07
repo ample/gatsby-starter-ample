@@ -1,7 +1,7 @@
 exports.hello = () => {
-  console.log("123")
+  return "Hello World"
 }
 
 exports.initNode = node => {
-  console.log(node)
+  return node
 }
