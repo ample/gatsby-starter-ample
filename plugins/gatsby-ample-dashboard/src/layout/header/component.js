@@ -8,6 +8,7 @@ const LoggedInHeader = () => {
     <>
       <a href="/admin">Dashboard</a>
       <a href="/admin/training">Training</a>
+      <a href="/admin/sitemap">Sitemap</a>
       <button onClick={() => logout({ returnTo: process.env.GATSBY_AUTH0_CALLBACK })}>
         Sign Out
       </button>

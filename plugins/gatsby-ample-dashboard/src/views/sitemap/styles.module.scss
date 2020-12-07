@@ -1,0 +1,7 @@
+.video_grid {
+  column-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  row-gap: 1rem;
+}
