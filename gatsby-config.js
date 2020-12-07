@@ -133,7 +133,48 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/sitemap.xml`
+        output: `/sitemap.xml`,
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+
+            excludedPages: allPage(filter: {exclude_from_sitemap: {eq: true}, published: {eq: true}}) {
+              edges {
+                node {
+                  pagePath
+                }
+              }
+            }
+          }
+        `,
+        serialize: ({ site, excludedPages, allSitePage }) => {
+          // Get the paths of all pages that should be excluded from the
+          // sitemap.
+          const excludePaths = excludedPages.edges.map(({ node }) => node.pagePath)
+          // Return an array of any static route Gatsby built, except those that
+          // were excluded.
+          return allSitePage.edges
+            .filter(({ node }) => !excludePaths.includes(node.path))
+            .map(({ node }) => {
+              return {
+                url: `${site.siteMetadata.siteUrl}${node.path}`,
+                changefreq: `daily`,
+                priority: 0.7
+              }
+            })
+        }
       }
     },
     {
