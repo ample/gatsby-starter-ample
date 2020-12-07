@@ -5,6 +5,7 @@ const path = require("path")
 const getOptions = require("./utils/get-options")
 const getPermalink = require("./utils/get-permalink")
 const getFilePath = require("./utils/get-file-path")
+const loadPlugins = require("./utils/load-plugins")
 const processFrontmatter = require("./utils/process-frontmatter")
 
 exports.createSchemaCustomization = ({ actions }, options) => {
@@ -60,6 +61,14 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
   // If the model was not specified, then don't try to create the node because
   // the type is unknown.
   if (!model) return
+
+  // Load plugin APIs.
+  let pluginAPIs
+  try {
+    pluginAPIs = loadPlugins(options.plugins || [])
+  } catch {
+    process.exit(1)
+  }
 
   // Set the initial state of the frontmatter to be processed as the slug,
   // slugPath, and filePath, along with the frontmatter from the MarkdownRemark
@@ -131,6 +140,9 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
     actions.createNode(seoNode)
     set(newNode, "seo", seoNode)
   }
+
+  // Run the initNode API.
+  pluginAPIs.initNode.map(func => (newNode = func(newNode)))
 
   // Create the new node and build a relationship to the parent, so we can use
   // childMarkdownRemark to get to html and other useful attributes.

@@ -17,6 +17,7 @@ This plugin is part of Ample's Gatsby starter. It is already configured in `gats
 - `markdownSuffix`: The unique suffix on keys that should be processed as markdown.
 - `modelField`: The unique top-level property key that should be used as explicit instruction on which query the file should be available.
 - `models`: The names of the models whose schema we want to explicitly define. (Note: Today we're only defining `id`, `seo`, `slug`, and `slugField`, but the plan is to define the entire schema.) This determines whether a `processed_frontmatter` field is created on the `MarkdownRemark` node (more on this below).
+- `plugins`: An array of plugin dependencies. See [Plugins](#plugins) for more details about how plugins fit into the lifecycle of this plugin.
 - `projectRoot`: The root directory of the project. This is the base from which `filePath` is set upon child nodes. As long as you are using this plugin from either the `plugins` directory or the `node_modules` directory, you won't have to mess with this. Otherwise, set it to `path.join(__dirname)`.
 - `seoField`: The unique top-level property key that houses SEO data.
 
@@ -347,3 +348,36 @@ The intention here was to not remove the original field reference to the SEO dat
   }
 }
 ```
+
+## Plugins
+
+This plugin accepts an array of plugin dependencies. Each dependency is expected to have a `remark-plugin.js` file in its root directory. That file is to contain a series of exported APIs that enable the plugin to hook into the lifecycle of the node creation process provided by this plugin.
+
+For example, say you want to add a `url` field to objects with the `Post` object before it is created. If that logic were to be included in a `gatsby-plugin-posts` plugin, you'd first specify the dependency in `gatsby-config.js`:
+
+```js
+{
+  resolve: `gatsby-remark-ample`,
+  options: {
+    plugins: [`gatsby-plugin-posts`]
+  }
+}
+```
+
+`gatsby-plugin-posts` would be expected to have a `remark-plugin.js` file in its root directory. That file may look something like this:
+
+```js
+const get = require("lodash/get")
+
+exports.initNode = node => {
+  if (get(node, "internal.type") !== "Post") return node
+  node.url = "..."
+  return node
+}
+```
+
+The important piece to note here is that the returned object is used by `gatsby-remark-ample` as the foundation for creating the node that will ultimately become available through GraphQL queries. That typically means it's better to manipulate the input node rather than creating a new one.
+
+### Available APIs
+
+The only API available currently is `initNode`. This is run before the node is created, though after its SEO node is created and attached. It is sent a single argument, which is the node object. That object can be manipulated and returned.
