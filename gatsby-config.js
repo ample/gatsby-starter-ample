@@ -36,7 +36,8 @@ module.exports = {
         disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
       }
     },
-    `gatsby-ample-dashboard``gatsby-plugin-react-helmet`,
+    `gatsby-ample-dashboard`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
