@@ -7,14 +7,14 @@ import { normalizeSEO, SEO } from "@plugins/gatsby-ample-seo"
 
 import { layouts as pageLayouts } from "@src/templates/page"
 
-const PageAdapter = ({ data, location }) => {
+const PageAdapter = ({ data, pageContext }) => {
   // Extract the page data from the GraphQL query's response.
   let { page } = data
 
   // Normalize the SEO for the SEO component. (Our goal is to refactor this
   // component so that this process happens automatically.)
   const seo = normalizeSEO({
-    location: location,
+    url: pageContext.url,
     overrides: page.seo,
     page: { title: page.title }
   })
@@ -54,11 +54,10 @@ PageAdapter.propTypes = {
     page: PropTypes.object.isRequired
   }).isRequired,
   /**
-   * Location object, sent from gatsby-node.js
+   * The URL at which the page is rendered must be sent.
    */
-  location: PropTypes.shape({
-    href: PropTypes.string.isRequired,
-    origin: PropTypes.string.isRequired
+  pageContext: PropTypes.shape({
+    url: PropTypes.string.isRequired
   }).isRequired
 }
 
