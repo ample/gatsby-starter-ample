@@ -28,12 +28,12 @@ const getImageUrl = (baseUrl, image) => {
   return imageUrl.concat(imagePath)
 }
 
-const normalizeSEO = ({ location = {}, overrides = {}, page = {} }) => {
-  let baseUrl = location.origin
-  if (!baseUrl) return {}
+const normalizeSEO = ({ overrides = {}, page = {}, url }) => {
+  if (!url) return {}
+  let baseUrl = new URL(url).origin
 
   // Add URL to the overrides object and store as a new object.
-  let props = { ...page, ...overrides, baseUrl, url: location.href }
+  let props = { ...page, ...overrides, baseUrl, url }
 
   // Add title and image to props if they exist and the overrides don't.
   if (!props.title && page.title) props.title = page.title

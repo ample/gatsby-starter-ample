@@ -8,11 +8,11 @@ import SEO from "@src/components/seo"
 
 import Template from "./template"
 
-const TemplateAdapter = ({ data, location }) => {
+const TemplateAdapter = ({ data, pageContext }) => {
   let { page } = data
 
   const seo = normalizeSEO({
-    location: location,
+    url: pageContext.url,
     overrides: page.seo,
     page: { title: page.title }
   })
@@ -32,9 +32,11 @@ TemplateAdapter.propTypes = {
     page: PropTypes.object
   }).isRequired,
   /**
-   * Location object send from the template's source.
+   * The URL at which the page is rendered must be sent.
    */
-  location: PropTypes.object.isRequired
+  pageContext: PropTypes.shape({
+    url: PropTypes.string.isRequired
+  }).isRequired
 }
 
 TemplateAdapter.defaultProps = {}

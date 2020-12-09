@@ -1,6 +1,6 @@
 # Normalize SEO
 
-The `normalizeSEO` function provides a means for template adapters to pull together dynamic data, combine it with the current location object, and use it to build an object that can be passed on to the [SEO utility](/?path=/docs/utilities-seo--page).
+The `normalizeSEO` function provides a means for template adapters to pull together dynamic data and use it to build an object that can be passed on to the SEO utility.
 
 ## Usage
 
@@ -8,7 +8,7 @@ The function can be imported from the helper's main index file.
 
 It accepts three named objects as arguments:
 
-- `location`: The page's `location` object. This comes from Gatsby as a prop to any static or dynamically-rendered page.
+- `url`: The page's full URL. We typically send this through the `pageContext` object when using the `createPage` node API.
 - `page`: The current page's basic information, including `title`, `description`, and `image`.
 - `overrides`: Optional structured content that can be used to override the page's basic information.
 
@@ -20,10 +20,7 @@ Putting it all together looks something like this:
 import { normalizeSEO } from "../../helpers" // adjust relative to current file
 
 normalizeSEO({
-  location: {
-    origin: '',
-    href: ''
-  },
+  url: '',
   overrides: {
     title: '',
     description: '',
