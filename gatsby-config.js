@@ -80,7 +80,15 @@ module.exports = {
       resolve: `gatsby-remark-ample`,
       options: {
         imageSrc: path.join(__dirname, "static"),
-        models: ["AdminReferences", "AdminSeo", "Form", "Page", "Redirect"],
+        models: [
+          "AdminFooter",
+          "AdminHeader",
+          "AdminReferences",
+          "AdminSeo",
+          "Form",
+          "Page",
+          "Redirect"
+        ],
         plugins: ["gatsby-ample-pages"],
         projectRoot: path.join(__dirname)
       }

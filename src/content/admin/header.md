@@ -11,6 +11,11 @@ top_nav:
 main_nav:
 - label: "Link #1"
   url: "/"
+  button: false
+  children: []
+- label: "Link #2"
+  url: "/"
+  button: false
   children:
   - label: "Link #1"
     url: "/"
@@ -18,17 +23,13 @@ main_nav:
     url: "/"
   - label: "Link #3"
     url: "/"
-- label: "Link #2"
-  url: "/"
-  button: false
-  children: []
 - label: "Link #3"
   url: "/"
   button: false
   children: []
 - label: "Link #4"
   url: "/"
-  button: false
+  button: true
   children: []
 
 ---
