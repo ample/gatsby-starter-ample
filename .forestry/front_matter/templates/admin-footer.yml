@@ -1,0 +1,85 @@
+---
+label: "[Admin] Footer"
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  hidden: true
+- name: model
+  type: text
+  hidden: true
+  default: AdminFooter
+  label: Model
+- name: menus
+  type: field_group_list
+  config:
+    min: 1
+    max: 4
+  fields:
+  - name: heading
+    label: Heading
+    type: text
+    description: The label above the menu. This cannot be a link.
+  - name: links
+    type: field_group_list
+    config:
+      min: 1
+    fields:
+    - name: label
+      label: Label
+      type: text
+    - name: url
+      label: URL
+      type: text
+    label: Links
+  label: Footer Menus
+  description: The menus below the logo in the footer.
+- name: social_links
+  type: field_group_list
+  config:
+    min: 1
+  fields:
+  - name: icon
+    label: Icon
+    type: select
+    config:
+      required: false
+      options:
+      - linkedin
+      - facebook
+      - twitter
+      source:
+        type: simple
+        section:
+        file:
+        path:
+  - name: url
+    label: URL
+    type: text
+  label: Social Links
+  description: Icons below the tagline linking to social media profiles.
+- name: copyright
+  type: text
+  label: Copyright
+  description: 'Copyright text at bottom of screen. Note: (c) is inserted automatically.'
+  config:
+    required: true
+- name: policy_links
+  type: field_group_list
+  config:
+    min: 1
+  fields:
+  - name: label
+    label: Label
+    type: text
+  - name: url
+    label: URL
+    type: text
+  label: Policy Links
+  description: These are the links shown at the bottom of the footer, next to the
+    copyright.
+pages:
+- src/content/admin/footer.md
