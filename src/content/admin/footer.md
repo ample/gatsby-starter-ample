@@ -25,6 +25,8 @@ menus:
 social_links:
 - icon: linkedin
   url: /
+- icon: facebook
+  url: /
 - icon: twitter
   url: /
 policy_links:
