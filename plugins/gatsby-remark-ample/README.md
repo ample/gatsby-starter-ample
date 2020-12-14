@@ -127,6 +127,7 @@ In addition to the original frontmatter fields and the newly processed fields, t
 
 - `slug`: The filename without the extension.
 - `slugPath`: The relative path with the file slug from the segmented content directory.
+- `pathPrefix`: The slug path, without the last segment.
 - `filePath`: The relative path of the file from the root of the project. This depends on the `projetRoot` option being the absolute path to the Gatsby project. (More on this below the example.)
 
 Consider the example above, but for a page that lives at `src/content/pages/about/company.md`:
