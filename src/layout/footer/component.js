@@ -19,7 +19,7 @@ const Footer = ({ copyright, menus, policy_links, social_links }) => (
 
       {menus &&
         menus.map((menu, index) => (
-          <LinkList key={index} heading={menu.label} links={menu.links} vertical />
+          <LinkList key={index} heading={menu.heading} links={menu.links} vertical />
         ))}
 
       {social_links && <SocialNav links={social_links} />}
