@@ -6,8 +6,6 @@ import Footer from "./footer"
 import Header from "./header"
 import { DebugMediaQueries } from "@plugins/gatsby-ample-debuggers"
 
-import footer_test_data from "./footer/fixtures"
-
 const Layout = ({ children, className }) => (
   <>
     <Header />
@@ -20,7 +18,7 @@ const Layout = ({ children, className }) => (
       {children}
     </main>
 
-    <Footer copyright="2020, All Rights Reserved" {...footer_test_data.default} />
+    <Footer />
 
     <DebugMediaQueries isShowing={process.env.GATSBY_DEBUG_MEDIA_QUERIES} />
   </>
