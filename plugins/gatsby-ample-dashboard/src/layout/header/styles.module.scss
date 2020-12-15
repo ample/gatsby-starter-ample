@@ -4,4 +4,21 @@
   background-color: var(--color-gray);
   box-shadow: 1px 1px 5px var(--color-gray);
   padding: 1rem;
+
+  .logged_in_menu,
+  .logged_out_menu {
+    text-align: right;
+  }
+
+  a,
+  button {
+    color: var(--color-black);
+    display: inline-block;
+    font-size: 0.85rem;
+    margin: 0 0.5rem;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
 }
