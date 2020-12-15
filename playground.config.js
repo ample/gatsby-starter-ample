@@ -2,6 +2,7 @@ import * as BackgroundImage from "@src/components/background-image"
 import * as Breadcrumbs from "@src/components/breadcrumbs"
 import * as Button from "@src/components/button"
 import * as Card from "@src/components/card"
+import * as Carousel from "@src/components/carousel"
 import * as Form from "@src/components/form"
 import * as Frame from "@src/components/frame"
 import * as Heading from "@src/components/heading"
@@ -18,6 +19,7 @@ export default {
     breadcrumbs: Breadcrumbs,
     button: Button,
     card: Card,
+    carousel: Carousel,
     form: Form,
     frame: Frame,
     heading: Heading,
