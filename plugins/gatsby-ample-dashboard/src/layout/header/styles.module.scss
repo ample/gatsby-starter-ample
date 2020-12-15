@@ -1,0 +1,7 @@
+@use '../../../../../src/styles/global' as *;
+
+.header {
+  background-color: var(--color-gray);
+  box-shadow: 1px 1px 5px var(--color-gray);
+  padding: 1rem;
+}

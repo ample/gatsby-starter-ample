@@ -11,6 +11,8 @@ import SitemapView from "../views/sitemap"
 
 import Header from "./header"
 
+import "./global.scss"
+
 const Layout = () => {
   return (
     <div>

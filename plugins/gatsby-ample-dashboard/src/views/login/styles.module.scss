@@ -1,0 +1,16 @@
+@use '../../../../../src/styles/global' as *;
+
+.login_view {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 27px);
+  justify-content: center;
+
+  > div {
+    background-color: var(--color-gray);
+    border-radius: 0.25rem;
+    box-shadow: 1px 1px 5px var(--color-gray);
+    padding: 2rem;
+    text-align: center;
+  }
+}
