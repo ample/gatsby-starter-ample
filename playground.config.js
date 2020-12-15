@@ -1,3 +1,4 @@
+import * as BackgroundImage from "@src/components/background-image"
 import * as Breadcrumbs from "@src/components/breadcrumbs"
 import * as Button from "@src/components/button"
 import * as Card from "@src/components/card"
@@ -13,6 +14,7 @@ import { layouts as pageLayouts } from "@src/templates/page"
 export default {
   title: "Ample Playground",
   components: {
+    background_image: BackgroundImage,
     breadcrumbs: Breadcrumbs,
     button: Button,
     card: Card,
