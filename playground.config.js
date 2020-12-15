@@ -8,6 +8,7 @@ import * as Heading from "@src/components/heading"
 import * as Image from "@src/components/image"
 import * as Link from "@src/components/link"
 import * as SVG from "@src/components/svg"
+import * as Video from "@src/components/video"
 
 import { layouts as pageLayouts } from "@src/templates/page"
 
@@ -23,7 +24,8 @@ export default {
     heading: Heading,
     image: Image,
     link: Link,
-    svg: SVG
+    svg: SVG,
+    video: Video
   },
   templates: {
     basic_page: pageLayouts.basic,
