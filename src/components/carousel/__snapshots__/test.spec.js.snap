@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel renders correctly 1`] = `
+Array [
+  <div>
+    <button
+      id="prev-slide"
+    >
+      Back
+    </button>
+    <button
+      id="next-slide"
+    >
+      Next
+    </button>
+  </div>,
+  <div
+    className="swiper-container"
+  >
+    <div
+      className="swiper-wrapper"
+    >
+      <div
+        className="swiper-slide"
+      >
+        Aliquip minim sit non esse mollit elit dolore eiusmod excepteur non.
+      </div>
+      <div
+        className="swiper-slide"
+      >
+        Ipsum minim sit aliqua commodo velit magna est.
+      </div>
+      <div
+        className="swiper-slide"
+      >
+        Proident nulla magna ex elit dolore ex ullamco nisi consequat et.
+      </div>
+      <div
+        className="swiper-slide"
+      >
+        Anim aliqua pariatur dolore reprehenderit nostrud.
+      </div>
+    </div>
+  </div>,
+]
+`;
