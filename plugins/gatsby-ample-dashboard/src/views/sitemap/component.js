@@ -2,6 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import get from "lodash/get"
 
+import styles from "./styles.module.scss"
+
 const SitemapView = () => {
   const sitemapQuery = useStaticQuery(graphql`
     {
@@ -21,10 +23,13 @@ const SitemapView = () => {
   console.log(pages)
 
   return (
-    <>
-      <h1>Sitemap</h1>
+    <div className={styles.sitemap_view}>
+      <div className={styles.intro}>
+        <h1>Sitemap</h1>
+        <p>This is a full list of URLs available on your site.</p>
+      </div>
       <div className="container">
-        <ul>
+        <ul className={styles.sitemap_list}>
           {pages.map((page, idx) => (
             <li key={idx}>
               <a href={page.path} target="_blank" rel="noreferrer">
@@ -34,7 +39,7 @@ const SitemapView = () => {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   )
 }
 

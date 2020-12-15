@@ -22,8 +22,11 @@ const TrainingView = () => {
   const videos = get(videoQuery, "adminTrainingVideos.videos") || []
 
   return (
-    <>
-      <h1>Training Videos</h1>
+    <div className={styles.training_view}>
+      <div className={styles.intro}>
+        <h1>Training Videos</h1>
+        <p>A list of videos to help you navigate your site and make it awesome!</p>
+      </div>
       <div className="container">
         <div className={styles.video_grid}>
           {videos.map((video, idx) => (
@@ -31,7 +34,7 @@ const TrainingView = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

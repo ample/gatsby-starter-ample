@@ -1,6 +1,6 @@
 @use '../../../../../src/styles/global' as *;
 
-.sitemap_view {
+.dashboard_view {
   padding: 2rem 1rem;
 }
 
@@ -14,14 +14,9 @@
   }
 
   p {
+    line-height: 1.35;
     margin: 0 auto;
     max-width: 32rem;
     text-align: center;
-  }
-}
-
-.sitemap_list {
-  li {
-    margin-bottom: 0.5rem;
   }
 }

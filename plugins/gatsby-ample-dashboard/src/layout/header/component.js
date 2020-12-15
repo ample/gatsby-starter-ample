@@ -36,7 +36,7 @@ const LoggedOutHeader = () => {
 
   return (
     <div className={styles.logged_out_menu}>
-      <button onClick={() => loginWithRedirect()}>Sign In (Auth0)</button>
+      <button onClick={() => loginWithRedirect()}>Sign In</button>
     </div>
   )
 }

@@ -2,8 +2,6 @@ import React from "react"
 import { navigate } from "gatsby"
 import { useAuth0 } from "@auth0/auth0-react"
 
-import Button from "@src/components/button"
-
 import styles from "./styles.module.scss"
 
 const LoginView = () => {
@@ -17,7 +15,7 @@ const LoginView = () => {
     <div className={styles.login_view}>
       <div>
         <p>This section requires authentication.</p>
-        <Button onClick={() => loginWithRedirect()}>Sign In</Button>
+        <button onClick={() => loginWithRedirect()}>Sign In</button>
       </div>
     </div>
   )
