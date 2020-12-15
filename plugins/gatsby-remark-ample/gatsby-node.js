@@ -4,6 +4,7 @@ const path = require("path")
 
 const getOptions = require("./utils/get-options")
 const getPermalink = require("./utils/get-permalink")
+const getPathPrefix = require("./utils/get-path-prefix")
 const getFilePath = require("./utils/get-file-path")
 const loadPlugins = require("./utils/load-plugins")
 const processFrontmatter = require("./utils/process-frontmatter")
@@ -20,6 +21,7 @@ exports.createSchemaCustomization = ({ actions }, options) => {
       slug: String
       slugPath: String
       filePath: String
+      pathPrefix: String
     }
 
     type MarkdownRemarkFields implements Node @infer {
@@ -79,6 +81,11 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
     // slugPath is the path to the file without the extension and the grouping
     // content directory.
     slugPath: getPermalink({
+      absoluteFilePath: node.fileAbsolutePath,
+      contentSrc: args.contentSrc
+    }),
+    // The path prefix is the slug path without the last segment.
+    pathPrefix: getPathPrefix({
       absoluteFilePath: node.fileAbsolutePath,
       contentSrc: args.contentSrc
     }),
