@@ -8,6 +8,8 @@ If you are working with this plugin and aren't familiar with the gatsby-transfor
 
 This plugin is part of Ample's Gatsby starter. It is already configured in `gatsby-config.js`, with commented options. See below for an explanation of the options.
 
+**IMPORTANT! To work properly, you must write your own type definitions.** More on this below.
+
 ## Options
 
 - `contentSrc`: The directory in which your markdown files live. This should be the topmost parent, as it can only be a single directory. **There is a major assumption in this plugin — that your content is segmented within the `contentSrc` directory by another directory, presumably indicating its type.** (e.g. If pages go in `src/content/pages` and posts go in `src/content/posts`, then `src/content` is the `contentSrc` value.)
@@ -16,7 +18,6 @@ This plugin is part of Ample's Gatsby starter. It is already configured in `gats
 - `imageSuffix`: The unique suffix on keys that should be processed as images.
 - `markdownSuffix`: The unique suffix on keys that should be processed as markdown.
 - `modelField`: The unique top-level property key that should be used as explicit instruction on which query the file should be available.
-- `models`: The names of the models whose schema we want to explicitly define. (Note: Today we're only defining `id`, `seo`, `slug`, and `slugField`, but the plan is to define the entire schema.) This determines whether a `processed_frontmatter` field is created on the `MarkdownRemark` node (more on this below).
 - `plugins`: An array of plugin dependencies. See [Plugins](#plugins) for more details about how plugins fit into the lifecycle of this plugin.
 - `projectRoot`: The root directory of the project. This is the base from which `filePath` is set upon child nodes. As long as you are using this plugin from either the `plugins` directory or the `node_modules` directory, you won't have to mess with this. Otherwise, set it to `path.join(__dirname)`.
 - `seoField`: The unique top-level property key that houses SEO data.
@@ -25,15 +26,15 @@ This plugin is part of Ample's Gatsby starter. It is already configured in `gats
 
 This is built on top of gatsby-transformer-remark. It takes the frontmatter from a `MarkdownRemark` node and creates a child of that node from the frontmatter, after further processing those properties and adding a few others.
 
-It also then stores that transformed frontmatter on the `MarkdownRemark` node at `fields.processed_frontmatter` **if the matching model was passed to the plugin** (see `models` option above).
+It also then stores that transformed frontmatter on the `MarkdownRemark` node at `fields.processed_frontmatter`.
 
-There are five concepts that we'll walk through to explain how this is working:
+Here are the primary concepts we'll walk through to explain how this is working:
 
 - Structured Data
+- Type Definitions
 - New Fields
 - Markdown Processing
 - Image Processing
-- SEO
 
 ### Structured Data
 
@@ -45,7 +46,7 @@ One of the key benefits of this plugin is that it groups local content files int
 
 The way structured data works is that it looks for a field at the top level of the frontmatter in nodes processed as `MarkdownRemark`. (This is the `modelField` option.) If it finds the field, it will create a new node of that type, maintaining a relationship to the `MarkdownRemark` node.
 
-### Creating structured child nodes
+#### Creating structured child nodes
 
 Say there's a file in `src/content/pages/index.md` that looks like this:
 
@@ -70,7 +71,7 @@ The node could be queried through `allPage` or `page` because `Page` was the val
 
 This node is a _child_ of the `MarkdownRemark` node and only brings the processed frontmatter with it. For example, `html` would not work in the example above, as `html` is only accessible through the parent `MarkdownRemark` node.
 
-### Accessing structured nodes through the `MarkdownRemark` node
+#### Accessing structured nodes through the `MarkdownRemark` node
 
 If you want to work with fields from the `MarkdownRemark` node _and_ the new structured node, there are two ways to go about it.
 
@@ -121,6 +122,14 @@ Then the page will be available through `fields.processed_frontmatter` as its ty
 }
 ```
 
+### Type Definitions
+
+This plugin **assumes that the types you're using have already been defined.** In the past, this plugin has handled type definitions, but it caused potential conflicts when types are defined outside the context of this plugin.
+
+We recommend using the [gatsby-ample-schema](https://github.com/ample/gatsby-starter-ample/tree/main/plugins/gatsby-ample-schema) plugin to easily define the types you're working with.
+
+Because Gatsby [automatically infers types](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#automatic-type-inference), you don't have to explicitly define every field, including those that this plugin sets. However, make note to avoid conflicts with fields set by this plugin. See the next section on new fields for more info.
+
 ### Added frontmatter fields
 
 In addition to the original frontmatter fields and the newly processed fields, this plugin adds some logical fields to support the way we work, including:
@@ -128,7 +137,7 @@ In addition to the original frontmatter fields and the newly processed fields, t
 - `slug`: The filename without the extension.
 - `slugPath`: The relative path with the file slug from the segmented content directory.
 - `pathPrefix`: The slug path, without the last segment.
-- `filePath`: The relative path of the file from the root of the project. This depends on the `projetRoot` option being the absolute path to the Gatsby project. (More on this below the example.)
+- `filePath`: The relative path of the file from the root of the project. This depends on the `projectRoot` option being the absolute path to the Gatsby project. (More on this below the example.)
 
 Consider the example above, but for a page that lives at `src/content/pages/about/company.md`:
 
@@ -286,69 +295,6 @@ image: "../../../static/uploads/our-company.jpg
 When `gatsby-remark-images` then processes this node, it will transform the `image` property into a `childImageSharp` object if it can find the physical file.
 
 But before `gatsby-remark-images` does its thing, `gatsby-remark-relative-images` also runs through our new node. Its responsibility is to look through body content of the markdown files and convert any items that would become `<img />` tags to adjust their `src` attribute to a relative path from the markdown file to the physical image file.
-
-### SEO
-
-The last feature this plugin brings is support for SEO. It assumes that there is one unique top-level frontmatter key used for storing SEO values. The default is `seo`.
-
-Like the other features here, it ties into our other processes and is extremely opinionated. There are a lot of inner workings to make SEO work right out of the gate, and this adds to that process.
-
-When this plugin finds the appropriate field, it creates a node of type `SeoMeta` as a child of our structured node. We do that so that we can use a single shared fragment through the project for querying SEO values.
-
-Consider our example file with an `seo` field:
-
-```md
----
-title: About our Company
-model: Page
-seo:
-  title: Some Meta Title
----
-```
-
-Now we can query like so:
-
-```graphql
-{
-  page {
-    seo {
-      title
-    }
-  }
-}
-```
-
-That enables you to create a fragment for SEO values, like so:
-
-```graphql
-fragment SEO on SeoMeta {
-  # ...
-}
-```
-
-And then simplify your queries throughout the project:
-
-```graphql
-{
-  page {
-    seo {
-      ...SEO
-    }
-  }
-}
-```
-
-The intention here was to not remove the original field reference to the SEO data. However, you may also reference the SEO data through Gatsby's parent-child relationship convention:
-
-```graphql
-{
-  page {
-    childSeoMeta {
-      ...SEO
-    }
-  }
-}
-```
 
 ## Plugins
 
