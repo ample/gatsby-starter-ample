@@ -1,5 +1,30 @@
 ---
-# --- Footer Config ---
+# --- Header ---
+
+- type: AdminHeaderTopNavItem
+  fields:
+    label: String
+    url: String
+
+- type: AdminHeaderMainNavChild
+  fields:
+    label: String
+    url: String
+
+- type: AdminHeaderMainNavItem
+  fields:
+    button: Boolean
+    children: "[AdminHeaderMainNavChild]"
+    label: String
+    url: String
+
+- type: AdminHeader
+  node: true
+  fields:
+    top_nav: "[AdminHeaderTopNavItem]"
+    main_nav: "[AdminHeaderMainNavItem]"
+
+# --- Footer ---
 
 - type: AdminFooterPolicyLink
   fields:
@@ -29,30 +54,28 @@
     policy_links: "[AdminFooterPolicyLink]"
     copyright: String
 
-# --- Header Config ---
+# --- SEO ---
 
-- type: AdminHeaderTopNavItem
+- type: SeoMetaOg
   fields:
-    label: String
-    url: String
+    description: String
+    image: File
+    title: String
 
-- type: AdminHeaderMainNavChild
+- type: SeoMetaTwitter
   fields:
-    label: String
-    url: String
+    card: String
+    description: String
+    image: File
+    title: String
 
-- type: AdminHeaderMainNavItem
+- type: SeoMeta
   fields:
-    button: Boolean
-    children: "[AdminHeaderMainNavChild]"
-    label: String
-    url: String
-
-- type: AdminHeader
-  node: true
-  fields:
-    top_nav: "[AdminHeaderTopNavItem]"
-    main_nav: "[AdminHeaderMainNavItem]"
+    description: String
+    image: File
+    og: SeoMetaOg
+    title: String
+    twitter: SeoMetaTwitter
 
 # --- Containers & Shared ---
 
