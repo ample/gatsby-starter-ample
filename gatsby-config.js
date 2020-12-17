@@ -19,6 +19,7 @@ module.exports = {
         }
       }
     },
+    `gatsby-ample-importer`,
     `gatsby-ample-schema`,
     `gatsby-ample-pages`,
     `gatsby-ample-seo`,
