@@ -1,5 +1,6 @@
 {
   "AllAutocomplete.wordListFiles": [
+    "src/styles/global/variables/_blueprint.scss",
     "src/styles/global/variables/_color.scss",
     "src/styles/global/variables/_font.scss",
     "src/styles/global/variables/_global.scss",
