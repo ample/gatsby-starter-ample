@@ -1,0 +1,11 @@
+// --------------------------------------------------------
+
+@use '../mixins/media' as *;
+
+// Global variables -- All variables should start with --global
+// ---------------------------------------------------
+
+$global: (
+  '--global-padding': 20px,
+  '--global-max-width': $large-lowest
+);

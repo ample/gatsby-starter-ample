@@ -1,8 +1,6 @@
-@forward 'alignment';
-@forward 'fonts';
-@forward 'layout';
-@forward 'media';
-@forward 'spacing';
-@forward 'supports';
-@forward 'typography';
-@forward 'z-index';
+@forward './mixins/accessibility';
+@forward './mixins/font';
+@forward './mixins/layout';
+@forward './mixins/media';
+@forward './mixins/support';
+@forward './mixins/typography';

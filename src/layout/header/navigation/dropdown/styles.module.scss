@@ -60,7 +60,7 @@
     top: 35px;
     transition: max-height 0.5s ease-out 0s;
     width: 100%;
-    z-index: $z-index-plus-two;
+    z-index: var(--z-index-plus-two);
   }
 
   .is_showing & {

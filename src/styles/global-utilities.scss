@@ -1,5 +1,7 @@
 @use 'global' as *;
 
+@forward './global/utilities/';
+
 // --------------------------------------------------------
 
 .container {

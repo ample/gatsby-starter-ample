@@ -1,0 +1,14 @@
+// Blueprint variables -- All variables in this file take precedence
+// ---------------------------------------------------
+
+$blueprint: (
+  '--color-blue': #0065f2,
+  '--color-blue-16': rgba(0, 101, 242, 0.16),
+  '--color-blue-20': rgba(0, 101, 242, 0.2),
+  '--color-blue-grayish': rgba(224, 236, 253, 0.4),
+  '--color-blue-pale': #eef6ff,
+  '--color-blue-pale-very': #f2f8ff,
+  '--color-blue-pale-very-2': #e1edff,
+  '--color-blue-soft': #c7defd,
+  '--color-white-50': rgba(255, 255, 255, 0.5)
+);
