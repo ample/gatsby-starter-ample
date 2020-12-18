@@ -48,8 +48,8 @@ module.exports = class {
    * retrieve the appropriate value for some given key (field).
    */
   getValueByType = {
-    // String fields are retrieved directly from the fields object.
-    String: (data, name) => data.fields[name],
+    // Text fields are retrieved directly from the fields object.
+    Text: (data, name) => data.fields[name],
     // System fields are those that Contentful sets automatically in a sys object.
     System: (data, name) => data.sys[name],
     // For now, we're digging into a file field and extracting the URL.

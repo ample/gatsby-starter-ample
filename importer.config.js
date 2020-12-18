@@ -10,9 +10,9 @@ module.exports = {
       // content: "body",
       fields: {
         id: "System",
-        title: "String",
-        slug: "String",
-        body: "String",
+        title: "Text",
+        slug: "Text",
+        body: "Text",
         image: "File"
       }
     }

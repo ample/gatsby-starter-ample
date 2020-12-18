@@ -28,9 +28,9 @@ module.exports = {
       content: "body",
       fields: {
         id: "System",
-        title: "String",
-        slug: "String",
-        body: "String",
+        title: "Text",
+        slug: "Text",
+        body: "Text",
         image: "File"
       }
     }
@@ -58,7 +58,7 @@ Each model (content type, post type, template, etc.) is meant to represent a gro
 Fields are represented in the config as key-value pairs. The key is the name of the field in the data source, while the value is the type of field. Different drivers may support different field types. Here is a shared generic list:
 
 - `File`: A media object or file. This gets normalized to the object's URL.
-- `String`: A plain field to be extracted directly.
+- `Text`: A string or text field that can be extracted directly.
 - `System`: A value that came from the data source itself.
 
 ## Drivers
