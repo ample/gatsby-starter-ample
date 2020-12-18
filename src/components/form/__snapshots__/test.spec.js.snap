@@ -98,6 +98,7 @@ exports[`Form Component renders correctly 1`] = `
           className="radio_button"
         >
           <input
+            className="radio"
             id="gender-female"
             name="gender"
             onChange={[Function]}
@@ -105,16 +106,19 @@ exports[`Form Component renders correctly 1`] = `
             value="Female"
           />
           <label
-            className="form_label"
             htmlFor="gender-female"
           >
             Female
           </label>
+          <div
+            className="circle"
+          />
         </div>
         <div
           className="radio_button"
         >
           <input
+            className="radio"
             id="gender-male"
             name="gender"
             onChange={[Function]}
@@ -122,11 +126,13 @@ exports[`Form Component renders correctly 1`] = `
             value="Male"
           />
           <label
-            className="form_label"
             htmlFor="gender-male"
           >
             Male
           </label>
+          <div
+            className="circle"
+          />
         </div>
       </div>
     </div>
