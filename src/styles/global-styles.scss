@@ -6,6 +6,7 @@
 body {
   @include font-smoothing;
 
+  color: var(--global-text-color);
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
@@ -25,11 +26,11 @@ h6 {
 }
 
 h1 {
-  font-size: responsive 35px 60px;
+  font-size: responsive 32px 36px;
 }
 
 h2 {
-  font-size: responsive 30px 45px;
+  font-size: responsive 22px 26px;
 }
 
 // --------------------------------------------------------

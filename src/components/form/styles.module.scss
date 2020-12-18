@@ -14,7 +14,7 @@ $form-field-gutter: 40px;
   margin: 0 (-$form-field-gutter / 2) 24px;
 
   h2 {
-    margin: 0 ($form-field-gutter / 2) 8px;
+    margin: 0 ($form-field-gutter / 2) 26px;
     width: 100%;
   }
 }
@@ -66,12 +66,19 @@ $form-field-gutter: 40px;
   input:not([type='radio']),
   select,
   textarea {
-    background-color: var(--color-white);
-    border: 1px solid var(--color-gray);
+    background-color: var(--color-blue-grayish);
+    border: 1px solid var(--color-blue-alpha-16);
     border-radius: 0;
+    color: var(--color-blue);
     font-size: 16px;
-    padding: 8px;
+    padding: 16px;
+    transition: border-color 0.25s ease-in;
     width: 100%;
+
+    &:focus {
+      border-color: var(--color-blue-alpha-50);
+      outline: none;
+    }
   }
 
   select {
@@ -115,7 +122,7 @@ $form-field-gutter: 40px;
   display: block;
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 
   abbr {
     display: inline-block;

@@ -6,6 +6,7 @@
 // ---------------------------------------------------
 
 $global: (
+  '--global-max-width': $large-lowest,
   '--global-padding': 20px,
-  '--global-max-width': $large-lowest
+  '--global-text-color': var(--color-black)
 );
