@@ -48,10 +48,16 @@ const FormFieldSelect = ({
           const id = `${name}-${parameterize(option)}`
           return (
             <div key={idx} className={styles.radio_button}>
-              <input type="radio" id={id} name={name} value={option} onChange={handleChange} />
-              <label className={styles.form_label} htmlFor={id}>
-                {option}
-              </label>
+              <input
+                className={styles.radio}
+                type="radio"
+                id={id}
+                name={name}
+                value={option}
+                onChange={handleChange}
+              />
+              <label htmlFor={id}>{option}</label>
+              <div className={styles.circle}></div>
             </div>
           )
         })}

@@ -1,12 +1,27 @@
+@use 'sass:color';
+@use 'sass:map';
+
+// --------------------------------------------------------
+
 @use '../../styles/global' as *;
 
+// --------------------------------------------------------
+
+$color-blue-hover: color.scale(
+  map.get($blueprint, '--color-blue'),
+  $lightness: -10%,
+  $saturation: 10%
+);
+$circle: 20px;
+$circle-border: 1px;
+$circle-center-offset: 6px;
 $form-field-gutter: 40px;
 
-// ---------------------------------------- | Form
+// -------------------------------------------------------- | Form
 
 // .form {}
 
-// ---------------------------------------- | Group
+// -------------------------------------------------------- | Group
 
 .form_field_group {
   display: flex;
@@ -19,7 +34,7 @@ $form-field-gutter: 40px;
   }
 }
 
-// ---------------------------------------- | Field Wrapper
+// -------------------------------------------------------- | Field Wrapper
 
 .form_field {
   flex-basis: 100%;
@@ -93,31 +108,9 @@ $form-field-gutter: 40px;
     font-family: var(--font-family-base);
     height: 140px;
   }
-
-  .radio_buttons {
-    margin-top: 8px;
-  }
-
-  .radio_button {
-    align-items: center;
-    display: flex;
-    margin-bottom: 4px;
-
-    input {
-      display: inline-block;
-      height: 14px;
-      margin-right: 4px;
-    }
-
-    label {
-      display: inline-block;
-      font-weight: normal;
-      margin: 0;
-    }
-  }
 }
 
-// ---------------------------------------- | Label
+// -------------------------------------------------------- | Label
 
 .form_label {
   display: block;
@@ -128,5 +121,82 @@ $form-field-gutter: 40px;
   abbr {
     display: inline-block;
     margin-left: 2px;
+  }
+}
+
+// -------------------------------------------------------- | Radio input
+
+.radio_buttons {
+  display: flex;
+  padding-top: 6px;
+}
+
+.radio_button {
+  position: relative;
+
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &:hover {
+    .circle {
+      border-color: $color-blue-hover;
+    }
+
+    label {
+      color: $color-blue-hover;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    height: $circle + $circle-border;
+    line-height: 1.33;
+    padding-left: 26px;
+    position: relative;
+    transition: color 0.25s linear;
+    z-index: 3;
+  }
+
+  .circle {
+    border: $circle-border solid var(--color-blue);
+    border-radius: 100%;
+    height: $circle;
+    position: absolute;
+    top: 0;
+    transition: border 0.25s linear;
+    width: $circle;
+    z-index: 1;
+
+    &::before {
+      border-radius: 100%;
+      content: '';
+      display: block;
+      height: $circle - $circle-center-offset;
+      left: $circle-center-offset - 4px;
+      position: absolute;
+      top: $circle-center-offset - 4px;
+      transition: background-color 0.25s linear;
+      width: $circle - $circle-center-offset;
+    }
+  }
+
+  .radio {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked ~ .circle {
+      border-color: var(--color-blue);
+    }
+
+    &:checked ~ .circle::before {
+      background-color: var(--color-blue);
+    }
+
+    &:checked ~ label {
+      color: (--color-blue);
+    }
   }
 }
