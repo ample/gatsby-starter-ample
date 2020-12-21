@@ -3,14 +3,15 @@ const path = require("path")
 const { initDir, cleanDir } = require("./dir")
 const { writeFile } = require("./writer")
 
-const config = require(path.join(__dirname, "../../../importer.config"))
-const Driver = require(`../drivers/${config.driver}`)
+const configFromFile = require(path.join(__dirname, "../../../importer.config"))
 
 /**
  * Import items by looping through the model config and using the appropriate
  * driver to import data to an items key and return the configuration object.
  */
-exports.importData = async () => {
+exports.importData = async ({ config = configFromFile }) => {
+  // Get driver from config.
+  const Driver = require(`../drivers/${config.driver}`)
   // Loop through the models in the config ...
   await config.models.map(async model => {
     // Import the data.
