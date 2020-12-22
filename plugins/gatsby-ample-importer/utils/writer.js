@@ -8,7 +8,7 @@ const yaml = require("js-yaml")
  */
 exports.writeFile = ({ frontmatter = {}, content = "", path }) => {
   // Add frontmatter and body together and store.
-  const body = `---\n${yaml.safeDump(frontmatter)}---\n\n${content || ""}`
+  const body = `---\n${yaml.dump(frontmatter)}---\n\n${content || ""}`
   // Write the file.
   return fs.writeFileSync(path, body)
 }

@@ -17,6 +17,40 @@ module.exports = {
     //   }
     // }
     {
+      id: "form",
+      name: "Form",
+      dir: path.join(__dirname, "src/content/forms"),
+      filename: "id",
+      fields: {
+        model: () => "Form",
+        id: "sys",
+        title: "text",
+        button_label: "text",
+        field_groups: [
+          {
+            title: "text",
+            heading: "text",
+            fields: [
+              {
+                title: "text",
+                type: "text",
+                label: "text",
+                name: "text",
+                required: "text",
+                text_appearance: "text",
+                text_validation: "text",
+                text_placeholder: "text",
+                select_options: "text",
+                select_appearance: "text",
+                width: "text",
+                solo: "text"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       id: "redirect",
       name: "Redirect",
       dir: path.join(__dirname, "src/content/redirects"),

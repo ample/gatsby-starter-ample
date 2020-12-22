@@ -21,10 +21,10 @@ module.exports = class {
    */
   async process() {
     // Retrieve the content from Contentful.
-    const res = await this.client.getEntries({ content_type: this.config.id })
+    const res = await this.client.getEntries({ content_type: this.config.id, include: 10 })
     // Once the data is in place, loop through it and process each item to return
     // an array of key-value pairs for all specified fields.
-    return (res.items || []).map(this.processItem)
+    return (res.items || []).map(item => this.processItem(item))
   }
 
   /**
@@ -33,9 +33,10 @@ module.exports = class {
    *
    * @param {object} item Data returned from Contentful's API.
    */
-  processItem = item => {
+  processItem = (item, fieldsConfig = this.config.fields) => {
+    // console.log(item, fieldsConfig, "...")
     // Create an array of fields from the config.
-    let fieldsArray = Object.entries(this.config.fields || {})
+    let fieldsArray = Object.entries(fieldsConfig || {})
     // Retrieve the value for each field.
     let fields = fieldsArray.map(([name, type]) => {
       const typename = typeof type === "string" ? type.toLowerCase() : typeof type
@@ -50,11 +51,24 @@ module.exports = class {
    * retrieve the appropriate value for some given key (field).
    */
   getValueByType = {
+    // Array fields are a series of linked subfields that get processed. This
+    // must originate from the object method below.
+    array: (item, name, config) => {
+      const subItems = item.fields[name]
+      return subItems.map(subItem => this.processItem(subItem, config[0]))
+    },
     // For now, we're digging into a file field and extracting the URL.
     file: (data, name) => get(data, `fields.${name}.fields.file.url`),
     // When using a function as the value, the function gets executed, sending
     // the item as the only argument.
     function: (item, _, func) => func(item),
+    // An object is a nested linked entry. It digs in and resolves the subitem.
+    object: (item, name, config) => {
+      if (Array.isArray(config)) {
+        return this.getValueByType.array(item, name, config)
+      }
+      return this.processItem(item.fields[name], config)
+    },
     // System fields are those that Contentful sets automatically in a sys object.
     sys: (data, name) => data.sys[name],
     // Text fields are retrieved directly from the fields object.

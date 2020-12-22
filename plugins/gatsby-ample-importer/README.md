@@ -100,6 +100,10 @@ Fields are represented in the config as key-value pairs. The key is the name of 
 - `text`: A string or text field that can be extracted directly.
 - `sys`: A value that came from the data source itself.
 
+A field type value can also be a function, object, or array. See below for more info.
+
+#### Function Field Type
+
 There is one exception to this rule. If the value of the field is a function, the result of running the function will be the resolved value. The function receives one argument, the object retrieved from the data source. For example, say I wanted to include an alias `name` that returns the title. That config might look something like this:
 
 ```js
@@ -117,10 +121,59 @@ module.exports = {
 }
 ```
 
+#### Object Field Type
+
+Fields may be nested, depending on the driver. Consider a case where a post is linked to its category, which is available as a sub-item on the post. If the category is an object with a title, then you can do something like this:
+
+```js
+module.exports = {
+  // ...
+  models: [
+    {
+      // ...
+      fields: {
+        title: "text",
+        category: {
+          title: "text"
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Array Field Type
+
+The same goes for an array. Now consider that post example from above has many tags. That config may look like this:
+
+```js
+module.exports = {
+  // ...
+  models: [
+    {
+      // ...
+      fields: {
+        title: "text",
+        tags: [
+          {
+            title: "text"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Note here that the array syntax is simply to tell the driver what you want to do with the field. **There should only be one config object within the array.** All subsequent (sub)configs would do nothing.
+
 ## Drivers
 
 Today only [Contentful](https://www.contentful.com/) is supported.
 
 ### Contentful
 
-Note that pagination is not currently supported for the Contentful driver. You will only receive 100 records back for each model, by default.
+Note that there are two known limitations to the Contentful driver today:
+
+1. Pagination is not currently supported. You will only receive 100 records back for each model, by default.
+2. We have manually maxed out the number of linked levels in responses. This could affect performance. [Read mode here](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/links).
