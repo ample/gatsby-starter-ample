@@ -37,9 +37,9 @@ fields:
     - flexible
     source:
       type: simple
-      section: 
-      file: 
-      path: 
+      section:
+      file:
+      path:
   label: Layout
   description: The layout affects how the page appears on the website, along with
     the fields visible here.
@@ -82,8 +82,13 @@ fields:
   description: While there are sensible defaults, the SEO section provides the option
     to explicitly set meta tag values.
 pages:
+- src/content/pages/404.md
 - src/content/pages/careers.md
 - src/content/pages/contact.md
 - src/content/pages/content-page.md
+- src/content/pages/content-page/nested-page.md
+- src/content/pages/draft-page.md
 - src/content/pages/flexible-page-columns.md
 - src/content/pages/index.md
+- src/content/pages/privacy-policy.md
+- src/content/pages/terms.md
