@@ -27,7 +27,7 @@ describe("process", () => {
     }
   })
 
-  test("...", async () => {
+  test("processes multiple items and returns the resulting array", async () => {
     const res = await driver.process()
     const expRes = response.items.map(item => ({
       id: item.sys.id,
@@ -55,6 +55,11 @@ describe("processItem", () => {
       slug: item.fields.slug,
       image: item.fields.image.fields.file.url
     })
+  })
+  test("adds a model field, if specified", () => {
+    driver = new Driver({ ...mockConfig, name: "Page" })
+    const res = driver.processItem(response.items[0])
+    expect(res.model).toBe("Page")
   })
 })
 

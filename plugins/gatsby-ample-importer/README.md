@@ -86,7 +86,8 @@ Here are the options:
 
 Each model (content type, post type, template, etc.) is meant to represent a grouping of content that you want to import to local files. The example above shows a single model, `page`. Here are the options:
 
-- `id`: The `id` for the model. This is specific to the data source.
+- `id`: The `id` for the model. This may serve a different purpose for each data source.
+- `name`: If the name is specified, a `model` key-value pair will be added to the output.
 - `dir`: Directory in which to store generated files.
 - `filename`: The name **of the field** used to create the filename. In the example above, we are using `slug`. That means the value of the `slug` field is used to name the file. You should make sure this is a required field in your CMS.
 - `content`: By default, all specified fields are written to frontmatter in the markdown file. You can also select one field to be rendered as the body content for the file.

@@ -35,9 +35,13 @@ module.exports = class {
    */
   processItem = item => {
     // Create an array of fields from the config.
-    const fieldsArray = Object.entries(this.config.fields || {})
+    let fieldsArray = Object.entries(this.config.fields || {})
     // Retrieve the value for each field.
-    const fields = fieldsArray.map(([name, type]) => [name, this.getValueByType[type](item, name)])
+    let fields = fieldsArray.map(([name, type]) => [name, this.getValueByType[type](item, name)])
+    // Add model, if specified.
+    if (this.config.name) {
+      fields.unshift(["model", this.config.name])
+    }
     // Convert the key-value pairs back to and object and return.
     return Object.fromEntries(fields)
   }
