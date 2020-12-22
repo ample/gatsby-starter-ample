@@ -9,10 +9,10 @@ module.exports = {
     //   filename: "slug",
     //   // content: "body",
     //   fields: {
-    //     id: "System",
-    //     title: "Text",
-    //     slug: "Text",
-    //     body: "Text",
+    //     id: "sys",
+    //     title: "text",
+    //     slug: "text",
+    //     body: "text",
     //     image: "File"
     //   }
     // }
@@ -22,11 +22,11 @@ module.exports = {
       dir: path.join(__dirname, "src/content/redirects"),
       filename: "title",
       fields: {
-        // id: "System",
-        title: "Text",
-        destination: "Text",
-        permanent: "Text",
-        force: "Text"
+        model: () => "Redirect",
+        title: "text",
+        destination: "text",
+        permanent: "text",
+        force: "text"
       }
     }
   ]

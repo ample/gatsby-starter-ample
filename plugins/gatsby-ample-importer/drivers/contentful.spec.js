@@ -11,11 +11,12 @@ const mockConfig = {
   filename: "slug",
   content: "body",
   fields: {
-    id: "System",
-    title: "Text",
-    slug: "Text",
-    body: "Text",
-    image: "File"
+    id: "sys",
+    title: "text",
+    name: item => item.fields.title,
+    slug: "text",
+    body: "text",
+    image: "file"
   }
 }
 
@@ -32,6 +33,7 @@ describe("process", () => {
     const expRes = response.items.map(item => ({
       id: item.sys.id,
       title: item.fields.title,
+      name: item.fields.title,
       body: item.fields.body,
       slug: item.fields.slug,
       image: item.fields.image.fields.file.url
@@ -51,16 +53,17 @@ describe("processItem", () => {
     expect(res).toStrictEqual({
       id: item.sys.id,
       title: item.fields.title,
+      name: item.fields.title,
       body: item.fields.body,
       slug: item.fields.slug,
       image: item.fields.image.fields.file.url
     })
   })
-  test("adds a model field, if specified", () => {
-    driver = new Driver({ ...mockConfig, name: "Page" })
-    const res = driver.processItem(response.items[0])
-    expect(res.model).toBe("Page")
-  })
+  // test("adds a model field, if specified", () => {
+  //   driver = new Driver({ ...mockConfig, name: "Page" })
+  //   const res = driver.processItem(response.items[0])
+  //   expect(res.model).toBe("Page")
+  // })
 })
 
 describe("getValueByType", () => {
@@ -68,16 +71,21 @@ describe("getValueByType", () => {
     driver = new Driver(mockConfig)
   })
 
-  test("supports Text type", () => {
-    const res = driver.getValueByType.Text(response.items[0], "title")
+  test("supports text type", () => {
+    const res = driver.getValueByType.text(response.items[0], "title")
     expect(res).toBe(response.items[0].fields.title)
   })
-  test("supports System type", () => {
-    const res = driver.getValueByType.System(response.items[0], "id")
+  test("supports sys type", () => {
+    const res = driver.getValueByType.sys(response.items[0], "id")
     expect(res).toBe(response.items[0].sys.id)
   })
-  test("supports File type", () => {
-    const res = driver.getValueByType.File(response.items[0], "image")
+  test("supports file type", () => {
+    const res = driver.getValueByType.file(response.items[0], "image")
     expect(res).toBe(response.items[0].fields.image.fields.file.url)
+  })
+  test("resolves functions", () => {
+    const func = item => item.fields.title
+    const res = driver.getValueByType.function(response.items[0], "image", func)
+    expect(res).toBe(response.items[0].fields.title)
   })
 })

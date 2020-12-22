@@ -66,11 +66,11 @@ module.exports = {
       filename: "slug",
       content: "body",
       fields: {
-        id: "System",
-        title: "Text",
-        slug: "Text",
-        body: "Text",
-        image: "File"
+        id: "sys",
+        title: "text",
+        slug: "text",
+        body: "text",
+        image: "file"
       }
     }
   ]
@@ -87,7 +87,6 @@ Here are the options:
 Each model (content type, post type, template, etc.) is meant to represent a grouping of content that you want to import to local files. The example above shows a single model, `page`. Here are the options:
 
 - `id`: The `id` for the model. This may serve a different purpose for each data source.
-- `name`: If the name is specified, a `model` key-value pair will be added to the output.
 - `dir`: Directory in which to store generated files.
 - `filename`: The name **of the field** used to create the filename. In the example above, we are using `slug`. That means the value of the `slug` field is used to name the file. You should make sure this is a required field in your CMS.
 - `content`: By default, all specified fields are written to frontmatter in the markdown file. You can also select one field to be rendered as the body content for the file.
@@ -97,9 +96,26 @@ Each model (content type, post type, template, etc.) is meant to represent a gro
 
 Fields are represented in the config as key-value pairs. The key is the name of the field in the data source, while the value is the type of field. Different drivers may support different field types. Here is a shared generic list:
 
-- `File`: A media object or file. This gets normalized to the object's URL.
-- `Text`: A string or text field that can be extracted directly.
-- `System`: A value that came from the data source itself.
+- `file`: A media object or file. This gets normalized to the object's URL.
+- `text`: A string or text field that can be extracted directly.
+- `sys`: A value that came from the data source itself.
+
+There is one exception to this rule. If the value of the field is a function, the result of running the function will be the resolved value. The function receives one argument, the object retrieved from the data source. For example, say I wanted to include an alias `name` that returns the title. That config might look something like this:
+
+```js
+module.exports = {
+  // ...
+  models: [
+    {
+      // ...
+      fields: {
+        title: "text",
+        name: item => item.title
+      }
+    }
+  ]
+}
+```
 
 ## Drivers
 

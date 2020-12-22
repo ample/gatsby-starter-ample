@@ -37,11 +37,10 @@ module.exports = class {
     // Create an array of fields from the config.
     let fieldsArray = Object.entries(this.config.fields || {})
     // Retrieve the value for each field.
-    let fields = fieldsArray.map(([name, type]) => [name, this.getValueByType[type](item, name)])
-    // Add model, if specified.
-    if (this.config.name) {
-      fields.unshift(["model", this.config.name])
-    }
+    let fields = fieldsArray.map(([name, type]) => {
+      const typename = typeof type === "string" ? type.toLowerCase() : typeof type
+      return [name, this.getValueByType[typename](item, name, type)]
+    })
     // Convert the key-value pairs back to and object and return.
     return Object.fromEntries(fields)
   }
@@ -51,11 +50,14 @@ module.exports = class {
    * retrieve the appropriate value for some given key (field).
    */
   getValueByType = {
-    // Text fields are retrieved directly from the fields object.
-    Text: (data, name) => data.fields[name],
-    // System fields are those that Contentful sets automatically in a sys object.
-    System: (data, name) => data.sys[name],
     // For now, we're digging into a file field and extracting the URL.
-    File: (data, name) => get(data, `fields.${name}.fields.file.url`)
+    file: (data, name) => get(data, `fields.${name}.fields.file.url`),
+    // When using a function as the value, the function gets executed, sending
+    // the item as the only argument.
+    function: (item, _, func) => func(item),
+    // System fields are those that Contentful sets automatically in a sys object.
+    sys: (data, name) => data.sys[name],
+    // Text fields are retrieved directly from the fields object.
+    text: (data, name) => data.fields[name]
   }
 }
