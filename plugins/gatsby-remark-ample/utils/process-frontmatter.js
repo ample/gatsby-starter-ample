@@ -7,9 +7,6 @@ const processImage = require("./process-image")
 const processMarkdown = require("./process-markdown")
 
 module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
-  // An object to reference SEO data. This is pulled out separately because we
-  // don't have all the info we need to create a node at this time.
-  let seoData = undefined
   // Loop through every property on the frontmatter object.
   deepForEach(frontmatter, (value, key, subject, keyPath) => {
     // Get type of the node. Most will be "default" and are left alone. Others
@@ -17,11 +14,6 @@ module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
     const keyType = getKeyType({ keyPath: keyPath, options: options, value: value })
     // Perform an action, based on the type.
     switch (keyType) {
-      // SEO keys replace the SEO object with a new node.
-      case "seo":
-        seoData = value
-        delete frontmatter[options.seoField]
-        break
       // Markdown keys are converted to HTML and stored as a new key without the
       // suffix.
       case "md": {
@@ -46,5 +38,5 @@ module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
   })
 
   // Return the transformed frontmatter, along with the seoData.
-  return { frontmatter: frontmatter, seoData: seoData }
+  return frontmatter
 }

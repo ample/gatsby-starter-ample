@@ -9,15 +9,13 @@ module.exports = (overrides = {}) => {
     imageSuffix: "_src",
     markdownSuffix: "_md",
     modelField: "model",
-    models: [],
-    projectRoot: path.join(__dirname, "../../../"),
-    seoField: "seo"
+    projectRoot: path.join(__dirname, "../../../")
   }
 
   // Map overrides on top of defaults, allowing only keys specified in the
   // defaults object above.
   let options = {}
-  Object.keys(defaults).map((key) => (options[key] = overrides[key] || defaults[key]))
+  Object.keys(defaults).map(key => (options[key] = overrides[key] || defaults[key]))
 
   // Ensure contentSrc ends with a trailing slash.
   if (options.contentSrc.slice(-1) !== "/") options.contentSrc += "/"
