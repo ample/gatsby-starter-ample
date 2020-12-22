@@ -1,11 +1,6 @@
 const contentful = require("contentful")
 const get = require("lodash/get")
 
-const client = contentful.createClient({
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  space: process.env.CONTENTFUL_SPACE_ID
-})
-
 module.exports = class {
   /**
    * @constructor
@@ -15,6 +10,10 @@ module.exports = class {
    */
   constructor(config) {
     this.config = config
+    this.client = contentful.createClient({
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      space: process.env.CONTENTFUL_SPACE_ID
+    })
   }
 
   /**
@@ -22,7 +21,7 @@ module.exports = class {
    */
   async process() {
     // Retrieve the content from Contentful.
-    const res = await client.getEntries({ content_type: this.config.id })
+    const res = await this.client.getEntries({ content_type: this.config.id })
     // Once the data is in place, loop through it and process each item to return
     // an array of key-value pairs for all specified fields.
     return (res.items || []).map(this.processItem)

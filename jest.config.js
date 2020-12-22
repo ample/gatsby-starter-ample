@@ -9,6 +9,7 @@ module.exports = {
     "\\@root\\/(.*)$": `<rootDir>/$1`,
     "\\@src\\/(.*)$": `<rootDir>/src/$1`
   },
+  unmockedModulePathPatterns: ["contentful"],
   testPathIgnorePatterns: [
     `node_modules`,
     `\\.cache`,

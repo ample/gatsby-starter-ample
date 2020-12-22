@@ -1,1 +1,1 @@
-require("./utils/importer").importData()
+require("./utils/importer").importData({})
