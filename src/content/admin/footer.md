@@ -31,9 +31,9 @@ social_links:
   url: /
 policy_links:
 - label: Terms & Conditions
-  url: "/"
+  url: "/terms"
 - label: Privacy Policy
-  url: "/"
+  url: "/privacy-policy"
 copyright: 2020, All Rights Reserved
 
 ---
