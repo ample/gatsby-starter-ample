@@ -4,16 +4,55 @@ This plugin is a data engine. Its primary purpose is to pull data from some sour
 
 This approach is useful because it enables you to easily swap out data providers without having to change the front-end code. It also means you can get up and running quicker simply by using local files as your data source.
 
-## Installation
+## Usage
 
 There are two ways to use this plugin:
 
-1. Direct use on the command-line. This is ready by default.
-2. As part of the Gatsby build process. To install for use with Gatsby, simply add to your `gatsby-config.js` file and the process will run at the beginning of the build process.
+1. Direct use on the command-line.
+2. As part of the Gatsby build process.
 
-## Usage
+### CLI
 
-The operations here revolve around a configuration file. This file is `importer.config.js` and should be placed at the root of your project. It should export a single object representing the desired configuration. Here is an example config:
+To use on the command-line, you can run a script to the `index.js` file in this plugin:
+
+    $ node plugins/gatsby-ample-importer
+
+The program has one option, `--config` (or `-c`), as the path to the config file. If omitted, this defaults to `importer.config.js` in the project root.
+
+### Gatsby Build Process
+
+To install for use with Gatsby, simply add to your `gatsby-config.js` file and the process will run at the beginning of the build process.
+
+```js
+module.exports = {
+  plugins: [
+    `gatsby-ample-importer`
+    // ...
+  ]
+  // ...
+}
+```
+
+You may also pass the config file as an option here, too.
+
+```js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-ample-importer`,
+      options: {
+        config: path.join(__dirname, "importer.config.js")
+      }
+    }
+    // ...
+  ]
+  // ...
+}
+```
+
+## Configuration
+
+The operations here revolve around a configuration file. This file is `importer.config.js` in the root of the project by default. It should export a single object representing the desired configuration. Here is an example config:
 
 ```js
 const path = require("path")

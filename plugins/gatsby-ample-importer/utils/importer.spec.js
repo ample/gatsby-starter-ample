@@ -77,7 +77,7 @@ describe("importData", () => {
     expect(fs.existsSync(`${contentDir}/pages/item-02.md`)).toBe(false)
     expect(fs.existsSync(`${contentDir}/posts/item-01.md`)).toBe(false)
     expect(fs.existsSync(`${contentDir}/posts/item-02.md`)).toBe(false)
-    await importData({ config: mockConfig })
+    await importData(mockConfig)
     expect(Driver).toHaveBeenCalled()
     expect(fs.existsSync(`${contentDir}/pages/item-01.md`)).toBe(true)
     expect(fs.existsSync(`${contentDir}/pages/item-02.md`)).toBe(true)
@@ -86,7 +86,7 @@ describe("importData", () => {
   })
 
   it("writes the data to file", async () => {
-    await importData({ config: mockConfig })
+    await importData(mockConfig)
     expect(Driver).toHaveBeenCalled()
     let content
     content = fs.readFileSync(`${contentDir}/pages/item-01.md`).toString()
