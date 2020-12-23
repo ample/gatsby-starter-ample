@@ -6,7 +6,6 @@ fields:
   type: blocks
   label: Blocks
   template_types:
-  - component-column
   - component-container
   config:
     min: 
