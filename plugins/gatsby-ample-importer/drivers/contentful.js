@@ -21,7 +21,10 @@ module.exports = class {
    */
   async process() {
     // Retrieve the content from Contentful.
-    const res = await this.client.getEntries({ content_type: this.config.id, include: 10 })
+    const res = await this.client.getEntries({
+      "sys.contentType.sys.id[in]": this.config.id,
+      include: 10
+    })
     // Once the data is in place, loop through it and process each item to return
     // an array of key-value pairs for all specified fields.
     return (res.items || []).map(item => this.processItem(item))
@@ -34,7 +37,6 @@ module.exports = class {
    * @param {object} item Data returned from Contentful's API.
    */
   processItem = (item, fieldsConfig = this.config.fields) => {
-    // console.log(item, fieldsConfig, "...")
     // Create an array of fields from the config.
     let fieldsArray = Object.entries(fieldsConfig || {})
     // Retrieve the value for each field.
@@ -61,17 +63,20 @@ module.exports = class {
     file: (data, name) => get(data, `fields.${name}.fields.file.url`),
     // When using a function as the value, the function gets executed, sending
     // the item as the only argument.
-    function: (item, _, func) => func(item),
+    function: (item, _, func) => func(item, this),
     // An object is a nested linked entry. It digs in and resolves the subitem.
     object: (item, name, config) => {
       if (Array.isArray(config)) {
         return this.getValueByType.array(item, name, config)
       }
+      if (!item.fields[name]) {
+        return {}
+      }
       return this.processItem(item.fields[name], config)
     },
     // System fields are those that Contentful sets automatically in a sys object.
-    sys: (data, name) => data.sys[name],
+    sys: (data, name) => get(data, `sys.${name}`),
     // Text fields are retrieved directly from the fields object.
-    text: (data, name) => data.fields[name]
+    text: (data, name) => get(data, `fields.${name}`)
   }
 }

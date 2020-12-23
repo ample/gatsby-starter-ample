@@ -90,6 +90,27 @@ describe("getValueByType", () => {
     driver = new Driver(mockConfig)
   })
 
+  test("supports array type", () => {
+    driver = new Driver({
+      id: "form",
+      fields: {
+        title: "text",
+        field_groups: [
+          {
+            title: "text"
+          }
+        ]
+      }
+    })
+    const res = driver.getValueByType.array(
+      linksResponse.items[0],
+      "field_groups",
+      driver.config.fields.field_groups
+    )
+    expect(res).toStrictEqual([
+      { title: linksResponse.items[0].fields.field_groups[0].fields.title }
+    ])
+  })
   test("supports text type", () => {
     const res = driver.getValueByType.text(pagesResponse.items[0], "title")
     expect(res).toBe(pagesResponse.items[0].fields.title)
@@ -106,5 +127,45 @@ describe("getValueByType", () => {
     const func = item => item.fields.title
     const res = driver.getValueByType.function(pagesResponse.items[0], "image", func)
     expect(res).toBe(pagesResponse.items[0].fields.title)
+  })
+  describe("object", () => {
+    test("passes arrays off to array method", () => {
+      driver = new Driver({
+        id: "form",
+        fields: {
+          title: "text",
+          field_groups: [
+            {
+              title: "text"
+            }
+          ]
+        }
+      })
+      const res = driver.getValueByType.object(
+        linksResponse.items[0],
+        "field_groups",
+        driver.config.fields.field_groups
+      )
+      expect(res).toStrictEqual([
+        { title: linksResponse.items[0].fields.field_groups[0].fields.title }
+      ])
+    })
+    test("returns an empty object when the value is null", () => {
+      driver = new Driver({
+        id: "form",
+        fields: {
+          title: "text",
+          field_groups: {
+            title: "text"
+          }
+        }
+      })
+      const res = driver.getValueByType.object(
+        linksResponse.items[0],
+        "wrong_key",
+        driver.config.fields.field_groups
+      )
+      expect(res).toStrictEqual({})
+    })
   })
 })
