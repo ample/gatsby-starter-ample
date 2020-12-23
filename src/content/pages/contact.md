@@ -4,18 +4,6 @@ model: Page
 published: true
 layout: flexible
 layout_flexible:
-  containers:
-  - title: Form Container
-    config:
-      margin_bottom: '40'
-    columns:
-    - title: Main Column
-      components:
-      - template: component-form
-        form: src/content/forms/contact-form.md
-      config:
-        width: 1/2
-        text_align: ''
   blocks:
   - template: component-container
     config:
