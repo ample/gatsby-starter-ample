@@ -13,7 +13,7 @@ const Block = props => {
 
   // If the tag is not found, throw a console error and exit.
   if (!TagName) {
-    console.error(`${props.template} not supported by <Container />.`)
+    console.error(`${props.template} mapping is not supported.`)
     return null
   }
 

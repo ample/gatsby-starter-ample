@@ -94,7 +94,7 @@
     "lint": "eslint -c .eslintrc.js ./src && stylelint --config stylelint.config.js './src/**/*.scss'",
     "netlify:build": "yarn lint && yarn test && GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn build --log-pages",
     "test:update": "yarn test --updateSnapshot",
-    "test": "jest"
+    "test": "jest --silent"
   },
   "repository": {
     "type": "git",
