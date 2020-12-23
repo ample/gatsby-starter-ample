@@ -1,5 +1,5 @@
 ---
-label: "[Fragment] Column"
+label: "[Component] Column"
 hide_body: true
 fields:
 - name: title
@@ -9,9 +9,9 @@ fields:
   label: Title
   description: This value is only for organization within the CMS and will not show
     up on the website.
-- name: components
+- name: blocks
   type: blocks
-  label: Components
+  label: Blocks
   template_types:
   - component-button
   - component-content
@@ -19,9 +19,9 @@ fields:
   - component-frame
   - component-image
   config:
-    min: 
+    min: 1
     max: 
-  description: Components that appear inside this column.
+  description: Blocks are content that are rendered within this column.
 - name: config
   type: field_group
   config: {}

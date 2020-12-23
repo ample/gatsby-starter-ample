@@ -237,7 +237,16 @@ Array [
       >
         <div
           className="content"
-        />
+        >
+          <div
+            className="content"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Hello World</p>",
+              }
+            }
+          />
+        </div>
       </div>
     </div>
   </main>,

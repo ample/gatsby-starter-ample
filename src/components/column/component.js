@@ -4,9 +4,9 @@ import classNames from "classnames"
 
 import styles from "./styles.module.scss"
 
-import Component from "./component"
+import Block from "../block"
 
-const Column = ({ className, components, config }) => {
+const Column = ({ className, blocks, config }) => {
   const wrapperClasses = classNames(styles.column, {
     [className]: className,
     [`mb-${config.margin_bottom}`]: config.margin_bottom,
@@ -16,8 +16,8 @@ const Column = ({ className, components, config }) => {
 
   return (
     <div className={wrapperClasses}>
-      {components.map((comp, idx) => (
-        <Component key={idx} data={comp} />
+      {blocks.map((block, idx) => (
+        <Block key={idx} {...block} />
       ))}
     </div>
   )
@@ -29,9 +29,9 @@ Column.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * An array of component objects that get passed on to the <Component />.
+   * An array of component objects that get passed on to the <Block />.
    */
-  components: PropTypes.arrayOf(PropTypes.object),
+  blocks: PropTypes.arrayOf(PropTypes.object),
   /**
    * An object that controls the styling of the container on screen.
    */
@@ -43,7 +43,7 @@ Column.propTypes = {
 }
 
 Column.defaultProps = {
-  components: [],
+  blocks: [],
   config: {}
 }
 

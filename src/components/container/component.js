@@ -4,9 +4,9 @@ import classNames from "classnames"
 
 import styles from "./styles.module.scss"
 
-import Column from "./column"
+import Block from "../block"
 
-const Container = ({ className, children, columns, config }) => {
+const Container = ({ className, children, blocks, config }) => {
   const wrapperClasses = classNames(styles.container, {
     [className]: className,
     [`mb-${config.margin_bottom}`]: config.margin_bottom
@@ -17,7 +17,7 @@ const Container = ({ className, children, columns, config }) => {
       <div className={styles.content}>
         {children}
 
-        {columns && columns.map((column, idx) => <Column key={idx} {...column} />)}
+        {blocks && blocks.map((column, idx) => <Block key={idx} {...column} />)}
       </div>
     </div>
   )
@@ -33,9 +33,9 @@ Container.propTypes = {
    */
   children: PropTypes.node,
   /**
-   * An array of column objects that get passed on to the <Column />.
+   * An array of components that get passed on to the <Block />.
    */
-  columns: PropTypes.arrayOf(PropTypes.object),
+  blocks: PropTypes.arrayOf(PropTypes.object),
   /**
    * An object that controls the styling of the outer container on screen.
    */
@@ -45,7 +45,7 @@ Container.propTypes = {
 }
 
 Container.defaultProps = {
-  columns: [],
+  blocks: [],
   config: {}
 }
 
