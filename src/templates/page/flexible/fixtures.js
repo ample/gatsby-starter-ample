@@ -1,10 +1,11 @@
 export default {
   default: {
     children: null,
-    containers: [
+    blocks: [
       {
         title: "Main Content",
-        components: [
+        template: "component-container",
+        blocks: [
           {
             template: "component-content",
             body: "<p>Hello World</p>"

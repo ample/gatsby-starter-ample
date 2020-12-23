@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component renders properly with valid props 1`] = `
-<a
-  className="button"
-  href="/"
->
-  Hello World
-</a>
-`;
-
 exports[`Container does not cause errors without props 1`] = `
 <div
   className="container"
@@ -19,12 +10,19 @@ exports[`Container does not cause errors without props 1`] = `
 </div>
 `;
 
-exports[`Container renders with one component 1`] = `
+exports[`Container renders sub-components 1`] = `
 <div
   className="container"
 >
   <div
     className="content"
-  />
+  >
+    <a
+      className="button"
+      href="/"
+    >
+      Hello World
+    </a>
+  </div>
 </div>
 `;

@@ -79,39 +79,26 @@
 
 # --- Containers & Shared ---
 
-- type: Component
+- type: BlockConfig
+  fields:
+    margin_bottom: String
+    text_align: String
+    width: String
+
+- type: Block
   fields:
     template: String
     body: String
+    blocks: "[Block]"
+    config: BlockConfig
     form:
       type: map
       name: Form
     image: File
     label: String
     src: String
+    title: String
     url: String
-
-- type: ColumnConfig
-  fields:
-    margin_bottom: String
-    text_align: String
-    width: String
-
-- type: Column
-  fields:
-    title: String
-    config: ColumnConfig
-    components: "[Component]"
-
-- type: ContainerConfig
-  fields:
-    margin_bottom: String
-
-- type: Container
-  fields:
-    title: String
-    config: ContainerConfig
-    columns: "[Column]"
 
 # --- Page Layouts ---
 
@@ -122,7 +109,7 @@
 
 - type: FlexiblePage
   fields:
-    containers: "[Container]"
+    blocks: "[Block]"
 
 # --- Page ---
 

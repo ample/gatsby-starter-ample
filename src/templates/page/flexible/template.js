@@ -5,15 +5,15 @@ import styles from "./styles.module.scss"
 
 import Layout from "@src/layout"
 
-import Container from "@src/layout/container"
+import Block from "@src/components/block"
 
-const FlexiblePage = ({ children, containers, title }) => (
+const FlexiblePage = ({ children, blocks, title }) => (
   <Layout>
     {children}
     <div className={styles.page}>
       <h1>{title}</h1>
-      {containers.map((section, idx) => (
-        <Container key={idx} {...section} />
+      {blocks.map((block, idx) => (
+        <Block key={idx} {...block} />
       ))}
     </div>
   </Layout>
@@ -25,9 +25,9 @@ FlexiblePage.propTypes = {
    */
   children: PropTypes.node,
   /**
-   * An array of containers that get mapped to the <Container /> component.
+   * An array of components that get mapped to the <Block /> component.
    */
-  containers: PropTypes.arrayOf(PropTypes.object),
+  blocks: PropTypes.arrayOf(PropTypes.object),
   /**
    * Title of the page, displayed as the page's <h1> value.
    */

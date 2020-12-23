@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Block renders properly with valid props 1`] = `
+<a
+  className="button"
+  href="/"
+>
+  Hello World
+</a>
+`;

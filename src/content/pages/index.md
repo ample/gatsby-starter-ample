@@ -4,16 +4,19 @@ model: Page
 published: true
 layout: flexible
 layout_flexible:
-  containers:
-  - title: Main Content
+  blocks:
+  - template: component-container
     config:
-      margin_bottom: "0"
-    columns:
-    - title: Main Column
+      margin_bottom: '0'
+    title: Main Content
+    blocks:
+    - template: component-column
       config:
-        text_align: ''
         width: full
-      components:
+        margin_bottom: '0'
+        text_align: ''
+      title: Main Column
+      blocks:
       - template: component-image
         image_src: "/uploads/placeholder-image.jpg"
       - template: component-content
@@ -37,5 +40,9 @@ seo:
     title: Home Page Twitter Title
     description: Home Page Twitter Description
     image_src: "/uploads/placeholder-image.jpg"
+exclude_from_sitemap: false
+layout_basic:
+  heading: ''
+  body_md: ''
 
 ---

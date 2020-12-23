@@ -3,12 +3,12 @@ import { fixtures as formFixtures } from "@src/components/form"
 export default {
   empty: {
     className: null,
-    components: [],
+    blocks: [],
     config: {}
   },
   default: {
     className: null,
-    components: [
+    blocks: [
       {
         template: "component-button",
         label: "Hello World",
@@ -19,7 +19,7 @@ export default {
   },
   form: {
     className: null,
-    components: [{ template: "component-form", form: formFixtures.default }],
+    blocks: [{ template: "component-form", form: formFixtures.default }],
     config: {}
   }
 }
