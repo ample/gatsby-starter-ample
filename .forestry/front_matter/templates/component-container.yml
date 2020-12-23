@@ -13,15 +13,10 @@ fields:
   type: blocks
   label: Blocks
   template_types:
-  - component-button
   - component-column
-  - component-content
-  - component-form
-  - component-frame
-  - component-image
   config:
     min: 1
-    max:
+    max: 
   description: Add one or more blocks to your container to render content on the page.
 - name: config
   type: field_group
@@ -42,9 +37,9 @@ fields:
       - '120'
       source:
         type: simple
-        section:
-        file:
-        path:
+        section: 
+        file: 
+        path: 
     label: Bottom Spacing
     description: The number of pixels the next container should be pushed down.
   description: Display options for the container.

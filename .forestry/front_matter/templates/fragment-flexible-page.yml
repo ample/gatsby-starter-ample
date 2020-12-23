@@ -9,6 +9,7 @@ fields:
   - component-column
   - component-container
   config:
-    min:
-    max:
-  description: Blocks can be configured to add content to your page in a flexible way.
+    min: 
+    max: 
+  description: Blocks can be configured to add content to your page in a flexible
+    way.

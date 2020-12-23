@@ -37,9 +37,9 @@ fields:
     - flexible
     source:
       type: simple
-      section:
-      file:
-      path:
+      section: 
+      file: 
+      path: 
   label: Layout
   description: The layout affects how the page appears on the website, along with
     the fields visible here.
