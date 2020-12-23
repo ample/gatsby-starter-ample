@@ -13,10 +13,6 @@ field_groups:
         name: name
         required: true
         text_appearance: short
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: half
         solo: true
       - title: Email
@@ -26,9 +22,6 @@ field_groups:
         required: true
         text_appearance: short
         text_validation: email
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: half
         solo: false
       - title: Phone
@@ -39,8 +32,6 @@ field_groups:
         text_appearance: short
         text_validation: phone
         text_placeholder: (xxx) xxx-xxxx
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: half
         solo: false
       - title: Gender
@@ -48,59 +39,36 @@ field_groups:
         label: Gender
         name: gender
         required: true
-        text_appearance: !<tag:yaml.org,2002:js/undefined> ''
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
         select_options:
           - Male
           - Female
         select_appearance: radio
         width: full
-        solo: !<tag:yaml.org,2002:js/undefined> ''
       - title: Address
         type: text
         label: Address
         name: address
         required: false
         text_appearance: short
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: half
-        solo: !<tag:yaml.org,2002:js/undefined> ''
       - title: Suite / Apt.
         type: text
         label: Suite / Apt.
         name: suite_apt
         required: false
         text_appearance: short
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: half
-        solo: !<tag:yaml.org,2002:js/undefined> ''
       - title: City
         type: text
         label: City
         name: city
         required: false
         text_appearance: short
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: half
-        solo: !<tag:yaml.org,2002:js/undefined> ''
       - title: State
         type: select
         label: State
         name: state
-        required: !<tag:yaml.org,2002:js/undefined> ''
-        text_appearance: !<tag:yaml.org,2002:js/undefined> ''
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
         select_options:
           - Alabama
           - Alaska
@@ -155,30 +123,18 @@ field_groups:
           - Wyoming
         select_appearance: dropdown
         width: quarter
-        solo: !<tag:yaml.org,2002:js/undefined> ''
       - title: Zip
         type: text
         label: Zip
         name: zip
-        required: !<tag:yaml.org,2002:js/undefined> ''
         text_appearance: short
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: quarter
-        solo: !<tag:yaml.org,2002:js/undefined> ''
       - title: Message
         type: text
         label: Message
         name: message
         required: true
         text_appearance: long
-        text_validation: !<tag:yaml.org,2002:js/undefined> ''
-        text_placeholder: !<tag:yaml.org,2002:js/undefined> ''
-        select_options: !<tag:yaml.org,2002:js/undefined> ''
-        select_appearance: !<tag:yaml.org,2002:js/undefined> ''
         width: full
-        solo: !<tag:yaml.org,2002:js/undefined> ''
 ---
 
