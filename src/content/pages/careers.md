@@ -21,6 +21,22 @@ layout_flexible:
         margin_bottom: ''
     config:
       margin_bottom: ''
+  blocks:
+  - template: component-container
+    config:
+      margin_bottom: '0'
+    title: Job Posting Container
+    blocks:
+    - template: component-column
+      config:
+        width: full
+        margin_bottom: '0'
+        text_align: ''
+      title: Job Posting Column
+      blocks:
+      - template: component-frame
+        margin_bottom: '0'
+        src: "/"
 seo:
   title: ''
   description: ''
@@ -34,5 +50,6 @@ seo:
     title: ''
     description: ''
     image_src: ''
+exclude_from_sitemap: false
 
 ---
