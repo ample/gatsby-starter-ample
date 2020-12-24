@@ -7,15 +7,15 @@
 
 // --------------------------------------------------------
 
-$color-blue-hover: color.scale(
-  map.get($blueprint, '--color-blue'),
-  $lightness: -10%,
-  $saturation: 10%
-);
 $circle: 20px;
 $circle-border: 1px;
 $circle-center-offset: 6px;
 $form-field-gutter: 40px;
+$radio-button-hover: color.scale(
+  map.get($color, '--color-blueprint'),
+  $lightness: -10%,
+  $saturation: 10%
+);
 
 // -------------------------------------------------------- | Form
 
@@ -81,17 +81,17 @@ $form-field-gutter: 40px;
   input:not([type='radio']),
   select,
   textarea {
-    background-color: var(--color-blue-grayish);
-    border: 1px solid var(--color-blue-alpha-16);
+    background-color: var(--color-blueprint-grayish);
+    border: 1px solid var(--color-blueprint-alpha-16);
     border-radius: 0;
-    color: var(--color-blue);
+    color: var(--color-blueprint);
     font-size: 16px;
     padding: 16px;
     transition: border-color 0.25s ease-in;
     width: 100%;
 
     &:focus {
-      border-color: var(--color-blue-alpha-50);
+      border-color: var(--color-blueprint-alpha-50);
       outline: none;
     }
   }
@@ -140,11 +140,11 @@ $form-field-gutter: 40px;
 
   &:hover {
     .circle {
-      border-color: $color-blue-hover;
+      border-color: $radio-button-hover;
     }
 
     label {
-      color: $color-blue-hover;
+      color: $radio-button-hover;
     }
   }
 
@@ -161,7 +161,7 @@ $form-field-gutter: 40px;
   }
 
   .circle {
-    border: $circle-border solid var(--color-blue);
+    border: $circle-border solid var(--color-blueprint);
     border-radius: 100%;
     height: $circle;
     position: absolute;
@@ -188,15 +188,15 @@ $form-field-gutter: 40px;
     visibility: hidden;
 
     &:checked ~ .circle {
-      border-color: var(--color-blue);
+      border-color: var(--color-blueprint);
     }
 
     &:checked ~ .circle::before {
-      background-color: var(--color-blue);
+      background-color: var(--color-blueprint);
     }
 
     &:checked ~ label {
-      color: (--color-blue);
+      color: (--color-blueprint);
     }
   }
 }

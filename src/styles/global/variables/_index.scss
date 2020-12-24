@@ -1,6 +1,5 @@
 // --------------------------------------------------------
 
-@use './blueprint' as *;
 @use './color' as *;
 @use './font' as *;
 @use './global' as *;
@@ -24,11 +23,6 @@
 
   // ------------------------------------------------------ | z-index variables
   @each $variable in $z-index {
-    #{nth($variable, 1)}: #{nth($variable, 2)};
-  }
-
-  // ------------------------------------------------------ | Blueprint variables
-  @each $variable in $blueprint {
     #{nth($variable, 1)}: #{nth($variable, 2)};
   }
 }

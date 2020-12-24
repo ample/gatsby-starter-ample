@@ -3,5 +3,15 @@
 
 $color: (
   '--color-black': #000,
+  '--color-blueprint': #0065f2,
+  '--color-blueprint-alpha-16': rgba(0, 101, 242, 0.16),
+  '--color-blueprint-alpha-20': rgba(0, 101, 242, 0.2),
+  '--color-blueprint-alpha-50': rgba(0, 101, 242, 0.5),
+  '--color-blueprint-grayish': rgba(224, 236, 253, 0.4),
+  '--color-blueprint-pale': #eef6ff,
+  '--color-blueprint-pale-very': #f2f8ff,
+  '--color-blueprint-pale-very-2': #e1edff,
+  '--color-blueprint-soft': #c7defd,
+  '--color-blueprint-white-50': rgba(255, 255, 255, 0.5),
   '--color-white': #fff
 );
