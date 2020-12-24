@@ -60,6 +60,7 @@
   fields:
     description: String
     image: File
+    image_src: String
     title: String
 
 - type: SeoMetaTwitter
@@ -67,12 +68,14 @@
     card: String
     description: String
     image: File
+    image_src: String
     title: String
 
 - type: SeoMeta
   fields:
     description: String
     image: File
+    image_src: String
     og: SeoMetaOg
     title: String
     twitter: SeoMetaTwitter
