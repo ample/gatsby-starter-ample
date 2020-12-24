@@ -3,6 +3,14 @@
 // ---------------------------------------------------------
 
 .button {
+  background-color: var(--color-blueprint);
+  color: var(--color-white);
+  display: inline-block;
   padding: 10px 26px 11px;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
+
+  @include hover {
+    background-color: var(--color-blueprint-alpha-80);
+    text-decoration: none;
+  }
 }
