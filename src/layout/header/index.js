@@ -1,6 +1,13 @@
-import component from "./component"
+import React from "react"
+
+import Adapter from "./adapter"
+import Component from "./component"
 import fixtures from "./navigation/fixtures"
 
-export default component
+const Header = () => {
+  return process.env.NODE_ENV === "test" ? <Component {...fixtures.default} /> : <Adapter />
+}
 
-export { component, fixtures }
+export default Header
+
+export { Adapter as adapter, Component as component, fixtures }

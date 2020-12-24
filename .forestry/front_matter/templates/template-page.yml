@@ -21,6 +21,12 @@ fields:
   description: Published pages are visible in production, while unpublished pages
     are not. All pages are available in preview.
   default: false
+- name: exclude_from_sitemap
+  type: boolean
+  label: Exclude from Sitemap
+  description: All published pages are included in the sitemap by default. Selecting
+    this option removes this page from the sitemap.
+  default: false
 - name: layout
   type: select
   default: basic
@@ -76,8 +82,13 @@ fields:
   description: While there are sensible defaults, the SEO section provides the option
     to explicitly set meta tag values.
 pages:
+- src/content/pages/404.md
 - src/content/pages/careers.md
 - src/content/pages/contact.md
 - src/content/pages/content-page.md
+- src/content/pages/content-page/nested-page.md
+- src/content/pages/draft-page.md
 - src/content/pages/flexible-page-columns.md
 - src/content/pages/index.md
+- src/content/pages/privacy-policy.md
+- src/content/pages/terms.md

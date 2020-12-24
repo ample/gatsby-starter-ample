@@ -3,20 +3,22 @@ import PropTypes from "prop-types"
 import startCase from "lodash/startCase"
 import toLower from "lodash/toLower"
 
-import styles from "./styles.module.scss"
+import styles from "./../../templates/components/styles.module.scss"
 
 const Variations = ({ component, data }) => {
   const TagName = component
 
   return (
-    <div>
+    <>
       {Object.entries(data).map((obj, idx) => (
-        <div key={idx} className={styles.comp_item}>
-          <h3 className={styles.comp_item_heading}>{startCase(toLower(obj[0]))}</h3>
-          <TagName {...obj[1]} />
+        <div className={styles.component_variation} key={idx}>
+          <h3 className={styles.component_variation_name}>{startCase(toLower(obj[0]))}</h3>
+          <div className={styles.component_variation_container}>
+            <TagName {...obj[1]} />
+          </div>
         </div>
       ))}
-    </div>
+    </>
   )
 }
 

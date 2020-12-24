@@ -3,7 +3,7 @@ export default {
     copyright: "2020, All Rights Reserved",
     menus: [
       {
-        label: "Quisque",
+        heading: "Quisque",
         links: [
           { url: "#", label: "Vestibulum vitae" },
           { url: "#", label: "Pellentesque tempor venenatis" },
@@ -12,7 +12,7 @@ export default {
         ]
       },
       {
-        label: "Vestibulum",
+        heading: "Vestibulum",
         links: [
           { url: "#", label: "Fusce molestie" },
           { url: "#", label: "Pellentesque venenatis" },

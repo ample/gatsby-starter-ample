@@ -1,6 +1,10 @@
+import { Provider } from "./src/services/provider"
+
 import "./src/styles/libs/sanitize.scss"
 import "./src/styles/global-styles.scss"
 import "./src/styles/global-utilities.scss"
+
+// ---------------------------------------- | Image Polyfill (IntersectionObserver)
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
@@ -9,6 +13,8 @@ export const onClientEntry = () => {
     console.log(`# IntersectionObserver is polyfilled!`)
   }
 }
+
+// ---------------------------------------- | Scroll To Anchor
 
 export const onRouteUpdate = ({ location }) => scrollToAnchor(location)
 
@@ -30,3 +36,7 @@ function scrollToAnchor(location, mainNavHeight = 0) {
 
   return true
 }
+
+// ---------------------------------------- | Global State Management
+
+export const wrapRootElement = Provider

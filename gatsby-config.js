@@ -19,50 +19,23 @@ module.exports = {
         }
       }
     },
-    /**
-     * Uses schema.yml at the root of the project to explicitly declare GraphQL
-     * schema. (See plugins/gatsby-ample-schema.)
-     */
     `gatsby-ample-schema`,
-    /**
-     * Looks in src/content and passes every page (except index.md) to
-     * src/templates/page/adapter.js. (See plugins/gatsby-ample-pages.)
-     */
     `gatsby-ample-pages`,
-    // Creates meta tags for every page
-    // src/templates/page/adapter.js. (See plugins/gatsby-ample-seo.)
     `gatsby-ample-seo`,
-    /**
-     * Creates Gatsby and Netlify redirects for records in
-     * src/content/redirects. (See plugins/gatsby-ample-redirects.)
-     */
+    `gatsby-ample-debuggers`,
+    `gatsby-ample-linters`,
     {
       resolve: `gatsby-ample-redirects`,
       options: {
-        // Setting GATSBY_REDIRECTS_DISABLED="true" disables redirects. This
-        // applies to both in-app redirects and those written to _redirects for
-        // use by Netlify.
         disable: process.env.GATSBY_REDIRECTS_DISABLED === "true"
       }
     },
-    /**
-     * Creates playgrounds from components and templates. (See
-     * plugins/gatsby-ample-playground.)
-     */
     {
       resolve: `gatsby-ample-playground`,
       options: {
-        // Setting GATSBY_PLAYGROUND_DISABLED="true" disables the playground
-        // build.
         disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
       }
     },
-    // Adds a debugger for media queries
-    // src/layout. (See plugins/gatsby-ample-debuggers.)
-    `gatsby-ample-debuggers`,
-    // Adds linters for local development
-    // (See plugins/gatsby-ample-linters.)
-    `gatsby-ample-linters`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
@@ -91,17 +64,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          // gatsby-remark-relative-images must
-          // go before gatsby-remark-images
           {
             resolve: `gatsby-remark-relative-images`
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 1440
             }
           }
@@ -110,18 +78,10 @@ module.exports = {
     },
     {
       resolve: `gatsby-remark-ample`,
-      // Commented lines are the plugin's default options. Read more here:
-      // https://github.com/ample/gatsby-remark-ample
       options: {
-        // contentSrc: "src/content/",
-        // imageExtensions: [".jpg", ".jpeg", ".png"],
         imageSrc: path.join(__dirname, "static"),
-        // imageSuffix: "_src",
-        // markdownSuffix: "_md",
-        // modelField: "model",
-        models: ["AdminReferences", "AdminSeo", "Form", "Page", "Redirect"],
+        plugins: ["gatsby-ample-pages"],
         projectRoot: path.join(__dirname)
-        // seoField: "seo"
       }
     },
     {
@@ -147,7 +107,7 @@ module.exports = {
         background_color: `#0095df`,
         theme_color: `#0095df`,
         display: `minimal-ui`,
-        icon: `src/images/ample-icon.png`
+        icon: `src/images/favicon.png`
       }
     },
     {
@@ -172,7 +132,48 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/sitemap.xml`
+        output: `/sitemap.xml`,
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+
+            excludedPages: allPage(filter: {exclude_from_sitemap: {eq: true}, published: {eq: true}}) {
+              edges {
+                node {
+                  pagePath
+                }
+              }
+            }
+          }
+        `,
+        serialize: ({ site, excludedPages, allSitePage }) => {
+          // Get the paths of all pages that should be excluded from the
+          // sitemap.
+          const excludePaths = excludedPages.edges.map(({ node }) => node.pagePath)
+          // Return an array of any static route Gatsby built, except those that
+          // were excluded.
+          return allSitePage.edges
+            .filter(({ node }) => !excludePaths.includes(node.path))
+            .map(({ node }) => {
+              return {
+                url: `${site.siteMetadata.siteUrl}${node.path}`,
+                changefreq: `daily`,
+                priority: 0.7
+              }
+            })
+        }
       }
     },
     {
