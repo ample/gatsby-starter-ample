@@ -74,24 +74,3 @@
     }
   }
 }
-
-:global {
-  .comp-item {
-    margin-bottom: 40px;
-
-    &:last-of-type:not(:only-of-type) {
-      margin-bottom: 0;
-    }
-  }
-
-  .comp-item-heading {
-    color: #8a8989;
-    font-family: system-ui;
-    font-size: 18px;
-    font-weight: 300;
-
-    &:after {
-      content: ':';
-    }
-  }
-}
