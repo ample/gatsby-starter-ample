@@ -1,5 +1,13 @@
 // --------------------------------------------------------
 
+@mixin reset-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+// --------------------------------------------------------
+
 @mixin reset-list {
   margin: 0;
   padding: 0;

@@ -4,6 +4,7 @@
 // --------------------------------------------------------
 
 @use '../../styles/global' as *;
+@use '../button/styles.module.scss' as *;
 
 // --------------------------------------------------------
 
@@ -19,7 +20,14 @@ $radio-button-hover: color.scale(
 
 // -------------------------------------------------------- | Form
 
-// .form {}
+.form {
+  input[type='submit'] {
+    @include reset-button;
+    @include default-button;
+
+    cursor: pointer;
+  }
+}
 
 // -------------------------------------------------------- | Group
 

@@ -2,7 +2,7 @@
 
 // ---------------------------------------------------------
 
-.button {
+@mixin default-button {
   background-color: var(--color-blueprint);
   color: var(--color-white);
   display: inline-block;
@@ -13,4 +13,10 @@
     background-color: var(--color-blueprint-alpha-80);
     text-decoration: none;
   }
+}
+
+// ---------------------------------------------------------
+
+.button {
+  @include default-button;
 }
