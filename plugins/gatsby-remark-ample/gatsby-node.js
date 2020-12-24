@@ -8,7 +8,10 @@ const getFilePath = require("./utils/get-file-path")
 const loadPlugins = require("./utils/load-plugins")
 const processFrontmatter = require("./utils/process-frontmatter")
 
-exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, options) => {
+exports.onCreateNode = async (
+  { node, actions, createNodeId, createContentDigest, store, cache },
+  options
+) => {
   // Only process nodes that were created by gatsby-transformer-remark.
   if (get(node, "internal.type") !== "MarkdownRemark") return
 
@@ -58,10 +61,11 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }, op
   }
 
   // Loop through and process each key-value in the frontmatter.
-  let frontmatter = processFrontmatter({
+  let frontmatter = await processFrontmatter({
     frontmatter: initFrontmatter,
     options: args,
-    node: node
+    node: node,
+    helpers: { createNode: actions.createNode, store, cache, createNodeId }
   })
 
   // Initialize a new node as a child of the MarkdownRemark node.

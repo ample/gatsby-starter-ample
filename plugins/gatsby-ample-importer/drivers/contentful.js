@@ -60,7 +60,12 @@ module.exports = class {
       return subItems.map(subItem => this.processItem(subItem, config[0]))
     },
     // For now, we're digging into a file field and extracting the URL.
-    file: (data, name) => get(data, `fields.${name}.fields.file.url`),
+    file: (data, name) => {
+      const urlWithoutProtocol = get(data, `fields.${name}.fields.file.url`)
+      if (urlWithoutProtocol) {
+        return `https:${urlWithoutProtocol}`
+      }
+    },
     // When using a function as the value, the function gets executed, sending
     // the item as the only argument.
     function: (item, _, func) => func(item, this),

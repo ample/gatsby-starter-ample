@@ -37,7 +37,7 @@ describe("process", () => {
       name: item.fields.title,
       body: item.fields.body,
       slug: item.fields.slug,
-      image: item.fields.image.fields.file.url
+      image: `https:${item.fields.image.fields.file.url}`
     }))
     expect(res).toStrictEqual(expRes)
   })
@@ -57,7 +57,7 @@ describe("processItem", () => {
       name: item.fields.title,
       body: item.fields.body,
       slug: item.fields.slug,
-      image: item.fields.image.fields.file.url
+      image: `https:${item.fields.image.fields.file.url}`
     })
   })
   test("can nest an array of linked sub-entries", () => {
@@ -121,7 +121,7 @@ describe("getValueByType", () => {
   })
   test("supports file type", () => {
     const res = driver.getValueByType.file(pagesResponse.items[0], "image")
-    expect(res).toBe(pagesResponse.items[0].fields.image.fields.file.url)
+    expect(res).toBe(`https:${pagesResponse.items[0].fields.image.fields.file.url}`)
   })
   test("resolves functions", () => {
     const func = item => item.fields.title

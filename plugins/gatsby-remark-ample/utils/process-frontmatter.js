@@ -3,12 +3,13 @@ const set = require("lodash/set")
 const trimEnd = require("lodash/trimEnd")
 
 const getKeyType = require("./get-key-type")
-const processImage = require("./process-image")
+const processLocalImage = require("./process-local-image")
+const processRemoteImage = require("./process-remote-image")
 const processMarkdown = require("./process-markdown")
 
-module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
+module.exports = async ({ frontmatter = {}, node = {}, options = {}, helpers = {} }) => {
   // Loop through every property on the frontmatter object.
-  deepForEach(frontmatter, (value, key, subject, keyPath) => {
+  deepForEach(frontmatter, async (value, key, subject, keyPath) => {
     // Get type of the node. Most will be "default" and are left alone. Others
     // are processed specifically to their type.
     const keyType = getKeyType({ keyPath: keyPath, options: options, value: value })
@@ -26,11 +27,17 @@ module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
       // the image, and stored as a new key without the suffix.
       case "img": {
         const newKeyPath = trimEnd(keyPath, options.imageSuffix)
-        const newValue = processImage({
-          absoluteFilePath: node.fileAbsolutePath,
-          imageSrcDir: options.imageSrc,
-          value: value
-        })
+        let newValue
+        if (options.imageSrc === "remote") {
+          newValue = await processRemoteImage({ node, helpers, value })
+        } else {
+          newValue = processLocalImage({
+            absoluteFilePath: node.fileAbsolutePath,
+            imageSrcDir: options.imageSrc,
+            value: value
+          })
+        }
+        console.log("|||", newValue)
         if (newValue) set(frontmatter, newKeyPath, newValue)
         break
       }
