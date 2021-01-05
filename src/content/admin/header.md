@@ -2,32 +2,52 @@
 title: Header
 model: AdminHeader
 top_nav:
-- label: "Link #1"
+- label: "Duis"
   url: "/"
-- label: "Link #2"
+- label: "Cupidatat"
   url: "/"
-- label: "Link #3"
+- label: "Ullamco"
+  url: "/"
+- label: "Labore"
+  url: "/"
+- label: "Consectetur"
+  url: "/"
+- label: "Pariatur"
   url: "/"
 main_nav:
-- label: "Link #1"
+- label: "Reprehenderit"
   url: "/"
   button: false
   children: []
-- label: "Link #2"
+- label: "Officia sint"
+  url: "/"
+  button: false
+  children: []
+- label: "Veniam"
+  url: "/"
+  button: false
+  children: []
+- label: "Consequat"
+  url: "/"
+  button: false
+  children: []
+- label: "Suspendisse semper"
   url: "/"
   button: false
   children:
-  - label: "Link #1"
+  - label: "Vestibulum vitae"
     url: "/"
-  - label: "Link #2"
+  - label: "Pellentesque tempor venenatis"
     url: "/"
-  - label: "Link #3"
+  - label: "Fusce molestie"
+    url: "/"
+  - label: "Etiam in lacinia dolor"
     url: "/"
 - label: "Link #3"
   url: "/"
   button: false
   children: []
-- label: "Link #4"
+- label: "Quisque interdum"
   url: "/"
   button: true
   children: []
