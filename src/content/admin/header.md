@@ -43,10 +43,6 @@ main_nav:
     url: "/"
   - label: "Etiam in lacinia dolor"
     url: "/"
-- label: "Link #3"
-  url: "/"
-  button: false
-  children: []
 - label: "Quisque interdum"
   url: "/"
   button: true
