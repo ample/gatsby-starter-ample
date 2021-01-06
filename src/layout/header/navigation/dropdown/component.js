@@ -14,14 +14,6 @@ const Dropdown = ({ items, label, onClick }) => {
     [styles.is_showing]: isOpen
   })
 
-  const handleMouseEnter = () => {
-    setIsOpen(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsOpen(false)
-  }
-
   const handleOnClick = () => {
     setIsOpen(!isOpen)
   }
@@ -31,8 +23,6 @@ const Dropdown = ({ items, label, onClick }) => {
       className={classes}
       onClick={handleOnClick}
       onKeyPress={handleOnClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       role="button"
       tabIndex={0}
     >
