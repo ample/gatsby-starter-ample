@@ -53,6 +53,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -62,6 +63,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -71,6 +73,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -80,6 +83,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -89,6 +93,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -98,6 +103,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -111,6 +117,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -120,6 +127,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -129,6 +137,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -138,6 +147,7 @@ Array [
           <li>
             <a
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >
@@ -147,6 +157,8 @@ Array [
           <li>
             <span
               className="dropdown"
+              onClick={[Function]}
+              onKeyPress={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="button"
@@ -173,6 +185,7 @@ Array [
                 <li>
                   <a
                     href="/"
+                    onClick={[Function]}
                   >
                     Vestibulum vitae
                   </a>
@@ -180,6 +193,7 @@ Array [
                 <li>
                   <a
                     href="#"
+                    onClick={[Function]}
                     rel="noopener"
                     target="_blank"
                   >
@@ -189,6 +203,7 @@ Array [
                 <li>
                   <a
                     href="#"
+                    onClick={[Function]}
                     rel="noopener"
                     target="_blank"
                   >
@@ -198,6 +213,7 @@ Array [
                 <li>
                   <a
                     href="#"
+                    onClick={[Function]}
                     rel="noopener"
                     target="_blank"
                   >
@@ -213,6 +229,7 @@ Array [
             <a
               className="button button"
               href="#"
+              onClick={[Function]}
               rel="noopener"
               target="_blank"
             >

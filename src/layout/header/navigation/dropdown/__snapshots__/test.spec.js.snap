@@ -3,6 +3,8 @@
 exports[`Dropdown renders correctly 1`] = `
 <span
   className="dropdown"
+  onClick={[Function]}
+  onKeyPress={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
   role="button"

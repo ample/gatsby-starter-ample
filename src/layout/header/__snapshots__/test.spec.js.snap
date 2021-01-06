@@ -52,6 +52,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -61,6 +62,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -70,6 +72,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -79,6 +82,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -88,6 +92,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -97,6 +102,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -110,6 +116,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -119,6 +126,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -128,6 +136,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -137,6 +146,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -146,6 +156,8 @@ exports[`Header renders correctly 1`] = `
         <li>
           <span
             className="dropdown"
+            onClick={[Function]}
+            onKeyPress={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             role="button"
@@ -172,6 +184,7 @@ exports[`Header renders correctly 1`] = `
               <li>
                 <a
                   href="/"
+                  onClick={[Function]}
                 >
                   Vestibulum vitae
                 </a>
@@ -179,6 +192,7 @@ exports[`Header renders correctly 1`] = `
               <li>
                 <a
                   href="#"
+                  onClick={[Function]}
                   rel="noopener"
                   target="_blank"
                 >
@@ -188,6 +202,7 @@ exports[`Header renders correctly 1`] = `
               <li>
                 <a
                   href="#"
+                  onClick={[Function]}
                   rel="noopener"
                   target="_blank"
                 >
@@ -197,6 +212,7 @@ exports[`Header renders correctly 1`] = `
               <li>
                 <a
                   href="#"
+                  onClick={[Function]}
                   rel="noopener"
                   target="_blank"
                 >
@@ -212,6 +228,7 @@ exports[`Header renders correctly 1`] = `
           <a
             className="button button"
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
