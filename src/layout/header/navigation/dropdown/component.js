@@ -7,7 +7,7 @@ import SVG from "@src/components/svg"
 
 import styles from "./styles.module.scss"
 
-const Dropdown = ({ items, label }) => {
+const Dropdown = ({ items, label, onClick }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const classes = classNames(styles.dropdown, {
@@ -44,7 +44,9 @@ const Dropdown = ({ items, label }) => {
       <ul className={styles.dropdown_menu}>
         {items.map((item, idx) => (
           <li key={idx} className={item.className}>
-            <Link to={item.url}>{item.label}</Link>
+            <Link to={item.url} onClick={onClick}>
+              {item.label}
+            </Link>
           </li>
         ))}
       </ul>
@@ -60,7 +62,11 @@ Dropdown.propTypes = {
   /**
    * Dropdown label
    */
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  /**
+   * A onClick function passed down from the navigation component
+   */
+  onClick: PropTypes.func
 }
 
 export default Dropdown

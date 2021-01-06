@@ -8,7 +8,7 @@ import Link from "@src/components/link"
 
 import styles from "./styles.module.scss"
 
-const Navigation = ({ activeClassName, className, links = [], vertical }) => {
+const Navigation = ({ className, links = [], onClick, vertical }) => {
   const classes = classNames(styles.navigation, className, {
     [styles[`is_vertical`]]: vertical
   })
@@ -19,7 +19,7 @@ const Navigation = ({ activeClassName, className, links = [], vertical }) => {
         if (item.children && item.children.length > 0) {
           return (
             <li key={index}>
-              <Dropdown key={index} items={item.children} label={item.label} />
+              <Dropdown key={index} items={item.children} label={item.label} onClick={onClick} />
             </li>
           )
         } else if (item.button) {
@@ -29,6 +29,7 @@ const Navigation = ({ activeClassName, className, links = [], vertical }) => {
                 className={classNames(styles[item.className])}
                 to={item.url}
                 theme={item.theme}
+                onClick={onClick}
               >
                 {item.label}
               </Button>
@@ -38,10 +39,11 @@ const Navigation = ({ activeClassName, className, links = [], vertical }) => {
           return (
             <li key={index}>
               <Link
-                activeClassName={activeClassName}
+                activeClassName={styles.is_active}
                 className={item.className}
                 title={item.title}
                 to={item.url}
+                onClick={onClick}
               >
                 {item.label}
               </Link>
@@ -54,10 +56,6 @@ const Navigation = ({ activeClassName, className, links = [], vertical }) => {
 }
 
 Navigation.propTypes = {
-  /**
-   * Specifies an active class name, passed on to the <Link /> component
-   */
-  activeClassName: PropTypes.string,
   /**
    * CSS class(es) applied to the wrapping element
    */
@@ -80,6 +78,10 @@ Navigation.propTypes = {
       )
     })
   ).isRequired,
+  /**
+   * A onClick function passed to all navigation links
+   */
+  onClick: PropTypes.func,
   /**
    * Specifies if the direction of the link list should be vertical
    */

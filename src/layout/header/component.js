@@ -47,8 +47,16 @@ const Header = ({ main_navigation, top_navigation }) => {
         </div>
 
         <div className={styles.navigation_container}>
-          <Navigation className={styles.top_navigation} links={top_navigation} />
-          <Navigation className={styles.main_navigation} links={main_navigation} />
+          <Navigation
+            className={styles.top_navigation}
+            links={top_navigation}
+            onClick={smallScreenMenuClick}
+          />
+          <Navigation
+            className={styles.main_navigation}
+            links={main_navigation}
+            onClick={smallScreenMenuClick}
+          />
         </div>
       </div>
     </header>
