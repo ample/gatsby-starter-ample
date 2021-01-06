@@ -15,6 +15,11 @@
       color: var(--color-cyan);
       text-decoration: none;
     }
+
+    &.is_active {
+      color: var(--color-blueprint-alpha-50);
+      text-decoration: none;
+  }
   }
 
   li {

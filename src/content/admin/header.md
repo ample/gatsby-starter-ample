@@ -3,24 +3,24 @@ title: Header
 model: AdminHeader
 top_nav:
 - label: "Duis"
-  url: "/"
+  url: "#"
 - label: "Cupidatat"
-  url: "/"
+  url: "#"
 - label: "Ullamco"
-  url: "/"
+  url: "#"
 - label: "Labore"
-  url: "/"
+  url: "#"
 - label: "Consectetur"
-  url: "/"
+  url: "#"
 - label: "Pariatur"
-  url: "/"
+  url: "#"
 main_nav:
 - label: "Reprehenderit"
-  url: "/"
+  url: "#"
   button: false
   children: []
 - label: "Officia sint"
-  url: "/"
+  url: "#"
   button: false
   children: []
 - label: "Veniam"
@@ -28,23 +28,23 @@ main_nav:
   button: false
   children: []
 - label: "Consequat"
-  url: "/"
+  url: "#"
   button: false
   children: []
 - label: "Suspendisse semper"
-  url: "/"
+  url: "#"
   button: false
   children:
   - label: "Vestibulum vitae"
-    url: "/"
+    url: "#"
   - label: "Pellentesque tempor venenatis"
-    url: "/"
+    url: "#"
   - label: "Fusce molestie"
-    url: "/"
+    url: "#"
   - label: "Etiam in lacinia dolor"
-    url: "/"
+    url: "#"
 - label: "Quisque interdum"
-  url: "/"
+  url: "#"
   button: true
   children: []
 
