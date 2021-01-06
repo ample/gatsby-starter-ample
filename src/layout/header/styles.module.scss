@@ -1,14 +1,15 @@
 @use '../../styles/global' as *;
 
-$mobile-header-height: 64px;
-
 // ---------------------------------------------------------
 
 .header {
   background: var(--color-blueprint-pale);
-  max-height: $mobile-header-height;
+
+  // left: 0;
+  max-height: var(--global-header-mobile-height);
   overflow: hidden;
   position: fixed;
+  top: 0;
   transition: max-height 400ms ease-out;
   z-index: var(--z-index-plus-three);
 
@@ -34,7 +35,7 @@ $mobile-header-height: 64px;
   @include media($full-navigation, down) {
     @include container-header;
 
-    height: $mobile-header-height;
+    height: var(--global-header-mobile-height);
     position: fixed;
     width: 100%;
   }
@@ -74,7 +75,7 @@ $mobile-header-height: 64px;
   flex-direction: column;
   height: 100%;
   overflow: scroll;
-  padding: ($mobile-header-height + 12px) 20px 140px;
+  padding: calc(var(--global-header-mobile-height) + 12px) 20px 140px;
 }
 
 .main_navigation,
