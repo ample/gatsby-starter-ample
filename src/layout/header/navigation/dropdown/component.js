@@ -22,13 +22,19 @@ const Dropdown = ({ items, label }) => {
     setIsOpen(false)
   }
 
+  const handleOnClick = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <span
       className={classes}
-      role="button"
-      tabIndex={0}
+      onClick={handleOnClick}
+      onKeyPress={handleOnClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      role="button"
+      tabIndex={0}
     >
       <div className={styles.dropdown_trigger}>
         {label}
