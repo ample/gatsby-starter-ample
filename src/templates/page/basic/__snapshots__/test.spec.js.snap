@@ -239,22 +239,15 @@ Array [
     </div>
   </header>,
   <main
-    className=""
+    className="basic_page"
   >
     <div
-      className="basic_page"
-    >
-      <h1>
-        Basic Page
-      </h1>
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Hello World</p>",
-          }
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Hello World</p>",
         }
-      />
-    </div>
+      }
+    />
   </main>,
   <footer
     className="footer"

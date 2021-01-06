@@ -239,29 +239,22 @@ Array [
     </div>
   </header>,
   <main
-    className=""
+    className="page"
   >
     <div
-      className="page"
+      className="container"
     >
-      <h1>
-        Flexible Page
-      </h1>
       <div
-        className="container"
+        className="content"
       >
         <div
           className="content"
-        >
-          <div
-            className="content"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>Hello World</p>",
-              }
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Hello World</p>",
             }
-          />
-        </div>
+          }
+        />
       </div>
     </div>
   </main>,
