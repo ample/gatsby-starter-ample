@@ -1,4 +1,5 @@
 @use '../../../styles/global' as *;
+@use '../../../components/button/styles.module.scss' as *;
 
 .navigation {
   @include reset-list;
@@ -6,9 +7,12 @@
   display: flex;
 
   a {
+    color: var(--color-blueprint);
     display: inline-block;
+    padding: 18px 0 19px;
 
     @include hover {
+      color: var(--color-cyan);
       text-decoration: none;
     }
   }
@@ -20,6 +24,14 @@
 
 // --------------------------------------------------------
 
-// .nav_button {
-//   //
-// }
+.nav_button {
+  a {
+    @include default-button;
+
+    display: block;
+    margin: 18px 0 12px;
+    padding: 14px;
+    text-align: center;
+    width: 100%;
+  }
+}

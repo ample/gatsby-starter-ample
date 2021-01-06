@@ -1,30 +1,23 @@
 @use '../../styles/global' as *;
 
+$mobile-header-height: 64px;
+
 // ---------------------------------------------------------
 
 .header {
-  background-color: #ccc;
-  width: 100%;
+  background: var(--color-blueprint-pale);
+  max-height: $mobile-header-height;
+  overflow: hidden;
+  position: fixed;
+  transition: max-height 400ms ease-out;
+  z-index: var(--z-index-plus-three);
 
   &.navigation_is_showing {
-    height: 100vh;
-    overflow: scroll;
-    position: sticky;
-    top: 0;
-    width: 100vw;
-  }
-
-  > div {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-
-    @include media($full-navigation) {
-      @include container-header;
-
-      flex-direction: row;
-      justify-content: flex-end;
-      overflow: visible;
+    @include media($full-navigation, down) {
+      height: 100vh;
+      max-height: 10000px;
+      overflow: scroll;
+      transition: max-height 400ms ease-in;
     }
   }
 }
@@ -32,63 +25,67 @@
 // --------------------------------------------------------- | logo
 
 .logo_container {
+  align-items: center;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
+  transition: background-color 460ms ease-in;
 
   @include media($full-navigation, down) {
     @include container-header;
 
-    padding: 10px;
+    height: $mobile-header-height;
+    position: fixed;
     width: 100%;
+  }
+
+  .navigation_is_showing & {
+    @include media($full-navigation, down) {
+      background-color: var(--color-blueprint-soft);
+      transition: background-color 460ms ease-out;
+    }
   }
 }
 
 .logo {
   svg {
-    width: 60px;
-
-    @include media($small-highest) {
-      width: 100px;
-    }
+    width: 30px;
   }
 }
 
 // --------------------------------------------------------- | smaller screen buttons
 
 .menu_button {
-  @include media($full-navigation) {
-    display: none;
-  }
+  color: var(--color-blueprint-alpha-80);
 
   span {
     @include screen-reader-only;
   }
+
+  svg {
+    height: 35px;
+  }
 }
 
-// --------------------------------------------------------- | navigation container
+// --------------------------------------------------------- | navigation
 
 .navigation_container {
   display: flex;
   flex-direction: column;
-  height: 0;
-
-  @include media($full-navigation) {
-    height: auto;
-  }
-
-  .navigation_is_showing & {
-    height: 100%;
-    overflow: scroll;
-  }
+  height: 100%;
+  overflow: scroll;
+  padding: ($mobile-header-height + 12px) 20px 140px;
 }
-
-// --------------------------------------------------------- | main and top navigation
 
 .main_navigation,
 .top_navigation {
   @include media($full-navigation) {
     justify-content: flex-end;
   }
+}
+
+.main_navigation {
+  flex-wrap: wrap;
 
   li {
     @include media($full-navigation, down) {
@@ -97,20 +94,13 @@
   }
 }
 
-.main_navigation {
-  flex-wrap: wrap;
-
-  @include media($full-navigation) {
-    flex-wrap: nowrap;
-  }
-}
-
 .top_navigation {
   flex-direction: column;
   order: 2;
 
-  @include media($full-navigation) {
-    flex-direction: row;
-    order: unset;
+  a {
+    display: block;
+    font-size: 14px;
+    padding: 10px 0;
   }
 }
