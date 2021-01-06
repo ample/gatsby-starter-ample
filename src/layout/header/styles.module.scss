@@ -58,6 +58,10 @@
 .menu_button {
   color: var(--color-blueprint-alpha-80);
 
+  @include media($full-navigation) {
+    display: none;
+  }
+
   span {
     @include screen-reader-only;
   }
