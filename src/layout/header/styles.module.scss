@@ -4,13 +4,12 @@
 
 .header {
   background: var(--color-blueprint-pale);
-
-  // left: 0;
   max-height: var(--global-header-mobile-height);
   overflow: hidden;
   position: fixed;
   top: 0;
   transition: max-height 400ms ease-out;
+  width: 100%;
   z-index: var(--z-index-plus-three);
 
   &.navigation_is_showing {
