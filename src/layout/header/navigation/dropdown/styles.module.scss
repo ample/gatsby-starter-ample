@@ -33,7 +33,7 @@
 
   svg {
     margin-left: 6px;
-    transition: transform 300ms;
+    transition: transform 200ms ease-in-out;
   }
 
   .is_showing & {
@@ -49,7 +49,7 @@
   max-height: 0;
   overflow: hidden;
   padding-left: 22px;
-  transition: max-height 1s ease-out;
+  transition: max-height 500ms ease-in;
 
   @include media($full-navigation) {
     background-color: var(--color-white);
@@ -58,14 +58,13 @@
     padding-left: 0;
     position: absolute;
     top: 35px;
-    transition: max-height 0.5s ease-out 0s;
     width: 100%;
     z-index: var(--z-index-plus-two);
   }
 
   .is_showing & {
     max-height: 1000px;
-    transition: max-height 1.5s ease-in;
+    transition: max-height 500ms ease-out;
 
     @include media($full-navigation) {
       max-height: 600px;
