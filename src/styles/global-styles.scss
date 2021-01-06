@@ -16,7 +16,9 @@ body {
 // --------------------------------------------------------
 
 main {
-  padding-top: var(--global-header-mobile-height);
+  @include media($full-navigation, down) {
+    padding-top: var(--global-header-mobile-height);
+  }
 }
 
 // --------------------------------------------------------

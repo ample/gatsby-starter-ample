@@ -12,12 +12,28 @@
   width: 100%;
   z-index: var(--z-index-plus-three);
 
+  @include media($full-navigation) {
+    max-height: fit-content;
+    overflow: visible;
+    position: static;
+  }
+
   &.navigation_is_showing {
     @include media($full-navigation, down) {
       height: 100vh;
       max-height: 10000px;
       overflow: scroll;
       transition: max-height 400ms ease-in;
+    }
+  }
+
+  > div {
+    @include media($full-navigation) {
+      @include container-header;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }
@@ -39,6 +55,10 @@
     width: 100%;
   }
 
+  @include media($full-navigation) {
+    flex-grow: 1;
+  }
+
   .navigation_is_showing & {
     @include media($full-navigation, down) {
       background-color: var(--color-blueprint-soft);
@@ -50,6 +70,10 @@
 .logo {
   svg {
     width: 30px;
+
+    @include media($full-navigation) {
+      width: 50px;
+    }
   }
 }
 
@@ -79,6 +103,12 @@
   height: 100%;
   overflow: scroll;
   padding: calc(var(--global-header-mobile-height) + 12px) 20px 140px;
+
+  @include media($full-navigation) {
+    overflow: visible;
+    padding: 0;
+    padding-bottom: 12px;
+  }
 }
 
 .main_navigation,
@@ -102,9 +132,26 @@
   flex-direction: column;
   order: 2;
 
+  @include media($full-navigation) {
+    flex-direction: row;
+    order: unset;
+  }
+
   a {
     display: block;
     font-size: 14px;
     padding: 10px 0;
+
+    @include media($full-navigation) {
+      padding: 12px;
+    }
+  }
+
+  li:last-of-type {
+    a {
+      @include media($full-navigation) {
+        padding-right: 0;
+      }
+    }
   }
 }

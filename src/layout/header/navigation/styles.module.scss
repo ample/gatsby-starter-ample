@@ -11,6 +11,10 @@
     display: inline-block;
     padding: 18px 0 19px;
 
+    @include media($full-navigation) {
+      padding: 11px 12px 8px;
+    }
+
     @include hover {
       color: var(--color-cyan);
       text-decoration: none;
@@ -19,7 +23,7 @@
     &.is_active {
       color: var(--color-blueprint-alpha-50);
       text-decoration: none;
-  }
+    }
   }
 
   li {
@@ -38,5 +42,10 @@
     padding: 14px;
     text-align: center;
     width: 100%;
+
+    @include media($full-navigation) {
+      margin: 0;
+      padding: 10px 12px;
+    }
   }
 }
