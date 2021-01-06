@@ -5,8 +5,6 @@ exports[`Dropdown renders correctly 1`] = `
   className="dropdown"
   onClick={[Function]}
   onKeyPress={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
   role="button"
   tabIndex={0}
 >
