@@ -85,16 +85,16 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        // TODO: Update project fonts.
-        //
-        // google: {
-        //   families: ["Font Family"]
-        // },
-        // typekit: {
-        //   id: ["typekit-id"]
-        // }
+        fonts: {
+          google: [
+            {
+              family: "Open Sans",
+              variants: ["400", "600", "700"]
+            }
+          ]
+        }
       }
     },
     `gatsby-plugin-catch-links`,
