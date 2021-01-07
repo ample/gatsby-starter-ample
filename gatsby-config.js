@@ -84,19 +84,6 @@ module.exports = {
         projectRoot: path.join(__dirname)
       }
     },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Open Sans",
-              variants: ["400", "600", "700"]
-            }
-          ]
-        }
-      }
-    },
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,
