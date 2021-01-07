@@ -81,7 +81,7 @@
 // --------------------------------------------------------- | smaller screen buttons
 
 .menu_button {
-  color: var(--color-blueprint-alpha-80);
+  color: var(--color-blueprint);
 
   @include media($full-navigation) {
     display: none;
