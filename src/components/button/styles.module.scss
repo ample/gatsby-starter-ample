@@ -13,7 +13,8 @@
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
 
   @include hover {
-    background-color: var(--color-blueprint-alpha-80);
+    background-color: var(--color-blueprint-bright);
+    border-color: var(--color-blueprint-bright);
     text-decoration: none;
   }
 }
@@ -30,10 +31,11 @@
   &_outline {
     background-color: var(--color-white);
     border-color: var(--color-blueprint);
-    color: var(--color-blueprint);
+    color: var(--color-blueprint) !important;
 
     @include hover {
-      background-color: var(--color-blueprint-soft);
+      background-color: var(--color-blueprint-grayish-light);
+      color: var(--color-white);
     }
   }
 }

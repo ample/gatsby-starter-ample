@@ -1,0 +1,11 @@
+@use '../../styles/global' as *;
+
+// ---------------------------------------------------------
+
+.link {
+  @include a;
+
+  &.is_external {
+    font-style: italic;
+  }
+}

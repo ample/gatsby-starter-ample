@@ -12,6 +12,7 @@ exports[`Footer renders correctly 1`] = `
         className="logo"
       >
         <a
+          className="link"
           href="/"
         >
           <svg
@@ -128,6 +129,7 @@ exports[`Footer renders correctly 1`] = `
         className="social_nav"
       >
         <a
+          className="link is_external"
           href="#"
           rel="noopener"
           target="_blank"
@@ -142,6 +144,7 @@ exports[`Footer renders correctly 1`] = `
           </svg>
         </a>
         <a
+          className="link is_external"
           href="#"
           rel="noopener"
           target="_blank"

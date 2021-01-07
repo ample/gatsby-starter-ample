@@ -1,5 +1,3 @@
-import React from "react"
-
 export default {
   internal: {
     to: "/components/link",
@@ -7,6 +5,6 @@ export default {
   },
   external: {
     to: "https://ample.co",
-    children: <em>And I'm external</em>
+    children: "And I'm external"
   }
 }

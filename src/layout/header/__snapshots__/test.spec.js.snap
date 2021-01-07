@@ -181,6 +181,7 @@ exports[`Header renders correctly 1`] = `
             >
               <li>
                 <a
+                  className="link"
                   href="/"
                   onClick={[Function]}
                 >
@@ -189,6 +190,7 @@ exports[`Header renders correctly 1`] = `
               </li>
               <li>
                 <a
+                  className="link is_external"
                   href="#"
                   onClick={[Function]}
                   rel="noopener"
@@ -199,6 +201,7 @@ exports[`Header renders correctly 1`] = `
               </li>
               <li>
                 <a
+                  className="link is_external"
                   href="#"
                   onClick={[Function]}
                   rel="noopener"
@@ -209,6 +212,7 @@ exports[`Header renders correctly 1`] = `
               </li>
               <li>
                 <a
+                  className="link is_external"
                   href="#"
                   onClick={[Function]}
                   rel="noopener"

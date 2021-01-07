@@ -5,6 +5,7 @@ exports[`SocialNav renders correctly 1`] = `
   className="social_nav"
 >
   <a
+    className="link is_external"
     href="#"
     rel="noopener"
     target="_blank"
@@ -19,6 +20,7 @@ exports[`SocialNav renders correctly 1`] = `
     </svg>
   </a>
   <a
+    className="link is_external"
     href="#"
     rel="noopener"
     target="_blank"
