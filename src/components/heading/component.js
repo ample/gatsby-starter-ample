@@ -1,11 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
+import classNames from "classnames"
 
 import styles from "./styles.module.scss"
 
-const Heading = ({ body, level: Level }) => (
-  <Level className={styles.heading} dangerouslySetInnerHTML={{ __html: body }} />
-)
+const Heading = ({ body, level: Level }) => {
+  const classes = classNames({
+    [styles[`heading_level_${Level}`]]: Level
+  })
+
+  return <Level className={classes} dangerouslySetInnerHTML={{ __html: body }} />
+}
 
 Heading.propTypes = {
   /**

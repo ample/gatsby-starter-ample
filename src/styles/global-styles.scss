@@ -34,11 +34,23 @@ h6 {
 }
 
 h1 {
-  font-size: responsive 32px 36px;
+  @include h1;
 }
 
 h2 {
-  font-size: responsive 22px 26px;
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
 }
 
 // --------------------------------------------------------

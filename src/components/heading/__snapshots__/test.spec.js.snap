@@ -2,7 +2,7 @@
 
 exports[`Heading renders correctly 1`] = `
 <h1
-  className="heading"
+  className="heading_level_h1"
   dangerouslySetInnerHTML={
     Object {
       "__html": "Lorem ipsum dolor sit amet",
