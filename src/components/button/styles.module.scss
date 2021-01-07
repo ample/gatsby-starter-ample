@@ -4,9 +4,12 @@
 
 @mixin default-button {
   background-color: var(--color-blueprint);
+  border: 1px solid var(--color-blueprint);
+  border-radius: 3px;
   color: var(--color-white);
   display: inline-block;
-  padding: 10px 26px 11px;
+  font-weight: var(--font-weight-semibold);
+  padding: 15px 24px 17px;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
 
   @include hover {
@@ -19,4 +22,18 @@
 
 .button {
   @include default-button;
+}
+
+// --------------------------------------------------------- / themes
+
+.theme {
+  &_outline {
+    background-color: var(--color-white);
+    border-color: var(--color-blueprint);
+    color: var(--color-blueprint);
+
+    @include hover {
+      background-color: var(--color-blueprint-soft);
+    }
+  }
 }

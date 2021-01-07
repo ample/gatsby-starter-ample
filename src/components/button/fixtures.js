@@ -1,6 +1,11 @@
 export default {
   default: {
-    children: "Hello World",
+    children: "Call to action",
+    to: "/"
+  },
+  outline: {
+    children: "Call to action",
+    theme: "outline",
     to: "/"
   }
 }
