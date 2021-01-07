@@ -1,7 +1,7 @@
 @use '../../styles/global' as *;
 
 .footer {
-  background-color: var(--color-blueprint-alpha-20);
+  background-color: var(--color-blueprint-grayish-light);
   padding: 30px 0;
 
   @include media($x-small) {

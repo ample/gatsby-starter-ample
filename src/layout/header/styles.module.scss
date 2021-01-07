@@ -3,7 +3,8 @@
 // ---------------------------------------------------------
 
 .header {
-  background: var(--color-blueprint-pale);
+  background: var(--color-white);
+  box-shadow: 0 3px 10px var(--color-blueprint-grayish-light);
   max-height: var(--global-header-mobile-height);
   overflow: hidden;
   position: fixed;
@@ -61,7 +62,7 @@
 
   .navigation_is_showing & {
     @include media($full-navigation, down) {
-      background-color: var(--color-blueprint-soft);
+      background-color: var(--color-blueprint-grayish-light);
       transition: background-color 460ms ease-out;
     }
   }
@@ -98,13 +99,16 @@
 // --------------------------------------------------------- | navigation
 
 .navigation_container {
+  background-color: var(--color-blueprint-pale-very);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   overflow: scroll;
   padding: calc(var(--global-header-mobile-height) + 12px) 20px 140px;
 
   @include media($full-navigation) {
+    background-color: transparent;
+    height: auto;
     overflow: visible;
     padding: 0;
     padding-bottom: 12px;
