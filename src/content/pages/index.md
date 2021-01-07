@@ -18,7 +18,7 @@ layout_flexible:
       title: Main Column
       blocks:
       - template: component-image
-        image_src: "/uploads/placeholder-image.jpg"
+        image_src: "/uploads/blueprint/rectangle.jpg"
       - template: component-content
         body_md: |-
           This is the home page. It shows an example of adding multiple components to a section within the page.
@@ -30,16 +30,16 @@ layout_flexible:
 seo:
   title: Home Page Title
   description: Home Page Description
-  image_src: "/uploads/placeholder-image.jpg"
+  image_src: "/uploads/blueprint/rectangle.jpg"
   og:
     title: Home Page OG Title
     description: Home Page OG Description
-    image_src: "/uploads/placeholder-image.jpg"
+    image_src: "/uploads/blueprint/rectangle.jpg"
   twitter:
     card: summary
     title: Home Page Twitter Title
     description: Home Page Twitter Description
-    image_src: "/uploads/placeholder-image.jpg"
+    image_src: "/uploads/blueprint/rectangle.jpg"
 exclude_from_sitemap: false
 layout_basic:
   heading: ''
