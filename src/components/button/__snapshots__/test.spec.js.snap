@@ -5,6 +5,6 @@ exports[`Button Component renders correctly 1`] = `
   className="button"
   href="/"
 >
-  Hello World
+  Call to action
 </a>
 `;
