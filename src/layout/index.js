@@ -6,9 +6,6 @@ import Footer from "./footer"
 import Header from "./header"
 import { DebugMediaQueries } from "@plugins/gatsby-ample-debuggers"
 
-// TODO: Remove or Replace Blueprint font
-import "@fontsource/open-sans"
-
 const Layout = ({ children, className }) => (
   <>
     <Header />
