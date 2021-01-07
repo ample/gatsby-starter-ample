@@ -10,23 +10,35 @@ import styles from "./styles.module.scss"
 
 const Footer = ({ copyright, menus, policy_links, social_links }) => (
   <footer className={styles.footer}>
-    <div>
-      <div className={styles.logo}>
-        <Link to="/">
-          <SVG name="logo" />
-        </Link>
+    <div className={styles.footer_container}>
+      <div>
+        <div className={styles.logo}>
+          <Link to="/">
+            <SVG name="logo" />
+          </Link>
+        </div>
+
+        <nav className={styles.menus}>
+          {menus &&
+            menus.map((menu, index) => (
+              <LinkList
+                className={styles.menu}
+                key={index}
+                heading={menu.heading}
+                links={menu.links}
+                vertical
+              />
+            ))}
+        </nav>
       </div>
 
-      {menus &&
-        menus.map((menu, index) => (
-          <LinkList key={index} heading={menu.heading} links={menu.links} vertical />
-        ))}
+      <div>
+        {social_links && <SocialNav links={social_links} />}
 
-      {social_links && <SocialNav links={social_links} />}
+        {policy_links && <LinkList className={styles.policy_links} links={policy_links} />}
 
-      {policy_links && <LinkList links={policy_links} />}
-
-      {copyright && <small className={styles.copyright}>&copy; {copyright}</small>}
+        {copyright && <small className={styles.copyright}>&copy; {copyright}</small>}
+      </div>
     </div>
   </footer>
 )

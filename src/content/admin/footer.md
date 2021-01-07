@@ -2,26 +2,46 @@
 title: Footer
 model: AdminFooter
 menus:
-- heading: "Menu #1"
+- heading: "Reprehenderit"
   links:
   - url: "/"
-    label: "Link #1"
+    label: "Duis"
   - url: "/"
-    label: "Link #2"
+    label: "Cupidatat"
   - url: "/"
-    label: "Link #3"
+    label: "Ullamco"
   - url: "/"
-    label: "Link #4"
-- heading: "Menu #2"
+    label: "Labore"
+- heading: "Consectetur"
   links:
   - url: "/"
-    label: "Link #1"
+    label: "Officia sint"
   - url: "/"
-    label: "Link #2"
+    label: "Veniam"
   - url: "/"
-    label: "Link #3"
+    label: "Consequat"
   - url: "/"
-    label: "Link #4"
+    label: "Suspendisse semper"
+- heading: "Elementum"
+  links:
+  - url: "/"
+    label: "Sed varius purus"
+  - url: "/"
+    label: "Veniam"
+  - url: "/"
+    label: "Malesuada"
+  - url: "/"
+    label: "Semper"
+- heading: "Porro galisum"
+  links:
+  - url: "/"
+    label: "Repudiandae"
+  - url: "/"
+    label: "Temporibus"
+  - url: "/"
+    label: "Ducimus"
+  - url: "/"
+    label: "Perferendis"
 social_links:
 - icon: linkedin
   url: /
@@ -34,6 +54,6 @@ policy_links:
   url: "/terms"
 - label: Privacy Policy
   url: "/privacy-policy"
-copyright: 2020, All Rights Reserved
+copyright: 2021, All Rights Reserved
 
 ---
