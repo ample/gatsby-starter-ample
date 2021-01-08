@@ -16,8 +16,13 @@ body {
 // --------------------------------------------------------
 
 main {
+  $padding: 40px;
+
+  padding-bottom: $padding;
+  padding-top: $padding;
+
   @include media($full-navigation, down) {
-    padding-top: var(--global-header-mobile-height);
+    padding-top: calc(var(--global-header-mobile-height) + #{$padding});
   }
 }
 
