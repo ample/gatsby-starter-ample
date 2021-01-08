@@ -30,7 +30,11 @@
   width: 40px;
 
   @include media($x-small) {
-    margin-right: 30px;
+    margin-right: 50px;
+  }
+
+  @include media($small-highest) {
+    margin-right: 80px;
   }
 }
 
