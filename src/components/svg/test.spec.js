@@ -5,7 +5,7 @@ import { component as SVG, fixtures } from "."
 
 describe("SVG", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<SVG {...fixtures.arrow_down} />).toJSON()
+    const tree = renderer.create(<SVG {...fixtures.angle_down} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

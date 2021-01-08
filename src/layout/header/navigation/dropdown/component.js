@@ -28,7 +28,7 @@ const Dropdown = ({ items, label, onClick }) => {
     >
       <div className={styles.dropdown_trigger}>
         {label}
-        <SVG name="arrow-down" />
+        <SVG name="angle-down" />
       </div>
 
       <ul className={styles.dropdown_menu}>
