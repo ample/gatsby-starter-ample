@@ -18,11 +18,11 @@ body {
 main {
   $padding: 40px;
 
+  margin-top: $padding;
   padding-bottom: $padding;
-  padding-top: $padding;
 
   @include media($full-navigation, down) {
-    padding-top: calc(var(--global-header-mobile-height) + #{$padding});
+    margin-top: calc(var(--global-header-mobile-height) + #{$padding});
   }
 }
 
