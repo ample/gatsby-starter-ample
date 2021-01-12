@@ -1,11 +1,16 @@
 export default {
   default: {
     children: "Call to action",
-    to: "/"
+    to: "#"
   },
   outline: {
     children: "Call to action",
     theme: "outline",
-    to: "/"
+    to: "#"
+  },
+  arrow: {
+    children: "Call to action",
+    theme: "arrow",
+    to: "#"
   }
 }

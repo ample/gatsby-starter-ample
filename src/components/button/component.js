@@ -2,9 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
-
 import Link from "../link"
+import SVG from "../svg"
+
+import styles from "./styles.module.scss"
 
 const Button = ({ children, className, onClick, theme, to }) => {
   const classes = classNames(styles.button, {
@@ -15,6 +16,7 @@ const Button = ({ children, className, onClick, theme, to }) => {
   return (
     <Link to={to} className={classes} onClick={onClick}>
       {children}
+      {theme === "arrow" && <SVG name="angle-right" />}
     </Link>
   )
 }
@@ -35,7 +37,7 @@ Button.propTypes = {
   /**
    * Specifies the theme of button
    */
-  theme: PropTypes.oneOf(["", "outline"]),
+  theme: PropTypes.oneOf(["arrow", "default", "outline"]),
   /**
    * The href attribute for the link rendered to the screen.
    */
@@ -43,7 +45,7 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  theme: ""
+  theme: "default"
 }
 
 export default Button

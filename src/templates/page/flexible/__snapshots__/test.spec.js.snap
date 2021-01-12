@@ -226,7 +226,7 @@ Array [
             className="nav_button"
           >
             <a
-              className="button button"
+              className="button button theme_default"
               href="#"
               onClick={[Function]}
               rel="noopener"
