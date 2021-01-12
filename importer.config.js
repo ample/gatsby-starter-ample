@@ -1,4 +1,5 @@
 const path = require("path")
+const get = require("lodash/get")
 
 const getContentType = item => item.sys.contentType.sys.id
 
@@ -38,6 +39,10 @@ const blockFields = {
       width: "text"
     }
     return api.processItem(item, cfg)
+  },
+  form: item => {
+    if (get(item, "sys.contentType.sys.id") !== "block_form") return
+    return `src/content/forms/${item.sys.id}.md`
   },
   image_src: "file",
   label: "text",
@@ -86,7 +91,7 @@ module.exports = {
       }
     },
     {
-      id: "form",
+      id: "block_form",
       dir: path.join(__dirname, "src/content/forms"),
       filename: "id",
       fields: {
