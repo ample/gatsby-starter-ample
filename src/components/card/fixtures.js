@@ -31,5 +31,18 @@ export default {
     heading: "Card Title",
     image: "/uploads/blueprint/graphic-1.svg",
     theme: "graphic"
+  },
+  with_graphic_centered: {
+    body:
+      "<p>Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>",
+    button: {
+      label: "Read more",
+      theme: "arrow",
+      url: "#"
+    },
+    heading: "Card Title",
+    image: "/uploads/blueprint/graphic-1.svg",
+    textAlignment: "center",
+    theme: "graphic"
   }
 }
