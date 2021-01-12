@@ -25,14 +25,16 @@
 // --------------------------------------------------------- | themes
 
 .theme {
-  &_graphic {
+  &_graphic,
+  &_image {
     .card_image {
       margin-bottom: 20px;
+    }
+  }
+
+  &_graphic {
+    .card_image {
       max-width: 60px;
     }
   }
-}
-
-.theme_2 {
-  background-color: var(--color-blueprint-bright);
 }
