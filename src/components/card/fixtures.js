@@ -1,13 +1,23 @@
-import imageFixtures from "@src/components/image/fixtures"
-
 export default {
   default: {
     body:
-      "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+      "<p>Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>",
     button: {
-      label: "Enim",
-      url: "/"
+      label: "Read more",
+      theme: "arrow",
+      url: "#"
     },
-    image: imageFixtures.fluid.src
+    heading: "Card Title"
+  },
+  text_alignment_center: {
+    body:
+      "<p>Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>",
+    button: {
+      label: "Read more",
+      theme: "arrow",
+      url: "#"
+    },
+    heading: "Card Title",
+    textAlignment: "center"
   }
 }
