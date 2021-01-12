@@ -6,7 +6,7 @@
 
   h3 {
     font-size: 18px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
 
   p {
@@ -24,8 +24,13 @@
 
 // --------------------------------------------------------- | themes
 
-.theme_1 {
-  background-color: var(--color-blueprint);
+.theme {
+  &_graphic {
+    .card_image {
+      margin-bottom: 20px;
+      max-width: 60px;
+    }
+  }
 }
 
 .theme_2 {

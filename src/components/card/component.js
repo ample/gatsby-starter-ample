@@ -16,7 +16,7 @@ const Card = ({ body, button, heading, image, textAlignment, theme, url }) => {
 
   let card = (
     <div className={classes}>
-      {image && <Image src={image} />}
+      {image && <Image className={styles.card_image} src={image} />}
       {heading && <h3>{heading}</h3>}
       {body && <div dangerouslySetInnerHTML={{ __html: body }} />}
       {button && <Button {...button} />}
@@ -59,7 +59,7 @@ Card.propTypes = {
   /**
    * Specifies the card theme
    */
-  theme: PropTypes.oneOf(["theme_1", "theme_2"]),
+  theme: PropTypes.oneOf(["graphic", "image"]),
   /**
    * Specifies the url for the card
    *
