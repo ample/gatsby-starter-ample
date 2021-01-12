@@ -85,8 +85,7 @@ module.exports = {
     {
       resolve: `gatsby-remark-ample`,
       options: {
-        // imageSrc: path.join(__dirname, "static"),
-        imageSrc: "remote",
+        imageSrc: path.join(__dirname, "static"),
         plugins: ["gatsby-ample-pages"],
         projectRoot: path.join(__dirname)
       }

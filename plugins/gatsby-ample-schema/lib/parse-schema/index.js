@@ -1,6 +1,6 @@
 const compact = require("lodash/compact")
 
-const getFieldDef = require("./get-field-dev")
+const getFieldDef = require("./get-field-def")
 
 const getTypeDef = type => {
   return `

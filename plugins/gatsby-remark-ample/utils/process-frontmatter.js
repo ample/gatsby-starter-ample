@@ -1,5 +1,6 @@
 const deepForEach = require("deep-for-each")
 const set = require("lodash/set")
+const startsWith = require("lodash/startsWith")
 const trimEnd = require("lodash/trimEnd")
 
 const getKeyType = require("./get-key-type")
@@ -26,10 +27,11 @@ module.exports = async ({ frontmatter = {}, node = {}, options = {}, helpers = {
       // Image keys are converted to a relative path from the markdown file to
       // the image, and stored as a new key without the suffix.
       case "img": {
-        const newKeyPath = trimEnd(keyPath, options.imageSuffix)
+        let newKeyPath = trimEnd(keyPath, options.imageSuffix)
         let newValue
-        if (options.imageSrc === "remote") {
+        if (startsWith(value, "http") || startsWith(value, "//")) {
           newValue = await processRemoteImage({ node, helpers, value })
+          newKeyPath += "___NODE"
         } else {
           newValue = processLocalImage({
             absoluteFilePath: node.fileAbsolutePath,
@@ -37,7 +39,6 @@ module.exports = async ({ frontmatter = {}, node = {}, options = {}, helpers = {
             value: value
           })
         }
-        console.log("|||", newValue)
         if (newValue) set(frontmatter, newKeyPath, newValue)
         break
       }

@@ -97,7 +97,7 @@
     form:
       type: map
       name: Form
-    image: File
+    image: RemoteFile
     label: String
     src: String
     title: String
