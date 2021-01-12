@@ -16,6 +16,22 @@ describe("getKeyType", () => {
     const result = getKeyType({ keyPath: "hello_src", value: "/world.jpg", options: options })
     expect(result).toEqual("img")
   })
+  it('returns "img" for remote images beginning with "http"', () => {
+    const result = getKeyType({
+      keyPath: "hello_src",
+      value: "https://www.mysite.com/hello-world.jpg",
+      options: options
+    })
+    expect(result).toEqual("img")
+  })
+  it('returns "img" for remote images beginning with "//"', () => {
+    const result = getKeyType({
+      keyPath: "hello_src",
+      value: "//www.mysite.com/hello-world.jpg",
+      options: options
+    })
+    expect(result).toEqual("img")
+  })
   it('returns "default" for image keys with improper filenames', () => {
     const result = getKeyType({ keyPath: "hello_src", value: "world.jpg", options: options })
     expect(result).toEqual("default")
