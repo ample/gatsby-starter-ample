@@ -51,6 +51,7 @@ If using Contentful:
 - Setup Contentful space.
 - Set environment variables. (See `plugins/gatsby-ample-importer` for more info.)
 - Uncomment `gatsby-ample-importer` config in `gatsby-config.js`.
+- Change `File` declarations in `schema.yml` to `RemoteFile` for fields whose assets will be coming from the remote source.
 
 ## Alias Imports
 
