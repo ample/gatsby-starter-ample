@@ -1,14 +1,16 @@
 const deepForEach = require("deep-for-each")
 const set = require("lodash/set")
+const startsWith = require("lodash/startsWith")
 const trimEnd = require("lodash/trimEnd")
 
 const getKeyType = require("./get-key-type")
-const processImage = require("./process-image")
+const processLocalImage = require("./process-local-image")
+const processRemoteImage = require("./process-remote-image")
 const processMarkdown = require("./process-markdown")
 
-module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
+module.exports = async ({ frontmatter = {}, node = {}, options = {}, helpers = {} }) => {
   // Loop through every property on the frontmatter object.
-  deepForEach(frontmatter, (value, key, subject, keyPath) => {
+  deepForEach(frontmatter, async (value, key, subject, keyPath) => {
     // Get type of the node. Most will be "default" and are left alone. Others
     // are processed specifically to their type.
     const keyType = getKeyType({ keyPath: keyPath, options: options, value: value })
@@ -25,12 +27,18 @@ module.exports = ({ frontmatter = {}, node = {}, options = {} }) => {
       // Image keys are converted to a relative path from the markdown file to
       // the image, and stored as a new key without the suffix.
       case "img": {
-        const newKeyPath = trimEnd(keyPath, options.imageSuffix)
-        const newValue = processImage({
-          absoluteFilePath: node.fileAbsolutePath,
-          imageSrcDir: options.imageSrc,
-          value: value
-        })
+        let newKeyPath = trimEnd(keyPath, options.imageSuffix)
+        let newValue
+        if (startsWith(value, "http") || startsWith(value, "//")) {
+          newValue = await processRemoteImage({ node, helpers, value })
+          newKeyPath += "___NODE"
+        } else {
+          newValue = processLocalImage({
+            absoluteFilePath: node.fileAbsolutePath,
+            imageSrcDir: options.imageSrc,
+            value: value
+          })
+        }
         if (newValue) set(frontmatter, newKeyPath, newValue)
         break
       }

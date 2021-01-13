@@ -51,7 +51,9 @@ See below for additional options:
 
 ### Files
 
-Files automatically get appended with the `fileByRelativePath` directive. Just use `File` as the type (the value):
+Local and remote files are both supported.
+
+Files are assumed to be local by default. They automatically get appended with the `fileByRelativePath` directive when using `File` as the type (the value):
 
 ```yml
 - type: MyType
@@ -66,6 +68,26 @@ type MyType @infer {
   image: File @fileByRelativePath
 }
 ```
+
+There's a little more magic expected behind the scenes with remote files. They assume that a node ID will be linked to a field with `___NODE` appended to it. This is meant to work in conjunction with the gatsby-remark-ample plugin.
+
+Here's what it looks like:
+
+```yml
+- type: MyType
+  fields:
+    image: RemoteFile
+```
+
+This resolves to:
+
+```graphql
+type MyType @infer {
+  image: File @link(from: "image___NODE")
+}
+```
+
+Read more about the remote approach [here](https://www.gatsbyjs.com/docs/how-to/images-and-media/preprocessing-external-images/).
 
 ### Nodes
 

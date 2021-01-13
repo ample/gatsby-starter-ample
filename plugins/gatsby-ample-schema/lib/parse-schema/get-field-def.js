@@ -15,8 +15,11 @@ module.exports = (key, value) => {
       value = value.name
     }
   }
-  // Append the file directive. This is the only directive currently supported.
+  // Append the file directive for local files.
   if (value === "File") value += " @fileByRelativePath"
+  // We assume remote files are converted to file nodes and linked to a key of
+  // the same name with "___NODE" appended.
+  if (value === "RemoteFile") value = `File @link(from: "${key}___NODE")`
   // Return the key-value pair after making the appropriate adjustments.
   return `${key}: ${value}`
 }

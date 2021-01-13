@@ -2875,6 +2875,13 @@ axios@^0.20.0:
   dependencies:
     follow-redirects "^1.10.0"
 
+axios@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.npmjs.org/axios/-/axios-0.21.0.tgz#26df088803a2350dff2c27f96fef99fe49442aca"
+  integrity sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
@@ -4287,6 +4294,13 @@ contentful-management@^5.26.3:
     lodash "^4.17.11"
     type-fest "0.15.1"
 
+contentful-resolve-response@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/contentful-resolve-response/-/contentful-resolve-response-1.3.0.tgz#79530897b109d326c47a32c4b327afa04966cbb7"
+  integrity sha512-FFa4it5VXW1YGyim5rhPbnwmN4c8OcmkpLrsylTL2Y1YpoC+6qnZSSU/QZyvHomLdEgwXaSXhGVJkWjpdz5IMg==
+  dependencies:
+    fast-copy "^2.1.0"
+
 contentful-sdk-core@^6.4.0:
   version "6.4.6"
   resolved "https://registry.yarnpkg.com/contentful-sdk-core/-/contentful-sdk-core-6.4.6.tgz#a94b1355afd292dfddb0cdc16b565980f9a03c47"
@@ -4294,6 +4308,25 @@ contentful-sdk-core@^6.4.0:
   dependencies:
     lodash "^4.17.10"
     qs "^6.5.2"
+
+contentful-sdk-core@^6.5.0:
+  version "6.7.0"
+  resolved "https://registry.npmjs.org/contentful-sdk-core/-/contentful-sdk-core-6.7.0.tgz#c014f12d7a716548c248e905dd8e095a6dbf7a0f"
+  integrity sha512-+b8UXVE249Z6WzMLXvsu3CIvN/s5xXRZ9o+zY7zDdPkIYBMW15xcs9N2ATI6ncmc+s1uj4XZij/2skflletHiw==
+  dependencies:
+    fast-copy "^2.1.0"
+    qs "^6.9.4"
+
+contentful@^8.1.4:
+  version "8.1.4"
+  resolved "https://registry.npmjs.org/contentful/-/contentful-8.1.4.tgz#c24c320f9cc8a2320751d13e7b4c3dd055f688fa"
+  integrity sha512-uaeIJjyWYk1q9fI3FBDYcHhwWlUhq8QEkXFLys/UmqDAfp79G8oS+vaOKflh4oDBFariJdFsjQUcfwvXxvsZnw==
+  dependencies:
+    axios "^0.21.0"
+    contentful-resolve-response "^1.3.0"
+    contentful-sdk-core "^6.5.0"
+    fast-copy "^2.1.0"
+    json-stringify-safe "^5.0.1"
 
 convert-hrtime@^3.0.0:
   version "3.0.0"
@@ -6218,6 +6251,11 @@ extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
+
+fast-copy@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/fast-copy/-/fast-copy-2.1.0.tgz#99c1b842aee063f8212d6f749080c196a822b293"
+  integrity sha512-j4VxAVJsu9NHveYrIj0+nJxXe2lOlibKTlyy0jH8DBwcuV6QyXTy0zTqZhmMKo7EYvuaUk/BFj/o6NU6grE5ag==
 
 fast-deep-equal@^3.1.1:
   version "3.1.3"
@@ -9607,10 +9645,18 @@ js-tokens@^3.0.2:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
   integrity sha1-mGbfOVECEw449/mWvOtlRDIJwls=
 
-js-yaml@^3.11.0, js-yaml@^3.13.1, js-yaml@^3.14.0:
+js-yaml@^3.11.0, js-yaml@^3.13.1:
   version "3.14.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.0.tgz#a7a34170f26a21bb162424d8adacb4113a69e482"
   integrity sha512-/4IbIeHcD9VMHFqDR/gQ7EdZdLimOvW2DdcxFjdyyZ9NsbS+ccrXqVWDtab/lRl5AlUqmpBx8EhPaWR+OtY17A==
+  dependencies:
+    argparse "^1.0.7"
+    esprima "^4.0.0"
+
+js-yaml@^3.14.1:
+  version "3.14.1"
+  resolved "https://registry.npmjs.org/js-yaml/-/js-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
+  integrity sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -13019,7 +13065,7 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
-qs@^6.5.2:
+qs@^6.5.2, qs@^6.9.4:
   version "6.9.4"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.4.tgz#9090b290d1f91728d3c22e54843ca44aea5ab687"
   integrity sha512-A1kFqHekCTM7cz0udomYUoYNWjBebHm/5wzU/XqrBRBNWectVH0QIiN+NEcZ0Dte5hvzHwbr8+XQmguPhJ6WdQ==
@@ -14385,6 +14431,11 @@ slugify@^1.4.4:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.5.tgz#a7517acf5f4c02a4df41e735354b660a4ed1efcf"
   integrity sha512-WpECLAgYaxHoEAJ8Q1Lo8HOs1ngn7LN7QjXgOLbmmfkcWvosyk4ZTXkTzKyhngK640USTZUlgoQJfED1kz5fnQ==
+
+slugify@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.npmjs.org/slugify/-/slugify-1.4.6.tgz#ef288d920a47fb01c2be56b3487b6722f5e34ace"
+  integrity sha512-ZdJIgv9gdrYwhXqxsH9pv7nXxjUEyQ6nqhngRxoAAOlmMGA28FDq5O4/5US4G2/Nod7d1ovNcgURQJ7kHq50KQ==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

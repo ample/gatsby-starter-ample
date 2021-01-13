@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
+import get from "lodash/get"
 
 import { getImageUrl } from "./../../helpers/normalize-seo"
 
@@ -25,20 +26,24 @@ const SeoTags = ({ description, og, imageUrl, title, titleTemplate, twitter, url
     {imageUrl && <meta name="image" content={imageUrl} />}
     {description && <meta name="description" content={description} />}
     {/* --- OpenGraph --- */}
-    <meta property="og:title" content={og.title || title} />
+    <meta property="og:title" content={get(og, "title") || title} />
     <meta property="og:url" content={url} />
-    {(og.description || description) && (
-      <meta property="og:description" content={og.description || description} />
+    {(get(og, "description") || description) && (
+      <meta property="og:description" content={get(og, "description") || description} />
     )}
-    {(og.imageUrl || imageUrl) && <meta property="og:image" content={og.imageUrl || imageUrl} />}
+    {(get(og, "imageUrl") || imageUrl) && (
+      <meta property="og:image" content={get(og, "imageUrl") || imageUrl} />
+    )}
     {/* --- Twitter --- */}
-    <meta name="twitter:card" content={twitter.card || "summary"} />
-    {twitter.title && <meta name="twitter:title" content={twitter.title || title} />}
-    {(twitter.description || description) && (
-      <meta name="twitter:description" content={twitter.description || description} />
+    <meta name="twitter:card" content={get(twitter, "card") || "summary"} />
+    {get(twitter, "title") && (
+      <meta name="twitter:title" content={get(twitter, "title") || title} />
     )}
-    {(twitter.imageUrl || imageUrl) && (
-      <meta name="twitter:image" content={twitter.imageUrl || imageUrl} />
+    {(get(twitter, "description") || description) && (
+      <meta name="twitter:description" content={get(twitter, "description") || description} />
+    )}
+    {(get(twitter, "imageUrl") || imageUrl) && (
+      <meta name="twitter:image" content={get(twitter, "imageUrl") || imageUrl} />
     )}
   </Helmet>
 )

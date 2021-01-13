@@ -15,7 +15,7 @@ module.exports = ({ keyPath, options, value }) => {
   if (
     endsWith(keyPath, options.imageSuffix) &&
     isString(value) &&
-    startsWith(value, path.sep) &&
+    (startsWith(value, path.sep) || startsWith(value, "http")) &&
     options.imageExtensions.includes(path.extname(value))
   )
     return "img"
