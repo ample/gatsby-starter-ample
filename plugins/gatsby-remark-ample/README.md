@@ -259,9 +259,13 @@ Note that the processed HTML field is not available on the `MarkdownRemark` node
 
 ### Image Processing
 
-Image processing works almost identically to markdown processing, with a few exceptions:
+This plugin supports both local and remote images.
 
-- It relies on `gatsby-remark-relative-images` and `gatsby-remark-images` for transforming image path strings into objects that can be used with gatsby-image.
+#### Local Images
+
+Local image processing works almost identically to markdown processing, with a few exceptions:
+
+- It relies on `gatsby-remark-relative-images`, and `gatsby-remark-images` for transforming image path strings into objects that can be used with gatsby-image.
 - It will ignore image paths that don't end in the accepted extensions whitelist. This is so we don't try to process images we can't process, like SVG files.
 - It will only process values that start with the proper path separator (e.g. `/`) character, indicating that it is a path to a file.
 
@@ -295,6 +299,10 @@ image: "../../../static/uploads/our-company.jpg
 When `gatsby-remark-images` then processes this node, it will transform the `image` property into a `childImageSharp` object if it can find the physical file.
 
 But before `gatsby-remark-images` does its thing, `gatsby-remark-relative-images` also runs through our new node. Its responsibility is to look through body content of the markdown files and convert any items that would become `<img />` tags to adjust their `src` attribute to a relative path from the markdown file to the physical image file.
+
+#### Remote Images
+
+Remote images are identified similarly as local images, using the `imageSuffix` setting. If the path/URL to the image begins with `http` or `//` then it is processed as a remote image using `gatsby-source-filesystem` and `gatsby-remark-images`.
 
 ## Plugins
 

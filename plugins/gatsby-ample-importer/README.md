@@ -177,3 +177,9 @@ Note that there are two known limitations to the Contentful driver today:
 
 1. Pagination is not currently supported. You will only receive 100 records back for each model, by default.
 2. We have manually maxed out the number of linked levels in responses. This could affect performance. [Read mode here](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/links).
+
+For the Contentful driver to work properly, you must have the following environment variables set:
+
+- `CONTENTFUL_SPACE_ID`
+- `CONTENTFUL_ENV`
+- `CONTENTFUL_ACCESS_TOKEN`

@@ -14,6 +14,44 @@ Then navigate to the project:
 
 That will start a development server at [http://localhost:8000](http://localhost:8000).
 
+## Content Management System
+
+This project has three methods for content management:
+
+1. None: Use markdown files in `src/content` directly.
+2. Forestry: Write markdown files to `src/content` using the Forestry UI.
+3. API-Driven CMS: Import and normalize data coming from a third-party API, then write to markdown files in `src/content`.
+
+### No CMS
+
+If you don't want a CMS, but want to use the markdown files as the content source:
+
+- Remove `.forestry` directory.
+- (Optional) Remove `forestry:preview` script in `package.json`.
+- Remove `gatsby-ample-importer` config in `gatsby-config.js`.
+- Remove `importer.config.js`.
+- (Optional) Remove `plugins/gatsby-ample-importer`. (We usually keep it since it's out of the way and may come in handy later.)
+
+### Forestry
+
+If using Forestry:
+
+- Remove `gatsby-ample-importer` config in `gatsby-config.js`.
+- Remove `importer.config.js`.
+- (Optional) Remove `plugins/gatsby-ample-importer`. (We usually keep it since it's out of the way and may come in handy later.)
+- Push code to a GitHub repository.
+- Setup Forestry instance at [forestry.io](https://www.forestry.io/).
+
+### Contentful
+
+If using Contentful:
+
+- Remove `.forestry` directory.
+- (Optional) Remove `forestry:preview` script in `package.json`.
+- Setup Contentful space.
+- Set environment variables. (See `plugins/gatsby-ample-importer` for more info.)
+- Uncomment `gatsby-ample-importer` config in `gatsby-config.js`.
+
 ## Alias Imports
 
 This project support alias imports through [the gatsby-alias-imports plugin](https://www.gatsbyjs.org/packages/gatsby-alias-imports/). This provides a means for being able to import components without needing to know exactly where you are in the tree. It can make moving items around a little less painful.
