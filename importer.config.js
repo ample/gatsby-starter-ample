@@ -63,7 +63,7 @@ module.exports = {
   models: [
     {
       id: "page_basic,page_flexible",
-      dir: path.join(__dirname, "src/content/pages-test"),
+      dir: path.join(__dirname, "src/content/pages"),
       filename: "slug",
       fields: {
         model: () => "Page",
