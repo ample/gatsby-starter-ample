@@ -30,7 +30,6 @@ module.exports = {
     `gatsby-ample-pages`,
     `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
-    `gatsby-ample-linters`,
     {
       resolve: `gatsby-ample-redirects`,
       options: {

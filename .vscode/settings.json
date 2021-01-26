@@ -1,7 +1,7 @@
 {
   "AllAutocomplete.wordListFiles": ["src/styles/global/_colors.scss"],
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
   "editor.insertSpaces": true,
