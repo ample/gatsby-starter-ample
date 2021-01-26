@@ -1,6 +1,4 @@
-{
-  /* eslint-disable no-undef, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-}
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 
 import React, { useState } from "react"
 import PropTypes from "prop-types"
@@ -38,7 +36,7 @@ const TemplatesPlayground = ({ location }) => {
     const TagName = cfg[1].template
     const templateName = startCase(toLower(cfg[0]))
 
-    Object.entries(cfg[1].fixtures || {}).map(fixture => {
+    Object.entries(cfg[1].fixtures || {}).map((fixture) => {
       const fixtureName = startCase(toLower(fixture[0]))
       const displayName = `${templateName}: ${fixtureName}`
       templates.push({
@@ -50,7 +48,7 @@ const TemplatesPlayground = ({ location }) => {
   })
 
   // Find the current template using a hash in the URL.
-  const currentTemplate = find(templates, t => t.slug && t.slug === location.hash.slice(1))
+  const currentTemplate = find(templates, (t) => t.slug && t.slug === location.hash.slice(1))
 
   // If there is no hash or current template, navigate to the first template in
   // the collection.
