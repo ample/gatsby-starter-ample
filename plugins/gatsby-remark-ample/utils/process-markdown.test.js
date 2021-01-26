@@ -1,5 +1,5 @@
 const processMarkdown = require("./process-markdown")
-const fs = require("fs")
+const fs = require("fs-extra")
 const path = require("path")
 
 const markdown = fs.readFileSync(path.join(__dirname, "./__fixtures__/plain-markdown.md"))

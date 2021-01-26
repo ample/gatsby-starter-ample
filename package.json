@@ -19,7 +19,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.1.0",
     "gatsby": "^2.31.1",
     "gatsby-alias-imports": "^1.0.6",
     "gatsby-background-image": "^1.4.0",
