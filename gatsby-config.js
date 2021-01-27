@@ -30,7 +30,6 @@ module.exports = {
     `gatsby-ample-pages`,
     `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
-    `gatsby-ample-linters`,
     {
       resolve: `gatsby-ample-redirects`,
       options: {
@@ -124,8 +123,6 @@ module.exports = {
           localIdentName: "[local]-[hash:base64:3]",
           sourceMap: true
         },
-        fiber: require("fibers"),
-        implementation: require("sass"),
         postCssPlugins: postcssConfig,
         sourceMap: true
       }

@@ -1,4 +1,4 @@
-const fs = require("fs")
+const fs = require("fs-extra")
 const path = require("path")
 
 /**
@@ -6,7 +6,7 @@ const path = require("path")
  *
  * @param {string} dir Path to directory
  */
-exports.initDir = dir => {
+exports.initDir = (dir) => {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
 }
 
@@ -15,8 +15,8 @@ exports.initDir = dir => {
  *
  * @param {string} dir Path to directory
  */
-exports.cleanDir = dir => {
+exports.cleanDir = (dir) => {
   if (!fs.existsSync(dir)) return
   const existingFiles = fs.readdirSync(dir)
-  existingFiles.map(file => fs.unlinkSync(path.join(dir, file)))
+  existingFiles.map((file) => fs.unlinkSync(path.join(dir, file)))
 }

@@ -1,4 +1,4 @@
-const fs = require("fs")
+const fs = require("fs-extra")
 const path = require("path")
 const glob = require("glob")
 
@@ -67,7 +67,7 @@ const mockConfig = {
 describe("importData", () => {
   beforeEach(() => {
     const files = glob.sync(`${contentDir}/**/*`)
-    files.map(file => {
+    files.map((file) => {
       if (!fs.lstatSync(file).isDirectory()) fs.unlinkSync(file)
     })
   })
