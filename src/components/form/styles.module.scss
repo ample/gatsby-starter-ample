@@ -1,12 +1,35 @@
+@use 'sass:color';
+@use 'sass:map';
+
+// --------------------------------------------------------
+
 @use '../../styles/global' as *;
+@use '../button/styles.module.scss' as *;
 
+// --------------------------------------------------------
+
+$circle: 20px;
+$circle-border: 1px;
+$circle-center-offset: 6px;
 $form-field-gutter: 40px;
+$radio-button-hover: color.scale(
+  map.get($color, '--color-blueprint'),
+  $lightness: -10%,
+  $saturation: 10%
+);
 
-// ---------------------------------------- | Form
+// -------------------------------------------------------- | Form
 
-// .form {}
+.form {
+  input[type='submit'] {
+    @include reset-button;
+    @include default-button;
 
-// ---------------------------------------- | Group
+    cursor: pointer;
+  }
+}
+
+// -------------------------------------------------------- | Group
 
 .form_field_group {
   display: flex;
@@ -14,12 +37,12 @@ $form-field-gutter: 40px;
   margin: 0 (-$form-field-gutter / 2) 24px;
 
   h2 {
-    margin: 0 ($form-field-gutter / 2) 8px;
+    margin: 0 ($form-field-gutter / 2) 26px;
     width: 100%;
   }
 }
 
-// ---------------------------------------- | Field Wrapper
+// -------------------------------------------------------- | Field Wrapper
 
 .form_field {
   flex-basis: 100%;
@@ -66,12 +89,19 @@ $form-field-gutter: 40px;
   input:not([type='radio']),
   select,
   textarea {
-    background-color: var(--color-white);
-    border: 1px solid var(--color-gray);
+    background-color: var(--color-blueprint-grayish);
+    border: 1px solid var(--color-blueprint-alpha-16);
     border-radius: 0;
+    color: var(--color-blueprint);
     font-size: 16px;
-    padding: 8px;
+    padding: 16px;
+    transition: border-color 0.25s ease-in;
     width: 100%;
+
+    &:focus {
+      border-color: var(--color-blueprint-alpha-50);
+      outline: none;
+    }
   }
 
   select {
@@ -83,42 +113,98 @@ $form-field-gutter: 40px;
   }
 
   textarea {
+    font-family: var(--font-family-base);
     height: 140px;
-  }
-
-  .radio_buttons {
-    margin-top: 8px;
-  }
-
-  .radio_button {
-    align-items: center;
-    display: flex;
-    margin-bottom: 4px;
-
-    input {
-      display: inline-block;
-      height: 14px;
-      margin-right: 4px;
-    }
-
-    label {
-      display: inline-block;
-      font-weight: normal;
-      margin: 0;
-    }
   }
 }
 
-// ---------------------------------------- | Label
+// -------------------------------------------------------- | Label
 
 .form_label {
   display: block;
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 
   abbr {
     display: inline-block;
     margin-left: 2px;
+  }
+}
+
+// -------------------------------------------------------- | Radio input
+
+.radio_buttons {
+  display: flex;
+  padding-top: 6px;
+}
+
+.radio_button {
+  position: relative;
+
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &:hover {
+    .circle {
+      border-color: $radio-button-hover;
+    }
+
+    label {
+      color: $radio-button-hover;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    height: $circle + $circle-border;
+    line-height: 1.33;
+    padding-left: 26px;
+    position: relative;
+    transition: color 0.25s linear;
+    z-index: 3;
+  }
+
+  .circle {
+    border: $circle-border solid var(--color-blueprint);
+    border-radius: 100%;
+    height: $circle;
+    position: absolute;
+    top: 0;
+    transition: border 0.25s linear;
+    width: $circle;
+    z-index: 1;
+
+    &::before {
+      border-radius: 100%;
+      content: '';
+      display: block;
+      height: $circle - $circle-center-offset;
+      left: $circle-center-offset - 4px;
+      position: absolute;
+      top: $circle-center-offset - 4px;
+      transition: background-color 0.25s linear;
+      width: $circle - $circle-center-offset;
+    }
+  }
+
+  .radio {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked ~ .circle {
+      border-color: var(--color-blueprint);
+    }
+
+    &:checked ~ .circle::before {
+      background-color: var(--color-blueprint);
+    }
+
+    &:checked ~ label {
+      color: (--color-blueprint);
+    }
   }
 }

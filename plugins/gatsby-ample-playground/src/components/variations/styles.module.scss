@@ -1,0 +1,18 @@
+.comp_item {
+  margin-bottom: 40px;
+
+  &:last-of-type:not(:only-of-type) {
+    margin-bottom: 0;
+  }
+}
+
+.comp_item_heading {
+  color: #8a8989;
+  font-family: system-ui;
+  font-size: 18px;
+  font-weight: 300;
+
+  &:after {
+    content: ':';
+  }
+}

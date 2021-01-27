@@ -8,12 +8,31 @@ import { selectAppearanceOptions, widthOptions } from "./__config__"
 
 import styles from "../styles.module.scss"
 
-const FormFieldSelect = ({ appearance, label, name, required, options, solo, width }) => {
+const FormFieldSelect = ({
+  appearance,
+  formHandler,
+  label,
+  name,
+  required,
+  options,
+  solo,
+  width
+}) => {
+  const handleChange = event => {
+    return formHandler(name, event.target.value)
+  }
+
   let fieldHtml
 
   if (appearance === "dropdown") {
     fieldHtml = (
-      <select name={name} required={required} defaultValue="">
+      <select
+        name={name}
+        required={required}
+        defaultValue=""
+        onBlur={handleChange}
+        onChange={handleChange}
+      >
         <option key="default" value="" />
         {options.map((option, idx) => (
           <option key={idx} value={option}>
@@ -29,10 +48,16 @@ const FormFieldSelect = ({ appearance, label, name, required, options, solo, wid
           const id = `${name}-${parameterize(option)}`
           return (
             <div key={idx} className={styles.radio_button}>
-              <input type="radio" id={id} name={name} value={option} />
-              <label className={styles.form_label} htmlFor={id}>
-                {option}
-              </label>
+              <input
+                className={styles.radio}
+                type="radio"
+                id={id}
+                name={name}
+                value={option}
+                onChange={handleChange}
+              />
+              <label htmlFor={id}>{option}</label>
+              <div className={styles.circle}></div>
             </div>
           )
         })}
@@ -51,19 +76,37 @@ const FormFieldSelect = ({ appearance, label, name, required, options, solo, wid
 }
 
 FormFieldSelect.propTypes = {
-  /** What type of field(s) to display for choosing. */
+  /**
+   * What type of field(s) to display for choosing.
+   */
   appearance: PropTypes.oneOf(selectAppearanceOptions).isRequired,
-  /** Label placed above the field. */
+  /**
+   * A method that handles updating the form's data object on change.
+   */
+  formHandler: PropTypes.func,
+  /**
+   * Label placed above the field.
+   */
   label: PropTypes.string.isRequired,
-  /** name attribute of the field, passed along with submission. */
+  /**
+   * name attribute of the field, passed along with submission.
+   */
   name: PropTypes.string.isRequired,
-  /** The list options available to choose. */
+  /**
+   * The list options available to choose.
+   */
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  /** Force that a value exists before submitting.*/
+  /**
+   * Force that a value exists before submittin
+   .*/
   required: PropTypes.bool,
-  /** Enforce that the field sits on its own line, regardless of width.*/
+  /**
+   * Enforce that the field sits on its own line, regardless of widt
+   .*/
   solo: PropTypes.bool,
-  /** Controls how wide the field renders on screen. */
+  /**
+   * Controls how wide the field renders on screen.
+   */
   width: PropTypes.oneOf(widthOptions).isRequired
 }
 

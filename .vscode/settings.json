@@ -1,9 +1,15 @@
 {
-  "AllAutocomplete.wordListFiles": ["src/styles/global/_colors.scss"],
-  "editor.formatOnSave": true,
+  "AllAutocomplete.wordListFiles": [
+    "src/styles/global/variables/_blueprint.scss",
+    "src/styles/global/variables/_color.scss",
+    "src/styles/global/variables/_font.scss",
+    "src/styles/global/variables/_global.scss",
+    "src/styles/global/variables/_z-index.scss"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
+  "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "files.encoding": "utf8",

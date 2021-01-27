@@ -1,0 +1,11 @@
+// Font variables -- All variables should start with font-
+// ---------------------------------------------------
+
+$font: (
+  '--font-fallback': system-ui,
+  '--font-family-base': var(--font-fallback),
+  '--font-family-headings': var(--font-fallback),
+  '--font-size-base': 16px,
+  '--font-weight-regular': 400,
+  '--font-weight-bold': 700
+);

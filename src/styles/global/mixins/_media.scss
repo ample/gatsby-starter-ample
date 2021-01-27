@@ -57,6 +57,11 @@ $x-large-highest: 3360px;
 
 // --------------------------------------------------------
 
+$full-navigation: $medium;
+
+// --------------------------------------------------------
+// prettier-ignore
+
 @mixin media($initial-width: false, $final-width: false) {
   @if type-of($initial-width) != number {
     @error '`#{$initial-width}` is not a valid value for $initial-width. `#{$examples}`';
