@@ -14,6 +14,7 @@ const fieldTypeMap = {
 
 const FormFieldText = ({
   appearance,
+  formHandler,
   label,
   name,
   placeholder,
@@ -22,8 +23,13 @@ const FormFieldText = ({
   validation,
   width
 }) => {
+  const handleChange = event => {
+    return formHandler(name, event.target.value)
+  }
+
   let fieldOpts = {
     name: name,
+    onChange: handleChange,
     placeholder: placeholder,
     required: required,
     type: fieldTypeMap[validation] || "text"
@@ -40,21 +46,41 @@ const FormFieldText = ({
 }
 
 FormFieldText.propTypes = {
-  /** Whether to render an input or textarea (short v long). */
+  /**
+   * Whether to render an input or textarea (short v long).
+   */
   appearance: PropTypes.oneOf(textAppearanceOptions).isRequired,
-  /** Label placed above the field. */
+  /**
+   * A method that handles updating the form's data object on change.
+   */
+  formHandler: PropTypes.func,
+  /**
+   * Label placed above the field.
+   */
   label: PropTypes.string.isRequired,
-  /** name attribute of the field, passed along with submission. */
+  /**
+   * name attribute of the field, passed along with submission.
+   */
   name: PropTypes.string.isRequired,
-  /** Muted text rendered inside the field when the value is missing. */
+  /**
+   * Muted text rendered inside the field when the value is missing.
+   */
   placeholder: PropTypes.string,
-  /** Force that a value exists before submitting.*/
+  /**
+   * Force that a value exists before submittin
+   .*/
   required: PropTypes.bool,
-  /** Enforce that the field sits on its own line, regardless of width.*/
+  /**
+   * Enforce that the field sits on its own line, regardless of widt
+   .*/
   solo: PropTypes.bool,
-  /** Controls the "type" attribute for short-form text fields. */
+  /**
+   * Controls the "type" attribute for short-form text fields.
+   */
   validation: PropTypes.oneOf([...textValidationOptions, ""]),
-  /** Controls how wide the field renders on screen. */
+  /**
+   * Controls how wide the field renders on screen.
+   */
   width: PropTypes.oneOf(widthOptions).isRequired
 }
 

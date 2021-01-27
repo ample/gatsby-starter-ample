@@ -2,11 +2,16 @@
 
 exports[`Form Component renders correctly 1`] = `
 <form
-  action="post"
+  action="/"
   className="form"
-  data-netlify="true"
+  data-netlify={false}
   name="Contact Form"
+  onSubmit={[Function]}
 >
+  <p>
+    Current Form State: 
+    null
+  </p>
   <input
     name="form-name"
     type="hidden"
@@ -31,6 +36,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <input
         name="name"
+        onChange={[Function]}
         placeholder=""
         required={true}
         type="text"
@@ -49,6 +55,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <input
         name="email"
+        onChange={[Function]}
         placeholder=""
         required={true}
         type="email"
@@ -67,6 +74,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <input
         name="phone"
+        onChange={[Function]}
         placeholder="(xxx) xxx-xxxx"
         required={true}
         type="tel"
@@ -90,33 +98,41 @@ exports[`Form Component renders correctly 1`] = `
           className="radio_button"
         >
           <input
+            className="radio"
             id="gender-female"
             name="gender"
+            onChange={[Function]}
             type="radio"
             value="Female"
           />
           <label
-            className="form_label"
             htmlFor="gender-female"
           >
             Female
           </label>
+          <div
+            className="circle"
+          />
         </div>
         <div
           className="radio_button"
         >
           <input
+            className="radio"
             id="gender-male"
             name="gender"
+            onChange={[Function]}
             type="radio"
             value="Male"
           />
           <label
-            className="form_label"
             htmlFor="gender-male"
           >
             Male
           </label>
+          <div
+            className="circle"
+          />
         </div>
       </div>
     </div>
@@ -137,6 +153,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <input
         name="street_address"
+        onChange={[Function]}
         placeholder=""
         required={false}
         type="text"
@@ -152,6 +169,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <input
         name="suite_apt"
+        onChange={[Function]}
         placeholder=""
         required={false}
         type="text"
@@ -167,6 +185,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <input
         name="city"
+        onChange={[Function]}
         placeholder=""
         required={false}
         type="text"
@@ -183,6 +202,8 @@ exports[`Form Component renders correctly 1`] = `
       <select
         defaultValue=""
         name="state"
+        onBlur={[Function]}
+        onChange={[Function]}
         required={false}
       >
         <option
@@ -455,6 +476,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <input
         name="zip"
+        onChange={[Function]}
         placeholder=""
         required={false}
         type="text"
@@ -480,6 +502,7 @@ exports[`Form Component renders correctly 1`] = `
       </label>
       <textarea
         name="message"
+        onChange={[Function]}
         placeholder=""
         required={true}
         type="text"

@@ -1,0 +1,28 @@
+// --------------------------------------------------------
+
+@use './color' as *;
+@use './font' as *;
+@use './global' as *;
+@use './z-index' as *;
+
+:root {
+  // ------------------------------------------------------ | Color variables
+  @each $variable in $color {
+    #{nth($variable, 1)}: #{nth($variable, 2)};
+  }
+
+  // ------------------------------------------------------ | Font variables
+  @each $variable in $font {
+    #{nth($variable, 1)}: #{nth($variable, 2)};
+  }
+
+  // ------------------------------------------------------ | Global variables
+  @each $variable in $global {
+    #{nth($variable, 1)}: #{nth($variable, 2)};
+  }
+
+  // ------------------------------------------------------ | z-index variables
+  @each $variable in $z-index {
+    #{nth($variable, 1)}: #{nth($variable, 2)};
+  }
+}

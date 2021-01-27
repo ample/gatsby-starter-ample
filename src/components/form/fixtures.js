@@ -20,7 +20,10 @@ export default {
             text_validation: "",
             text_placeholder: "",
             select_appearance: "",
-            solo: true
+            solo: true,
+            appearance: "short",
+            placeholder: "",
+            validation: ""
           },
           {
             title: "Email",
@@ -29,12 +32,15 @@ export default {
             required: true,
             width: "half",
             select_options: [],
-            name: "",
+            name: "email",
             text_appearance: "short",
             text_validation: "email",
             text_placeholder: "",
             select_appearance: "",
-            solo: false
+            solo: false,
+            appearance: "short",
+            placeholder: "",
+            validation: "email"
           },
           {
             title: "Phone",
@@ -43,12 +49,15 @@ export default {
             required: true,
             width: "half",
             select_options: [],
-            name: "",
+            name: "phone",
             text_appearance: "short",
             text_validation: "phone",
             text_placeholder: "(xxx) xxx-xxxx",
             select_appearance: "",
-            solo: false
+            solo: false,
+            appearance: "short",
+            placeholder: "(xxx) xxx-xxxx",
+            validation: "phone"
           },
           {
             title: "Gender",
@@ -61,7 +70,10 @@ export default {
             text_validation: "",
             text_placeholder: "",
             select_appearance: "radio",
-            solo: false
+            solo: false,
+            appearance: "radio",
+            label: "Gender",
+            options: ["Female", "Male"]
           }
         ]
       },
@@ -76,16 +88,19 @@ export default {
             required: false,
             width: "half",
             select_options: [],
-            name: "",
+            name: "street_address",
             text_appearance: "short",
             text_validation: "",
             text_placeholder: "",
             select_appearance: "",
-            solo: false
+            solo: false,
+            appearance: "short",
+            placeholder: "",
+            validation: ""
           },
           {
             title: "Suite / Apt.",
-            name: "",
+            name: "suite_apt",
             type: "text",
             required: false,
             width: "half",
@@ -94,11 +109,15 @@ export default {
             text_validation: "",
             text_placeholder: "",
             select_appearance: "",
-            solo: false
+            solo: false,
+            appearance: "short",
+            label: "Suite / Apt.",
+            placeholder: "",
+            validation: ""
           },
           {
             title: "City",
-            name: "",
+            name: "city",
             type: "text",
             required: false,
             width: "half",
@@ -107,11 +126,15 @@ export default {
             text_validation: "",
             text_placeholder: "",
             select_appearance: "",
-            solo: false
+            solo: false,
+            appearance: "short",
+            label: "City",
+            placeholder: "",
+            validation: ""
           },
           {
             title: "State",
-            name: "",
+            name: "state",
             type: "select",
             required: false,
             width: "quarter",
@@ -172,7 +195,62 @@ export default {
             text_validation: "",
             text_placeholder: "",
             select_appearance: "dropdown",
-            solo: false
+            solo: false,
+            appearance: "dropdown",
+            label: "State",
+            options: [
+              "Alabama",
+              "Alaska",
+              "Arizona",
+              "Arkansas",
+              "California",
+              "Colorado",
+              "Connecticut",
+              "Delaware",
+              "District Of Columbia",
+              "Florida",
+              "Georgia",
+              "Hawaii",
+              "Idaho",
+              "Illinois",
+              "Indiana",
+              "Iowa",
+              "Kansas",
+              "Kentucky",
+              "Louisiana",
+              "Maine",
+              "Maryland",
+              "Massachusetts",
+              "Michigan",
+              "Minnesota",
+              "Mississippi",
+              "Missouri",
+              "Montana",
+              "Nebraska",
+              "Nevada",
+              "New Hampshire",
+              "New Jersey",
+              "New Mexico",
+              "New York",
+              "North Carolina",
+              "North Dakota",
+              "Ohio",
+              "Oklahoma",
+              "Oregon",
+              "Pennsylvania",
+              "Rhode Island",
+              "South Carolina",
+              "South Dakota",
+              "Tennessee",
+              "Texas",
+              "Utah",
+              "Vermont",
+              "Virginia",
+              "Washington",
+              "West Virginia",
+              "Wisconsin",
+              "Wyoming"
+            ]
           },
           {
             title: "Zip Code",
@@ -185,7 +263,11 @@ export default {
             text_validation: "",
             text_placeholder: "",
             select_appearance: "",
-            solo: false
+            solo: false,
+            appearance: "short",
+            label: "Zip Code",
+            placeholder: "",
+            validation: ""
           }
         ]
       },
@@ -200,12 +282,15 @@ export default {
             required: true,
             width: "full",
             select_options: [],
-            name: "",
+            name: "message",
             text_appearance: "long",
             text_validation: "",
             text_placeholder: "",
             select_appearance: "",
-            solo: false
+            solo: false,
+            appearance: "long",
+            placeholder: "",
+            validation: ""
           }
         ]
       }

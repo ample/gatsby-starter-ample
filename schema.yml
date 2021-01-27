@@ -123,3 +123,33 @@
     title: String
     layout_basic: BasicPage
     layout_flexible: FlexiblePage
+
+# --- Form ---
+
+- type: FormField
+  fields:
+    label: String
+    name: String
+    required: Boolean
+    select_appearance: String
+    select_options: "[String]"
+    solo: Boolean
+    text_appearance: String
+    text_placeholder: String
+    text_validation: String
+    title: String
+    type: String
+    width: String
+
+- type: FormFieldGroup
+  fields:
+    heading: String
+    fields: "[FormField]"
+
+- type: Form
+  node: true
+  fields:
+    title: String
+    driver: String
+    button_label: String
+    field_groups: "[FormFieldGroup]"

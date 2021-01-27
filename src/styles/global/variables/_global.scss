@@ -1,0 +1,12 @@
+// --------------------------------------------------------
+
+@use '../mixins/media' as *;
+
+// Global variables -- All variables should start with --global
+// ---------------------------------------------------
+
+$global: (
+  '--global-max-width': $large-lowest,
+  '--global-padding': 20px,
+  '--global-text-color': var(--color-blueprint)
+);

@@ -1,0 +1,13 @@
+// --------------------------------------------------------
+
+@mixin container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--global-max-width);
+  padding-left: var(--global-padding);
+  padding-right: var(--global-padding);
+}
+
+@mixin container-header {
+  @include container;
+}

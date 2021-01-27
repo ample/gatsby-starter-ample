@@ -1,4 +1,4 @@
-@use 'global/root';
+@use 'global/variables';
 @use 'global' as *;
 
 // --------------------------------------------------------
@@ -6,9 +6,10 @@
 body {
   @include font-smoothing;
 
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  font-weight: $font-weight-regular;
+  color: var(--global-text-color);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
   line-height: 1;
 }
 
@@ -20,16 +21,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $font-weight-bold;
+  font-weight: var(--font-weight-bold);
   margin: 0 0 20px;
 }
 
 h1 {
-  font-size: responsive 35px 60px;
+  font-size: responsive 32px 36px;
 }
 
 h2 {
-  font-size: responsive 30px 45px;
+  font-size: responsive 22px 26px;
 }
 
 // --------------------------------------------------------

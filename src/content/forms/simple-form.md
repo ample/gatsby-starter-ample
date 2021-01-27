@@ -1,11 +1,26 @@
 ---
-title: Contact Form
-model: Form
+title: Simple Form
 driver: netlify
+model: Form
 button_label: Submit
 field_groups:
 - title: Personal Info
-  heading: Personal Info
+  heading: ''
+  fields:
+  - title: Name
+    type: text
+    required: true
+    width: half
+    select_options: []
+    label: First Name
+    name: first_name
+    text_appearance: short
+    text_validation: ''
+    text_placeholder: ''
+    select_appearance: ''
+    solo: true
+- title: Personal Info
+  heading: ''
   fields:
   - title: Name
     type: text
@@ -19,34 +34,10 @@ field_groups:
     text_placeholder: ''
     select_appearance: ''
     solo: true
-  - title: Email
-    type: text
-    label: Email
-    required: true
-    width: half
-    select_options: []
-    name: ''
-    text_appearance: short
-    text_validation: email
-    text_placeholder: ''
-    select_appearance: ''
-    solo: false
-  - title: Phone
-    type: text
-    label: Phone
-    required: true
-    width: half
-    select_options: []
-    name: ''
-    text_appearance: short
-    text_validation: phone
-    text_placeholder: "(xxx) xxx-xxxx"
-    select_appearance: ''
-    solo: false
   - title: Gender
     name: gender
     type: select
-    required: true
+    required: false
     width: full
     select_options:
     - Female
@@ -55,43 +46,6 @@ field_groups:
     text_validation: ''
     text_placeholder: ''
     select_appearance: radio
-    solo: false
-- title: Address
-  heading: Address
-  fields:
-  - title: Street Address
-    type: text
-    label: Street Address
-    required: false
-    width: half
-    select_options: []
-    name: ''
-    text_appearance: short
-    text_validation: ''
-    text_placeholder: ''
-    select_appearance: ''
-    solo: false
-  - title: Suite / Apt.
-    name: ''
-    type: text
-    required: false
-    width: half
-    select_options: []
-    text_appearance: short
-    text_validation: ''
-    text_placeholder: ''
-    select_appearance: ''
-    solo: false
-  - title: City
-    name: ''
-    type: text
-    required: false
-    width: half
-    select_options: []
-    text_appearance: short
-    text_validation: ''
-    text_placeholder: ''
-    select_appearance: ''
     solo: false
   - title: State
     name: ''
@@ -155,24 +109,10 @@ field_groups:
     text_placeholder: ''
     select_appearance: dropdown
     solo: false
-  - title: Zip Code
-    name: zip
-    type: text
-    required: false
-    width: quarter
-    select_options: []
-    text_appearance: short
-    text_validation: ''
-    text_placeholder: ''
-    select_appearance: ''
-    solo: false
-- title: Message
-  heading: Message
-  fields:
   - title: Message
     type: text
     label: Message
-    required: true
+    required: false
     width: full
     select_options: []
     name: ''
@@ -181,5 +121,4 @@ field_groups:
     text_placeholder: ''
     select_appearance: ''
     solo: false
-
 ---
