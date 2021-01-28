@@ -19,11 +19,17 @@ module.exports = {
         }
       }
     },
+    // TODO: Remove if using Forestry or no CMS, otherwise uncomment.
+    // {
+    //   resolve: `gatsby-ample-importer`,
+    //   options: {
+    //     config: path.join(__dirname, "importer.config.js")
+    //   }
+    // },
     `gatsby-ample-schema`,
     `gatsby-ample-pages`,
     `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
-    `gatsby-ample-linters`,
     {
       resolve: `gatsby-ample-redirects`,
       options: {
@@ -104,8 +110,6 @@ module.exports = {
           localIdentName: "[local]-[hash:base64:3]",
           sourceMap: true
         },
-        fiber: require("fibers"),
-        implementation: require("sass"),
         postCssPlugins: postcssConfig,
         sourceMap: true
       }

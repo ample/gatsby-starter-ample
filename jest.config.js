@@ -15,7 +15,8 @@ module.exports = {
     `<rootDir>.*/public`,
     `<rootDir>/.bin`,
     `<rootDir>/lib`,
-    `<rootDir>/plugins/gatsby-ample-generator/lib`
+    `<rootDir>/plugins/gatsby-ample-generator/lib`,
+    `<rootDir>/plugins/gatsby-ample-importer`
   ],
   transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
   globals: {
