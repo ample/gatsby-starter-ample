@@ -33,9 +33,16 @@ $margin: 8px;
     }
   }
 
-  a {
+  .crumb {
+    @include a;
+
     align-items: center;
     display: flex;
+    font-style: normal;
+
+    @include hover {
+      text-decoration: none;
+    }
   }
 
   svg {

@@ -2,7 +2,7 @@
 
 exports[`Block renders properly with valid props 1`] = `
 <a
-  className="button"
+  className="button theme_default"
   href="/"
 >
   Hello World

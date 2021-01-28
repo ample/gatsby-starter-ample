@@ -1,34 +1,39 @@
 import React from "react"
 import PropTypes from "prop-types"
+import classNames from "classnames"
 
 import Link from "@src/components/link"
 
 import styles from "./styles.module.scss"
 
-const LinkList = ({ activeClassName, heading, links = [] }) => (
-  <ul className={styles.link_list}>
-    {heading && (
-      <li>
-        <strong>{heading}</strong>
-      </li>
-    )}
+const LinkList = ({ activeClassName, className, heading, links = [] }) => {
+  const classes = classNames(styles.link_list, { [className]: className })
 
-    {links.map((item, index) => {
-      return (
-        <li key={index}>
-          <Link
-            activeClassName={activeClassName}
-            className={item.className}
-            title={item.title}
-            to={item.url}
-          >
-            {item.label}
-          </Link>
+  return (
+    <ul className={classes}>
+      {heading && (
+        <li>
+          <strong>{heading}</strong>
         </li>
-      )
-    })}
-  </ul>
-)
+      )}
+
+      {links.map((item, index) => {
+        return (
+          <li key={index}>
+            <Link
+              activeClassName={activeClassName}
+              className={item.className}
+              title={item.title}
+              to={item.url}
+            >
+              {item.label}
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
 
 LinkList.propTypes = {
   /**

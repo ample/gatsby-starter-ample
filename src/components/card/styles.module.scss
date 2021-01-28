@@ -1,17 +1,40 @@
 @use '../../styles/global' as *;
 
 .card {
-  // theme: theme 1
-  // ---------------------------------------------------------
+  font-size: 15px;
+  line-height: 1.6;
 
-  &.theme_1 {
-    background-color: green;
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
   }
 
-  // theme: theme 2
-  // ---------------------------------------------------------
+  p {
+    margin-bottom: 20px;
+  }
+}
 
-  &.theme_2 {
-    background-color: red;
+// --------------------------------------------------------- | text alignment
+
+.text_alignment {
+  &_center {
+    text-align: center;
+  }
+}
+
+// --------------------------------------------------------- | themes
+
+.theme {
+  &_graphic,
+  &_image {
+    .card_image {
+      margin-bottom: 20px;
+    }
+  }
+
+  &_graphic {
+    .card_image {
+      max-width: 60px;
+    }
   }
 }

@@ -2,9 +2,11 @@
 
 exports[`Button Component renders correctly 1`] = `
 <a
-  className="button"
-  href="/"
+  className="button theme_default"
+  href="#"
+  rel="noopener"
+  target="_blank"
 >
-  Hello World
+  Call to action
 </a>
 `;

@@ -90,19 +90,6 @@ module.exports = {
         projectRoot: path.join(__dirname)
       }
     },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        // TODO: Update project fonts.
-        //
-        // google: {
-        //   families: ["Font Family"]
-        // },
-        // typekit: {
-        //   id: ["typekit-id"]
-        // }
-      }
-    },
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,

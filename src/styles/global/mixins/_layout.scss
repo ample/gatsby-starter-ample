@@ -1,3 +1,5 @@
+@use 'media' as *;
+
 // --------------------------------------------------------
 
 @mixin container {
@@ -10,4 +12,8 @@
 
 @mixin container-header {
   @include container;
+
+  @include media($full-navigation, down) {
+    padding: 0 calc(var(--global-padding) / 2);
+  }
 }

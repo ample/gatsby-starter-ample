@@ -69,7 +69,7 @@ layout_basic:
 
     Commodo ut proident elit nisi eiusmod fugiat dolor qui ullamco ut sunt ex.
 
-    ![](/uploads/placeholder-image.jpg)
+    ![](/uploads/blueprint/rectangle.jpg)
 layout_flexible:
   containers: []
 

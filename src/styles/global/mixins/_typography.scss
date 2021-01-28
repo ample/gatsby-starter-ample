@@ -1,0 +1,33 @@
+@use 'support' as *;
+
+// ---------------------------------------------------------
+
+@mixin h1 {
+  font-size: responsive 42px 54px;
+}
+
+@mixin h2 {
+  font-size: responsive 32px 40px;
+}
+
+@mixin h3 {
+  font-size: responsive 24px 32px;
+}
+
+@mixin h4 {
+  font-size: responsive 20px 24px;
+}
+
+@mixin h5 {
+  font-size: 18px;
+}
+
+// ---------------------------------------------------------
+
+@mixin a {
+  color: var(--color-blueprint);
+
+  @include hover {
+    color: var(--color-blueprint-soft);
+  }
+}

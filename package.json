@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "dependencies": {
     "@babel/core": "^7.12.10",
+    "@fontsource/open-sans": "^4.1.0",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",

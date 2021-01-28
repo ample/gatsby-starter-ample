@@ -3,9 +3,13 @@
 
 $font: (
   '--font-fallback': system-ui,
-  '--font-family-base': var(--font-fallback),
+  '--font-family-base': (
+    'Open Sans',
+    var(--font-fallback)
+  ),
   '--font-family-headings': var(--font-fallback),
   '--font-size-base': 16px,
+  '--font-weight-bold': 700,
   '--font-weight-regular': 400,
-  '--font-weight-bold': 700
+  '--font-weight-semibold': 600
 );

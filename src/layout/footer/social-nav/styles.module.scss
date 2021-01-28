@@ -2,12 +2,27 @@
 
 .social_nav {
   display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
 
   svg {
-    $size: 20px;
+    fill: var(--color-blueprint);
+    height: 100%;
+    width: 100%;
+  }
 
-    fill: var(--color-black);
+  a {
+    $size: 22px;
+
+    color: var(--color-blue-gray);
     height: $size;
+    justify-content: center;
+    margin-right: 8px;
     width: $size;
+
+    @include hover {
+      color: var(--color-blue-gray-2);
+    }
   }
 }

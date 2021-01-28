@@ -3,8 +3,8 @@ export default {
     main_navigation: [
       { url: "#", label: "Reprehenderit" },
       { url: "#", label: "Officia sint" },
-      { url: "#", label: "Veniam " },
-      { url: "#", label: "Consequat " },
+      { url: "#", label: "Veniam" },
+      { url: "#", label: "Consequat" },
       {
         url: "#",
         label: "Suspendisse semper",

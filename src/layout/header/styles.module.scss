@@ -3,28 +3,38 @@
 // ---------------------------------------------------------
 
 .header {
-  background-color: #ccc;
+  background: var(--color-white);
+  box-shadow: 0 3px 10px var(--color-blueprint-light);
+  max-height: var(--global-header-mobile-height);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transition: max-height 400ms ease-out;
   width: 100%;
+  z-index: var(--z-index-plus-three);
+
+  @include media($full-navigation) {
+    max-height: fit-content;
+    overflow: visible;
+    position: static;
+  }
 
   &.navigation_is_showing {
-    height: 100vh;
-    overflow: scroll;
-    position: sticky;
-    top: 0;
-    width: 100vw;
+    @include media($full-navigation, down) {
+      height: 100vh;
+      max-height: 10000px;
+      overflow: scroll;
+      transition: max-height 400ms ease-in;
+    }
   }
 
   > div {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-
     @include media($full-navigation) {
       @include container-header;
 
+      display: flex;
       flex-direction: row;
-      justify-content: flex-end;
-      overflow: visible;
+      justify-content: space-between;
     }
   }
 }
@@ -32,23 +42,38 @@
 // --------------------------------------------------------- | logo
 
 .logo_container {
+  align-items: center;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
+  transition: background-color 460ms ease-in;
 
   @include media($full-navigation, down) {
     @include container-header;
 
-    padding: 10px;
+    height: var(--global-header-mobile-height);
+    position: fixed;
     width: 100%;
+  }
+
+  @include media($full-navigation) {
+    flex-grow: 1;
+  }
+
+  .navigation_is_showing & {
+    @include media($full-navigation, down) {
+      background-color: var(--color-blueprint-light);
+      transition: background-color 460ms ease-out;
+    }
   }
 }
 
 .logo {
   svg {
-    width: 60px;
+    width: 30px;
 
-    @include media($small-highest) {
-      width: 100px;
+    @include media($full-navigation) {
+      width: 50px;
     }
   }
 }
@@ -56,6 +81,8 @@
 // --------------------------------------------------------- | smaller screen buttons
 
 .menu_button {
+  color: var(--color-blueprint);
+
   @include media($full-navigation) {
     display: none;
   }
@@ -63,45 +90,44 @@
   span {
     @include screen-reader-only;
   }
+
+  svg {
+    height: 35px;
+  }
 }
 
-// --------------------------------------------------------- | navigation container
+// --------------------------------------------------------- | navigation
 
 .navigation_container {
+  background-color: var(--color-blueprint-lighter);
   display: flex;
   flex-direction: column;
-  height: 0;
+  height: 100vh;
+  overflow: scroll;
+  padding: calc(var(--global-header-mobile-height) + 12px) 20px 140px;
 
   @include media($full-navigation) {
+    background-color: transparent;
     height: auto;
-  }
-
-  .navigation_is_showing & {
-    height: 100%;
-    overflow: scroll;
+    overflow: visible;
+    padding: 0;
   }
 }
-
-// --------------------------------------------------------- | main and top navigation
 
 .main_navigation,
 .top_navigation {
   @include media($full-navigation) {
     justify-content: flex-end;
   }
-
-  li {
-    @include media($full-navigation, down) {
-      width: 100%;
-    }
-  }
 }
 
 .main_navigation {
   flex-wrap: wrap;
 
-  @include media($full-navigation) {
-    flex-wrap: nowrap;
+  li {
+    @include media($full-navigation, down) {
+      width: 100%;
+    }
   }
 }
 
@@ -112,5 +138,23 @@
   @include media($full-navigation) {
     flex-direction: row;
     order: unset;
+  }
+
+  a {
+    display: block;
+    font-size: 14px;
+    padding: 10px 0;
+
+    @include media($full-navigation) {
+      padding: 12px;
+    }
+  }
+
+  li:last-of-type {
+    a {
+      @include media($full-navigation) {
+        padding-right: 0;
+      }
+    }
   }
 }

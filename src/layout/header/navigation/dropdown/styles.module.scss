@@ -6,6 +6,7 @@
 
   @include media($full-navigation) {
     background-color: transparent;
+    margin-right: 12px;
     position: relative;
     transition: background-color 0ms ease-out 0.5s;
   }
@@ -16,7 +17,7 @@
 
   &.is_showing {
     @include media($full-navigation) {
-      background-color: var(--color-white);
+      background-color: var(--color-blueprint-light);
       transition: background-color 0.3s ease-in;
     }
   }
@@ -25,18 +26,41 @@
 // --------------------------------------------------------- // Trigger
 
 .dropdown_trigger {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
   padding: 18px 0 19px;
 
   @include media($full-navigation) {
-    padding: 11px 0 8px;
+    padding: 11px 12px 16.5px;
   }
 
   svg {
+    height: 20px;
     margin-left: 6px;
-    transition: transform 300ms;
+    transition: transform 200ms ease-in-out;
+    width: 20px;
+  }
+
+  &::after {
+    background-color: var(--color-blueprint);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 1px;
+    position: relative;
+    top: 10px;
+    transition: width 400ms ease-in-out;
+    width: 0%;
   }
 
   .is_showing & {
+    &::after {
+      @include media($full-navigation) {
+        width: 100%;
+      }
+    }
+
     svg {
       transform: rotate(-180deg);
     }
@@ -49,27 +73,32 @@
   max-height: 0;
   overflow: hidden;
   padding-left: 22px;
-  transition: max-height 1s ease-out;
+  transition: max-height 500ms ease-in;
 
   @include media($full-navigation) {
-    background-color: var(--color-white);
+    background-color: var(--color-blueprint-light);
     left: 0;
     min-width: 300px;
     padding-left: 0;
     position: absolute;
-    top: 35px;
-    transition: max-height 0.5s ease-out 0s;
+    top: 48px;
     width: 100%;
     z-index: var(--z-index-plus-two);
   }
 
   .is_showing & {
     max-height: 1000px;
-    transition: max-height 1.5s ease-in;
+    transition: max-height 500ms ease-out;
 
     @include media($full-navigation) {
       max-height: 600px;
       transition: max-height 0.5s ease-in 0.2s;
+    }
+  }
+
+  li {
+    &:last-of-type {
+      margin-bottom: 12px;
     }
   }
 }

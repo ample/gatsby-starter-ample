@@ -19,7 +19,7 @@ exports[`Header renders correctly 1`] = `
             <g>
               <path
                 d="M183.017 315.94c-3.61-15.747 6.689-33.17 25.385-42.987 18.688-9.808 71.15-37.94 71.15-37.94l6.924 30.535c7.247 31.714-15.002 64.002-49.693 72.163-21.475 5.048-47.37 6.178-53.766-21.771zM111.27 323.753a91.566 91.566 0 005.675 16.776 157.222 157.222 0 014.916-305.155L275.019 0l17.623 76.35c-27.351-16.405-63.045-22.577-99.318-14.165-49.635 11.526-86.344 46.89-96.898 87.81a37.41 37.41 0 00-.275 17.44 38.338 38.338 0 0046 28.69c36.188-8.401 18.127-57.647 66.273-68.83 32.638-7.577 49.863 11.45 52.235 21.703l3.484 14.981-91.261 43.758a118.729 118.729 0 00-34.66 24.665c-23.498 24.543-34.659 58.132-26.953 91.351z"
-                fill="#fff"
+                fill="#0065f2"
               />
             </g>
           </g>
@@ -52,6 +52,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -61,6 +62,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -70,6 +72,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -79,6 +82,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -88,6 +92,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -97,6 +102,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -110,6 +116,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -119,6 +126,7 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
@@ -128,26 +136,28 @@ exports[`Header renders correctly 1`] = `
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
-            Veniam 
+            Veniam
           </a>
         </li>
         <li>
           <a
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >
-            Consequat 
+            Consequat
           </a>
         </li>
         <li>
           <span
             className="dropdown"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
+            onClick={[Function]}
+            onKeyPress={[Function]}
             role="button"
             tabIndex={0}
           >
@@ -156,13 +166,10 @@ exports[`Header renders correctly 1`] = `
             >
               Suspendisse semper
               <svg
-                height={8}
-                viewBox="0 0 11 8"
-                width={11}
+                viewBox="0 0 256 512"
               >
                 <path
-                  d="M9.524.724l1.262 1.263L5.393 7.38 0 1.987 1.263.724l4.13 4.131z"
-                  fillRule="evenodd"
+                  d="M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z"
                 />
               </svg>
             </div>
@@ -171,14 +178,18 @@ exports[`Header renders correctly 1`] = `
             >
               <li>
                 <a
+                  className="link"
                   href="/"
+                  onClick={[Function]}
                 >
                   Vestibulum vitae
                 </a>
               </li>
               <li>
                 <a
+                  className="link is_external"
                   href="#"
+                  onClick={[Function]}
                   rel="noopener"
                   target="_blank"
                 >
@@ -187,7 +198,9 @@ exports[`Header renders correctly 1`] = `
               </li>
               <li>
                 <a
+                  className="link is_external"
                   href="#"
+                  onClick={[Function]}
                   rel="noopener"
                   target="_blank"
                 >
@@ -196,7 +209,9 @@ exports[`Header renders correctly 1`] = `
               </li>
               <li>
                 <a
+                  className="link is_external"
                   href="#"
+                  onClick={[Function]}
                   rel="noopener"
                   target="_blank"
                 >
@@ -210,8 +225,9 @@ exports[`Header renders correctly 1`] = `
           className="nav_button"
         >
           <a
-            className="button button"
+            className="button button theme_default"
             href="#"
+            onClick={[Function]}
             rel="noopener"
             target="_blank"
           >

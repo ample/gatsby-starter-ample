@@ -15,7 +15,7 @@ const Breadcrumbs = ({ className, links, separator }) => (
         key={index}
         data-separator={separator}
       >
-        <Link to={url} key={index}>
+        <Link className={styles.crumb} to={url} key={index}>
           <>
             {icon && <SVG name={icon} />}
             {label && label}

@@ -11,7 +11,7 @@ exports[`Column renders sub-components 1`] = `
   className="column"
 >
   <a
-    className="button"
+    className="button theme_default"
     href="/"
   >
     Hello World

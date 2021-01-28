@@ -89,8 +89,8 @@ $radio-button-hover: color.scale(
   input:not([type='radio']),
   select,
   textarea {
-    background-color: var(--color-blueprint-grayish);
-    border: 1px solid var(--color-blueprint-alpha-16);
+    background-color: var(--color-blueprint-light);
+    border: 1px solid var(--color-blueprint);
     border-radius: 0;
     color: var(--color-blueprint);
     font-size: 16px;
@@ -99,7 +99,7 @@ $radio-button-hover: color.scale(
     width: 100%;
 
     &:focus {
-      border-color: var(--color-blueprint-alpha-50);
+      border-color: var(--color-blueprint-bright);
       outline: none;
     }
   }

@@ -8,16 +8,18 @@ import Image from "@src/components/image"
 
 import styles from "./styles.module.scss"
 
-const Card = ({ body, button, image, theme, url }) => {
+const Card = ({ body, button, heading, image, textAlignment, theme, url }) => {
   const classes = classNames(styles.card, {
-    [styles[theme]]: theme
+    [styles[`text_alignment_${textAlignment}`]]: textAlignment,
+    [styles[`theme_${theme}`]]: theme
   })
 
   let card = (
     <div className={classes}>
-      {image && <Image src={image} />}
+      {image && <Image className={styles.card_image} src={image} />}
+      {heading && <h3>{heading}</h3>}
       {body && <div dangerouslySetInnerHTML={{ __html: body }} />}
-      {button && <Button to={button.url}>{button.label}</Button>}
+      {button && <Button {...button} />}
     </div>
   )
 
@@ -43,13 +45,21 @@ Card.propTypes = {
     url: PropTypes.string.isRequired
   }),
   /**
+   * Specifies the heading
+   */
+  heading: PropTypes.string,
+  /**
    * Specifies the image src and alt text
    */
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   /**
+   * Specifies the alignment of the card's content
+   */
+  textAlignment: PropTypes.oneOf(["left", "center", "right"]),
+  /**
    * Specifies the card theme
    */
-  theme: PropTypes.oneOf(["theme_1", "theme_2"]),
+  theme: PropTypes.oneOf(["graphic", "image"]),
   /**
    * Specifies the url for the card
    *
@@ -60,6 +70,8 @@ Card.propTypes = {
   url: PropTypes.string
 }
 
-Card.defaultProps = {}
+Card.defaultProps = {
+  textAlignment: "left"
+}
 
 export default Card

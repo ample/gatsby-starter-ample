@@ -5,7 +5,7 @@ import { component as Heading, fixtures } from "."
 
 describe("Heading", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Heading {...fixtures.default} />).toJSON()
+    const tree = renderer.create(<Heading {...fixtures.h1} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

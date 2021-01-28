@@ -18,7 +18,7 @@ exports[`Container renders sub-components 1`] = `
     className="content"
   >
     <a
-      className="button"
+      className="button theme_default"
       href="/"
     >
       Hello World
