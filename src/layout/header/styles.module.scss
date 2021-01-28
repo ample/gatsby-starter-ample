@@ -4,7 +4,7 @@
 
 .header {
   background: var(--color-white);
-  box-shadow: 0 3px 10px var(--color-blueprint-grayish-light);
+  box-shadow: 0 3px 10px var(--color-blueprint-light);
   max-height: var(--global-header-mobile-height);
   overflow: hidden;
   position: fixed;
@@ -62,7 +62,7 @@
 
   .navigation_is_showing & {
     @include media($full-navigation, down) {
-      background-color: var(--color-blueprint-grayish-light);
+      background-color: var(--color-blueprint-light);
       transition: background-color 460ms ease-out;
     }
   }
@@ -99,7 +99,7 @@
 // --------------------------------------------------------- | navigation
 
 .navigation_container {
-  background-color: var(--color-blueprint-pale-very);
+  background-color: var(--color-blueprint-lighter);
   display: flex;
   flex-direction: column;
   height: 100vh;
