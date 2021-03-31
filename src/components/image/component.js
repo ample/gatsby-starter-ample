@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import classNames from "classnames"
 import dig from "object-dig"
 import startCase from "lodash/startCase"
@@ -26,12 +26,11 @@ const Image = ({ alt, className, src, ...props }) => {
     }
 
     return (
-      <Img
+      <GatsbyImage
         className={classes}
         alt={alt || defaultAltAttribute(imageName)}
-        {...src.childImageSharp}
-      />
-    )
+        {...src.childImageSharp} />
+    );
   }
 
   // ---------------------------------------- | Native Image

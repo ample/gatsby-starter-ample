@@ -28,7 +28,8 @@ module.exports = {
     // },
     `gatsby-ample-schema`,
     `gatsby-ample-pages`,
-    `gatsby-ample-seo`,
+    // TODO: fix gatsby-ample-seo to work with Gatsby 3
+    // `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
     {
       resolve: `gatsby-ample-redirects`,
@@ -64,6 +65,7 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

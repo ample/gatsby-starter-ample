@@ -99,7 +99,7 @@ SeoTags.defaultProps = {
   twitter: {}
 }
 
-const SEO = props => (
+const SEO = (props) => (
   <StaticQuery
     query={graphql`
       {
@@ -111,7 +111,7 @@ const SEO = props => (
         }
       }
     `}
-    render={data => <SeoTags {...transformData({ queryData: data.settings, srcProps: props })} />}
+    render={(data) => <SeoTags {...transformData({ queryData: data.settings, srcProps: props })} />}
   />
 )
 
