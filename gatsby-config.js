@@ -108,9 +108,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
+        additionalData: `@use 'global' as *;`,
         cssLoaderOptions: {
           localIdentName: "[local]-[hash:base64:3]",
           sourceMap: true
+        },
+        sassOptions: {
+          includePaths: [`${__dirname}/src/styles`]
         },
         postCssPlugins: postcssConfig,
         sourceMap: true
