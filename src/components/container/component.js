@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 import Block from "../block"
 

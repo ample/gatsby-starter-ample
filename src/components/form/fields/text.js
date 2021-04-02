@@ -5,7 +5,7 @@ import classNames from "classnames"
 import Label from "./label"
 import { textAppearanceOptions, textValidationOptions, widthOptions } from "./__config__"
 
-import styles from "../styles.module.scss"
+import * as styles from "../styles.module.scss"
 
 const fieldTypeMap = {
   email: "email",
@@ -23,7 +23,7 @@ const FormFieldText = ({
   validation,
   width
 }) => {
-  const handleChange = event => {
+  const handleChange = (event) => {
     return formHandler(name, event.target.value)
   }
 

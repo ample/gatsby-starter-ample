@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import startCase from "lodash/startCase"
 import toLower from "lodash/toLower"
 
-import styles from "./../../templates/components/styles.module.scss"
+import * as styles from "./../../templates/components/styles.module.scss"
 
 const Variations = ({ component, data }) => {
   const TagName = component

@@ -4,7 +4,7 @@ import classNames from "classnames"
 
 import Link from "@src/components/link"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const LinkList = ({ activeClassName, className, heading, links = [] }) => {
   const classes = classNames(styles.link_list, { [className]: className })

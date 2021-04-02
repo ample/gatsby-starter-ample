@@ -7,9 +7,9 @@ import { isGatsbyLink } from "./helpers"
 import ExternalLink from "./external-link"
 import InternalLink from "./internal-link"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
-const Link = props => {
+const Link = (props) => {
   const classes = classNames(styles.link, {
     [props.className]: props.className,
     [styles[`is_external`]]: !isGatsbyLink(props.to)

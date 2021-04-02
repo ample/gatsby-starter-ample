@@ -13,7 +13,7 @@ import toLower from "lodash/toLower"
 
 import config from "@root/playground.config"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const TemplatesPlayground = ({ location }) => {
   const [isOpen, setOpen] = useState(false)

@@ -5,7 +5,7 @@ import classNames from "classnames"
 import Link from "../link"
 import SVG from "../svg"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const Button = ({ children, className, onClick, theme, to }) => {
   const classes = classNames(styles.button, {

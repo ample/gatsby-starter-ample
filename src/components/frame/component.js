@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const Frame = ({ src, margin_bottom, title }) => {
   const classes = classNames(styles.frame_container, {

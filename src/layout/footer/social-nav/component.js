@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const SocialNav = ({ links }) => (
   <nav className={styles.social_nav}>

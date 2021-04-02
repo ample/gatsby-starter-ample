@@ -6,12 +6,10 @@ import Button from "@src/components/button"
 import { Dropdown } from "./dropdown"
 import Link from "@src/components/link"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
-const Navigation = ({ className, links = [], onClick, vertical }) => {
-  const classes = classNames(styles.navigation, className, {
-    [styles[`is_vertical`]]: vertical
-  })
+const Navigation = ({ className, links = [], onClick }) => {
+  const classes = classNames(styles.navigation, className, {})
 
   return (
     <ul className={classes}>
@@ -81,15 +79,9 @@ Navigation.propTypes = {
   /**
    * A onClick function passed to all navigation links
    */
-  onClick: PropTypes.func,
-  /**
-   * Specifies if the direction of the link list should be vertical
-   */
-  vertical: PropTypes.bool
+  onClick: PropTypes.func
 }
 
-Navigation.defaultProps = {
-  vertical: false
-}
+Navigation.defaultProps = {}
 
 export default Navigation

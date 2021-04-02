@@ -6,7 +6,7 @@ import LinkList from "./link-list"
 import SocialNav from "./social-nav"
 import SVG from "../../components/svg"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const Footer = ({ copyright, menus, policy_links, social_links }) => (
   <footer className={styles.footer}>

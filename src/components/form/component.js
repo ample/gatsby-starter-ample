@@ -6,15 +6,15 @@ import classNames from "classnames"
 
 import FormFieldGroup from "./fields"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const Form = ({ button_label, className, driver, title, field_groups }) => {
   // Set the initial form data as an object which contains all field names as
   // keys, and each value as undefined.
-  const fieldNames = flatMap(field_groups.map(group => group.fields)).map(({ name }) => name)
+  const fieldNames = flatMap(field_groups.map((group) => group.fields)).map(({ name }) => name)
   const initialFormData = {
     _meta: { driver: driver, title: title },
-    data: Object.fromEntries(fieldNames.map(x => [x, undefined]))
+    data: Object.fromEntries(fieldNames.map((x) => [x, undefined]))
   }
   const [formData, setFormData] = useState(initialFormData)
 
@@ -40,7 +40,7 @@ const Form = ({ button_label, className, driver, title, field_groups }) => {
    *
    * @param {object} event onSubmit event object
    */
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     // Set the form state to loading.
     setFormState("loading")
     // Prevent the form from being submitted via default browser request.
@@ -52,7 +52,7 @@ const Form = ({ button_label, className, driver, title, field_groups }) => {
         setFormState("success")
         formEl.current.reset()
       })
-      .catch(err => {
+      .catch((err) => {
         setFormState("error")
         console.error(err)
       })

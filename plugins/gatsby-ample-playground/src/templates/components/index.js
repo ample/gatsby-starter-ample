@@ -11,7 +11,7 @@ import config from "@root/playground.config"
 
 import Link from "@src/components/link"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const ComponentsPlayground = () => {
   const darkMode = useDarkMode(false)

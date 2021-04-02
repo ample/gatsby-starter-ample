@@ -5,7 +5,7 @@ import classNames from "classnames"
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const Dropdown = ({ items, label, onClick }) => {
   const [isOpen, setIsOpen] = useState(false)

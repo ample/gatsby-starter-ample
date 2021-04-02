@@ -1,20 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import classNames from "classnames"
 import dig from "object-dig"
 import startCase from "lodash/startCase"
 import path from "path"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
-export const defaultAltAttribute = image => {
+export const defaultAltAttribute = (image) => {
   const filename = path.basename(image, path.extname(image))
   return startCase(filename)
 }
 
 const Image = ({ alt, className, src, ...props }) => {
   const classes = classNames(styles.image, { [className]: className })
+
+  // TODO: Update Image component to work with new `gatsby-plugin-image`
+  console.log("Image src =>", src)
 
   // ---------------------------------------- | Gastby Image
 
@@ -29,8 +32,9 @@ const Image = ({ alt, className, src, ...props }) => {
       <GatsbyImage
         className={classes}
         alt={alt || defaultAltAttribute(imageName)}
-        {...src.childImageSharp} />
-    );
+        {...src.childImageSharp}
+      />
+    )
   }
 
   // ---------------------------------------- | Native Image

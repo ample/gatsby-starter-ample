@@ -7,7 +7,7 @@ import SVG from "@src/components/svg"
 
 import Navigation from "./navigation"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const Header = ({ main_navigation, top_navigation }) => {
   // ------------------------------------------------------ | Mobile Menu

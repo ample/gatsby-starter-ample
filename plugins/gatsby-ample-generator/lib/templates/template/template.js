@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import Layout from "@src/layout"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const TemplateName = ({ children, title }) => (
   <Layout>

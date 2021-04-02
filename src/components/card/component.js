@@ -2,11 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
+import * as styles from "./styles.module.scss"
+
 import Link from "@src/components/link"
 import Button from "@src/components/button"
 import Image from "@src/components/image"
-
-import styles from "./styles.module.scss"
 
 const Card = ({ body, button, heading, image, textAlignment, theme, url }) => {
   const classes = classNames(styles.card, {

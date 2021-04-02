@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import GatsbyBackgroundImage from "gatsby-background-image"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const BackgroundImage = ({ children, className, image }) => {
   // Combine wrapping class names.

@@ -5,13 +5,13 @@ import classNames from "classnames"
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
 
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 
 const Breadcrumbs = ({ className, links, separator }) => (
   <ul className={classNames(styles.breadcrumbs, { [className]: className })}>
     {links.map(({ label, icon, url }, index) => (
       <li
-        className={classNames({ [styles[`only_icon`]]: icon })}
+        className={classNames({ [styles["icon_only"]]: icon })}
         key={index}
         data-separator={separator}
       >
