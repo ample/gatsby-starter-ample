@@ -9603,9 +9603,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-sass@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "gatsby-plugin-sass@npm:4.2.0"
+"gatsby-plugin-sass@npm:next":
+  version: 4.3.0-next.0
+  resolution: "gatsby-plugin-sass@npm:4.3.0-next.0"
   dependencies:
     "@babel/runtime": ^7.12.5
     resolve-url-loader: ^3.1.2
@@ -9613,7 +9613,7 @@ fsevents@~2.3.1:
   peerDependencies:
     gatsby: ^3.0.0-next.0
     sass: ^1.30.0
-  checksum: f3fa334cfceef6b66335d1b4cfece051ed15366b68a4888d1fc3a9b6083282a27ffdd8c2735fdadd9bf337d3a32b6dd4ca5aa76616cd37b65ee457776b630e32
+  checksum: 279093c7b40de86c19438dd3962c01023bf21fb1eacfb06cd4d7b54dfc626641cae294b0358bf0dd29591bd2c84138b4543868e4d9f9c22aaab64d80c4ba08bf
   languageName: node
   linkType: hard
 
@@ -19188,7 +19188,7 @@ resolve@^2.0.0-next.3:
     gatsby-plugin-netlify: ^3.2.0
     gatsby-plugin-offline: ^4.2.0
     gatsby-plugin-react-helmet: ^4.2.0
-    gatsby-plugin-sass: ^4.2.0
+    gatsby-plugin-sass: next
     gatsby-plugin-sharp: ^3.2.0
     gatsby-plugin-sitemap: ^3.2.0
     gatsby-plugin-web-font-loader: ^1.0.4

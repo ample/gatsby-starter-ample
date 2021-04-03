@@ -1,6 +1,3 @@
-@use '../../../styles/global' as *;
-@use '../../../components/button/styles.module.scss' as *;
-
 .navigation {
   @include reset-list;
 

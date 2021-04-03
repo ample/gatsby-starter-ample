@@ -37,12 +37,13 @@ module.exports = {
         disable: process.env.GATSBY_REDIRECTS_DISABLED === "true"
       }
     },
-    {
-      resolve: `gatsby-ample-playground`,
-      options: {
-        disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
-      }
-    },
+    // TODO: replace gatsby-ample-playground with Storybook
+    // {
+    //   resolve: `gatsby-ample-playground`,
+    //   options: {
+    //     disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
+    //   }
+    // },
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
