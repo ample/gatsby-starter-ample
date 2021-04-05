@@ -5,12 +5,13 @@ import classNames from "classnames"
 import Link from "../link"
 import SVG from "../svg"
 
-import * as styles from "./styles.module.scss"
+import { button, theme_default } from "./styles.module.scss"
 
 const Button = ({ children, className, onClick, theme, to }) => {
-  const classes = classNames(styles.button, {
-    [className]: className,
-    [styles[`theme_${theme}`]]: theme
+  const classes = classNames(button, theme_default, {
+    [className]: className
+    // TODO: How do we handle multiple theme classes
+    // [styles[`theme_${theme}`]]: theme
   })
 
   return (
@@ -45,7 +46,7 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  theme: "default"
+  // theme: "default"
 }
 
 export default Button

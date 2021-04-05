@@ -1,4 +1,3 @@
-const postcssConfig = require("./postcss.config")
 const path = require("path")
 
 module.exports = {
@@ -104,21 +103,6 @@ module.exports = {
         theme_color: `#0095df`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        additionalData: `@use 'global' as *;`,
-        cssLoaderOptions: {
-          localIdentName: "[local]-[hash:base64:3]",
-          sourceMap: true
-        },
-        sassOptions: {
-          includePaths: [`${__dirname}/src/styles`]
-        },
-        postCssPlugins: postcssConfig,
-        sourceMap: true
       }
     },
     {

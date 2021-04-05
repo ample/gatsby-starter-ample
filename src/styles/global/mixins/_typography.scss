@@ -3,7 +3,7 @@
 // ---------------------------------------------------------
 
 @mixin h1 {
-  font-size: responsive 42px 54px;
+  font-size: rfs(54px);
 }
 
 @mixin h2 {
