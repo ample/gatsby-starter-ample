@@ -17,7 +17,6 @@ const Image = ({ alt, className, src, ...props }) => {
   const classes = classNames(image, { [className]: className })
 
   // TODO: Update Image component to work with new `gatsby-plugin-image`
-  console.log("Image src =>", src)
 
   // ---------------------------------------- | Gastby Image
 
