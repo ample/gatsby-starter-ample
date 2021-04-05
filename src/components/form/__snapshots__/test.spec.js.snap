@@ -81,7 +81,7 @@ exports[`Form Component renders correctly 1`] = `
       />
     </div>
     <div
-      className="form_field width_full"
+      className="form_field"
     >
       <label
         className="form_label"
@@ -490,7 +490,7 @@ exports[`Form Component renders correctly 1`] = `
       Message
     </h2>
     <div
-      className="form_field width_full"
+      className="form_field"
     >
       <label
         className="form_label"

@@ -16,11 +16,12 @@ import {
 } from "./styles.module.scss"
 
 const widthOptions = {
-  "1/4": col_width_one_fourth,
-  "1/3": col_width_one_third,
   "1/2": col_width_one_half,
+  "1/3": col_width_one_third,
+  "1/4": col_width_one_fourth,
   "2/3": col_width_two_thirds,
-  "3/4": col_width_three_fourths
+  "3/4": col_width_three_fourths,
+  full: null
 }
 
 // -------------------------------------------------------- | component

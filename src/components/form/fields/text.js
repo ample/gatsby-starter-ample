@@ -7,16 +7,10 @@ import { textAppearanceOptions, textValidationOptions } from "./__config__"
 
 // -------------------------------------------------------- | styles
 
-import {
-  form_field,
-  solo_field,
-  width_full,
-  width_half,
-  width_quarter
-} from "../styles.module.scss"
+import { form_field, solo_field, width_half, width_quarter } from "../styles.module.scss"
 
 const widthOptions = {
-  full: width_full,
+  full: null,
   half: width_half,
   quarter: width_quarter
 }
