@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import * as styles from "../styles.module.scss"
-
 import SelectField from "./select"
 import TextField from "./text"
+
+import { form_field_group } from "../styles.module.scss"
 
 // ---------------------------------------- | Helpers
 
@@ -19,7 +19,7 @@ let fieldMap = {
 // ---------------------------------------- | Component
 
 const FormFields = ({ fields, formHandler, heading }) => (
-  <div className={styles.form_field_group}>
+  <div className={form_field_group}>
     {heading && <h2>{heading}</h2>}
 
     {fields.map((field, idx) => {

@@ -24,7 +24,7 @@ exports[`Form Component renders correctly 1`] = `
       Personal Info
     </h2>
     <div
-      className="form_field width_half solo"
+      className="form_field solo_field width_half"
     >
       <label
         className="form_label"

@@ -6,7 +6,7 @@ import classNames from "classnames"
 
 import FormFieldGroup from "./fields"
 
-import * as styles from "./styles.module.scss"
+import { form } from "./styles.module.scss"
 
 const Form = ({ button_label, className, driver, title, field_groups }) => {
   // Set the initial form data as an object which contains all field names as
@@ -60,7 +60,7 @@ const Form = ({ button_label, className, driver, title, field_groups }) => {
 
   return (
     <form
-      className={classNames(styles.form, {
+      className={classNames(form, {
         [className]: className
       })}
       action="/"

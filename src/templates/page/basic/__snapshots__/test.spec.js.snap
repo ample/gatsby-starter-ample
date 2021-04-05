@@ -240,7 +240,7 @@ Array [
     </div>
   </header>,
   <main
-    className="basic_page"
+    className=""
   >
     <div
       dangerouslySetInnerHTML={
@@ -279,10 +279,10 @@ Array [
           </a>
         </div>
         <nav
-          className="menus"
+          className="menus_container"
         >
           <ul
-            className="link_list menu"
+            className="link_list menu_container"
           >
             <li>
               <strong>
@@ -327,7 +327,7 @@ Array [
             </li>
           </ul>
           <ul
-            className="link_list menu"
+            className="link_list menu_container"
           >
             <li>
               <strong>
@@ -407,7 +407,7 @@ Array [
           </a>
         </nav>
         <ul
-          className="link_list policy_links"
+          className="link_list policy_links_container"
         >
           <li>
             <a
@@ -429,7 +429,7 @@ Array [
           </li>
         </ul>
         <small
-          className="copyright"
+          className="copyright_container"
         >
           © 
           2020, All Rights Reserved

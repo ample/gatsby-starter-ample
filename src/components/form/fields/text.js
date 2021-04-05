@@ -3,9 +3,25 @@ import PropTypes from "prop-types"
 import classNames from "classnames"
 
 import Label from "./label"
-import { textAppearanceOptions, textValidationOptions, widthOptions } from "./__config__"
+import { textAppearanceOptions, textValidationOptions } from "./__config__"
 
-import * as styles from "../styles.module.scss"
+// -------------------------------------------------------- | styles
+
+import {
+  form_field,
+  solo_field,
+  width_full,
+  width_half,
+  width_quarter
+} from "../styles.module.scss"
+
+const widthOptions = {
+  full: width_full,
+  half: width_half,
+  quarter: width_quarter
+}
+
+// -------------------------------------------------------- | component
 
 const fieldTypeMap = {
   email: "email",
@@ -35,7 +51,10 @@ const FormFieldText = ({
     type: fieldTypeMap[validation] || "text"
   }
 
-  const classes = classNames(styles.form_field, styles[`width_${width}`], { [styles.solo]: solo })
+  const classes = classNames(form_field, {
+    [solo_field]: solo,
+    [widthOptions[width]]: widthOptions[width]
+  })
 
   return (
     <div className={classes}>

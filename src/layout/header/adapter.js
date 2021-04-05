@@ -28,7 +28,7 @@ const HeaderAdapter = () => {
     settings: { top_nav, main_nav }
   } = data
 
-  return <Header top_navigation={top_nav} main_navigation={main_nav} />
+  return <Header topNavigation={top_nav} mainNavigation={main_nav} />
 }
 
 HeaderAdapter.propTypes = {}

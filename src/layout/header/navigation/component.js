@@ -6,10 +6,10 @@ import Button from "@src/components/button"
 import { Dropdown } from "./dropdown"
 import Link from "@src/components/link"
 
-import * as styles from "./styles.module.scss"
+import { is_active, nav_button, navigation } from "./styles.module.scss"
 
 const Navigation = ({ className, links = [], onClick }) => {
-  const classes = classNames(styles.navigation, className, {})
+  const classes = classNames(navigation, className, {})
 
   return (
     <ul className={classes}>
@@ -22,9 +22,9 @@ const Navigation = ({ className, links = [], onClick }) => {
           )
         } else if (item.button) {
           return (
-            <li className={styles.nav_button} key={index}>
+            <li className={nav_button} key={index}>
               <Button
-                className={classNames(styles[item.className])}
+                className={classNames([item.className])}
                 to={item.url}
                 theme={item.theme}
                 onClick={onClick}
@@ -37,7 +37,7 @@ const Navigation = ({ className, links = [], onClick }) => {
           return (
             <li key={index}>
               <Link
-                activeClassName={styles.is_active}
+                activeClassName={is_active}
                 className={item.className}
                 title={item.title}
                 to={item.url}

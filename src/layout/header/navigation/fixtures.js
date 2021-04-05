@@ -1,6 +1,6 @@
 export default {
   default: {
-    main_navigation: [
+    mainNavigation: [
       { url: "#", label: "Reprehenderit" },
       { url: "#", label: "Officia sint" },
       { url: "#", label: "Veniam" },
@@ -17,7 +17,7 @@ export default {
       },
       { url: "#", label: "Quisque interdum", button: true, className: "button" }
     ],
-    top_navigation: [
+    topNavigation: [
       { url: "#", label: "Duis" },
       { url: "#", label: "Cupidatat" },
       { url: "#", label: "Ullamco" },

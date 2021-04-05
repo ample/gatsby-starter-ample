@@ -8,8 +8,8 @@ describe("Header", () => {
     const tree = renderer
       .create(
         <Header
-          main_navigation={fixtures.default.main_navigation}
-          top_navigation={fixtures.default.top_navigation}
+          mainNavigation={fixtures.default.mainNavigation}
+          topNavigation={fixtures.default.topNavigation}
         />
       )
       .toJSON()

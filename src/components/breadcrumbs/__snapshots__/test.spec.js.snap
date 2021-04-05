@@ -5,7 +5,7 @@ exports[`Breadcrumbs renders correctly 1`] = `
   className="breadcrumbs"
 >
   <li
-    className="only_icon"
+    className="icon_only"
     data-separator="/"
   >
     <a

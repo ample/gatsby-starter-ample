@@ -59,8 +59,17 @@ $radio-button-hover: color.scale(
     }
   }
 
-  &.solo {
+  &.solo_field {
     flex-basis: 100%;
+
+    &.width_full {
+      label,
+      input:not([type='radio']),
+      select,
+      textarea {
+        width: 100%;
+      }
+    }
 
     &.width_half {
       label,

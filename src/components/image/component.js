@@ -6,7 +6,7 @@ import dig from "object-dig"
 import startCase from "lodash/startCase"
 import path from "path"
 
-import * as styles from "./styles.module.scss"
+import { image } from "./styles.module.scss"
 
 export const defaultAltAttribute = (image) => {
   const filename = path.basename(image, path.extname(image))
@@ -14,7 +14,7 @@ export const defaultAltAttribute = (image) => {
 }
 
 const Image = ({ alt, className, src, ...props }) => {
-  const classes = classNames(styles.image, { [className]: className })
+  const classes = classNames(image, { [className]: className })
 
   // TODO: Update Image component to work with new `gatsby-plugin-image`
   console.log("Image src =>", src)

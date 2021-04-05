@@ -5,13 +5,13 @@ import classNames from "classnames"
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
 
-import * as styles from "./styles.module.scss"
+import { dropdown, dropdown_menu, dropdown_trigger, is_showing } from "./styles.module.scss"
 
 const Dropdown = ({ items, label, onClick }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const classes = classNames(styles.dropdown, {
-    [styles.is_showing]: isOpen
+  const classes = classNames(dropdown, {
+    [is_showing]: isOpen
   })
 
   const handleOnClick = () => {
@@ -26,12 +26,12 @@ const Dropdown = ({ items, label, onClick }) => {
       role="button"
       tabIndex={0}
     >
-      <div className={styles.dropdown_trigger}>
+      <div className={dropdown_trigger}>
         {label}
         <SVG name="angle-down" />
       </div>
 
-      <ul className={styles.dropdown_menu}>
+      <ul className={dropdown_menu}>
         {items.map((item, idx) => (
           <li key={idx} className={item.className}>
             <Link to={item.url} onClick={onClick}>

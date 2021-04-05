@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 import GatsbyBackgroundImage from "gatsby-background-image"
 import classNames from "classnames"
 
-import * as styles from "./styles.module.scss"
+import { background_image } from "./styles.module.scss"
 
 const BackgroundImage = ({ children, className, image }) => {
   // Combine wrapping class names.
-  const wrapperClassNames = classNames(className, styles.background_image)
+  const wrapperClassNames = classNames(className, background_image)
   // If there is no image, render a wrapper and the children.
   if (!image) return <div className={wrapperClassNames}>{children}</div>
   // Should return either fluid or fixed if setup properly.

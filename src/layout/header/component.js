@@ -7,9 +7,18 @@ import SVG from "@src/components/svg"
 
 import Navigation from "./navigation"
 
-import * as styles from "./styles.module.scss"
+import {
+  header,
+  logo_container,
+  logo,
+  main_navigation,
+  menu_button,
+  navigation_container,
+  navigation_is_showing,
+  top_navigation
+} from "./styles.module.scss"
 
-const Header = ({ main_navigation, top_navigation }) => {
+const Header = ({ mainNavigation, topNavigation }) => {
   // ------------------------------------------------------ | Mobile Menu
 
   const [menuIsOpen, setMenu] = useState(false)
@@ -26,8 +35,8 @@ const Header = ({ main_navigation, top_navigation }) => {
 
   // ------------------------------------------------------ | Classes
 
-  const classes = classNames(styles.header, {
-    [styles.navigation_is_showing]: menuIsOpen
+  const classes = classNames(header, {
+    [navigation_is_showing]: menuIsOpen
   })
 
   // ------------------------------------------------------ | Component
@@ -35,26 +44,26 @@ const Header = ({ main_navigation, top_navigation }) => {
   return (
     <header className={classes}>
       <div>
-        <div className={styles.logo_container}>
-          <Link className={styles.logo} to="/">
+        <div className={logo_container}>
+          <Link className={logo} to="/">
             <SVG name="logo" />
           </Link>
 
-          <button className={styles.menu_button} onClick={smallScreenMenuClick}>
+          <button className={menu_button} onClick={smallScreenMenuClick}>
             <span>Menu</span>
             {!menuIsOpen ? <SVG name="bars" /> : <SVG name="close" />}
           </button>
         </div>
 
-        <div className={styles.navigation_container}>
+        <div className={navigation_container}>
           <Navigation
-            className={styles.top_navigation}
-            links={top_navigation}
+            className={top_navigation}
+            links={topNavigation}
             onClick={smallScreenMenuClick}
           />
           <Navigation
-            className={styles.main_navigation}
-            links={main_navigation}
+            className={main_navigation}
+            links={mainNavigation}
             onClick={smallScreenMenuClick}
           />
         </div>
@@ -67,12 +76,12 @@ Header.propTypes = {
    * An array of main navigation links.
    * This prop is passed to the LinkList component
    */
-  main_navigation: PropTypes.array.isRequired,
+  mainNavigation: PropTypes.array.isRequired,
   /**
    * An array of links that sit above the main_nav
    * This prop is passed to the LinkList component
    */
-  top_navigation: PropTypes.array
+  topNavigation: PropTypes.array
 }
 
 Header.defaultProps = {}

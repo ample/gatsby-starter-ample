@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import * as styles from "./styles.module.scss"
+import { video } from "./styles.module.scss"
 
 const Video = ({ youtube_id }) => {
   return (
-    <div className={styles.video}>
+    <div className={video}>
       <iframe
         width="560"
         height="315"
