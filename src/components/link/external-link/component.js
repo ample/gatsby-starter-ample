@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const ExternalLink = props => (
+const ExternalLink = (props) => (
   <a
     href={props.to}
     target={props.target}
@@ -17,7 +17,7 @@ ExternalLink.propTypes = {
   /**
    * Text or elements to render inside the link.
    */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /**
    * The "class" attribute of the anchor.
    */

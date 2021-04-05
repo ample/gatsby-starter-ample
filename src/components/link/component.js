@@ -29,7 +29,7 @@ const Link = (props) => {
 Link.propTypes = {
   activeClassName: PropTypes.string,
   activeStyle: PropTypes.object,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   className: PropTypes.string,
   target: PropTypes.string,
   to: PropTypes.string.isRequired,
