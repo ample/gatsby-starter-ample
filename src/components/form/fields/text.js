@@ -94,7 +94,7 @@ FormFieldText.propTypes = {
   /**
    * Controls how wide the field renders on screen.
    */
-  width: PropTypes.oneOf(widthOptions).isRequired
+  width: PropTypes.oneOf(Object.keys(widthOptions)).isRequired
 }
 
 FormFieldText.defaultProps = {}
