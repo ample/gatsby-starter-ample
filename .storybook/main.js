@@ -5,9 +5,48 @@ const postcssConfig = require("../postcss.config")
 module.exports = {
   addons: [
     {
+      name: "@storybook/preset-scss",
+      options: {
+        styleLoaderOptions: {
+          esModule: true,
+          modules: {
+            namedExport: true
+          }
+        },
+        cssLoaderOptions: {
+          importLoaders: 2,
+          esModule: true,
+          modules: {
+            localIdentName: "[local]-[hash:base64:3]",
+            auto: true,
+            namedExport: true,
+            exportLocalsConvention: "dashesOnly"
+          },
+          sourceMap: isDevelopment
+        },
+        postcssLoaderOptions: {
+          implementation: require("postcss"),
+          postcssOptions: {
+            plugins: postcssConfig
+          }
+        },
+        sassLoaderOptions: {
+          additionalData: `@use 'global' as *;`,
+          sassOptions: {
+            includePaths: [path.join(__dirname, "../src/styles")]
+          }
+        }
+      }
+    },
+    {
       name: "@storybook/addon-essentials",
       options: {
-        controls: false
+        controls: false,
+        docs: {
+          options: {
+            configureJSX: true
+          }
+        }
       }
     },
     "@storybook/addon-jest",
@@ -32,8 +71,7 @@ module.exports = {
       // use @babel/plugin-proposal-class-properties for class arrow functions
       require.resolve("@babel/plugin-proposal-class-properties"),
       // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-      require.resolve("babel-plugin-remove-graphql-queries"),
-      require.resolve("babel-plugin-react-docgen")
+      require.resolve("babel-plugin-remove-graphql-queries")
     ]
     // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
     config.resolve.mainFields = ["browser", "module", "main"]
@@ -44,55 +82,13 @@ module.exports = {
         "@plugins": path.resolve(__dirname, "../plugins"),
         "@root": path.resolve(__dirname, "../"),
         "@src": path.resolve(__dirname, "../src")
+      },
+
+      fallback: {
+        crypto: require.resolve("crypto-browserify"),
+        stream: require.resolve("stream-browserify")
       }
     }
-
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: [
-        {
-          loader: "style-loader",
-          options: {
-            esModule: true,
-            modules: {
-              namedExport: true
-            }
-          }
-        },
-        {
-          loader: "css-loader",
-          options: {
-            importLoaders: 2,
-            esModule: true,
-            modules: {
-              localIdentName: "[local]-[hash:base64:3]",
-              auto: true,
-              namedExport: true,
-              exportLocalsConvention: "dashesOnly"
-            },
-            sourceMap: isDevelopment
-          }
-        },
-        {
-          loader: "postcss-loader",
-          options: {
-            postcssOptions: {
-              plugins: postcssConfig
-            }
-          }
-        },
-        {
-          loader: "sass-loader",
-          options: {
-            additionalData: `@use 'global' as *;`,
-            sassOptions: {
-              includePaths: [path.join(__dirname, "../src/styles")]
-            },
-            sourceMap: isDevelopment
-          }
-        }
-      ]
-    })
 
     return config
   }

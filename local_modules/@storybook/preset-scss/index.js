@@ -16,6 +16,7 @@ function webpack(webpackConfig = {}, options = {}) {
   const {
     styleLoaderOptions,
     cssLoaderOptions,
+    postcssLoaderOptions,
     sassLoaderOptions,
     rule = {},
   } = options;
@@ -32,6 +33,7 @@ function webpack(webpackConfig = {}, options = {}) {
           use: [
             ...wrapLoader(require.resolve('style-loader'), styleLoaderOptions),
             ...wrapLoader(require.resolve('css-loader'), cssLoaderOptions),
+            ...wrapLoader(require.resolve('postcss-loader'), postcssLoaderOptions),
             ...wrapLoader(require.resolve('sass-loader'), sassLoaderOptions),
           ],
         },

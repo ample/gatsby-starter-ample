@@ -3,6 +3,7 @@ import { Configuration, RuleSetCondition } from 'webpack';
 interface Options {
   styleLoaderOptions?: object | false;
   cssLoaderOptions?: object | false;
+  postcssLoaderOptions?: object | false;
   sassLoaderOptions?: object | false;
   rule?: RuleSetCondition;
 }
