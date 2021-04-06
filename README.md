@@ -6,11 +6,15 @@ This is the [_Gatsby Starter_](https://www.gatsbyjs.org/docs/creating-a-starter/
 
 To start a new project from this template, run the following command:
 
-    $ gatsby new [PROJECT_NAME] ample/gatsby-starter-ample
+```shell
+gatsby new [PROJECT_NAME] ample/gatsby-starter-ample
+```
 
 Then navigate to the project:
 
-    $ yarn develop
+```shell
+yarn develop
+```
 
 That will start a development server at [http://localhost:8000](http://localhost:8000).
 
@@ -70,6 +74,16 @@ Unfortunately, for seamless integration across the board, we have to configure a
 - `jsconfig.json`
 
 If you wish to add a custom alias to your project, make sure to touch all appropriate config files.
+
+## Storybook
+
+This starter uses [Storybook](https://storybook.js.org/) for documentation, development, and visual testing. To start the server in development, run the `storybook` command:
+
+```shell
+yarn storybook
+```
+
+This will launch a browser at localhost:6006, running storybook. Documentation specific to this project can be found in Storybook. You can also find more information about working with Gatsby within [Ample's Dev Playbook](https://dev-playbook.netlify.com/code/working-with-gatsby).
 
 ## Linters
 
