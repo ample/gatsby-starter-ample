@@ -42,6 +42,6 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   layout: "centered",
   docs: {
-    theme: themes.dark
+    theme: process.env.STORYBOOK_THEME_DARK === true ? themes.dark : themes.light
   }
 }
