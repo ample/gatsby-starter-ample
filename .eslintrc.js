@@ -1,9 +1,10 @@
 module.exports = {
   env: {
-    es6: true,
     browser: true,
-    node: true,
-    jest: true
+    es6: true,
+    jest: true,
+    jsx: true,
+    node: true
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
   globals: {
@@ -17,11 +18,9 @@ module.exports = {
       }
     }
   ],
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    }
+    requireConfigFile: false
   },
   plugins: ["prettier", "jsx-a11y", "jest"],
   rules: {
