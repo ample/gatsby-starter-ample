@@ -1311,7 +1311,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-typescript@npm:^7.12.1, @babel/plugin-transform-typescript@npm:^7.13.0":
+"@babel/plugin-transform-typescript@npm:^7.13.0":
   version: 7.13.0
   resolution: "@babel/plugin-transform-typescript@npm:7.13.0"
   dependencies:
@@ -4807,15 +4807,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@use-it/event-listener@npm:^0.1.2":
-  version: 0.1.6
-  resolution: "@use-it/event-listener@npm:0.1.6"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 7ba9bb306cc25207eb3b67965c176ae892614250dea04d237d2b20222438ce277b4e0b5aececece8212cdcba68fd1b9b5e13bc2d5d3c15a377b664cff6587cde
-  languageName: node
-  linkType: hard
-
 "@webassemblyjs/ast@npm:1.11.0":
   version: 1.11.0
   resolution: "@webassemblyjs/ast@npm:1.11.0"
@@ -6221,26 +6212,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0
   checksum: bba41cc95aa205268fd6b1cc0baab8810b848ac1dac62c7f54e5eab0beed9ad8fe68bec3766137b68d2f6d318bf990876d65d94debaa0627bd63ed09d25e2504
-  languageName: node
-  linkType: hard
-
-"babel-preset-gatsby-package@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "babel-preset-gatsby-package@npm:1.2.0"
-  dependencies:
-    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.12.1
-    "@babel/plugin-proposal-optional-chaining": ^7.12.1
-    "@babel/plugin-syntax-dynamic-import": ^7.8.3
-    "@babel/plugin-transform-runtime": ^7.12.1
-    "@babel/plugin-transform-typescript": ^7.12.1
-    "@babel/preset-env": ^7.12.1
-    "@babel/preset-flow": ^7.12.1
-    "@babel/preset-react": ^7.12.5
-    babel-plugin-dynamic-import-node: ^2.3.3
-    core-js: ^3.7.0
-  peerDependencies:
-    "@babel/core": ^7.11.6
-  checksum: 441e42baaa3480dff076fd784271895bc6f1511f7d14670c77bc54ff4b211caf5b5680a166848d1f45a4493bfb4ac427571910658b422516219bb8539d69b284
   languageName: node
   linkType: hard
 
@@ -8054,7 +8025,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.0.4, core-js@npm:^3.6.5, core-js@npm:^3.7.0, core-js@npm:^3.8.2, core-js@npm:^3.9.0":
+"core-js@npm:^3.0.4, core-js@npm:^3.6.5, core-js@npm:^3.8.2, core-js@npm:^3.9.0":
   version: 3.10.0
   resolution: "core-js@npm:3.10.0"
   checksum: d8bb20f7da9fdd944057cb41938153a7c4e471fb7d529e37958e32c7a20ab9506abbd03932750c27c8fd02de03a8e4775ba68252506a0dd42dda5404901ae9f1
@@ -11921,16 +11892,6 @@ fsevents@^1.2.7:
   peerDependencies:
     gatsby: ^3.0.0-next.0
   checksum: 2d5ea1028d0cb73398305bf91f4f57cab1f2a4e7512c785c4d589112f9b3025c054ce403b3e34275c4eeceae10c9ef65185be45eb367b5f92ab1214bf64fbce8
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-web-font-loader@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "gatsby-plugin-web-font-loader@npm:1.0.4"
-  dependencies:
-    babel-runtime: ^6.26.0
-    webfontloader: ^1.6.28
-  checksum: 4ed4678a84bd505737e21714a8092a54d0dee3c620a94971e341da1dfed9255857e87aeed8255da1c580cb7ddb754955728b758e64081595f31733c1be8ba41b
   languageName: node
   linkType: hard
 
@@ -22734,7 +22695,6 @@ resolve@^2.0.0-next.3:
     babel-jest: ^26.6.3
     babel-loader: ^8.2.2
     babel-preset-gatsby: ^1.2.0
-    babel-preset-gatsby-package: ^1.2.0
     browserslist: latest
     classnames: ^2.3.1
     contentful: ^8.2.1
@@ -22758,7 +22718,6 @@ resolve@^2.0.0-next.3:
     gatsby-plugin-react-helmet: ^4.2.0
     gatsby-plugin-sharp: ^3.2.0
     gatsby-plugin-sitemap: ^3.2.0
-    gatsby-plugin-web-font-loader: ^1.0.4
     gatsby-remark-images: ^4.2.0
     gatsby-remark-relative-images: ^2.0.2
     gatsby-source-filesystem: ^3.2.0
@@ -22797,7 +22756,6 @@ resolve@^2.0.0-next.3:
     sass: ^1.32.8
     sass-loader: ^11.0.1
     short-uuid: ^4.1.0
-    slugify: ^1.4.6
     storybook-dark-mode: ^1.0.7
     style-loader: ^2.0.0
     stylelint: ^13.12.0
@@ -22805,7 +22763,6 @@ resolve@^2.0.0-next.3:
     stylelint-order: ^4.1.0
     stylelint-scss: ^3.19.0
     swiper: ^6.5.3
-    use-dark-mode: ^2.3.1
     yargs: ^15.4.1
   languageName: unknown
   linkType: soft
@@ -22845,7 +22802,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"slugify@npm:^1.4.4, slugify@npm:^1.4.6":
+"slugify@npm:^1.4.4":
   version: 1.5.0
   resolution: "slugify@npm:1.5.0"
   checksum: 049cb08bda13e3adfa0eb05e6a6d26cfa76526d9ce41b455f48833e1d3c99940683047618af9b864a93cd544ca1f4b795b524414d3725c71caac7f9f8f7374f1
@@ -25453,18 +25410,6 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"use-dark-mode@npm:^2.3.1":
-  version: 2.3.1
-  resolution: "use-dark-mode@npm:2.3.1"
-  dependencies:
-    "@use-it/event-listener": ^0.1.2
-    use-persisted-state: ^0.3.0
-  peerDependencies:
-    react: ^16.8.0
-  checksum: ea12e45eee0025461fcb5f356f0ce46ef668364a10eeca9105a09326c72c943ca849d3a552b81468f4daeafca1a36d12c2813bef9f9d4ee6cc66de3f724d04c3
-  languageName: node
-  linkType: hard
-
 "use-isomorphic-layout-effect@npm:^1.0.0":
   version: 1.1.1
   resolution: "use-isomorphic-layout-effect@npm:1.1.1"
@@ -25488,17 +25433,6 @@ resolve@^2.0.0-next.3:
     "@types/react":
       optional: true
   checksum: 4d0e0543f16cb64cf0f01c3db22f2fdb67beca1bdd2a14d255300f4f106e9bf960d9b7605641ee7ad5faf5fc64bce721f8686fbb7d6ecf413999ed2b6a17aea5
-  languageName: node
-  linkType: hard
-
-"use-persisted-state@npm:^0.3.0":
-  version: 0.3.3
-  resolution: "use-persisted-state@npm:0.3.3"
-  dependencies:
-    "@use-it/event-listener": ^0.1.2
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0
-  checksum: c767b3d24a611a6b919bbfa2ef9fc1743bd7fe015731d32e9e291f1d80c29f13f66758cc51a800f7a300455e77115110eaec07c4cc77e1e3a2ab2f97a7d6657f
   languageName: node
   linkType: hard
 
@@ -25838,13 +25772,6 @@ resolve@^2.0.0-next.3:
   version: 1.1.4
   resolution: "web-namespaces@npm:1.1.4"
   checksum: 0899d2a4a088b15761b6234ff6610f9598112d58f27adad86f7881ad51631317b47033bfa84cdeb62a37c8b6c3ece618f4ff720fd42c99f4907a1d9390c9dae0
-  languageName: node
-  linkType: hard
-
-"webfontloader@npm:^1.6.28":
-  version: 1.6.28
-  resolution: "webfontloader@npm:1.6.28"
-  checksum: fea984c451eecc1566a13bdcaf04d50b0f38a032ed7c4b6d81d126f0b5434ea16a5e70d38075e21a8f6d300ff84637c329244a522f40719ebfc86bbb791f6ae3
   languageName: node
   linkType: hard
 
