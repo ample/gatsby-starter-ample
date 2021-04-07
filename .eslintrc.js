@@ -3,7 +3,6 @@ module.exports = {
     browser: true,
     es6: true,
     jest: true,
-    jsx: true,
     node: true
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
@@ -18,11 +17,14 @@ module.exports = {
       }
     }
   ],
-  parser: "@babel/eslint-parser",
+  parser: "babel-eslint",
   parserOptions: {
-    requireConfigFile: false
+    requireConfigFile: false,
+    ecmaFeatures: {
+      jsx: true
+    }
   },
-  plugins: ["prettier", "jsx-a11y", "jest"],
+  plugins: ["prettier", "jest", "jsx-a11y", "react"],
   rules: {
     "react/no-unescaped-entities": "off",
     "react/prop-types": [2, { ignore: ["className"] }]
