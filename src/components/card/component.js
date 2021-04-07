@@ -65,7 +65,8 @@ Card.propTypes = {
    */
   button: PropTypes.exact({
     label: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    theme: PropTypes.string
   }),
   /**
    * Specifies the heading
