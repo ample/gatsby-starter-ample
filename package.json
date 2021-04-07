@@ -101,8 +101,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --log-pages",
-    "build:with-storybook": "yarn build && yarn storybook:build && mv storybook-static public/storybook",
+    "build": "gatsby build",
+    "build:with-storybook": "yarn build --log-pages && yarn storybook:build && mv storybook-static public/storybook",
     "clean": "gatsby clean",
     "develop": "GATSBY_DEBUG_MEDIA_QUERIES=true yarn gatsby develop -H 0.0.0.0",
     "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0",
