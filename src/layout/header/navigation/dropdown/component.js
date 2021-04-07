@@ -1,28 +1,22 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
 
-import { dropdown, dropdown_menu, dropdown_trigger, is_showing } from "./styles.module.scss"
+import { dropdown_menu, dropdown_trigger, dropdown, is_showing } from "./styles.module.scss"
 
-const Dropdown = ({ items, label, onClick }) => {
-  const [isOpen, setIsOpen] = useState(false)
-
+const Dropdown = ({ handleDropdownClick, items, label, onClick, openDropdown }) => {
   const classes = classNames(dropdown, {
-    [is_showing]: isOpen
+    [is_showing]: label === openDropdown
   })
-
-  const handleOnClick = () => {
-    setIsOpen(!isOpen)
-  }
 
   return (
     <span
       className={classes}
-      onClick={handleOnClick}
-      onKeyPress={handleOnClick}
+      onKeyPress={() => handleDropdownClick(label)}
+      onClick={() => handleDropdownClick(label)}
       role="button"
       tabIndex={0}
     >
@@ -50,13 +44,21 @@ Dropdown.propTypes = {
    */
   items: PropTypes.array.isRequired,
   /**
+   * A onClick function passed down from the navigation component
+   */
+  handleDropdownClick: PropTypes.func,
+  /**
    * Dropdown label
    */
   label: PropTypes.string.isRequired,
   /**
    * A onClick function passed down from the navigation component
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * Dropdown state passed down from the navigation component
+   */
+  openDropdown: PropTypes.string
 }
 
 export default Dropdown

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
+import { useMediaQuery } from "react-responsive"
 
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
@@ -9,6 +10,7 @@ import Navigation from "./navigation"
 
 import {
   header,
+  is_desktop,
   logo_container,
   logo,
   main_navigation_container,
@@ -24,18 +26,33 @@ const Header = ({ main_navigation, top_navigation }) => {
   const [menuIsOpen, setMenu] = useState(false)
 
   const smallScreenMenuClick = () => {
-    setMenu(!menuIsOpen)
-
-    if (menuIsOpen === false) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.removeProperty("overflow")
+    if (isMobileNavigation) {
+      setMenu(!menuIsOpen)
+      lockScroll()
     }
   }
+
+  const lockScroll = () => {
+    if (menuIsOpen === false) {
+      document.documentElement.style.overflow = "hidden"
+    } else {
+      document.documentElement.style.removeProperty("overflow")
+    }
+  }
+
+  const handleQueryChange = (match) => {
+    if (!match) {
+      setMenu(false)
+      lockScroll()
+    }
+  }
+
+  const isMobileNavigation = useMediaQuery({ query: "(max-width: 65em)" }, null, handleQueryChange)
 
   // ------------------------------------------------------ | Classes
 
   const classes = classNames(header, {
+    [is_desktop]: !isMobileNavigation,
     [navigation_is_showing]: menuIsOpen
   })
 

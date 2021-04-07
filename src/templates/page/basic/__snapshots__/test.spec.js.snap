@@ -3,7 +3,7 @@
 exports[`BasicPage renders correctly 1`] = `
 Array [
   <header
-    className="header"
+    className="header is_desktop"
   >
     <div>
       <div
@@ -47,195 +47,199 @@ Array [
       <div
         className="navigation_container"
       >
-        <ul
-          className="navigation top_navigation"
-        >
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Duis
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Cupidatat
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Ullamco
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Labore
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Consectetur
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Pariatur
-            </a>
-          </li>
-        </ul>
-        <ul
-          className="navigation main_navigation"
-        >
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Reprehenderit
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Officia sint
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Veniam
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
-            >
-              Consequat
-            </a>
-          </li>
-          <li>
-            <span
-              className="dropdown"
-              onClick={[Function]}
-              onKeyPress={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <div
-                className="dropdown_trigger"
-              >
-                Suspendisse semper
-                <svg
-                  viewBox="0 0 256 512"
-                >
-                  <path
-                    d="M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z"
-                  />
-                </svg>
-              </div>
-              <ul
-                className="dropdown_menu"
-              >
-                <li>
-                  <a
-                    className="link"
-                    href="/"
-                    onClick={[Function]}
-                  >
-                    Vestibulum vitae
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="link is_external"
-                    href="#"
-                    onClick={[Function]}
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    Pellentesque tempor venenatis
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="link is_external"
-                    href="#"
-                    onClick={[Function]}
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    Fusce molestie
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="link is_external"
-                    href="#"
-                    onClick={[Function]}
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    Etiam in lacinia dolor
-                  </a>
-                </li>
-              </ul>
-            </span>
-          </li>
-          <li
-            className="nav_button"
+        <div>
+          <ul
+            className="navigation top_navigation_container"
           >
-            <a
-              className="button button theme_default"
-              href="#"
-              onClick={[Function]}
-              rel="noopener"
-              target="_blank"
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Duis
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Cupidatat
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Ullamco
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Labore
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Consectetur
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Pariatur
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul
+            className="navigation main_navigation_container"
+          >
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Reprehenderit
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Officia sint
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Veniam
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Consequat
+              </a>
+            </li>
+            <li>
+              <span
+                className="dropdown"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <div
+                  className="dropdown_trigger"
+                >
+                  Suspendisse semper
+                  <svg
+                    viewBox="0 0 256 512"
+                  >
+                    <path
+                      d="M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z"
+                    />
+                  </svg>
+                </div>
+                <ul
+                  className="dropdown_menu"
+                >
+                  <li>
+                    <a
+                      className="link"
+                      href="/"
+                      onClick={[Function]}
+                    >
+                      Vestibulum vitae
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="link is_external"
+                      href="#"
+                      onClick={[Function]}
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      Pellentesque tempor venenatis
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="link is_external"
+                      href="#"
+                      onClick={[Function]}
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      Fusce molestie
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="link is_external"
+                      href="#"
+                      onClick={[Function]}
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      Etiam in lacinia dolor
+                    </a>
+                  </li>
+                </ul>
+              </span>
+            </li>
+            <li
+              className="nav_button"
             >
-              Quisque interdum
-            </a>
-          </li>
-        </ul>
+              <a
+                className="button button theme_default"
+                href="#"
+                onClick={[Function]}
+                rel="noopener"
+                target="_blank"
+              >
+                Quisque interdum
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>,

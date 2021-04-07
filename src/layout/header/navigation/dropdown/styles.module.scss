@@ -8,7 +8,7 @@
     background-color: transparent;
     margin-right: 12px;
     position: relative;
-    transition: background-color 0ms ease-out 0.5s;
+    transition: background-color 200ms ease-out;
   }
 
   &:focus {
@@ -18,7 +18,6 @@
   &.is_showing {
     @include media($full-navigation) {
       background-color: var(--color-blueprint-light);
-      transition: background-color 0.3s ease-in;
     }
   }
 }
@@ -30,9 +29,10 @@
   display: flex;
   flex-wrap: wrap;
   padding: 18px 0 19px;
+  transition: max-height 200ms ease-out;
 
   @include media($full-navigation) {
-    padding: 11px 12px 16.5px;
+    padding: 11px 12px 15.5px;
   }
 
   svg {
@@ -43,20 +43,20 @@
   }
 
   &::after {
-    background-color: var(--color-blueprint);
     bottom: 0;
     content: '';
     display: block;
     height: 1px;
     position: relative;
-    top: 10px;
-    transition: width 400ms ease-in-out;
-    width: 0%;
+    top: 9px;
+    transition: width 200ms ease-in-out;
+    width: 1%;
   }
 
   .is_showing & {
     &::after {
       @include media($full-navigation) {
+        background-color: var(--color-blueprint);
         width: 100%;
       }
     }
@@ -73,7 +73,7 @@
   max-height: 0;
   overflow: hidden;
   padding-left: 22px;
-  transition: max-height 500ms ease-in;
+  transition: max-height 200ms ease-out;
 
   @include media($full-navigation) {
     background-color: var(--color-blueprint-light);
@@ -87,12 +87,12 @@
   }
 
   .is_showing & {
-    max-height: 1000px;
-    transition: max-height 500ms ease-out;
+    max-height: 400px;
+    transition: max-height 200ms ease-out;
 
     @include media($full-navigation) {
       max-height: 600px;
-      transition: max-height 0.5s ease-in 0.2s;
+      transition: max-height 200ms ease-in 200ms;
     }
   }
 

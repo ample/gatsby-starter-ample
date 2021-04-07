@@ -22,7 +22,15 @@ main_nav:
 - label: "Officia sint"
   url: "#"
   button: false
-  children: []
+  children:
+  - label: "Vestibulum vitae"
+    url: "#"
+  - label: "Pellentesque tempor venenatis"
+    url: "#"
+  - label: "Fusce molestie"
+    url: "#"
+  - label: "Etiam in lacinia dolor"
+    url: "#"
 - label: "Veniam"
   url: "/"
   button: false
