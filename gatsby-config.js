@@ -30,6 +30,7 @@ module.exports = {
     // TODO: fix gatsby-ample-seo to work with Gatsby 3
     // `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
+    `gatsby-ample-sass`,
     {
       resolve: `gatsby-ample-redirects`,
       options: {

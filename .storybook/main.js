@@ -50,7 +50,8 @@ module.exports = {
       }
     },
     "@storybook/addon-jest",
-    "@storybook/addon-a11y"
+    "@storybook/addon-a11y",
+    "storybook-dark-mode"
   ],
   core: {
     builder: "webpack5"
