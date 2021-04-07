@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import classNames from "classnames"
 import dig from "object-dig"
 import startCase from "lodash/startCase"
@@ -19,19 +19,20 @@ const Image = ({ alt, className, src, ...props }) => {
   // TODO: Update Image component to work with new `gatsby-plugin-image`
 
   // ---------------------------------------- | Gastby Image
-
-  if (dig(src, "childImageSharp", "fluid") || dig(src, "childImageSharp", "fixed")) {
-    let imageName = dig(src, "childImageSharp", "fluid", "src")
-
-    if (dig(src, "childImageSharp", "fixed")) {
-      imageName = dig(src, "childImageSharp", "fixed", "src")
-    }
+  const gatsbyImageData = dig(src, "childImageSharp", "gatsbyImageData")
+  if (gatsbyImageData) {
+    const gImage = getImage(src)
+    const imageName = dig(gatsbyImageData, "images", "fallback", "src")
+    const width = dig(gatsbyImageData, "width")
+    const height = dig(gatsbyImageData, "height")
 
     return (
       <GatsbyImage
         className={classes}
         alt={alt || defaultAltAttribute(imageName)}
-        {...src.childImageSharp}
+        image={gImage}
+        width={width}
+        height={height}
       />
     )
   }
