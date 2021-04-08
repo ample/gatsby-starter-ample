@@ -1,4 +1,10 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+if [ -f ~/.zsh_profile ]; then
+  source ~/.zsh_profile
+elif [ -f ~/.bash_profile ]; then
+  source ~/.bash_profile
+fi
+
 yarn run lint && yarn run test
