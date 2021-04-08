@@ -104,7 +104,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "build:with_storybook": "yarn build --log-pages && yarn storybook:build && mv storybook-static storybook && mv storybook public/static/",
+    "build:with_storybook": "yarn build --log-pages && rm -rf public/static/storybook && yarn storybook:build",
     "clean": "gatsby clean",
     "develop": "GATSBY_DEBUG_MEDIA_QUERIES=true yarn gatsby develop -H 0.0.0.0",
     "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0",
@@ -113,7 +113,7 @@
     "netlify:dev": "netlify dev",
     "postinstall": "husky install",
     "serve": "gatsby serve",
-    "storybook:build": "yarn run test:generate_output && build-storybook -c .storybook",
+    "storybook:build": "yarn run test:generate_output && build-storybook -c .storybook && mv storybook-static public/static/storybook",
     "storybook": "yarn run test:generate_output && BROWSER=none start-storybook -s ./static -p 6006 --no-manager-cache",
     "test:generate_output": "jest --json --outputFile=.jest-test-results.json --silent",
     "test:update": "yarn test --updateSnapshot",
