@@ -1,5 +1,3 @@
-@use '../../styles/global' as *;
-
 $column-gutter: 40px;
 
 .column {
@@ -7,23 +5,23 @@ $column-gutter: 40px;
   margin-right: $column-gutter / 2;
   width: 100%;
 
-  &.col_width_1\/4 {
+  &.col_width_one_fourth {
     width: calc(25% - #{$column-gutter});
   }
 
-  &.col_width_1\/3 {
+  &.col_width_one_third {
     width: calc(33.333% - #{$column-gutter});
   }
 
-  &.col_width_1\/2 {
+  &.col_width_one_half {
     width: calc(50% - #{$column-gutter});
   }
 
-  &.col_width_2\/3 {
+  &.col_width_two_thirds {
     width: calc(66.666% - #{$column-gutter});
   }
 
-  &.col_width_3\/4 {
+  &.col_width_three_fourths {
     width: calc(75% - #{$column-gutter});
   }
 }

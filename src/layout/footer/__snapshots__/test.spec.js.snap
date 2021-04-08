@@ -30,10 +30,10 @@ exports[`Footer renders correctly 1`] = `
         </a>
       </div>
       <nav
-        className="menus"
+        className="menus_container"
       >
         <ul
-          className="link_list menu"
+          className="link_list menu_container"
         >
           <li>
             <strong>
@@ -78,7 +78,7 @@ exports[`Footer renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          className="link_list menu"
+          className="link_list menu_container"
         >
           <li>
             <strong>
@@ -158,7 +158,7 @@ exports[`Footer renders correctly 1`] = `
         </a>
       </nav>
       <ul
-        className="link_list policy_links"
+        className="link_list policy_links_container"
       >
         <li>
           <a
@@ -180,7 +180,7 @@ exports[`Footer renders correctly 1`] = `
         </li>
       </ul>
       <small
-        className="copyright"
+        className="copyright_container"
       >
         © 
         2020, All Rights Reserved

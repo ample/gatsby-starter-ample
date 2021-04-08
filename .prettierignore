@@ -6,6 +6,9 @@ node_modules/
 package-lock.json
 yarn.lock
 
+# local node modules
+local_modules/
+
 # Build directory
 public
 

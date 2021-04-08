@@ -1,9 +1,9 @@
 module.exports = {
   env: {
-    es6: true,
     browser: true,
-    node: true,
-    jest: true
+    es6: true,
+    jest: true,
+    node: true
   },
   extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
   globals: {
@@ -19,11 +19,12 @@ module.exports = {
   ],
   parser: "babel-eslint",
   parserOptions: {
+    requireConfigFile: false,
     ecmaFeatures: {
       jsx: true
     }
   },
-  plugins: ["prettier", "jsx-a11y", "jest"],
+  plugins: ["prettier", "jest", "jsx-a11y", "react"],
   rules: {
     "react/no-unescaped-entities": "off",
     "react/prop-types": [2, { ignore: ["className"] }]

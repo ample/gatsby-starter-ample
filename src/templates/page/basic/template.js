@@ -3,10 +3,8 @@ import PropTypes from "prop-types"
 
 import Layout from "@src/layout"
 
-import styles from "./styles.module.scss"
-
 const BasicPage = ({ body, children }) => (
-  <Layout className={styles.basic_page}>
+  <Layout>
     {children}
     {body && <div dangerouslySetInnerHTML={{ __html: body }} />}
   </Layout>

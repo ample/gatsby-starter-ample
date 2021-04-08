@@ -1,18 +1,16 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
+import { debug, is_showing, debug_media_queries } from "./styles.module.scss"
 
 const DebugMediaQueries = ({ isShowing }) => {
-  if (isShowing !== "true") return null
-
   const [isOpen, setOpen] = useState(false)
 
-  const classes = classNames(styles.debug, isOpen, {
-    [styles.is_showing]: isOpen
+  if (isShowing !== "true") return null
+
+  const classes = classNames(debug, {
+    [is_showing]: isOpen
   })
 
   const handleClick = () => {
@@ -20,8 +18,8 @@ const DebugMediaQueries = ({ isShowing }) => {
   }
 
   return (
-    <div className={classes} onClick={handleClick}>
-      <div className={styles.debug_media_queries} />
+    <div className={classes} onClick={handleClick} aria-hidden="true">
+      <div className={debug_media_queries} />
     </div>
   )
 }

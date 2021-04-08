@@ -5,12 +5,22 @@ import classNames from "classnames"
 import Link from "../link"
 import SVG from "../svg"
 
-import styles from "./styles.module.scss"
+// -------------------------------------------------------- | styles
+
+import { button, theme_arrow, theme_default, theme_outline } from "./styles.module.scss"
+
+const themeOptions = {
+  arrow: theme_arrow,
+  default: theme_default,
+  outline: theme_outline
+}
+
+// -------------------------------------------------------- | component
 
 const Button = ({ children, className, onClick, theme, to }) => {
-  const classes = classNames(styles.button, {
+  const classes = classNames(button, {
     [className]: className,
-    [styles[`theme_${theme}`]]: theme
+    [themeOptions[theme]]: themeOptions[theme]
   })
 
   return (
@@ -37,7 +47,7 @@ Button.propTypes = {
   /**
    * Specifies the theme of button
    */
-  theme: PropTypes.oneOf(["arrow", "default", "outline"]),
+  theme: PropTypes.oneOf(Object.keys(themeOptions)),
   /**
    * The href attribute for the link rendered to the screen.
    */

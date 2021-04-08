@@ -2,6 +2,7 @@
 
 exports[`DebugMediaQueries renders correctly 1`] = `
 <div
+  aria-hidden="true"
   className="debug"
   onClick={[Function]}
 >

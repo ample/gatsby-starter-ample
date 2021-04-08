@@ -1,13 +1,24 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
+import { useMediaQuery } from "react-responsive"
 
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
 
 import Navigation from "./navigation"
 
-import styles from "./styles.module.scss"
+import {
+  header,
+  is_desktop,
+  logo_container,
+  logo,
+  main_navigation_container,
+  menu_button,
+  navigation_container,
+  navigation_is_showing,
+  top_navigation_container
+} from "./styles.module.scss"
 
 const Header = ({ main_navigation, top_navigation }) => {
   // ------------------------------------------------------ | Mobile Menu
@@ -15,19 +26,34 @@ const Header = ({ main_navigation, top_navigation }) => {
   const [menuIsOpen, setMenu] = useState(false)
 
   const smallScreenMenuClick = () => {
-    setMenu(!menuIsOpen)
-
-    if (menuIsOpen === false) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.removeProperty("overflow")
+    if (isMobileNavigation) {
+      setMenu(!menuIsOpen)
+      lockScroll()
     }
   }
 
+  const lockScroll = () => {
+    if (menuIsOpen === false) {
+      document.documentElement.style.overflow = "hidden"
+    } else {
+      document.documentElement.style.removeProperty("overflow")
+    }
+  }
+
+  const handleQueryChange = (match) => {
+    if (!match) {
+      setMenu(false)
+      lockScroll()
+    }
+  }
+
+  const isMobileNavigation = useMediaQuery({ query: "(max-width: 65em)" }, null, handleQueryChange)
+
   // ------------------------------------------------------ | Classes
 
-  const classes = classNames(styles.header, {
-    [styles.navigation_is_showing]: menuIsOpen
+  const classes = classNames(header, {
+    [is_desktop]: !isMobileNavigation,
+    [navigation_is_showing]: menuIsOpen
   })
 
   // ------------------------------------------------------ | Component
@@ -35,25 +61,25 @@ const Header = ({ main_navigation, top_navigation }) => {
   return (
     <header className={classes}>
       <div>
-        <div className={styles.logo_container}>
-          <Link className={styles.logo} to="/">
+        <div className={logo_container}>
+          <Link className={logo} to="/">
             <SVG name="logo" />
           </Link>
 
-          <button className={styles.menu_button} onClick={smallScreenMenuClick}>
+          <button className={menu_button} onClick={smallScreenMenuClick}>
             <span>Menu</span>
             {!menuIsOpen ? <SVG name="bars" /> : <SVG name="close" />}
           </button>
         </div>
 
-        <div className={styles.navigation_container}>
+        <div className={navigation_container}>
           <Navigation
-            className={styles.top_navigation}
+            className={top_navigation_container}
             links={top_navigation}
             onClick={smallScreenMenuClick}
           />
           <Navigation
-            className={styles.main_navigation}
+            className={main_navigation_container}
             links={main_navigation}
             onClick={smallScreenMenuClick}
           />

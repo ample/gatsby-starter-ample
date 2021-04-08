@@ -4,10 +4,8 @@ import PropTypes from "prop-types"
 import Block from "@src/components/block"
 import Layout from "@src/layout"
 
-import styles from "./styles.module.scss"
-
 const FlexiblePage = ({ children, blocks }) => (
-  <Layout className={styles.page}>
+  <Layout>
     {children}
     {blocks.map((block, idx) => (
       <Block key={idx} {...block} />

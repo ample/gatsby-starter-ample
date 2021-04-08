@@ -1,35 +1,38 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import classNames from "classnames"
 import dig from "object-dig"
 import startCase from "lodash/startCase"
 import path from "path"
 
-import styles from "./styles.module.scss"
+import { image } from "./styles.module.scss"
 
-export const defaultAltAttribute = image => {
+export const defaultAltAttribute = (image) => {
   const filename = path.basename(image, path.extname(image))
   return startCase(filename)
 }
 
 const Image = ({ alt, className, src, ...props }) => {
-  const classes = classNames(styles.image, { [className]: className })
+  const classes = classNames(image, { [className]: className })
+
+  // TODO: Update Image component to work with new `gatsby-plugin-image`
 
   // ---------------------------------------- | Gastby Image
-
-  if (dig(src, "childImageSharp", "fluid") || dig(src, "childImageSharp", "fixed")) {
-    let imageName = dig(src, "childImageSharp", "fluid", "src")
-
-    if (dig(src, "childImageSharp", "fixed")) {
-      imageName = dig(src, "childImageSharp", "fixed", "src")
-    }
+  const gatsbyImageData = dig(src, "childImageSharp", "gatsbyImageData")
+  if (gatsbyImageData) {
+    const gImage = getImage(src)
+    const imageName = dig(gatsbyImageData, "images", "fallback", "src")
+    const width = dig(gatsbyImageData, "width")
+    const height = dig(gatsbyImageData, "height")
 
     return (
-      <Img
+      <GatsbyImage
         className={classes}
         alt={alt || defaultAltAttribute(imageName)}
-        {...src.childImageSharp}
+        image={gImage}
+        width={width}
+        height={height}
       />
     )
   }

@@ -4,9 +4,28 @@ import classNames from "classnames"
 import parameterize from "parameterize-string"
 
 import Label from "./label"
-import { selectAppearanceOptions, widthOptions } from "./__config__"
+import { selectAppearanceOptions } from "./__config__"
 
-import styles from "../styles.module.scss"
+// -------------------------------------------------------- | styles
+
+import {
+  circle,
+  form_field,
+  radio_button,
+  radio_buttons,
+  radio,
+  solo_field,
+  width_half,
+  width_quarter
+} from "../styles.module.scss"
+
+const widthOptions = {
+  full: null,
+  half: width_half,
+  quarter: width_quarter
+}
+
+// -------------------------------------------------------- | component
 
 const FormFieldSelect = ({
   appearance,
@@ -18,7 +37,7 @@ const FormFieldSelect = ({
   solo,
   width
 }) => {
-  const handleChange = event => {
+  const handleChange = (event) => {
     return formHandler(name, event.target.value)
   }
 
@@ -43,13 +62,13 @@ const FormFieldSelect = ({
     )
   } else if (appearance === "radio") {
     fieldHtml = (
-      <div className={styles.radio_buttons}>
+      <div className={radio_buttons}>
         {options.map((option, idx) => {
           const id = `${name}-${parameterize(option)}`
           return (
-            <div key={idx} className={styles.radio_button}>
+            <div key={idx} className={radio_button}>
               <input
-                className={styles.radio}
+                className={radio}
                 type="radio"
                 id={id}
                 name={name}
@@ -57,7 +76,7 @@ const FormFieldSelect = ({
                 onChange={handleChange}
               />
               <label htmlFor={id}>{option}</label>
-              <div className={styles.circle}></div>
+              <div className={circle}></div>
             </div>
           )
         })}
@@ -65,7 +84,10 @@ const FormFieldSelect = ({
     )
   }
 
-  const classes = classNames(styles.form_field, styles[`width_${width}`], { [styles.solo]: solo })
+  const classes = classNames(form_field, {
+    [solo_field]: solo,
+    [widthOptions[width]]: widthOptions[width]
+  })
 
   return (
     <div className={classes}>
@@ -107,7 +129,7 @@ FormFieldSelect.propTypes = {
   /**
    * Controls how wide the field renders on screen.
    */
-  width: PropTypes.oneOf(widthOptions).isRequired
+  width: PropTypes.oneOf(Object.keys(widthOptions)).isRequired
 }
 
 FormFieldSelect.defaultProps = {}

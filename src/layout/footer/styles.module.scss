@@ -1,4 +1,4 @@
-@use '../../styles/global' as *;
+// --------------------------------------------------------
 
 .footer {
   background-color: var(--color-blueprint-light);
@@ -40,7 +40,7 @@
 
 // -------------------------------------------------------- / menus
 
-.menus {
+.menus_container {
   @include media($x-small) {
     display: flex;
     flex-wrap: wrap;
@@ -51,7 +51,7 @@
   }
 }
 
-.menu {
+.menu_container {
   margin-bottom: 30px;
 
   &:last-of-type {
@@ -85,14 +85,14 @@
 
 // -------------------------------------------------------- / policy and copyright
 
-.policy_links,
-.copyright {
+.policy_links_container,
+.copyright_container {
   font-size: 12px;
   justify-content: center;
   text-align: center;
 }
 
-.policy_links {
+.policy_links_container {
   flex-direction: row;
   margin-bottom: 4px;
 
@@ -117,6 +117,6 @@
   }
 }
 
-.copyright {
+.copyright_container {
   display: block;
 }

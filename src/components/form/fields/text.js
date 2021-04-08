@@ -3,9 +3,19 @@ import PropTypes from "prop-types"
 import classNames from "classnames"
 
 import Label from "./label"
-import { textAppearanceOptions, textValidationOptions, widthOptions } from "./__config__"
+import { textAppearanceOptions, textValidationOptions } from "./__config__"
 
-import styles from "../styles.module.scss"
+// -------------------------------------------------------- | styles
+
+import { form_field, solo_field, width_half, width_quarter } from "../styles.module.scss"
+
+const widthOptions = {
+  full: null,
+  half: width_half,
+  quarter: width_quarter
+}
+
+// -------------------------------------------------------- | component
 
 const fieldTypeMap = {
   email: "email",
@@ -23,7 +33,7 @@ const FormFieldText = ({
   validation,
   width
 }) => {
-  const handleChange = event => {
+  const handleChange = (event) => {
     return formHandler(name, event.target.value)
   }
 
@@ -35,7 +45,10 @@ const FormFieldText = ({
     type: fieldTypeMap[validation] || "text"
   }
 
-  const classes = classNames(styles.form_field, styles[`width_${width}`], { [styles.solo]: solo })
+  const classes = classNames(form_field, {
+    [solo_field]: solo,
+    [widthOptions[width]]: widthOptions[width]
+  })
 
   return (
     <div className={classes}>
@@ -81,7 +94,7 @@ FormFieldText.propTypes = {
   /**
    * Controls how wide the field renders on screen.
    */
-  width: PropTypes.oneOf(widthOptions).isRequired
+  width: PropTypes.oneOf(Object.keys(widthOptions)).isRequired
 }
 
 FormFieldText.defaultProps = {}

@@ -7,29 +7,29 @@ import { isGatsbyLink } from "./helpers"
 import ExternalLink from "./external-link"
 import InternalLink from "./internal-link"
 
-import styles from "./styles.module.scss"
+import { link, is_external } from "./styles.module.scss"
 
-const Link = props => {
-  const classes = classNames(styles.link, {
+const Link = (props) => {
+  const classes = classNames(link, {
     [props.className]: props.className,
-    [styles[`is_external`]]: !isGatsbyLink(props.to)
+    [[is_external]]: !isGatsbyLink(props.to)
   })
 
-  let link
+  let linkComponent
 
   if (isGatsbyLink(props.to)) {
-    link = <InternalLink className={classes} {...props} />
+    linkComponent = <InternalLink className={classes} {...props} />
   } else {
-    link = <ExternalLink className={classes} {...props} />
+    linkComponent = <ExternalLink className={classes} {...props} />
   }
 
-  return link
+  return linkComponent
 }
 
 Link.propTypes = {
   activeClassName: PropTypes.string,
   activeStyle: PropTypes.object,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   className: PropTypes.string,
   target: PropTypes.string,
   to: PropTypes.string.isRequired,

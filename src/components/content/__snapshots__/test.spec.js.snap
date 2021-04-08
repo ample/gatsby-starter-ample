@@ -2,7 +2,7 @@
 
 exports[`Content renders correctly 1`] = `
 <div
-  className="content"
+  className=""
   dangerouslySetInnerHTML={
     Object {
       "__html": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",

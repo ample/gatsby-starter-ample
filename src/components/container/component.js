@@ -2,19 +2,19 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
-
 import Block from "../block"
 
+import { container, content } from "./styles.module.scss"
+
 const Container = ({ className, children, blocks, config }) => {
-  const wrapperClasses = classNames(styles.container, {
+  const wrapperClasses = classNames(container, {
     [className]: className,
     [`mb-${config.margin_bottom}`]: config.margin_bottom
   })
 
   return (
     <div className={wrapperClasses}>
-      <div className={styles.content}>
+      <div className={content}>
         {children}
 
         {blocks && blocks.map((column, idx) => <Block key={idx} {...column} />)}

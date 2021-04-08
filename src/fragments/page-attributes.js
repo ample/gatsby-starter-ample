@@ -5,9 +5,10 @@ export const PageAttributes = graphql`
     id
     title
     layout
-    seo {
-      ...SEO
-    }
+    # TODO: fix gatsby-ample-seo to work with Gatsby 3
+    # seo {
+    #  ...SEO
+    # }
 
     # --- Layouts ---
 

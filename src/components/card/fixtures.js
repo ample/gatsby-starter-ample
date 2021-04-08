@@ -56,10 +56,27 @@ export default {
     heading: "Card Title",
     image: {
       childImageSharp: {
-        fluid: {
-          aspectRatio: 1.5,
-          sizes: "(max-width: 1400px) 100vw, 1400px",
-          src: "/uploads/blueprint/rectangle.jpg"
+        gatsbyImageData: {
+          layout: "constrained",
+          backgroundColor: "#e8f8f8",
+          images: {
+            fallback: {
+              src: "/static/c24e7716b2b55a79a77f498c4401b3f8/585db/cricle.png",
+              srcSet:
+                "/static/c24e7716b2b55a79a77f498c4401b3f8/33f3b/cricle.png 36w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/ec02e/cricle.png 72w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/585db/cricle.png 144w",
+              sizes: "(min-width: 144px) 144px, 100vw"
+            },
+            sources: [
+              {
+                srcSet:
+                  "/static/c24e7716b2b55a79a77f498c4401b3f8/aa015/cricle.webp 36w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/6a9e0/cricle.webp 72w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/2e74f/cricle.webp 144w",
+                type: "image/webp",
+                sizes: "(min-width: 144px) 144px, 100vw"
+              }
+            ]
+          },
+          width: 1400,
+          height: 933.3333333333334
         }
       }
     },
@@ -76,10 +93,27 @@ export default {
     heading: "Card Title",
     image: {
       childImageSharp: {
-        fluid: {
-          aspectRatio: 1.5,
-          sizes: "(max-width: 1400px) 100vw, 1400px",
-          src: "/uploads/blueprint/rectangle.jpg"
+        gatsbyImageData: {
+          layout: "constrained",
+          backgroundColor: "#e8f8f8",
+          images: {
+            fallback: {
+              src: "/static/c24e7716b2b55a79a77f498c4401b3f8/585db/cricle.png",
+              srcSet:
+                "/static/c24e7716b2b55a79a77f498c4401b3f8/33f3b/cricle.png 36w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/ec02e/cricle.png 72w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/585db/cricle.png 144w",
+              sizes: "(min-width: 144px) 144px, 100vw"
+            },
+            sources: [
+              {
+                srcSet:
+                  "/static/c24e7716b2b55a79a77f498c4401b3f8/aa015/cricle.webp 36w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/6a9e0/cricle.webp 72w,\n/static/c24e7716b2b55a79a77f498c4401b3f8/2e74f/cricle.webp 144w",
+                type: "image/webp",
+                sizes: "(min-width: 144px) 144px, 100vw"
+              }
+            ]
+          },
+          width: 1400,
+          height: 933.3333333333334
         }
       }
     },

@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/swiper.scss"
 import "swiper/components/navigation/navigation.scss"
 
-// import styles from "./styles.module.scss"
+// import * as styles from "./styles.module.scss"
 
 SwiperCore.use([Navigation, A11y])
 

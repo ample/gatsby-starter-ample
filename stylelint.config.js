@@ -95,7 +95,7 @@ module.exports = {
     ],
     "scss/at-else-empty-line-before": "never",
     "scss/at-else-if-parentheses-space-before": "always",
-    "scss/at-function-parentheses-space-before": "always",
+    "scss/at-function-parentheses-space-before": "never",
     "scss/at-mixin-parentheses-space-before": "never",
     "scss/dollar-variable-colon-space-after": "always",
     "scss/dollar-variable-empty-line-before": [

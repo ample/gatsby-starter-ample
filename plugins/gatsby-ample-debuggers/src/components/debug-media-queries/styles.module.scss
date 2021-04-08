@@ -4,21 +4,21 @@
 
 $media-queries: (
   smallest: 0,
-  x-small-lowest: 360px,
-  x-small: 400px,
-  x-small-highest: 480px,
-  small-lowest: 600px,
-  small: 720px,
-  small-highest: 840px,
-  medium-lowest: 960px,
-  medium: 1040px,
-  medium-highest: 1140px,
-  large-lowest: 1280px,
-  large: 1440px,
-  large-highest: 1600px,
-  x-large-lowest: 1920px,
-  x-large: 2560px,
-  x-large-highest: 3360px
+  x-small-lowest: 360,
+  x-small: 400,
+  x-small-highest: 480,
+  small-lowest: 600,
+  small: 720,
+  small-highest: 840,
+  medium-lowest: 960,
+  medium: 1040,
+  medium-highest: 1140,
+  large-lowest: 1280,
+  large: 1440,
+  large-highest: 1600,
+  x-large-lowest: 1920,
+  x-large: 2560,
+  x-large-highest: 3360
 );
 
 // ---------------------------------------------------------
@@ -27,6 +27,12 @@ $background-color: rgba(0, 0, 0, 0.8);
 $content-color: #ded;
 $size: 44px;
 $z-index-debug: 4;
+
+// ---------------------------------------------------------
+
+@function em($unitless-pixels) {
+  @return #{$unitless-pixels / 16}em;
+}
 
 // ---------------------------------------------------------
 
@@ -73,9 +79,12 @@ $z-index-debug: 4;
   }
 
   @each $mq in $media-queries {
-    @media screen and (min-width: nth($mq, 2)) {
+    $min-width: em(nth($mq, 2));
+    $min-width-pixels: nth($mq, 2);
+
+    @media screen and (min-width: $min-width) {
       &::after {
-        content: '#{nth($mq, 1)} - min-width: #{nth($mq, 2)}';
+        content: '#{nth($mq, 1)} - min-width: #{$min-width} (#{$min-width-pixels}px)';
       }
     }
   }

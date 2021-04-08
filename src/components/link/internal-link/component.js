@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
 
-const InternalLink = props => (
+const InternalLink = (props) => (
   <GatsbyLink
     to={props.to}
     className={props.className}
@@ -26,7 +26,7 @@ InternalLink.propTypes = {
   /**
    * Text or elements to render inside the link.
    */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /**
    * The "class" attribute that gets passed to Gatsby's <Link /> component.
    */

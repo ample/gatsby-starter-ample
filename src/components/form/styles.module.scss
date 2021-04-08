@@ -3,8 +3,7 @@
 
 // --------------------------------------------------------
 
-@use '../../styles/global' as *;
-@use '../button/styles.module.scss' as *;
+// @forward '../button/styles.module.scss' show default-button;
 
 // --------------------------------------------------------
 
@@ -60,7 +59,7 @@ $radio-button-hover: color.scale(
     }
   }
 
-  &.solo {
+  &.solo_field {
     flex-basis: 100%;
 
     &.width_half {

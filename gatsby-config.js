@@ -1,4 +1,3 @@
-const postcssConfig = require("./postcss.config")
 const path = require("path")
 
 module.exports = {
@@ -28,18 +27,14 @@ module.exports = {
     // },
     `gatsby-ample-schema`,
     `gatsby-ample-pages`,
-    `gatsby-ample-seo`,
+    // TODO: fix gatsby-ample-seo to work with Gatsby 3
+    // `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
+    `gatsby-ample-sass`,
     {
       resolve: `gatsby-ample-redirects`,
       options: {
         disable: process.env.GATSBY_REDIRECTS_DISABLED === "true"
-      }
-    },
-    {
-      resolve: `gatsby-ample-playground`,
-      options: {
-        disable: process.env.GATSBY_PLAYGROUND_DISABLED === "true"
       }
     },
     `gatsby-plugin-react-helmet`,
@@ -64,6 +59,7 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -101,17 +97,6 @@ module.exports = {
         theme_color: `#0095df`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        cssLoaderOptions: {
-          localIdentName: "[local]-[hash:base64:3]",
-          sourceMap: true
-        },
-        postCssPlugins: postcssConfig,
-        sourceMap: true
       }
     },
     {

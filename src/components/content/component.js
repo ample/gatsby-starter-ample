@@ -2,11 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import styles from "./styles.module.scss"
-
 const Content = ({ body, className }) => (
   <div
-    className={classNames(styles.content, { [className]: className })}
+    className={classNames({ [className]: className })}
     dangerouslySetInnerHTML={{ __html: body }}
   />
 )

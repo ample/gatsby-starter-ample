@@ -6,17 +6,40 @@ import Link from "@src/components/link"
 import Button from "@src/components/button"
 import Image from "@src/components/image"
 
-import styles from "./styles.module.scss"
+// -------------------------------------------------------- | styles
+
+import {
+  card_image,
+  card,
+  text_alignment_center,
+  text_alignment_left,
+  text_alignment_right,
+  theme_graphic,
+  theme_image
+} from "./styles.module.scss"
+
+const alignmentOptions = {
+  center: text_alignment_center,
+  left: text_alignment_left,
+  right: text_alignment_right
+}
+
+const themeOptions = {
+  graphic: theme_graphic,
+  image: theme_image
+}
+
+// -------------------------------------------------------- | component
 
 const Card = ({ body, button, heading, image, textAlignment, theme, url }) => {
-  const classes = classNames(styles.card, {
-    [styles[`text_alignment_${textAlignment}`]]: textAlignment,
-    [styles[`theme_${theme}`]]: theme
+  const classes = classNames(card, {
+    [themeOptions[theme]]: themeOptions[theme],
+    [alignmentOptions[textAlignment]]: alignmentOptions[textAlignment]
   })
 
-  let card = (
+  let cardComponent = (
     <div className={classes}>
-      {image && <Image className={styles.card_image} src={image} />}
+      {image && <Image className={card_image} src={image} />}
       {heading && <h3>{heading}</h3>}
       {body && <div dangerouslySetInnerHTML={{ __html: body }} />}
       {button && <Button {...button} />}
@@ -24,10 +47,10 @@ const Card = ({ body, button, heading, image, textAlignment, theme, url }) => {
   )
 
   if (url) {
-    card = <Link to={url}>{card}</Link>
+    cardComponent = <Link to={url}>{cardComponent}</Link>
   }
 
-  return card
+  return cardComponent
 }
 
 Card.propTypes = {
@@ -42,7 +65,8 @@ Card.propTypes = {
    */
   button: PropTypes.exact({
     label: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    theme: PropTypes.string
   }),
   /**
    * Specifies the heading
@@ -55,11 +79,11 @@ Card.propTypes = {
   /**
    * Specifies the alignment of the card's content
    */
-  textAlignment: PropTypes.oneOf(["left", "center", "right"]),
+  textAlignment: PropTypes.oneOf(Object.keys(alignmentOptions)),
   /**
    * Specifies the card theme
    */
-  theme: PropTypes.oneOf(["graphic", "image"]),
+  theme: PropTypes.oneOf(Object.keys(themeOptions)),
   /**
    * Specifies the url for the card
    *

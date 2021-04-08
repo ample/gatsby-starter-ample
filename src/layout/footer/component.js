@@ -6,23 +6,31 @@ import LinkList from "./link-list"
 import SocialNav from "./social-nav"
 import SVG from "../../components/svg"
 
-import styles from "./styles.module.scss"
+import {
+  copyright_container,
+  footer,
+  footer_container,
+  logo,
+  menus_container,
+  menu_container,
+  policy_links_container
+} from "./styles.module.scss"
 
 const Footer = ({ copyright, menus, policy_links, social_links }) => (
-  <footer className={styles.footer}>
-    <div className={styles.footer_container}>
+  <footer className={footer}>
+    <div className={footer_container}>
       <div>
-        <div className={styles.logo}>
+        <div className={logo}>
           <Link to="/">
             <SVG name="logo" />
           </Link>
         </div>
 
-        <nav className={styles.menus}>
+        <nav className={menus_container}>
           {menus &&
             menus.map((menu, index) => (
               <LinkList
-                className={styles.menu}
+                className={menu_container}
                 key={index}
                 heading={menu.heading}
                 links={menu.links}
@@ -35,9 +43,9 @@ const Footer = ({ copyright, menus, policy_links, social_links }) => (
       <div>
         {social_links && <SocialNav links={social_links} />}
 
-        {policy_links && <LinkList className={styles.policy_links} links={policy_links} />}
+        {policy_links && <LinkList className={policy_links_container} links={policy_links} />}
 
-        {copyright && <small className={styles.copyright}>&copy; {copyright}</small>}
+        {copyright && <small className={copyright_container}>&copy; {copyright}</small>}
       </div>
     </div>
   </footer>
