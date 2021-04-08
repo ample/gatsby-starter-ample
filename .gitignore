@@ -85,3 +85,6 @@ package-lock.json
 
 # temp files
 tmp/
+
+# Local Netlify folder
+.netlify
