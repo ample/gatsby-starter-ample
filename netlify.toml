@@ -5,7 +5,7 @@
 
 [build]
   # command = "yarn build:with_storybook"
-  command = "pwd;ls -la;"
+  command = "pwd;ls -la ./public;"
   publish = "public/"
   functions = "functions/handlers"
 
