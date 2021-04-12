@@ -4,7 +4,7 @@
   NODE_VERSION = "15"
 
 [build]
-  command = "yarn build:with_storybook;ls -la ./public;"
+  command = "yarn build:with_storybook;ls -la ./public/static/;"
   publish = "public/"
   functions = "functions/handlers"
 
