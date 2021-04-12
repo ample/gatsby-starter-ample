@@ -58,10 +58,35 @@ Image.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Specifies the image src attribute as a string or Gatsby fixed/fluid image
-   * object ([Gatsby Docs](https://www.gatsbyjs.org/packages/gatsby-image/)).
+   * Specifies the image src attribute as a string or
+   * Gatsby image object ([Gatsby Docs](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#all-options)).
    */
-  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  src: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        gatsbyImageData: PropTypes.shape({
+          layout: PropTypes.oneOf(["constrained", "fixed", "fullWidth"]),
+          images: PropTypes.shape({
+            fallback: PropTypes.shape({
+              src: PropTypes.string,
+              srcSet: PropTypes.string,
+              sizes: PropTypes.string
+            }),
+            sources: PropTypes.arrayOf(
+              PropTypes.shape({
+                srcSet: PropTypes.string,
+                type: PropTypes.string,
+                sizes: PropTypes.string
+              })
+            )
+          }),
+          width: PropTypes.number,
+          height: PropTypes.number
+        })
+      })
+    })
+  ]).isRequired,
   /**
    * Support for directly passing styles to the image component.
    */
