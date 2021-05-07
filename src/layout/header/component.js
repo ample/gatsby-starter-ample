@@ -27,23 +27,23 @@ const Header = ({ main_navigation, top_navigation }) => {
 
   const smallScreenMenuClick = () => {
     if (isMobileNavigation) {
-      setMenu(!menuIsOpen)
-      lockScroll()
+      lockScrollAndSetMenu(!menuIsOpen)
     }
   }
 
-  const lockScroll = () => {
-    if (menuIsOpen === false) {
+  const lockScrollAndSetMenu = (isOpen) => {
+    if (isOpen) {
       document.documentElement.style.overflow = "hidden"
     } else {
       document.documentElement.style.removeProperty("overflow")
     }
+
+    setMenu(isOpen)
   }
 
   const handleQueryChange = (match) => {
     if (!match) {
-      setMenu(false)
-      lockScroll()
+      lockScrollAndSetMenu(false)
     }
   }
 
