@@ -1,18 +1,16 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 import { useMediaQuery } from "react-responsive"
-
 import Link from "@src/components/link"
 import SVG from "@src/components/svg"
-
 import Navigation from "./navigation"
 
 import {
   header,
   is_desktop,
-  logo_container,
   logo,
+  logo_container,
   main_navigation_container,
   menu_button,
   navigation_container,
@@ -25,29 +23,37 @@ const Header = ({ main_navigation, top_navigation }) => {
 
   const [menuIsOpen, setMenu] = useState(false)
 
-  const smallScreenMenuClick = () => {
-    if (isMobileNavigation) {
-      setMenu(!menuIsOpen)
-      lockScroll()
+  const handleMediaQueryChange = (match) => {
+    if (!match) {
+      lockScroll(false)
+      setMenu(false)
     }
   }
 
-  const lockScroll = () => {
-    if (menuIsOpen === false) {
+  const lockScroll = (menuIsOpen) => {
+    overflowHidden(menuIsOpen)
+  }
+
+  const mobileMenuClick = () => {
+    if (isMobileNavigation) {
+      lockScroll(!menuIsOpen)
+      setMenu(!menuIsOpen)
+    }
+  }
+
+  const overflowHidden = (menuIsOpen) => {
+    if (menuIsOpen) {
       document.documentElement.style.overflow = "hidden"
     } else {
       document.documentElement.style.removeProperty("overflow")
     }
   }
 
-  const handleQueryChange = (match) => {
-    if (!match) {
-      setMenu(false)
-      lockScroll()
-    }
-  }
+  useEffect((menuIsOpen) => {
+    overflowHidden(menuIsOpen)
+  }, [])
 
-  const isMobileNavigation = useMediaQuery({ query: "(max-width: 65em)" }, null, handleQueryChange)
+  const isMobileNavigation = useMediaQuery({ maxWidth: 1040 }, null, handleMediaQueryChange)
 
   // ------------------------------------------------------ | Classes
 
@@ -66,7 +72,7 @@ const Header = ({ main_navigation, top_navigation }) => {
             <SVG name="logo" />
           </Link>
 
-          <button className={menu_button} onClick={smallScreenMenuClick}>
+          <button className={menu_button} onClick={mobileMenuClick}>
             <span>Menu</span>
             {!menuIsOpen ? <SVG name="bars" /> : <SVG name="close" />}
           </button>
@@ -76,12 +82,12 @@ const Header = ({ main_navigation, top_navigation }) => {
           <Navigation
             className={top_navigation_container}
             links={top_navigation}
-            onClick={smallScreenMenuClick}
+            onClick={mobileMenuClick}
           />
           <Navigation
             className={main_navigation_container}
             links={main_navigation}
-            onClick={smallScreenMenuClick}
+            onClick={mobileMenuClick}
           />
         </div>
       </div>
