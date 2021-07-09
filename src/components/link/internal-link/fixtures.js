@@ -4,7 +4,7 @@ export default {
     activeStyle: {},
     children: "Hello World",
     className: "",
-    to: "/",
-    onClick: null
+    onClick: null,
+    to: "/"
   }
 }

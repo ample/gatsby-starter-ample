@@ -13,7 +13,7 @@ const BackgroundImage = ({ children, className, image }) => {
   // Should return either fluid or fixed if setup properly.
   const imageType = Object.keys(image.childImageSharp)[0]
   // Set props for the wrapping element.
-  let props = {
+  const props = {
     className: wrapperClassNames,
     [imageType]: image.childImageSharp[imageType]
   }
@@ -27,11 +27,6 @@ BackgroundImage.propTypes = {
    * image attached).
    */
   children: PropTypes.node,
-  /**
-   * Additional classes on the wrapping element (the one with the background
-   * image).
-   */
-  className: PropTypes.string,
   /**
    * Object representing the image values to pass on to gatsby-background-image.
    */

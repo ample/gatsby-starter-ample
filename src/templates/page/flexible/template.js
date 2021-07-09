@@ -15,13 +15,13 @@ const FlexiblePage = ({ children, blocks }) => (
 
 FlexiblePage.propTypes = {
   /**
-   * Components to inject before the page content.
-   */
-  children: PropTypes.node,
-  /**
    * An array of components that get mapped to the <Block /> component.
    */
-  blocks: PropTypes.arrayOf(PropTypes.object)
+  blocks: PropTypes.arrayOf(PropTypes.object),
+  /**
+   * Components to inject before the page content.
+   */
+  children: PropTypes.node
 }
 
 FlexiblePage.defaultProps = {

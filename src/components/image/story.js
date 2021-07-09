@@ -4,7 +4,6 @@ import { component as Image } from "."
 import fixtures from "./fixtures"
 
 export default {
-  title: "Components/Images",
   component: Image,
   parameters: {
     docs: {
@@ -13,7 +12,8 @@ export default {
           "Wrapper around the [Gatsby Image Component](https://www.gatsbyjs.com/plugins/gatsby-plugin-image):"
       }
     }
-  }
+  },
+  title: "Components/Images"
 }
 
 const Template = (args) => <Image {...args} />

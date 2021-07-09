@@ -54,10 +54,6 @@ Image.propTypes = {
    */
   alt: PropTypes.string,
   /**
-   * Classes attributed to the wrapping element.
-   */
-  className: PropTypes.string,
-  /**
    * Specifies the image src attribute as a string or
    * Gatsby image object ([Gatsby Docs](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#all-options)).
    */
@@ -66,23 +62,23 @@ Image.propTypes = {
     PropTypes.shape({
       childImageSharp: PropTypes.shape({
         gatsbyImageData: PropTypes.shape({
-          layout: PropTypes.oneOf(["constrained", "fixed", "fullWidth"]),
+          height: PropTypes.number,
           images: PropTypes.shape({
             fallback: PropTypes.shape({
+              sizes: PropTypes.string,
               src: PropTypes.string,
-              srcSet: PropTypes.string,
-              sizes: PropTypes.string
+              srcSet: PropTypes.string
             }),
             sources: PropTypes.arrayOf(
               PropTypes.shape({
+                sizes: PropTypes.string,
                 srcSet: PropTypes.string,
-                type: PropTypes.string,
-                sizes: PropTypes.string
+                type: PropTypes.string
               })
             )
           }),
-          width: PropTypes.number,
-          height: PropTypes.number
+          layout: PropTypes.oneOf(["constrained", "fixed", "fullWidth"]),
+          width: PropTypes.number
         })
       })
     })

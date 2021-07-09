@@ -5,29 +5,29 @@ export default {
       {
         heading: "Quisque",
         links: [
-          { url: "#", label: "Vestibulum vitae" },
-          { url: "#", label: "Pellentesque tempor venenatis" },
-          { url: "#", label: "Fusce molestie" },
-          { url: "#", label: "Etiam in lacinia dolor" }
+          { label: "Vestibulum vitae", url: "#" },
+          { label: "Pellentesque tempor venenatis", url: "#" },
+          { label: "Fusce molestie", url: "#" },
+          { label: "Etiam in lacinia dolor", url: "#" }
         ]
       },
       {
         heading: "Vestibulum",
         links: [
-          { url: "#", label: "Fusce molestie" },
-          { url: "#", label: "Pellentesque venenatis" },
-          { url: "#", label: "Vestibulum vitae" },
-          { url: "#", label: "lacinia dolor" }
+          { label: "Fusce molestie", url: "#" },
+          { label: "Pellentesque venenatis", url: "#" },
+          { label: "Vestibulum vitae", url: "#" },
+          { label: "lacinia dolor", url: "#" }
         ]
       }
     ],
     policy_links: [
-      { url: "#", label: "Privacy Policy" },
-      { url: "#", label: "Terms of Service" }
+      { label: "Privacy Policy", url: "#" },
+      { label: "Terms of Service", url: "#" }
     ],
     social_links: [
-      { url: "#", icon: "twitter" },
-      { url: "#", icon: "facebook" }
+      { icon: "twitter", url: "#" },
+      { icon: "facebook", url: "#" }
     ]
   }
 }

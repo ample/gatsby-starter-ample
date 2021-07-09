@@ -4,7 +4,6 @@ import Card from "."
 import fixtures from "./fixtures"
 
 export default {
-  title: "Components/Cards",
   component: Card,
   parameters: {
     docs: {
@@ -12,7 +11,8 @@ export default {
         component: "Let's define a story for our `Card` component:"
       }
     }
-  }
+  },
+  title: "Components/Cards"
 }
 
 const Template = (args) => <Card {...args} />

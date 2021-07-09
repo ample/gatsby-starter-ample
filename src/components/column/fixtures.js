@@ -1,25 +1,25 @@
 import { fixtures as formFixtures } from "@src/components/form"
 
 export default {
-  empty: {
-    className: null,
-    blocks: [],
-    config: {}
-  },
   default: {
-    className: null,
     blocks: [
       {
-        template: "component-button",
         label: "Hello World",
+        template: "component-button",
         url: "/"
       }
     ],
+    className: null,
+    config: {}
+  },
+  empty: {
+    blocks: [],
+    className: null,
     config: {}
   },
   form: {
+    blocks: [{ form: formFixtures.default, template: "component-form" }],
     className: null,
-    blocks: [{ template: "component-form", form: formFixtures.default }],
     config: {}
   }
 }

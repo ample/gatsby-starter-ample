@@ -33,10 +33,6 @@ const Button = ({ children, className, onClick, theme, to }) => {
 
 Button.propTypes = {
   /**
-   * Additional classes on the link element.
-   */
-  className: PropTypes.string,
-  /**
    * Text rendered to the screen inside the button.
    */
   children: PropTypes.string.isRequired,

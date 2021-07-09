@@ -19,9 +19,9 @@ ExternalLink.propTypes = {
    */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /**
-   * The "class" attribute of the anchor.
+   * Event handler for the onClick event
    */
-  className: PropTypes.string,
+  onClick: PropTypes.func,
   /**
    * The "target" attribute of the anchor.
    */
@@ -29,11 +29,7 @@ ExternalLink.propTypes = {
   /**
    * The URL of the link.
    */
-  to: PropTypes.string.isRequired,
-  /**
-   * Event handler for the onClick event
-   */
-  onClick: PropTypes.func
+  to: PropTypes.string.isRequired
 }
 
 export default ExternalLink

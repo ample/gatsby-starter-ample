@@ -45,10 +45,6 @@ const Column = ({ className, blocks, config }) => {
 
 Column.propTypes = {
   /**
-   * A CSS class adding to the wrapping element.
-   */
-  className: PropTypes.string,
-  /**
    * An array of component objects that get passed on to the <Block />.
    */
   blocks: PropTypes.arrayOf(PropTypes.object),

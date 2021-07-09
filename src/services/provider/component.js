@@ -6,7 +6,7 @@ const ProviderContext = createContext()
 const Provider = ({ children }) => {
   const [theme, setTheme] = useState(null)
 
-  return <ProviderContext.Provider value={{ theme, setTheme }}>{children}</ProviderContext.Provider>
+  return <ProviderContext.Provider value={{ setTheme, theme }}>{children}</ProviderContext.Provider>
 }
 
 Provider.propTypes = {

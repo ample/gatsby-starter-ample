@@ -1,29 +1,29 @@
 export default {
   default: {
     main_navigation: [
-      { url: "#", label: "Reprehenderit" },
-      { url: "#", label: "Officia sint" },
-      { url: "#", label: "Veniam" },
-      { url: "#", label: "Consequat" },
+      { label: "Reprehenderit", url: "#" },
+      { label: "Officia sint", url: "#" },
+      { label: "Veniam", url: "#" },
+      { label: "Consequat", url: "#" },
       {
-        url: "#",
-        label: "Suspendisse semper",
         children: [
-          { url: "/", label: "Vestibulum vitae" },
-          { url: "#", label: "Pellentesque tempor venenatis" },
-          { url: "#", label: "Fusce molestie" },
-          { url: "#", label: "Etiam in lacinia dolor" }
-        ]
+          { label: "Vestibulum vitae", url: "/" },
+          { label: "Pellentesque tempor venenatis", url: "#" },
+          { label: "Fusce molestie", url: "#" },
+          { label: "Etiam in lacinia dolor", url: "#" }
+        ],
+        label: "Suspendisse semper",
+        url: "#"
       },
-      { url: "#", label: "Quisque interdum", button: true, className: "button" }
+      { button: true, className: "button", label: "Quisque interdum", url: "#" }
     ],
     top_navigation: [
-      { url: "#", label: "Duis" },
-      { url: "#", label: "Cupidatat" },
-      { url: "#", label: "Ullamco" },
-      { url: "#", label: "Labore" },
-      { url: "#", label: "Consectetur" },
-      { url: "#", label: "Pariatur" }
+      { label: "Duis", url: "#" },
+      { label: "Cupidatat", url: "#" },
+      { label: "Ullamco", url: "#" },
+      { label: "Labore", url: "#" },
+      { label: "Consectetur", url: "#" },
+      { label: "Pariatur", url: "#" }
     ]
   }
 }

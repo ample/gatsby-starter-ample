@@ -3,7 +3,6 @@ import React from "react"
 import Button from "./"
 
 export default {
-  title: "Components/Buttons",
   component: Button,
   parameters: {
     docs: {
@@ -11,16 +10,17 @@ export default {
         component: "Let's define a story for our `Button` component:"
       }
     }
-  }
+  },
+  title: "Components/Buttons"
 }
 
 const Template = (args) => <Button {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  children: "Call to Action",
   theme: "default",
-  url: "/docs/",
-  children: "Call to Action"
+  url: "/docs/"
 }
 
 export const Outline = Template.bind({})

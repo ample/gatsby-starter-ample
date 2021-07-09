@@ -40,18 +40,18 @@ describe("Form Transformer", () => {
   })
   it("normalizes field data", () => {
     const input = {
-      title: "Contact Form",
       field_groups: [
         {
-          title: "Personal Info",
           fields: [
             {
               title: "Name",
               type: "text"
             }
-          ]
+          ],
+          title: "Personal Info"
         }
-      ]
+      ],
+      title: "Contact Form"
     }
     expect(input.field_groups[0].fields[0].name).toEqual(undefined)
     const result = transformer({ form: fixtures.default })
@@ -62,18 +62,18 @@ describe("Form Transformer", () => {
 describe("normalizeField", () => {
   // --- appearance ---
   it("sets appearance for text fields", () => {
-    const input = { type: "text", text_appearance: "long", select_appearance: "dropdown" }
+    const input = { select_appearance: "dropdown", text_appearance: "long", type: "text" }
     const result = normalizeField(input)
     expect(result.appearance).toEqual("long")
   })
   it("sets appearance for select fields", () => {
-    const input = { type: "select", text_appearance: "long", select_appearance: "dropdown" }
+    const input = { select_appearance: "dropdown", text_appearance: "long", type: "select" }
     const result = normalizeField(input)
     expect(result.appearance).toEqual("dropdown")
   })
   // --- name ---
   it("keeps the name as the name if set", () => {
-    const result = normalizeField({ title: "WRONG", name: "hello_world" })
+    const result = normalizeField({ name: "hello_world", title: "WRONG" })
     expect(result.name).toEqual("hello_world")
   })
   it("parameterizes the title if not set", () => {
@@ -83,7 +83,7 @@ describe("normalizeField", () => {
   })
   // --- label ---
   it("keeps the label in place if it exists", () => {
-    const result = normalizeField({ title: "WRONG", label: "Hello World" })
+    const result = normalizeField({ label: "Hello World", title: "WRONG" })
     expect(result.label).toEqual("Hello World")
   })
   it("sets the label as the title if not set", () => {
@@ -92,22 +92,22 @@ describe("normalizeField", () => {
   })
   // --- options ---
   it("does not set validation for text fields", () => {
-    const input = { type: "text", select_options: ["A", "B", "C"] }
+    const input = { select_options: ["A", "B", "C"], type: "text" }
     const result = normalizeField(input)
     expect(result.options).toEqual(undefined)
   })
   it("sets options for select fields", () => {
-    const input = { type: "select", select_options: ["A", "B", "C"] }
+    const input = { select_options: ["A", "B", "C"], type: "select" }
     const result = normalizeField(input)
     expect(result.options).toEqual(["A", "B", "C"])
   })
   // --- placeholder ---
   it("sets placeholder for text fields", () => {
-    const result = normalizeField({ type: "text", text_placeholder: "Hello World" })
+    const result = normalizeField({ text_placeholder: "Hello World", type: "text" })
     expect(result.placeholder).toEqual("Hello World")
   })
   it("does not set placeholder for select fields", () => {
-    const input = { type: "select", text_placeholder: "Hello World" }
+    const input = { text_placeholder: "Hello World", type: "select" }
     const result = normalizeField(input)
     expect(result.placeholder).toEqual(undefined)
   })
@@ -122,11 +122,11 @@ describe("normalizeField", () => {
   })
   // --- validation ---
   it("sets validation for text fields", () => {
-    const result = normalizeField({ type: "text", text_validation: "phone" })
+    const result = normalizeField({ text_validation: "phone", type: "text" })
     expect(result.validation).toEqual("phone")
   })
   it("does not set validation for select fields", () => {
-    const input = { type: "select", text_validation: "email" }
+    const input = { text_validation: "email", type: "select" }
     const result = normalizeField(input)
     expect(result.validation).toEqual(undefined)
   })

@@ -18,13 +18,13 @@ const Frame = ({ src, margin_bottom, title }) => {
 
 Frame.propTypes = {
   /**
-   * URL of the frame to insert.
-   */
-  src: PropTypes.string.isRequired,
-  /**
    * Number of pixels to push subsequent content down the page.
    */
   margin_bottom: PropTypes.string,
+  /**
+   * URL of the frame to insert.
+   */
+  src: PropTypes.string.isRequired,
   /**
    * Title attribute on iframe element.
    */

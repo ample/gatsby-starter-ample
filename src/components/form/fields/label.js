@@ -11,9 +11,13 @@ const FormFieldLabel = ({ children, required }) => (
 )
 
 FormFieldLabel.propTypes = {
-  /** Text to display within the label */
+  /**
+   * Text to display within the label
+   */
   children: PropTypes.string.isRequired,
-  /** Force that a value exists before submitting.*/
+  /**
+   * Force that a value exists before submitting.
+   */
   required: PropTypes.bool
 }
 

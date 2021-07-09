@@ -35,14 +35,14 @@ describe("Button Transformer", () => {
     expect(result.url).toEqual("/")
   })
   it("brings along other props", () => {
-    const result = transformer({ label: "Hello World", url: "/", hello: "world" })
+    const result = transformer({ hello: "world", label: "Hello World", url: "/" })
     expect(result.hello).toEqual("world")
   })
   it("gives precedence to the correct props", () => {
     const result = transformer({
       children: "Pick Me",
-      to: "/pick-me",
       label: "Hello World",
+      to: "/pick-me",
       url: "/"
     })
     expect(result.children).toEqual("Pick Me")

@@ -11,7 +11,7 @@ import { form_field_group } from "../styles.module.scss"
 /**
  * Maps field types to field components.
  */
-let fieldMap = {
+const fieldMap = {
   select: SelectField,
   text: TextField
 }

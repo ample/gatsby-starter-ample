@@ -119,12 +119,12 @@ FormFieldSelect.propTypes = {
    */
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   /**
-   * Force that a value exists before submittin
-   .*/
+   * Force that a value exists before submitting.
+   */
   required: PropTypes.bool,
   /**
-   * Enforce that the field sits on its own line, regardless of widt
-   .*/
+   * Enforce that the field sits on its own line, regardless of width.
+   */
   solo: PropTypes.bool,
   /**
    * Controls how wide the field renders on screen.

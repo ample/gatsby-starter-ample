@@ -1,4 +1,9 @@
 export default {
+  arrow: {
+    children: "Call to action",
+    theme: "arrow",
+    to: "#"
+  },
   default: {
     children: "Call to action",
     to: "#"
@@ -6,11 +11,6 @@ export default {
   outline: {
     children: "Call to action",
     theme: "outline",
-    to: "#"
-  },
-  arrow: {
-    children: "Call to action",
-    theme: "arrow",
     to: "#"
   }
 }

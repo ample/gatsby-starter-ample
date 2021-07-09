@@ -25,17 +25,14 @@ const Container = ({ className, children, blocks, config }) => {
 
 Container.propTypes = {
   /**
-   * A CSS class adding to the wrapping element.
+   * An array of components that get passed on to the <Block />.
    */
-  className: PropTypes.string,
+  blocks: PropTypes.arrayOf(PropTypes.object),
+
   /**
    * For use in templates when more control is needed.
    */
   children: PropTypes.node,
-  /**
-   * An array of components that get passed on to the <Block />.
-   */
-  blocks: PropTypes.arrayOf(PropTypes.object),
   /**
    * An object that controls the styling of the outer container on screen.
    */
