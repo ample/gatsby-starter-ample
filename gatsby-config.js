@@ -2,11 +2,8 @@ const path = require("path")
 const postcssConfig = require("./postcss.config")
 
 module.exports = {
-  siteMetadata: {
-    author: `@helloample`,
-    description: `The base for a new Ample development project.`,
-    siteUrl: `https://www.site-url.com`,
-    title: `Ample's Gatsby Starter`
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
     {
@@ -175,5 +172,11 @@ module.exports = {
         }
       }
     }
-  ]
+  ],
+  siteMetadata: {
+    author: `@helloample`,
+    description: `The base for a new Ample development project.`,
+    siteUrl: `https://www.site-url.com`,
+    title: `Ample's Gatsby Starter`
+  }
 }
