@@ -4,3 +4,27 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// --------------------------------------------------------
+
+// Mixin to set a responsive font size
+// and line height with a unitless number
+// -------------------------------------------------------- | usage
+
+// h4 {
+//   @include font-size(22px, 26px);
+// }
+
+// -------------------------------------------------------- | result
+// h4 {
+//   font-size: min(1.375rem, calc(1.275rem + 0.13333vw));
+//   line-height: 1.1818181818;
+// }
+
+@mixin font-size($font-size, $line-height: false) {
+  font-size: rfs($font-size);
+
+  @if $line-height != false {
+    line-height: ($line-height / $font-size);
+  }
+}
