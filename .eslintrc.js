@@ -5,7 +5,12 @@ module.exports = {
     jest: true,
     node: true
   },
-  extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
+  extends: [
+    "eslint:recommended",
+    "gatsby-standard",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended"
+  ],
   globals: {
     __PATH_PREFIX__: true
   },
@@ -15,19 +20,30 @@ module.exports = {
       rules: {
         "react/prop-types": 0
       }
+    },
+    {
+      files: ["./gatsby-config.js"],
+      rules: {
+        "sort-keys-fix/sort-keys-fix": 0
+      }
     }
   ],
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   parserOptions: {
-    requireConfigFile: false,
-    ecmaFeatures: {
-      jsx: true
-    }
+    babelOptions: {
+      presets: ["@babel/preset-react"]
+    },
+    ecmaVersion: "11",
+    requireConfigFile: false
   },
-  plugins: ["prettier", "jest", "jsx-a11y", "react"],
+  plugins: ["jest", "jsx-a11y", "react", "sort-keys-fix"],
   rules: {
-    "react/no-unescaped-entities": "off",
-    "react/prop-types": [2, { ignore: ["className"] }]
+    camelcase: 0,
+    "react/no-unescaped-entities": 0,
+    "react/prop-types": [2, { ignore: ["className"] }],
+    "react/react-in-jsx-scope": 0,
+    "sort-keys": ["error", "asc", { caseSensitive: true, minKeys: 3, natural: true }],
+    "sort-keys-fix/sort-keys-fix": 1
   },
   settings: {
     react: {
