@@ -2,12 +2,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
+import { Helmet } from "react-helmet"
+
 import Footer from "./footer"
 import Header from "./header"
 import { DebugMediaQueries } from "@plugins/gatsby-ample-debuggers"
 
 const Layout = ({ children, className }) => (
   <>
+    <Helmet>
+      <html lang="en" />
+    </Helmet>
+
     <Header />
 
     <main
