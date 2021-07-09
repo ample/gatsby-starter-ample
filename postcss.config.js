@@ -1,6 +1,5 @@
 module.exports = [
   require("postcss-normalize"),
-  require("postcss-responsive-type"),
   require("rfs")({
     factor: 5
   }),
