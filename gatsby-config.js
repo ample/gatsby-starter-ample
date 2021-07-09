@@ -1,11 +1,12 @@
 const path = require("path")
+const postcssConfig = require("./postcss.config")
 
 module.exports = {
   siteMetadata: {
-    title: `Ample's Gatsby Starter`,
-    description: `The base for a new Ample development project.`,
     author: `@helloample`,
-    siteUrl: `https://www.site-url.com`
+    description: `The base for a new Ample development project.`,
+    siteUrl: `https://www.site-url.com`,
+    title: `Ample's Gatsby Starter`
   },
   plugins: [
     {
@@ -30,7 +31,21 @@ module.exports = {
     // TODO: fix gatsby-ample-seo to work with Gatsby 3
     // `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
-    `gatsby-ample-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        additionalData: `@use 'global' as *;`,
+        cssLoaderOptions: {
+          modules: {
+            localIdentName: "[local]-[hash:base64:3]"
+          }
+        },
+        postCssPlugins: postcssConfig,
+        sassOptions: {
+          includePaths: [path.join(__dirname, "src/styles")]
+        }
+      }
+    },
     {
       resolve: `gatsby-ample-redirects`,
       options: {
@@ -42,21 +57,21 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: `uploads`,
-        path: `${__dirname}/static/uploads`
+        path: path.join(__dirname, "static/uploads")
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/content`
+        path: path.join(__dirname, "src/content")
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
+        path: path.join(__dirname, "src/images")
       }
     },
     `gatsby-plugin-image`,
@@ -90,13 +105,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        background_color: `#0095df`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon.png`,
         name: `gatsby-starter-ample`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#0095df`,
-        theme_color: `#0095df`,
-        display: `minimal-ui`,
-        icon: `src/images/favicon.png`
+        theme_color: `#0095df`
       }
     },
     {
@@ -144,9 +159,9 @@ module.exports = {
             .filter(({ node }) => !excludePaths.includes(node.path))
             .map(({ node }) => {
               return {
-                url: `${site.siteMetadata.siteUrl}${node.path}`,
                 changefreq: `daily`,
-                priority: 0.7
+                priority: 0.7,
+                url: `${site.siteMetadata.siteUrl}${node.path}`
               }
             })
         }

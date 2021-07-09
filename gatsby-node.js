@@ -1,4 +1,4 @@
-exports.onCreateWebpackConfig = ({ actions, getConfig, stage, loaders }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
