@@ -39,6 +39,7 @@ module.exports = {
   plugins: ["jest", "jsx-a11y", "react", "sort-keys-fix"],
   rules: {
     camelcase: 0,
+    "import/no-unresolved": 0,
     "react/no-unescaped-entities": 0,
     "react/prop-types": [2, { ignore: ["className"] }],
     "react/react-in-jsx-scope": 0,
