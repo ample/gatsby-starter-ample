@@ -65,6 +65,7 @@
     "pluralize": "^8.0.0",
     "postcss": "^8.3.5",
     "postcss-em-media-query": "^4.1.0",
+    "postcss-loader": "^6.1.1",
     "postcss-normalize": "^10.0.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-pxtorem": "^6.0.0",

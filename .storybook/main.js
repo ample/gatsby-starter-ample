@@ -41,7 +41,6 @@ module.exports = {
     {
       name: "@storybook/addon-essentials",
       options: {
-        controls: false,
         docs: {
           options: {
             configureJSX: true

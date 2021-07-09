@@ -19891,6 +19891,20 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"postcss-loader@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "postcss-loader@npm:6.1.1"
+  dependencies:
+    cosmiconfig: ^7.0.0
+    klona: ^2.0.4
+    semver: ^7.3.5
+  peerDependencies:
+    postcss: ^7.0.0 || ^8.0.1
+    webpack: ^5.0.0
+  checksum: a166ecd835c62e2afc3d5f4fd77962f88e1319a6a5d84bd291167c43659cdfd4414bb332840577b464b8d8f69604b85c4ed26ac8695808c2ca336652706ed505
+  languageName: node
+  linkType: hard
+
 "postcss-logical@npm:^3.0.0":
   version: 3.0.0
   resolution: "postcss-logical@npm:3.0.0"
@@ -23043,6 +23057,7 @@ rfs@next:
     pluralize: ^8.0.0
     postcss: ^8.3.5
     postcss-em-media-query: ^4.1.0
+    postcss-loader: ^6.1.1
     postcss-normalize: ^10.0.0
     postcss-preset-env: ^6.7.0
     postcss-pxtorem: ^6.0.0
