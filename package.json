@@ -111,8 +111,8 @@
     "netlify:dev": "netlify dev",
     "postinstall": "husky install",
     "serve": "gatsby serve -H 0.0.0.0",
-    "storybook:build": "yarn run test:generate_output && build-storybook -c .storybook && mv storybook-static public/static/storybook",
-    "storybook": "yarn run test:generate_output && BROWSER=none start-storybook -s ./*static -p 6006 --no-manager-cache",
+    "storybook:build": "yarn run test:generate_output && yarn run build && NODE_ENV=test build-storybook -c .storybook -s ./static",
+    "storybook": "yarn run test:generate_output && BROWSER=none start-storybook -s ./static -p 6006 --quiet",
     "test:generate_output": "jest --json --outputFile=.jest-test-results.json --silent",
     "test:update": "yarn test --updateSnapshot",
     "test": "jest --silent"
