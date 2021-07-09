@@ -82,11 +82,6 @@ module.exports = {
         "@plugins": path.resolve(__dirname, "../plugins"),
         "@root": path.resolve(__dirname, "../"),
         "@src": path.resolve(__dirname, "../src")
-      },
-
-      fallback: {
-        crypto: require.resolve("crypto-browserify"),
-        stream: require.resolve("stream-browserify")
       }
     }
 
