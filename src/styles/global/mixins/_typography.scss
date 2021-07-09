@@ -7,15 +7,15 @@
 }
 
 @mixin h2 {
-  font-size: responsive 32px 40px;
+  font-size: rfs(40px);
 }
 
 @mixin h3 {
-  font-size: responsive 24px 32px;
+  font-size: 32px;
 }
 
 @mixin h4 {
-  font-size: responsive 20px 24px;
+  font-size: 24px;
 }
 
 @mixin h5 {
