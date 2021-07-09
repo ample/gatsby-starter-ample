@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // --------------------------------------------------------
 
 @mixin font-smoothing {
@@ -25,6 +27,6 @@
   font-size: rfs($font-size);
 
   @if $line-height != false {
-    line-height: ($line-height / $font-size);
+    line-height: math.div($line-height, $font-size);
   }
 }

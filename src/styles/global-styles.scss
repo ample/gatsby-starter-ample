@@ -15,24 +15,16 @@ body {
 // --------------------------------------------------------
 
 main {
-  $padding: 40px;
+  @include container;
 
-  margin-top: $padding;
-  padding-bottom: $padding;
-
-  @include media($full-navigation, down) {
-    margin-top: calc(var(--global-header-mobile-height) + #{$padding});
-  }
+  padding-bottom: rfs(40px);
+  padding-top: rfs(40px);
 }
 
 // --------------------------------------------------------
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+@include headings {
+  font-family: var(--font-family-headings);
   font-weight: var(--font-weight-bold);
   margin: 0 0 20px;
 }
@@ -67,14 +59,28 @@ a {
   }
 }
 
-p {
-  margin-bottom: 20px;
-  margin-top: 0;
+// --------------------------------------------------------
 
-  &:last-child {
-    margin-bottom: 0;
+p,
+ul {
+  @include p;
+
+  margin-bottom: 20px;
+}
+
+p + ul {
+  margin-top: rfs(-10px);
+}
+
+ul {
+  padding-left: 30px;
+
+  li {
+    margin-bottom: 10px;
   }
 }
+
+// --------------------------------------------------------
 
 strong {
   font-weight: 700;
@@ -83,10 +89,7 @@ strong {
 // ---------------------------------------------------------
 
 button {
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  padding: 0;
+  @include reset-button;
 }
 
 // --------------------------------------------------------

@@ -1,25 +1,42 @@
+@use 'font' as *;
 @use 'support' as *;
 
 // ---------------------------------------------------------
 
+@mixin headings {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @content;
+  }
+}
+
 @mixin h1 {
-  font-size: rfs(54px);
+  @include font-size(54px, 54px);
 }
 
 @mixin h2 {
-  font-size: rfs(40px);
+  @include font-size(40px, 40px);
 }
 
 @mixin h3 {
-  font-size: 32px;
+  @include font-size(32px, 32px);
 }
 
 @mixin h4 {
-  font-size: 24px;
+  @include font-size(24px, 24px);
 }
 
 @mixin h5 {
-  font-size: 18px;
+  @include font-size(18px, 18px);
+}
+
+// ---------------------------------------------------------
+
+@mixin p {
+  @include font-size(16px, 28px);
 }
 
 // ---------------------------------------------------------
