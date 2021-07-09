@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $column-gutter: 40px;
 
 // --------------------------------------------------------
@@ -12,8 +14,8 @@ $column-gutter: 40px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: -($column-gutter / 2);
-    margin-right: -($column-gutter / 2);
+    margin-left: -(math.div($column-gutter, 2));
+    margin-right: -(math.div($column-gutter, 2));
     width: 100%;
   }
 }
