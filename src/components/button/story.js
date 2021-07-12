@@ -1,13 +1,14 @@
 import React from "react"
 
-import Button from "./"
+import { component as Button, fixtures } from "./"
 
 export default {
   component: Button,
   parameters: {
     docs: {
       description: {
-        component: "Let's define a story for our `Button` component:"
+        component:
+          "The button has several predefined themes and either renders as an `<a>` or `<button>` tag depending on the props that are used."
       }
     }
   },
@@ -17,20 +18,16 @@ export default {
 const Template = (args) => <Button {...args} />
 
 export const Default = Template.bind({})
-Default.args = {
-  children: "Call to Action",
-  theme: "default",
-  url: "/docs/"
-}
+Default.args = fixtures.default
 
 export const Outline = Template.bind({})
 Outline.args = {
   ...Default.args,
-  theme: "outline"
+  ...fixtures.outline
 }
 
 export const Arrow = Template.bind({})
 Arrow.args = {
   ...Default.args,
-  theme: "arrow"
+  ...fixtures.arrow
 }

@@ -1,7 +1,6 @@
 import React from "react"
 
-import { component as Image } from "."
-import fixtures from "./fixtures"
+import { component as Image, fixtures } from "."
 
 export default {
   component: Image,

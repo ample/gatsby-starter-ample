@@ -1,7 +1,6 @@
 import React from "react"
 
-import Card from "."
-import fixtures from "./fixtures"
+import { component as Card, fixtures } from "./"
 
 export default {
   component: Card,
