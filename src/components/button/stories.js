@@ -3,6 +3,14 @@ import React from "react"
 import { component as Button, fixtures } from "."
 
 export default {
+  argTypes: {
+    theme: {
+      control: { type: "select" }
+    },
+    type: {
+      control: { type: "select" }
+    }
+  },
   component: Button,
   parameters: {
     docs: {
