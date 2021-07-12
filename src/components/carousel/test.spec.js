@@ -5,7 +5,7 @@ import { component as Carousel, fixtures } from "."
 
 describe("Carousel", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Carousel {...fixtures.default} />).toJSON()
+    const tree = renderer.create(<Carousel {...fixtures.props} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

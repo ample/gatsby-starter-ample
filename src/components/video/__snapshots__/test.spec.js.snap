@@ -9,8 +9,8 @@ exports[`Video renders correctly 1`] = `
     allowFullScreen={true}
     frameBorder="0"
     height="315"
-    src="https://www.youtube.com/embed/cIcNqn89BoU"
-    title="cIcNqn89BoU"
+    src="https://www.youtube.com/embed/j5a0jTc9S10"
+    title="j5a0jTc9S10"
     width="560"
   />
 </div>
