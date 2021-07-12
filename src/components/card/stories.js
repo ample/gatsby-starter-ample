@@ -14,7 +14,11 @@ export default {
   title: "Components/Card"
 }
 
-const Template = (args) => <Card {...args} />
+const Template = (args) => (
+  <div style={{ maxWidth: "400px" }}>
+    <Card {...args} />
+  </div>
+)
 
 export const Default = Template.bind({})
 Default.args = fixtures.default
