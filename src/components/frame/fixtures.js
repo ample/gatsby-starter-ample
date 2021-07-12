@@ -1,6 +1,6 @@
 export default {
-  default: {
+  props: {
     src: "/",
-    title: "FPO Frame"
+    title: "FPO iFrame"
   }
 }
