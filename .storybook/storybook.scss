@@ -1,10 +1,43 @@
+// --------------------------------------------------------
+// remove padding to ensure components are edge to edge when using viewport mode.
+
 .sb-show-main {
   padding: 0 !important;
 }
 
-h2#stories {
+// --------------------------------------------------------
+// remove padding and set max-width on all canvas layouts that are set to centered
+
+.sb-show-main.sb-main-centered #root {
+  max-width: var(--global-max-width) !important;
+  padding: 0 !important;
+}
+
+// --------------------------------------------------------
+// override global styles from project that are interfering with storybook
+
+h1.sbdocs-title,
+h1.sbdocs-h1,
+h2.sbdocs-h2 {
+  letter-spacing: normal !important;
+}
+
+h1.sbdocs-h1,
+h2.sbdocs-h2 {
   margin-bottom: 30px !important;
 }
+
+// --------------------------------------------------------
+// make font sizing consistent in argstable
+
+.docblock-argstable-body p,
+.rejt-object-node,
+.rejt-not-collapsed-list {
+  font-size: 13px;
+}
+
+// --------------------------------------------------------
+// remove storybook upgrade notification from UI
 
 [href='/?path=/settings/about'] {
   display: none !important;
