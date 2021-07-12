@@ -11,7 +11,9 @@
   NODE_VERSION = "15"
 
 [build]
-  functions = "functions"
+  command = "yarn build:with_storybook"
+  publish = "public/"
+  functions = "functions/handlers"
 
-
-
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
