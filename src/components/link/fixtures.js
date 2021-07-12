@@ -5,6 +5,10 @@ export default {
   },
   internal: {
     children: "I'm an internal link",
-    to: "/components/link"
+    to: "/?path=/docs/components-link--props#internal-link"
+  },
+  props: {
+    children: "Lorem dolor",
+    to: "/?path=/docs/components-link--props#internal-link"
   }
 }

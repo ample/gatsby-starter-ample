@@ -10,7 +10,7 @@ export default {
   },
   externalLink: {
     children: children,
-    to: "https://apple.com"
+    to: "https://ample.co"
   },
   outline: {
     theme: "outline",
