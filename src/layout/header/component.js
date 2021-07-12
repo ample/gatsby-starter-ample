@@ -74,7 +74,7 @@ const Header = ({ main_navigation, top_navigation }) => {
 
           <button className={menu_button} onClick={mobileMenuClick}>
             <span>Menu</span>
-            {!menuIsOpen ? <SVG name="bars" /> : <SVG name="close" />}
+            {!menuIsOpen ? <SVG name="bars" /> : <SVG name="times" />}
           </button>
         </div>
 

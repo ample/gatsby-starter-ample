@@ -1,6 +1,11 @@
-import component from "./component"
+import React from "react"
+
+import Component from "./component"
 import fixtures from "./fixtures"
+import svgOptions from "./svgs"
 
-export default component
+const SVG = (props) => <Component {...props} />
 
-export { component, fixtures }
+export default SVG
+
+export { Component as component, fixtures, svgOptions }
