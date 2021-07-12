@@ -8,6 +8,7 @@ module.exports = {
     "\\@components\\/(.*)$": `<rootDir>/src/components/$1`,
     "\\@plugins\\/(.*)$": `<rootDir>/plugins/$1`,
     "\\@root\\/(.*)$": `<rootDir>/$1`,
+    "\\@snippets\\/(.*)$": `<rootDir>/src/snippets/$1`,
     "\\@src\\/(.*)$": `<rootDir>/src/$1`
   },
   setupFiles: [`<rootDir>/.jest/loadershim.js`, `<rootDir>/.jest/setup.js`],

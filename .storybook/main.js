@@ -75,6 +75,7 @@ module.exports = {
         "@components": path.resolve(__dirname, "../src/components"),
         "@plugins": path.resolve(__dirname, "../plugins"),
         "@root": path.resolve(__dirname, "../"),
+        "@snippets": path.resolve(__dirname, "../src/snippets"),
         "@src": path.resolve(__dirname, "../src")
       }
     }

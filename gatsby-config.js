@@ -13,6 +13,7 @@ module.exports = {
           "@components": `./src/components`,
           "@plugins": `./plugins`,
           "@root": `./`,
+          "@snippets": `./src/snippets`,
           "@src": `./src`
         }
       }

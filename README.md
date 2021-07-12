@@ -66,6 +66,7 @@ The convention is to treat directories in our project like [NPM scopes](https://
 - `@components` maps to `./src/components`
 - `@plugins` maps to `./plugins`
 - `@root` maps to `./`
+- `@snippets` maps to `./src/snippets`
 - `@src` maps to `./src`
 
 Unfortunately, for seamless integration across the board, we have to configure aliases for every place in which we're going to use them, which means _at least_ Gatsby, VS Code, and Jest. Therefore, they are replicated (with the appropriate syntax) in:
