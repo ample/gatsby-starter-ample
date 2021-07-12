@@ -17,8 +17,7 @@ exports[`Card renders correctly 1`] = `
   <a
     className="button theme_arrow"
     href="#"
-    rel="noopener"
-    target="_blank"
+    onClick={[Function]}
   >
     Read more
     <svg

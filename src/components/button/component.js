@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+
 import Link from "../link"
 import SVG from "../svg"
 
@@ -17,37 +19,68 @@ const themeOptions = {
 
 // -------------------------------------------------------- | component
 
-const Button = ({ children, className, onClick, theme, to }) => {
+const Button = ({ children, className, onClick, theme, to, type }) => {
   const classes = classNames(button, {
     [className]: className,
     [themeOptions[theme]]: themeOptions[theme]
   })
 
-  return (
-    <Link to={to} className={classes} onClick={onClick}>
+  const buttonContents = (
+    <>
       {children}
       {theme === "arrow" && <SVG name="angle-right" />}
+    </>
+  )
+
+  // a element
+  let buttonComponent = (
+    <Link to={to} className={classes} onClick={onClick}>
+      {buttonContents}
     </Link>
   )
+
+  // button element
+  if (!to && (onClick || type)) {
+    buttonComponent = (
+      <button className={classes} onClick={onClick} type={type}>
+        {buttonContents}
+      </button>
+    )
+  }
+
+  // anchor links
+  if (to !== undefined && to.includes("#")) {
+    buttonComponent = (
+      <AnchorLink to={to} className={classes}>
+        {buttonContents}
+      </AnchorLink>
+    )
+  }
+
+  return buttonComponent
 }
 
 Button.propTypes = {
   /**
-   * Text rendered to the screen inside the button.
+   * Specifies what is rendered inside the button.
    */
   children: PropTypes.string.isRequired,
   /**
-   * Specifies a click Function and uses the button element
+   * Specifies a click function and renders a `<button>` element.
    */
   onClick: PropTypes.func,
   /**
-   * Specifies the theme of button
+   * Specifies the theme.
    */
   theme: PropTypes.oneOf(Object.keys(themeOptions)),
   /**
-   * The href attribute for the link rendered to the screen.
+   * Specifies the href attribute and if it contains "#" a smooth scroll anchor link used.
    */
-  to: PropTypes.string.isRequired
+  to: PropTypes.string,
+  /**
+   * Specifies the type attribute and renders a `<button>` element.
+   */
+  type: PropTypes.oneOf(["submit", "button"])
 }
 
 Button.defaultProps = {

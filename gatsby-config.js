@@ -100,6 +100,12 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         background_color: `#0095df`,

@@ -1,7 +1,8 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const NewStaticImage = () => {
+// TODO: Get Static Image to work in storybook
+const TestStaticImage = () => {
   return (
     <StaticImage
       src="https://images2.fanpop.com/images/photos/5100000/Cats-wallpaper-cats-5194876-1280-1024.jpg"
@@ -10,8 +11,8 @@ const NewStaticImage = () => {
   )
 }
 
-NewStaticImage.propTypes = {}
+TestStaticImage.propTypes = {}
 
-NewStaticImage.defaultProps = {}
+TestStaticImage.defaultProps = {}
 
-export default NewStaticImage
+export default TestStaticImage

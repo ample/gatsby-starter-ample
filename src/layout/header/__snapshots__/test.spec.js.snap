@@ -231,8 +231,6 @@ exports[`Header renders correctly 1`] = `
               className="button button theme_default"
               href="#"
               onClick={[Function]}
-              rel="noopener"
-              target="_blank"
             >
               Quisque interdum
             </a>

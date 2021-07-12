@@ -11501,6 +11501,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-anchor-links@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "gatsby-plugin-anchor-links@npm:1.2.1"
+  dependencies:
+    scroll-to-element: ^2.0.3
+  checksum: 2f3042804c4861a1a0c65fc6b60b9783cb0213687eb1a98be3e459c3990449cc1cb7a5a38137cb5a885d642ec23dfc2bb5adaf8a3b1fc008880ea33c0869ec77
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-catch-links@npm:^3.9.0":
   version: 3.9.0
   resolution: "gatsby-plugin-catch-links@npm:3.9.0"
@@ -18614,6 +18623,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"performance-now@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "performance-now@npm:2.1.0"
+  checksum: bb4ebed0b03d6c3ad3ae4eddd1182c895d385cff9096af441c19c130aaae3ea70229438ebc3297dfc52c86022f6becf177a810050823d01bf5280779cd2de624
+  languageName: node
+  linkType: hard
+
 "phin@npm:^2.9.1":
   version: 2.9.3
   resolution: "phin@npm:2.9.3"
@@ -20272,6 +20288,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"raf@npm:^3.4.0":
+  version: 3.4.1
+  resolution: "raf@npm:3.4.1"
+  dependencies:
+    performance-now: ^2.1.0
+  checksum: 567b0160be46ed20b124a05ace6e653f4ad3c047c48d02ac76161e9ac624488c0fdf622b2f4fb9c35c0c828a13dfa549044ad1db89c7af075cb0f99403b88c4b
+  languageName: node
+  linkType: hard
+
 "ramda@npm:^0.21.0":
   version: 0.21.0
   resolution: "ramda@npm:0.21.0"
@@ -21791,6 +21816,15 @@ rfs@next:
   languageName: node
   linkType: hard
 
+"scroll-to-element@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "scroll-to-element@npm:2.0.3"
+  dependencies:
+    raf: ^3.4.0
+  checksum: 6e133beaf1f31517b0b38451b2de26303c01cbcb12e1269bb6569307019ed82ca69db4f2b86824c906f57aa426ab1e707d81bbd6b55cb02c186aebdeb217a65a
+  languageName: node
+  linkType: hard
+
 "section-matter@npm:^1.0.0":
   version: 1.0.0
   resolution: "section-matter@npm:1.0.0"
@@ -22213,6 +22247,7 @@ rfs@next:
     gatsby: ^3.9.1
     gatsby-alias-imports: ^1.0.6
     gatsby-background-image: ^1.5.3
+    gatsby-plugin-anchor-links: ^1.2.1
     gatsby-plugin-catch-links: ^3.9.0
     gatsby-plugin-google-analytics: ^3.9.0
     gatsby-plugin-image: ^1.9.0
