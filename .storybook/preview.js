@@ -1,6 +1,7 @@
 import React from "react"
 import { action } from "@storybook/addon-actions"
 import { addDecorator, addParameters } from "@storybook/react"
+import { setConsoleOptions } from "@storybook/addon-console"
 import { themes } from "@storybook/theming"
 import { withTests } from "@storybook/addon-jest"
 import results from "../.jest-test-results.json"
@@ -25,6 +26,11 @@ global.__BASE_PATH__ = "/"
 window.___navigate = (pathname) => {
   action("NavigateTo:")(pathname)
 }
+
+// Storybook addon for redirecting console output into action logger panel
+setConsoleOptions({
+  panelExclude: []
+})
 
 addParameters({
   jest: ["test.spec.js"]

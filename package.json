@@ -10,6 +10,7 @@
     "@fontsource/open-sans": "^4.5.0",
     "@storybook/addon-a11y": "^6.3.4",
     "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-console": "^1.2.3",
     "@storybook/addon-docs": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/addon-jest": "^6.3.4",

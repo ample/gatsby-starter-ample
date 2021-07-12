@@ -3141,6 +3141,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-console@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@storybook/addon-console@npm:1.2.3"
+  dependencies:
+    global: ^4.3.2
+  peerDependencies:
+    "@storybook/addon-actions": "*"
+  checksum: c2ff74b19f3698f81b333d22e39be0118d14b9526a50461d6815d7116ebdd87ca05afb1bd0ec7fdad3199e40e2b966a715cd8dd288165971271744c09b372337
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-controls@npm:6.3.4":
   version: 6.3.4
   resolution: "@storybook/addon-controls@npm:6.3.4"
@@ -12366,7 +12377,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"global@npm:^4.4.0, global@npm:~4.4.0":
+"global@npm:^4.3.2, global@npm:^4.4.0, global@npm:~4.4.0":
   version: 4.4.0
   resolution: "global@npm:4.4.0"
   dependencies:
@@ -22174,6 +22185,7 @@ rfs@next:
     "@fontsource/open-sans": ^4.5.0
     "@storybook/addon-a11y": ^6.3.4
     "@storybook/addon-actions": ^6.3.4
+    "@storybook/addon-console": ^1.2.3
     "@storybook/addon-docs": ^6.3.4
     "@storybook/addon-essentials": ^6.3.4
     "@storybook/addon-jest": ^6.3.4
