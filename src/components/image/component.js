@@ -16,10 +16,8 @@ export const defaultAltAttribute = (image) => {
 const Image = ({ alt, className, src, ...props }) => {
   const classes = classNames(image, { [className]: className })
 
-  // TODO: Update Image component to work with new `gatsby-plugin-image`
-
-  // ---------------------------------------- | Gastby Image
-  const gatsbyImageData = dig(src, "childImageSharp", "gatsbyImageData")
+  // ---------------------------------------- | Gatsby Image
+  const gatsbyImageData = dig(src, "gatsbyImageData")
   if (gatsbyImageData) {
     const gImage = getImage(src)
     const imageName = dig(gatsbyImageData, "images", "fallback", "src")
@@ -53,6 +51,10 @@ Image.propTypes = {
    * Specifies the image alt attribute.
    */
   alt: PropTypes.string,
+  /**
+   * Classes attributed to the wrapping element.
+   */
+  className: PropTypes.string,
   /**
    * Specifies the image src attribute as a string or
    * Gatsby image object ([Gatsby Docs](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#all-options)).

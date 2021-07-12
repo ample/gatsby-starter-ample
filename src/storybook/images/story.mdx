@@ -1,0 +1,76 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks"
+
+<Meta title="Documentation/Gatsby Image Workflow" />
+
+# Gatsby Image Workflow for Storybook
+
+### Add images to `src/images`, start Gatsby and then go to the [GraphQL UI](http://localhost:8000/___graphql)
+
+```shell
+yarn develop
+```
+
+### Query All Images.
+
+**Note**: Change the `gatsbyImageData` options to meet the requirements for each image. e.g. Change `width: 1000` in `gatsbyImageData()` to the desired width. Here's the full list of [image options](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#image-options) that can be passed in.
+
+```graphql
+{
+  allImageSharp {
+    edges {
+      childImageSharp: node {
+        id # Test
+        gatsbyImageData(width: 1000)
+      }
+    }
+  }
+}
+```
+
+### Query a Single Image (via `id`)
+
+**Note:** Adjust the \***\*`(id: {eq: "..."})` to be use any filter, but `id` seems to be the cleanest. Find the `id` via the **All Images\*\* query.
+
+```graphql
+{
+  childImageSharp: imageSharp(id: { eq: "262b21b8-b879-5bea-9e8f-8c945e3c9240" }) {
+    gatsbyImageData(width: 1000)
+  }
+}
+```
+
+### Retrieving data needed for `src`
+
+1. Grab the `gatsbyImageData` object (see JSON block below for example) and use that as the `src` for the `<Image />` component.
+2. Change all references of `/static` to be `/storybook`.
+
+```json
+"gatsbyImageData": {
+  "layout": "constrained",
+  "backgroundColor": "#d8e8f8",
+  "images": {
+    "fallback": {
+      "src": "/static/9e01fe059bae0bedd117446c113abf11/b44b0/large-dark.jpg",
+      "srcSet": "/static/9e01fe059bae0bedd117446c113abf11/f782f/large-dark.jpg 250w,\n/static/9e01fe059bae0bedd117446c113abf11/24d85/large-dark.jpg 500w,\n/static/9e01fe059bae0bedd117446c113abf11/b44b0/large-dark.jpg 1000w,\n/static/9e01fe059bae0bedd117446c113abf11/8ba2d/large-dark.jpg 2000w",
+      "sizes": "(min-width: 1000px) 1000px, 100vw"
+    },
+    "sources": [
+      {
+        "srcSet": "/static/9e01fe059bae0bedd117446c113abf11/2a4db/large-dark.webp 250w,\n/static/9e01fe059bae0bedd117446c113abf11/c0386/large-dark.webp 500w,\n/static/9e01fe059bae0bedd117446c113abf11/e8e37/large-dark.webp 1000w,\n/static/9e01fe059bae0bedd117446c113abf11/9dca3/large-dark.webp 2000w",
+        "type": "image/webp",
+        "sizes": "(min-width: 1000px) 1000px, 100vw"
+      }
+    ]
+  },
+  "width": 1000,
+  "height": 414.99999999999994
+}
+```
+
+### Copying image files
+
+```shell
+yarn build
+```
+
+Once the build is complete, copy the images that are needed from `public/static/IMAGE_DIRECTORY_ID` into `/static/storybook/IMAGE_DIRECTORY_ID`, and then remove the images in `src/images` since they're no longer needed.
