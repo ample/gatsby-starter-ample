@@ -1,5 +1,5 @@
 export default {
-  default: {
-    youtube_id: "cIcNqn89BoU"
+  props: {
+    youtube_id: "j5a0jTc9S10"
   }
 }
