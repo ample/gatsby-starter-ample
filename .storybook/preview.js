@@ -46,8 +46,9 @@ addDecorator((story) => <>{story()}</>)
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-  layout: "centered",
+  controls: { sort: "alpha" },
   docs: {
     theme: process.env.STORYBOOK_THEME_DARK === true ? themes.dark : themes.light
-  }
+  },
+  layout: "centered"
 }
