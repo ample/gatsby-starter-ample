@@ -10,7 +10,7 @@ export default {
     }
   },
   component: SVG,
-  title: "Components/SVGs"
+  title: "Components/SVG"
 }
 
 const Template = (args) => (

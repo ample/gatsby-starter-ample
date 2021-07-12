@@ -12,7 +12,7 @@ export default {
       }
     }
   },
-  title: "Components/Images"
+  title: "Components/Image"
 }
 
 const Template = (args) => <Image {...args} />

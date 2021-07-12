@@ -11,7 +11,7 @@ export default {
       }
     }
   },
-  title: "Components/Cards"
+  title: "Components/Card"
 }
 
 const Template = (args) => <Card {...args} />

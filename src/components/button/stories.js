@@ -20,7 +20,7 @@ export default {
       }
     }
   },
-  title: "Components/Buttons"
+  title: "Components/Button"
 }
 
 const Template = (args) => <Button {...args} />
