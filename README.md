@@ -59,7 +59,7 @@ If using Contentful:
 
 ## Alias Imports
 
-This project support alias imports through [the gatsby-alias-imports plugin](https://www.gatsbyjs.org/packages/gatsby-alias-imports/). This provides a means for being able to import components without needing to know exactly where you are in the tree. It can make moving items around a little less painful.
+This project supports alias imports through [the gatsby-alias-imports plugin](https://www.gatsbyjs.org/packages/gatsby-alias-imports/). This provides a means for being able to import components without needing to know exactly where you are in the tree. It can make moving items around a little less painful.
 
 The convention is to treat directories in our project like [NPM scopes](https://docs.npmjs.com/about-scopes). The scope is prepended with a `@` character. There are three prefixes supported out of the box:
 
@@ -74,6 +74,7 @@ Unfortunately, for seamless integration across the board, we have to configure a
 - `gatsby-config.js`
 - `jest.config.js`
 - `jsconfig.json`
+- `.storybook/main.js`
 
 If you wish to add a custom alias to your project, make sure to touch all appropriate config files.
 
@@ -96,7 +97,7 @@ It's recommended to set up seamless integration with your editor.
 
 > Note: _When using VS Code most ESLint and Stylelint conventions will be fixed automatically._
 
-Run `yarn run lint` to ensure there are no linter errors or warnings before committing.
+Linters run `pre-push` to ensure there are no errors or warnings.
 
 ## License
 
