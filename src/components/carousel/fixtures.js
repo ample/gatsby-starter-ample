@@ -1,5 +1,5 @@
 export default {
-  default: {
+  props: {
     slides: [
       {
         body: "Aliquip minim sit non esse mollit elit dolore eiusmod excepteur non."
