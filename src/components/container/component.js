@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Block from "../block"
+import Block from "@components/block"
 
 import { container, content } from "./styles.module.scss"
 

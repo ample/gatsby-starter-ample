@@ -4,8 +4,8 @@ import classNames from "classnames"
 
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import Link from "../link"
-import SVG from "../svg"
+import Link from "@components/link"
+import SVG from "@components/svg"
 
 // -------------------------------------------------------- | styles
 

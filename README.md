@@ -63,6 +63,7 @@ This project support alias imports through [the gatsby-alias-imports plugin](htt
 
 The convention is to treat directories in our project like [NPM scopes](https://docs.npmjs.com/about-scopes). The scope is prepended with a `@` character. There are three prefixes supported out of the box:
 
+- `@components` maps to `./src/components`
 - `@plugins` maps to `./plugins`
 - `@root` maps to `./`
 - `@src` maps to `./src`

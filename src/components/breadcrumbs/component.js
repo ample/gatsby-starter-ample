@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Link from "@src/components/link"
-import SVG from "@src/components/svg"
+import Link from "@components/link"
+import SVG from "@components/svg"
 
 import { breadcrumbs, crumb, icon_only } from "./styles.module.scss"
 
