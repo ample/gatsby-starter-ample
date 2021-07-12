@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import componentMap from "./component-map"
 
-const Block = props => {
+const Block = (props) => {
   // If no data was passed, render nothing.
   if (!props) return null
 

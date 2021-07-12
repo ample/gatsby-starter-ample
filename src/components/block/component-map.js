@@ -1,10 +1,10 @@
-import Button from "@src/components/button"
-import Column from "@src/components/column"
-import Container from "@src/components/container"
-import Content from "@src/components/content"
-import Form from "@src/components/form"
-import Frame from "@src/components/frame"
-import Image from "@src/components/image"
+import Button from "@components/button"
+import Column from "@components/column"
+import Container from "@components/container"
+import Content from "@components/content"
+import Form from "@components/form"
+import Frame from "@components/frame"
+import Image from "@components/image"
 
 export default {
   "component-button": Button,
