@@ -57,9 +57,19 @@ If using Contentful:
 - Uncomment `gatsby-ample-importer` config in `gatsby-config.js`.
 - Change `File` declarations in `schema.yml` to `RemoteFile` for fields whose assets will be coming from the remote source.
 
+## Generator
+
+Generate new Components, Templates and Fragments with boilerplate code to speed up the development process. Run the following command to bring up the help menu.
+
+```shell
+yarn generate
+```
+
+Read more about the [gatsby-ample-generator](/plugins/gatsby-ample-generator/README.md) plugin.
+
 ## Alias Imports
 
-This project supports alias imports through [the gatsby-alias-imports plugin](https://www.gatsbyjs.org/packages/gatsby-alias-imports/). This provides a means for being able to import components without needing to know exactly where you are in the tree. It can make moving items around a little less painful.
+This project supports alias imports through the [gatsby-alias-imports](https://www.gatsbyjs.org/packages/gatsby-alias-imports/) plugin. This provides a means for being able to import components without needing to know exactly where you are in the tree. It can make moving items around a little less painful.
 
 The convention is to treat directories in our project like [NPM scopes](https://docs.npmjs.com/about-scopes). The scope is prepended with a `@` character. There are three prefixes supported out of the box:
 

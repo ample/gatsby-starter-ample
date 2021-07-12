@@ -1,6 +1,11 @@
-import component from "./component"
+import React from "react"
+
+import Component from "./component"
 import fixtures from "./fixtures"
+import transform from "./transformer"
 
-export default component
+const ComponentName = (props) => <Component {...transform(props)} />
 
-export { component, fixtures }
+export default ComponentName
+
+export { Component as component, fixtures, transform as transformer }

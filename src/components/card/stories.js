@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "Let's define a story for our `Card` component:"
+        component: "Let's define a story for our `Card` component."
       }
     }
   },

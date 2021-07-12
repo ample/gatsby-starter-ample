@@ -10,16 +10,17 @@ const copyDir = (type, name) => {
   fs.copySync(srcDir, destDir, { recursive: true })
 }
 
-const copyFile = (tmpl, dest) => fs.copySync(path.join(__dirname, `templates/${tmpl}`), dest)
+const copyFile = (template, dest) =>
+  fs.copySync(path.join(__dirname, `templates/${template}`), dest)
 
 const argv = require("yargs")
-  .command(["component <name>", "c"], "Generate a new component", {}, argv =>
+  .command(["component <name>", "c"], "Generate a new component", {}, (argv) =>
     copyDir("component", argv.name)
   )
-  .command(["template <name>", "t"], "Generate a new template", {}, argv =>
+  .command(["template <name>", "t"], "Generate a new template", {}, (argv) =>
     copyDir("template", argv.name)
   )
-  .command(["fragment <name>", "f"], "Generate a new fragment", {}, argv =>
+  .command(["fragment <name>", "f"], "Generate a new fragment", {}, (argv) =>
     copyFile("fragment.js", `./src/fragments/${argv.name}-attributes.js`)
   )
   .demandCommand(2, "You must specify type and name").argv
