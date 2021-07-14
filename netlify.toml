@@ -16,4 +16,4 @@
   functions = "functions/handlers"
 
 [[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+  package = "@netlify/plugin-gatsby"

@@ -2857,6 +2857,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@netlify/functions@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "@netlify/functions@npm:0.7.2"
+  dependencies:
+    is-promise: ^4.0.0
+  checksum: c7f71c251ed4c11cb431aeedf5d3f7a3deed174cb6ce0ff87b163335262703f94e84f733713dd99b379ba5641cd42477efcef8a4ab2214fe24065e0b09e81d1f
+  languageName: node
+  linkType: hard
+
+"@netlify/plugin-gatsby@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@netlify/plugin-gatsby@npm:1.0.3"
+  dependencies:
+    "@netlify/functions": ^0.7.2
+    co-body: ^6.1.0
+    cookie: ^0.4.1
+    download: ^8.0.0
+    fs-extra: ^10.0.0
+    multer: ^1.4.2
+    node-fetch: ^2.6.1
+    path-to-regexp: ^6.0.0
+    tempy: ^1.0.0
+  checksum: 501bb0cbfa1d59d84b6e81f2d6d146e5ddf935e3b64c967b722aea565867af7cd0a8712926d3698be3684b064dcf06d22bd3f129e55643accce60d5c5b75bab9
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -7453,6 +7479,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"co-body@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "co-body@npm:6.1.0"
+  dependencies:
+    inflation: ^2.0.0
+    qs: ^6.5.2
+    raw-body: ^2.3.3
+    type-is: ^1.6.16
+  checksum: 9be4361e91f6cc7d21a65f52b306feb79a78047ab484622fbae72f6ec3f704be32155899624bc4066bc038c7f95f2fcb29a7f20ac51a3e919d51b3a6c9b5c301
+  languageName: node
+  linkType: hard
+
 "co@npm:^4.6.0":
   version: 4.6.0
   resolution: "co@npm:4.6.0"
@@ -8692,7 +8730,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decompress@npm:^4.0.0, decompress@npm:^4.2.0":
+"decompress@npm:^4.0.0, decompress@npm:^4.2.0, decompress@npm:^4.2.1":
   version: 4.2.1
   resolution: "decompress@npm:4.2.1"
   dependencies:
@@ -8855,6 +8893,22 @@ __metadata:
     rimraf: ^3.0.0
     slash: ^3.0.0
   checksum: e9de3180b2a5742adf877d1acdf1721fe42a27ea86890a9f19e949697ac4d972ba505e912df023a8b5ef04c1b5989a02e8451fd52fa6d3487b8745c21456efc6
+  languageName: node
+  linkType: hard
+
+"del@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "del@npm:6.0.0"
+  dependencies:
+    globby: ^11.0.1
+    graceful-fs: ^4.2.4
+    is-glob: ^4.0.1
+    is-path-cwd: ^2.2.0
+    is-path-inside: ^3.0.2
+    p-map: ^4.0.0
+    rimraf: ^3.0.2
+    slash: ^3.0.0
+  checksum: da72707c9221154db6d6b05890ac1ae771d1b4ffc2759a6b8fca58e8a8289e07d22b68f68666a6c540dd99f1021b29ef77918dcaf4dbfeb9f99f49bd7fcc6fb5
   languageName: node
   linkType: hard
 
@@ -9341,6 +9395,25 @@ __metadata:
     p-event: ^2.1.0
     pify: ^3.0.0
   checksum: f5e779952ff09208ddcceb49ec56c2192f7f14ca135da521d22e5ddc1d8f5f1efbb5a639656681d8c5e2591367533a8ae908f7d978fe51af9cef042a9299873e
+  languageName: node
+  linkType: hard
+
+"download@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "download@npm:8.0.0"
+  dependencies:
+    archive-type: ^4.0.0
+    content-disposition: ^0.5.2
+    decompress: ^4.2.1
+    ext-name: ^5.0.0
+    file-type: ^11.1.0
+    filenamify: ^3.0.0
+    get-stream: ^4.1.0
+    got: ^8.3.1
+    make-dir: ^2.1.0
+    p-event: ^2.1.0
+    pify: ^4.0.1
+  checksum: 61adbdf846211c91fafd30ce763c5f6a0be6fb9fdd9f599d7ff597e58ea3f092318b3b6147806d25171ce6887fef51a61b7811734ed391a979a3f8a0473ae936
   languageName: node
   linkType: hard
 
@@ -10790,6 +10863,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"file-type@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "file-type@npm:11.1.0"
+  checksum: 00798b174c7dc5522f1a9d6efb2e19534a386bcbbeb9efce3d315ab288cf969bb8ee6e2d232bc23631cfc9d9872e18055e7e4b52f2c09e0a0f8cd79151412bda
+  languageName: node
+  linkType: hard
+
 "file-type@npm:^12.0.0":
   version: 12.4.2
   resolution: "file-type@npm:12.4.2"
@@ -10865,6 +10945,17 @@ __metadata:
     strip-outer: ^1.0.0
     trim-repeated: ^1.0.0
   checksum: 3c9daa99d338eadeed225882ae8033e5fb03aa595c39a09acd492545b380ec46e4224ebbbc66f8be854e30392b02c597fb127ecaa76bd1280949ad634dcf0ad3
+  languageName: node
+  linkType: hard
+
+"filenamify@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "filenamify@npm:3.0.0"
+  dependencies:
+    filename-reserved-regex: ^2.0.0
+    strip-outer: ^1.0.0
+    trim-repeated: ^1.0.0
+  checksum: ad75665a0b8b603a2b6dbb9e229ca092813255e9cc80e7f9b9e91be4cc54b9172ac3de4911d5dcec7b51b90e1d50bf998fcd6d4f72eac0ad447d8abd1f6199b0
   languageName: node
   linkType: hard
 
@@ -12465,7 +12556,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"globby@npm:^11.0.2, globby@npm:^11.0.3":
+"globby@npm:^11.0.1, globby@npm:^11.0.2, globby@npm:^11.0.3":
   version: 11.0.4
   resolution: "globby@npm:11.0.4"
   dependencies:
@@ -13695,6 +13786,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"inflation@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "inflation@npm:2.0.0"
+  checksum: 05b9472808b70844e0305371d5df6b757847de796a2bcc1d9526ad394a82ff469112515ddcc90f5d682df674d4e4735311c10fcbc4b533b2fc0f56e2aaa13417
+  languageName: node
+  linkType: hard
+
 "inflight@npm:^1.0.4":
   version: 1.0.6
   resolution: "inflight@npm:1.0.6"
@@ -14366,7 +14464,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"is-promise@npm:4.0.0":
+"is-promise@npm:4.0.0, is-promise@npm:^4.0.0":
   version: 4.0.0
   resolution: "is-promise@npm:4.0.0"
   checksum: 7085bdc4eaff389c5730a1d54f014880e90ca1e4b7f0a49de9f3c5f5d2fb9e0c3a878ac226d3aa9190bfe4a78400e66d911427ef4812455756293cdb02fb05cf
@@ -17324,13 +17422,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"netlify-plugin-gatsby-cache@npm:^0.3.2":
-  version: 0.3.2
-  resolution: "netlify-plugin-gatsby-cache@npm:0.3.2"
-  checksum: 4e1852e7487b04a1d7de04bc158ecf6d483c0a10cdc079de24d2e5219c02ba44fef392a23da1e5f988656b26fb7d5f3f7ae449d1823f969ca567ee49e8c66047
-  languageName: node
-  linkType: hard
-
 "next-tick@npm:1, next-tick@npm:^1.1.0":
   version: 1.1.0
   resolution: "next-tick@npm:1.1.0"
@@ -18579,6 +18670,13 @@ fsevents@^1.2.7:
   version: 0.1.7
   resolution: "path-to-regexp@npm:0.1.7"
   checksum: 342fdb0ca48415d6eccdbe6d4180fd0fa4786ccc96ab3f74fcdf7acfc99e075af25e6077c8086c341dcfb4f5f84401ecd21e6cd7b24e0c3b556fb7ffb2570da7
+  languageName: node
+  linkType: hard
+
+"path-to-regexp@npm:^6.0.0":
+  version: 6.2.0
+  resolution: "path-to-regexp@npm:6.2.0"
+  checksum: 4116de71f5453163910347f199ab28fdd07f4053ed88093acb42dc044a2e5e7d9e18379e81e8d5d982d1b88291be3666e56be34a0741298673248fd21e3c1c16
   languageName: node
   linkType: hard
 
@@ -20202,7 +20300,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0, qs@npm:^6.9.4":
+"qs@npm:^6.10.0, qs@npm:^6.5.2, qs@npm:^6.9.4":
   version: 6.10.1
   resolution: "qs@npm:6.10.1"
   dependencies:
@@ -20332,7 +20430,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"raw-body@npm:^2.4.1":
+"raw-body@npm:^2.3.3, raw-body@npm:^2.4.1":
   version: 2.4.1
   resolution: "raw-body@npm:2.4.1"
   dependencies:
@@ -22217,6 +22315,7 @@ rfs@next:
     "@babel/eslint-parser": ^7.14.7
     "@babel/preset-react": ^7.14.5
     "@fontsource/open-sans": ^4.5.0
+    "@netlify/plugin-gatsby": ^1.0.3
     "@storybook/addon-a11y": ^6.3.4
     "@storybook/addon-actions": ^6.3.4
     "@storybook/addon-console": ^1.2.3
@@ -22271,7 +22370,6 @@ rfs@next:
     jest: ^26.6.3
     js-yaml: ^3.14.1
     lodash: ^4.17.21
-    netlify-plugin-gatsby-cache: ^0.3.2
     object-dig: ^0.1.3
     parameterize-string: ^1.0.1
     path-browserify: ^1.0.1
@@ -23646,6 +23744,13 @@ rfs@next:
   languageName: node
   linkType: hard
 
+"temp-dir@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "temp-dir@npm:2.0.0"
+  checksum: d7816d1ce5ea605ffe79f5692c96eef7e14b3dd01799be5462233046db9a169e2bee927c4391f577528137318198f5a18540c174cb6b054768213e7bffd5cb25
+  languageName: node
+  linkType: hard
+
 "tempfile@npm:^2.0.0":
   version: 2.0.0
   resolution: "tempfile@npm:2.0.0"
@@ -23653,6 +23758,19 @@ rfs@next:
     temp-dir: ^1.0.0
     uuid: ^3.0.1
   checksum: b979d29579d52ef5de77b7dad75c4a66cec805b6c733bd0405e6904ebd7badaba732d5b8294ce9ccfffb75685e013533b1a6585117fbe7ece870308f377711f5
+  languageName: node
+  linkType: hard
+
+"tempy@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "tempy@npm:1.0.1"
+  dependencies:
+    del: ^6.0.0
+    is-stream: ^2.0.0
+    temp-dir: ^2.0.0
+    type-fest: ^0.16.0
+    unique-string: ^2.0.0
+  checksum: c598d89ec21246d29e30d6051b0112b614fd744c9c0c80526eb558332056aec949ec79a2918a73514416c95dca3f6f4afe23552b1ce40282205a5ddd7463f999
   languageName: node
   linkType: hard
 
@@ -24173,6 +24291,13 @@ rfs@next:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "type-fest@npm:0.16.0"
+  checksum: d30834bb1d96f0eb4ec53248d094bc96c026c06873be4f35816dee3812d210a85cbb23e1ac3f231d98c804efedb49aec83752b9b265c3f3aad03e2c23e4f2876
+  languageName: node
+  linkType: hard
+
 "type-fest@npm:^0.18.0":
   version: 0.18.1
   resolution: "type-fest@npm:0.18.1"
@@ -24208,7 +24333,7 @@ rfs@next:
   languageName: node
   linkType: hard
 
-"type-is@npm:^1.6.4, type-is@npm:~1.6.17, type-is@npm:~1.6.18":
+"type-is@npm:^1.6.16, type-is@npm:^1.6.4, type-is@npm:~1.6.17, type-is@npm:~1.6.18":
   version: 1.6.18
   resolution: "type-is@npm:1.6.18"
   dependencies:
