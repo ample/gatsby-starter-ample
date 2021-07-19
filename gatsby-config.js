@@ -3,6 +3,7 @@ const postcssConfig = require("./postcss.config")
 
 module.exports = {
   flags: {
+    PARALLEL_SOURCING: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
@@ -77,20 +78,20 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-relative-images`
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1440
-            }
-          }
-        ]
-      }
+      resolve: `gatsby-transformer-remark`
+      // options: {
+      //   plugins: [
+      //     {
+      //       resolve: `gatsby-remark-relative-images`
+      //     },
+      //     {
+      //       resolve: `gatsby-remark-images`,
+      //       options: {
+      //         maxWidth: 1440
+      //       }
+      //     }
+      //   ]
+      // }
     },
     {
       resolve: `gatsby-remark-ample`,
@@ -173,6 +174,8 @@ module.exports = {
     //     }
     //   }
     // },
+    //  Netlify recommends building files without a hash, this plugin will eliminate the hash from built JavaScript files
+    `gatsby-plugin-remove-fingerprints`,
     {
       resolve: `gatsby-plugin-netlify`,
       options: {

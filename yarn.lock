@@ -11735,6 +11735,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-remove-fingerprints@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "gatsby-plugin-remove-fingerprints@npm:0.0.2"
+  checksum: 2e5b738b6a971e6c135c4a428f96c3c4e0841ad363f06e7451b02da66d28164afad5695b00a039fd0c7f3ef0c133d8bd41c38333ba6e1d7a3e223d2bca3d9293
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-sass@npm:^4.9.0":
   version: 4.9.0
   resolution: "gatsby-plugin-sass@npm:4.9.0"
@@ -22354,6 +22361,7 @@ rfs@next:
     gatsby-plugin-netlify: ^3.9.0
     gatsby-plugin-offline: ^4.9.0
     gatsby-plugin-react-helmet: ^4.9.0
+    gatsby-plugin-remove-fingerprints: ^0.0.2
     gatsby-plugin-sass: ^4.9.0
     gatsby-plugin-sharp: ^3.9.0
     gatsby-plugin-sitemap: ^4.5.0
