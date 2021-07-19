@@ -42,3 +42,21 @@ h2.sbdocs-h2 {
 [href='/?path=/settings/about'] {
   display: none !important;
 }
+
+// --------------------------------------------------------
+// center story in canvas tab
+
+.sb-centered {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  > div {
+    width: 100vw;
+  }
+}
+
+.sbdocs .sb-centered {
+  height: auto;
+}

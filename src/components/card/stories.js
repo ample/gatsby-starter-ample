@@ -20,8 +20,8 @@ const Template = (args) => (
   </div>
 )
 
-export const Default = Template.bind({})
-Default.args = fixtures.default
+export const Props = Template.bind({})
+Props.args = fixtures.props
 
 export const TextAlignmentCenter = Template.bind({})
 TextAlignmentCenter.args = fixtures.text_alignment_center
