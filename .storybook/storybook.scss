@@ -6,6 +6,13 @@
 }
 
 // --------------------------------------------------------
+// extend storybook docs content area
+
+.sbdocs-content {
+  max-width: $large !important;
+}
+
+// --------------------------------------------------------
 // remove padding and set max-width on all canvas layouts that are set to centered
 
 .sb-show-main.sb-main-centered #root {

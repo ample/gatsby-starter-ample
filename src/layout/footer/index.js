@@ -5,7 +5,7 @@ import Component from "./component"
 import fixtures from "./fixtures"
 
 const Footer = () => {
-  return process.env.NODE_ENV === "test" ? <Component {...fixtures.default} /> : <Adapter />
+  return process.env.NODE_ENV === "test" ? <Component {...fixtures} /> : <Adapter />
 }
 
 export default Footer
