@@ -2,7 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 
 import Block from "."
-import { fixtures } from "@src/components/container"
+import { fixtures } from "@layout/container"
 
 describe("Block", () => {
   it("returns null when no data", () => {

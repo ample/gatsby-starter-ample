@@ -12,6 +12,7 @@ module.exports = {
       options: {
         aliases: {
           "@components": `./src/components`,
+          "@layout": `./src/layout`,
           "@plugins": `./plugins`,
           "@root": `./`,
           "@snippets": `./src/snippets`,
