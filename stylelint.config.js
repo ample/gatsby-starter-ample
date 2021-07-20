@@ -1,7 +1,7 @@
 module.exports = {
   extends: ["stylelint-config-prettier"],
-  plugins: ["stylelint-order", "stylelint-scss"],
   ignoreFiles: ["**/*.js"],
+  plugins: ["stylelint-order", "stylelint-scss"],
   rules: {
     "at-rule-empty-line-before": [
       "always",
@@ -15,13 +15,13 @@ module.exports = {
     "at-rule-name-space-after": "always",
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
+    "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after": [
       "always",
       {
         ignoreAtRules: ["if", "else"]
       }
     ],
-    "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-before": "always",
     "block-no-empty": true,
     "block-opening-brace-newline-after": "always",
@@ -66,12 +66,6 @@ module.exports = {
     "function-whitespace-after": "always",
     "length-zero-no-unit": true,
     linebreaks: "unix",
-    "no-duplicate-at-import-rules": true,
-    "no-duplicate-selectors": true,
-    "no-empty-first-line": true,
-    "no-eol-whitespace": true,
-    "no-extra-semicolons": true,
-    "no-missing-end-of-source-newline": true,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-name-case": "lower",
@@ -83,6 +77,12 @@ module.exports = {
     "media-query-list-comma-newline-after": "always-multi-line",
     "media-query-list-comma-space-after": "always-single-line",
     "media-query-list-comma-space-before": "never",
+    "no-duplicate-at-import-rules": true,
+    "no-duplicate-selectors": true,
+    "no-empty-first-line": true,
+    "no-eol-whitespace": true,
+    "no-extra-semicolons": true,
+    "no-missing-end-of-source-newline": true,
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "order/order": ["custom-properties", "declarations"],
