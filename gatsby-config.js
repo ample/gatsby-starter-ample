@@ -3,6 +3,7 @@ const postcssConfig = require("./postcss.config")
 
 module.exports = {
   flags: {
+    DEV_WEBPACK_CACHE: true,
     PARALLEL_SOURCING: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
