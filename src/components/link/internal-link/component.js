@@ -28,17 +28,13 @@ InternalLink.propTypes = {
    */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /**
-   * The "class" attribute that gets passed to Gatsby's <Link /> component.
+   * Event handler for the onClick event
    */
-  className: PropTypes.string,
+  onClick: PropTypes.func,
   /**
    * The path of the link.
    */
-  to: PropTypes.string.isRequired,
-  /**
-   * Event handler for the onClick event
-   */
-  onClick: PropTypes.func
+  to: PropTypes.string.isRequired
 }
 
 export default InternalLink

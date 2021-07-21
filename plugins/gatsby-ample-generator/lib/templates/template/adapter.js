@@ -9,12 +9,12 @@ import SEO from "@src/components/seo"
 import Template from "./template"
 
 const TemplateAdapter = ({ data, pageContext }) => {
-  let { page } = data
+  const { page } = data
 
   const seo = normalizeSEO({
-    url: pageContext.url,
     overrides: page.seo,
-    page: { title: page.title }
+    page: { title: page.title },
+    url: pageContext.url
   })
 
   return (

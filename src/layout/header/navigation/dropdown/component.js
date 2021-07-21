@@ -40,13 +40,13 @@ const Dropdown = ({ handleDropdownClick, items, label, onClick, openDropdown }) 
 
 Dropdown.propTypes = {
   /**
-   * Element(s) to render to the screen
-   */
-  items: PropTypes.array.isRequired,
-  /**
    * A onClick function passed down from the navigation component
    */
   handleDropdownClick: PropTypes.func,
+  /**
+   * Element(s) to render to the screen
+   */
+  items: PropTypes.array.isRequired,
   /**
    * Dropdown label
    */

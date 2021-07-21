@@ -5,7 +5,7 @@ import Component from "./component"
 import fixtures from "./navigation/fixtures"
 
 const Header = () => {
-  return process.env.NODE_ENV === "test" ? <Component {...fixtures.default} /> : <Adapter />
+  return process.env.NODE_ENV === "test" ? <Component {...fixtures} /> : <Adapter />
 }
 
 export default Header

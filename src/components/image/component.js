@@ -16,10 +16,8 @@ export const defaultAltAttribute = (image) => {
 const Image = ({ alt, className, src, ...props }) => {
   const classes = classNames(image, { [className]: className })
 
-  // TODO: Update Image component to work with new `gatsby-plugin-image`
-
-  // ---------------------------------------- | Gastby Image
-  const gatsbyImageData = dig(src, "childImageSharp", "gatsbyImageData")
+  // ---------------------------------------- | Gatsby Image
+  const gatsbyImageData = dig(src, "gatsbyImageData")
   if (gatsbyImageData) {
     const gImage = getImage(src)
     const imageName = dig(gatsbyImageData, "images", "fallback", "src")
@@ -66,23 +64,23 @@ Image.propTypes = {
     PropTypes.shape({
       childImageSharp: PropTypes.shape({
         gatsbyImageData: PropTypes.shape({
-          layout: PropTypes.oneOf(["constrained", "fixed", "fullWidth"]),
+          height: PropTypes.number,
           images: PropTypes.shape({
             fallback: PropTypes.shape({
+              sizes: PropTypes.string,
               src: PropTypes.string,
-              srcSet: PropTypes.string,
-              sizes: PropTypes.string
+              srcSet: PropTypes.string
             }),
             sources: PropTypes.arrayOf(
               PropTypes.shape({
+                sizes: PropTypes.string,
                 srcSet: PropTypes.string,
-                type: PropTypes.string,
-                sizes: PropTypes.string
+                type: PropTypes.string
               })
             )
           }),
-          width: PropTypes.number,
-          height: PropTypes.number
+          layout: PropTypes.oneOf(["constrained", "fixed", "fullWidth"]),
+          width: PropTypes.number
         })
       })
     })

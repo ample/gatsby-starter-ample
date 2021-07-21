@@ -37,7 +37,7 @@ const FormFieldText = ({
     return formHandler(name, event.target.value)
   }
 
-  let fieldOpts = {
+  const fieldOpts = {
     name: name,
     onChange: handleChange,
     placeholder: placeholder,
@@ -80,12 +80,12 @@ FormFieldText.propTypes = {
    */
   placeholder: PropTypes.string,
   /**
-   * Force that a value exists before submittin
-   .*/
+   * Force that a value exists before submitting.
+   */
   required: PropTypes.bool,
   /**
-   * Enforce that the field sits on its own line, regardless of widt
-   .*/
+   * Enforce that the field sits on its own line, regardless of width.
+   */
   solo: PropTypes.bool,
   /**
    * Controls the "type" attribute for short-form text fields.

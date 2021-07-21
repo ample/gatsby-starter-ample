@@ -7,7 +7,7 @@
   "trailingComma": "none",
   "overrides": [
     {
-      "files": "*.scss",
+      "files": ["*.scss", "*.css"],
       "options": {
         "singleQuote": true
       }

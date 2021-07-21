@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import Link from "@src/components/link"
-import Button from "@src/components/button"
-import Image from "@src/components/image"
+import Link from "@components/link"
+import Button from "@components/button"
+import Image from "@components/image"
 
 // -------------------------------------------------------- | styles
 
@@ -65,8 +65,8 @@ Card.propTypes = {
    */
   button: PropTypes.exact({
     label: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    theme: PropTypes.string
+    theme: PropTypes.string,
+    url: PropTypes.string.isRequired
   }),
   /**
    * Specifies the heading

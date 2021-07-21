@@ -1,9 +1,12 @@
 // --------------------------------------------------------
 
 @mixin reset-button {
+  appearance: none;
   background-color: transparent;
-  border: none;
-  outline: none;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
 }
 
 // --------------------------------------------------------
@@ -16,4 +19,16 @@
     list-style: none;
     padding: 0;
   }
+}
+
+// ---------------------------------------------------------
+
+@mixin reset-select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
 }

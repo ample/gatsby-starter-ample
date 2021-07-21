@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use 'sass:map';
+@use 'sass:math';
 
 // --------------------------------------------------------
 
@@ -33,10 +34,10 @@ $radio-button-hover: color.scale(
 .form_field_group {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 (-$form-field-gutter / 2) 24px;
+  margin: 0 math.div(-$form-field-gutter, 2) 24px;
 
   h2 {
-    margin: 0 ($form-field-gutter / 2) 26px;
+    margin: 0 math.div($form-field-gutter, 2) 26px;
     width: 100%;
   }
 }
@@ -45,7 +46,7 @@ $radio-button-hover: color.scale(
 
 .form_field {
   flex-basis: 100%;
-  margin: 0 ($form-field-gutter / 2) 18px;
+  margin: 0 math.div($form-field-gutter, 2) 18px;
 
   &.width_half {
     @include media($small) {
@@ -68,7 +69,7 @@ $radio-button-hover: color.scale(
       select,
       textarea {
         @include media($small) {
-          width: calc(50% - #{$form-field-gutter / 2});
+          width: calc(50% - #{math.div($form-field-gutter, 2)});
         }
       }
     }
@@ -79,7 +80,7 @@ $radio-button-hover: color.scale(
       select,
       textarea {
         @include media($small) {
-          width: calc(25% - #{$form-field-gutter / 1.33333});
+          width: calc(25% - #{math.div($form-field-gutter, 1.33333)});
         }
       }
     }

@@ -14,7 +14,7 @@ exports[`Link renders external link correctly 1`] = `
 exports[`Link renders internal link correctly 1`] = `
 <a
   className="link"
-  href="/components/link"
+  href="/?path=/docs/components-link--props#internal-link"
 >
   I'm an internal link
 </a>

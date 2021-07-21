@@ -83,25 +83,21 @@ const Navigation = ({ className, links = [], onClick }) => {
 
 Navigation.propTypes = {
   /**
-   * CSS class(es) applied to the wrapping element
-   */
-  className: PropTypes.string,
-  /**
    * An array of link objects used to build the list
    */
   links: PropTypes.arrayOf(
     PropTypes.shape({
       button: PropTypes.bool,
-      className: PropTypes.string,
-      label: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
       children: PropTypes.arrayOf(
         PropTypes.shape({
           className: PropTypes.string,
           label: PropTypes.string.isRequired,
           url: PropTypes.string.isRequired
         })
-      )
+      ),
+      className: PropTypes.string,
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
     })
   ).isRequired,
   /**

@@ -1,5 +1,5 @@
 export default {
-  default: {
+  props: {
     links: [
       { icon: "home", label: "Home", url: "#" },
       { label: "Lorem", url: "#" },

@@ -6,7 +6,7 @@ exports[`Frame renders correctly 1`] = `
 >
   <iframe
     src="/"
-    title="FPO Frame"
+    title="FPO iFrame"
   />
 </div>
 `;

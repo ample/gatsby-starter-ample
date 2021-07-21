@@ -1,16 +1,34 @@
+const children = "Call to action"
+
 export default {
+  arrow: {
+    theme: "arrow"
+  },
   default: {
-    children: "Call to action",
-    to: "#"
+    children: children,
+    to: "/"
+  },
+  externalLink: {
+    children: children,
+    to: "https://ample.co"
   },
   outline: {
-    children: "Call to action",
     theme: "outline",
+    to: "/"
+  },
+  props: {
+    children: children,
+    theme: "default",
+    to: "/",
+    type: "button"
+  },
+  useAnchorLink: {
+    children: children,
     to: "#"
   },
-  arrow: {
-    children: "Call to action",
-    theme: "arrow",
-    to: "#"
+  useButtonElement: {
+    children: children,
+    to: "",
+    type: "button"
   }
 }

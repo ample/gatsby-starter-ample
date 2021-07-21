@@ -5,7 +5,7 @@ import { component as Frame, fixtures } from "."
 
 describe("Frame", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Frame {...fixtures.default} />).toJSON()
+    const tree = renderer.create(<Frame {...fixtures.props} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

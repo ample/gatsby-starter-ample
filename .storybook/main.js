@@ -41,7 +41,6 @@ module.exports = {
     {
       name: "@storybook/addon-essentials",
       options: {
-        controls: false,
         docs: {
           options: {
             configureJSX: true
@@ -56,38 +55,29 @@ module.exports = {
   core: {
     builder: "webpack5"
   },
-  stories: ["../src/**/story.mdx", "../src/**/story.js"],
+  stories: ["../src/storybook/*stories.mdx", "../src/**/stories.js"],
 
   webpackFinal: async (config) => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
-    // use installed babel-loader which is v8.0-beta (which is meant to work with @babel/core@7)
-    config.module.rules[0].use[0].loader = require.resolve("babel-loader")
-    // use @babel/preset-react for JSX and env (instead of staged presets)
-    config.module.rules[0].use[0].options.presets = [
-      require.resolve("@babel/preset-react"),
-      require.resolve("@babel/preset-env")
-    ]
-    config.module.rules[0].use[0].options.plugins = [
-      // use @babel/plugin-proposal-class-properties for class arrow functions
-      require.resolve("@babel/plugin-proposal-class-properties"),
-      // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
+    // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
+    config.module.rules[0].use[0].options.plugins.push(
       require.resolve("babel-plugin-remove-graphql-queries")
-    ]
-    // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
-    config.resolve.mainFields = ["browser", "module", "main"]
+    )
 
     config.resolve = {
+      fallback: {
+        assert: false,
+        crypto: false
+      },
       alias: {
         path: require.resolve("path-browserify"),
+        "@components": path.resolve(__dirname, "../src/components"),
+        "@layout": path.resolve(__dirname, "../src/layout"),
         "@plugins": path.resolve(__dirname, "../plugins"),
         "@root": path.resolve(__dirname, "../"),
+        "@snippets": path.resolve(__dirname, "../src/snippets"),
         "@src": path.resolve(__dirname, "../src")
-      },
-
-      fallback: {
-        crypto: require.resolve("crypto-browserify"),
-        stream: require.resolve("stream-browserify")
       }
     }
 

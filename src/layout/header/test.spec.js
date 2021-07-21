@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from "react"
 import renderer from "react-test-renderer"
 
@@ -8,8 +12,8 @@ describe("Header", () => {
     const tree = renderer
       .create(
         <Header
-          main_navigation={fixtures.default.main_navigation}
-          top_navigation={fixtures.default.top_navigation}
+          main_navigation={fixtures.main_navigation}
+          top_navigation={fixtures.top_navigation}
         />
       )
       .toJSON()

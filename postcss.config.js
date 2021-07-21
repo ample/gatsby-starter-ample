@@ -1,8 +1,7 @@
 module.exports = [
   require("postcss-normalize"),
-  require("postcss-responsive-type"),
   require("rfs")({
-    factor: 5
+    twoDimensional: true
   }),
   require("postcss-pxtorem")({
     mediaQuery: false,
@@ -11,16 +10,8 @@ module.exports = [
     rootValue: 16
   }),
   require("postcss-preset-env")({
-    features: {
-      "custom-properties": {
-        preserve: true,
-        warnings: true
-      }
-    },
+    autoprefixer: { grid: true },
     stage: 1
-  }),
-  require("autoprefixer")({
-    grid: "autoplace"
   }),
   require("postcss-em-media-query"),
   require("postcss-sort-media-queries")({

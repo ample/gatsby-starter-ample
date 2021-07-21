@@ -1,18 +1,18 @@
 export default {
   default: {
-    children: null,
     blocks: [
       {
-        title: "Main Content",
-        template: "component-container",
         blocks: [
           {
-            template: "component-content",
-            body: "<p>Hello World</p>"
+            body: "<p>Hello World</p>",
+            template: "component-content"
           }
-        ]
+        ],
+        template: "component-container",
+        title: "Main Content"
       }
     ],
+    children: null,
     title: "Flexible Page"
   }
 }

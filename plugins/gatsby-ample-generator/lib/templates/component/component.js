@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import * as styles from "./styles.module.scss"
+import { component_name } from "./styles.module.scss"
 
 const ComponentName = ({ name }) => (
-  <div className={styles.component_name}>
+  <div className={component_name}>
     <p>{name}</p>
   </div>
 )

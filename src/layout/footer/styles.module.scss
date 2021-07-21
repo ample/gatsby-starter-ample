@@ -3,6 +3,7 @@
 .footer {
   background-color: var(--color-blueprint-light);
   padding: 30px 0;
+  width: 100%;
 
   @include media($x-small) {
     padding: 80px 0;

@@ -66,7 +66,7 @@ describe("Image Transformer", () => {
     expect(result.image).toEqual("/hello-world.jpg")
   })
   it("brings along other props", () => {
-    const result = transformer({ image: "/hello-world.jpg", hello: "world" })
+    const result = transformer({ hello: "world", image: "/hello-world.jpg" })
     expect(result.hello).toEqual("world")
   })
   it("gives precedence to the correct props", () => {

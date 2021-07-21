@@ -30,10 +30,9 @@ Link.propTypes = {
   activeClassName: PropTypes.string,
   activeStyle: PropTypes.object,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  className: PropTypes.string,
+  onClick: PropTypes.func,
   target: PropTypes.string,
-  to: PropTypes.string.isRequired,
-  onClick: PropTypes.func
+  to: PropTypes.string.isRequired
 }
 
 Link.defaultProps = {

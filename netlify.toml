@@ -1,13 +1,14 @@
 [build.environment]
   GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES = "true"
+  GATSBY_GOOGLE_ANALYTICS_ID = "0"
   NETLIFY_USE_YARN = "true"
   NODE_VERSION = "15"
+  YARN_VERSION = "1.22.10"
 
 [build]
-  command = "yarn build:with_storybook"
+  command = "yarn build:with-storybook"
   publish = "public/"
   functions = "functions/handlers"
 
 [[plugins]]
-  package = "netlify-plugin-gatsby-cache"
-
+  package = "@netlify/plugin-gatsby"

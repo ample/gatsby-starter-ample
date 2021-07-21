@@ -85,10 +85,6 @@ Form.propTypes = {
    */
   button_label: PropTypes.string,
   /**
-   * Additional classes on the form element.
-   */
-  className: PropTypes.string,
-  /**
    * Tells the form submission control which driver to use. (i.e. It controls
    * where the data gets sent.)
    */

@@ -40,10 +40,7 @@ LinkList.propTypes = {
    * Specifies an active class name, passed on to the <Link /> component
    */
   activeClassName: PropTypes.string,
-  /**
-   * CSS class(es) applied to the wrapping element
-   */
-  className: PropTypes.string,
+
   /**
    * Heading rendered before the items, typically only used in vertical lists
    */
@@ -54,16 +51,16 @@ LinkList.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({
       button: PropTypes.bool,
-      className: PropTypes.string,
-      label: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
       children: PropTypes.arrayOf(
         PropTypes.shape({
           className: PropTypes.string,
           label: PropTypes.string.isRequired,
           url: PropTypes.string.isRequired
         })
-      )
+      ),
+      className: PropTypes.string,
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
     })
   ).isRequired
 }
