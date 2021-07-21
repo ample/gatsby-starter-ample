@@ -21,7 +21,7 @@ layout_flexible:
         image_src: "/uploads/blueprint/rectangle.jpg"
       - template: component-content
         body_md: |-
-          # This is the home page.
+          # Testing - This is the home page.
 
           It shows an example of adding multiple components to a section within the page.
 
