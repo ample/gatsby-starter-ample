@@ -13,17 +13,16 @@ module.exports = {
       options: {
         aliases: {
           "@components": `./src/components`,
+          "@content": `./src/content`,
           "@layout": `./src/layout`,
           "@plugins": `./plugins`,
           "@root": `./`,
           "@snippets": `./src/snippets`,
-          "@src": `./src`
+          "@src": `./src`,
+          "@templates": `./src/templates`
         }
       }
     },
-    `gatsby-ample-schema`,
-    `gatsby-ample-pages`,
-    // TODO: fix gatsby-ample-seo to work with Gatsby 3
     // `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
     {
@@ -41,13 +40,14 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-ample-redirects`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        disable: process.env.GATSBY_REDIRECTS_DISABLED === "true"
+        name: `data`,
+        path: path.join(__dirname, "src/data")
       }
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -58,29 +58,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: path.join(__dirname, "src/content")
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `images`,
         path: path.join(__dirname, "src/images")
       }
     },
+    `gatsby-transformer-json`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-remark-ample`,
-      options: {
-        imageSrc: path.join(__dirname, "static"),
-        plugins: ["gatsby-ample-pages"],
-        projectRoot: path.join(__dirname)
-      }
-    },
     `gatsby-plugin-catch-links`,
     {
       resolve: "gatsby-plugin-anchor-links",

@@ -4,8 +4,8 @@ import classNames from "classnames"
 
 import { Helmet } from "react-helmet"
 
-import Footer from "./footer"
-import Header from "./header"
+import { component as Footer, fixtures as footerFixtures } from "./footer"
+import { component as Header, fixtures as headerFixtures } from "./header"
 import { DebugMediaQueries } from "@plugins/gatsby-ample-debuggers"
 
 const Layout = ({ children, className }) => (
@@ -14,7 +14,7 @@ const Layout = ({ children, className }) => (
       <html lang="en" />
     </Helmet>
 
-    <Header />
+    <Header {...headerFixtures} />
 
     <main
       className={classNames({
@@ -24,7 +24,7 @@ const Layout = ({ children, className }) => (
       {children}
     </main>
 
-    <Footer />
+    <Footer {...footerFixtures} />
 
     <DebugMediaQueries isShowing={process.env.GATSBY_DEBUG_MEDIA_QUERIES} />
   </>

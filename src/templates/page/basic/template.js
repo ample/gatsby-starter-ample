@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Layout from "@src/layout"
+import Layout from "@layout"
 
 const BasicPage = ({ body, children }) => (
   <Layout>

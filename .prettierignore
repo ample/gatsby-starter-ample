@@ -12,6 +12,3 @@ local_modules/
 # Build directory
 public
 
-# CMS Content
-.forestry/
-src/content/

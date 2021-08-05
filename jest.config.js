@@ -6,11 +6,13 @@ module.exports = {
     ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
     ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/.jest/__mocks__/file-mock.js`,
     "\\@components\\/(.*)$": `<rootDir>/src/components/$1`,
+    "\\@content\\/(.*)$": `<rootDir>/src/content/$1`,
     "\\@layout\\/(.*)$": `<rootDir>/src/layout/$1`,
     "\\@plugins\\/(.*)$": `<rootDir>/plugins/$1`,
     "\\@root\\/(.*)$": `<rootDir>/$1`,
     "\\@snippets\\/(.*)$": `<rootDir>/src/snippets/$1`,
-    "\\@src\\/(.*)$": `<rootDir>/src/$1`
+    "\\@src\\/(.*)$": `<rootDir>/src/$1`,
+    "\\@templates\\/(.*)$": `<rootDir>/src/templates/$1`
   },
   setupFiles: [`<rootDir>/.jest/loadershim.js`, `<rootDir>/.jest/setup.js`],
   testPathIgnorePatterns: [
