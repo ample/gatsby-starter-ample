@@ -12,7 +12,7 @@
       "blocks": [
         {
           "template": "component-image",
-          "src": "/uploads/blueprint/rectangle.jpg"
+          "src": "../images/blueprint/rectangle.jpg"
         },
         {
           "template": "component-content",

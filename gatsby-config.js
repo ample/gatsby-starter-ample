@@ -63,6 +63,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blueprint-images`,
+        path: path.join(__dirname, "src/images/blueprint")
+      }
+    },
+    {
       resolve: `gatsby-transformer-json`,
       options: {
         typeName: `Json`

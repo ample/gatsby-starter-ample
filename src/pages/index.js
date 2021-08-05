@@ -16,8 +16,12 @@ const homePage = () => {
                 template
                 body
                 label
-                src
                 url
+                src {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
               }
               config {
                 margin_bottom
@@ -32,6 +36,8 @@ const homePage = () => {
   `)
 
   const blocks = data.allJson.edges[0].node.blocks[0]
+
+  console.log(blocks)
 
   return (
     <FlexibleTemplate blocks={[blocks]}>
