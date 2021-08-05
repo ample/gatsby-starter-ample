@@ -3,7 +3,7 @@
   GATSBY_GOOGLE_ANALYTICS_ID = "0"
   NETLIFY_USE_YARN = "true"
   NODE_VERSION = "15"
-  YARN_VERSION = "1.22.10"
+  YARN_VERSION = "1.22.11"
 
 [build]
   command = "yarn build:with-storybook"
