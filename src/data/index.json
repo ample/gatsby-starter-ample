@@ -1,0 +1,29 @@
+{
+  "title": "gatsby-ample-starter",
+  "blocks": [
+    {
+      "template": "component-container",
+      "title": "Main Content",
+      "config": {
+        "width": "full",
+        "margin_bottom": "0",
+        "text_align": ""
+      },
+      "blocks": [
+        {
+          "template": "component-image",
+          "src": "../../static/blueprint/rectangle.jpg"
+        },
+        {
+          "template": "component-content",
+          "body": "<h1>This is the home page.</h1><p>It shows an example of adding multiple components to a section within the page.</p><p>To see a basic content page, with all types of content, click the button below.</p>"
+        },
+        {
+          "template": "component-button",
+          "label": "View Content Page",
+          "url": "/content-page"
+        }
+      ]
+    }
+  ]
+}

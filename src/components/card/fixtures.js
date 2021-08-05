@@ -1,4 +1,5 @@
 import imageFixture from "../image/fixtures"
+
 export default {
   props: {
     body: "<p>Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>",
@@ -27,7 +28,7 @@ export default {
       url: "#"
     },
     heading: "Card Title",
-    image: "/uploads/blueprint/graphic-1.svg",
+    image: "/blueprint/graphic-1.svg",
     theme: "graphic"
   },
   with_graphic_centered: {
@@ -38,7 +39,7 @@ export default {
       url: "#"
     },
     heading: "Card Title",
-    image: "/uploads/blueprint/graphic-1.svg",
+    image: "/blueprint/graphic-1.svg",
     textAlignment: "center",
     theme: "graphic"
   },

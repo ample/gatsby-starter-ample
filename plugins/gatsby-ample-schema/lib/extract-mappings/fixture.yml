@@ -1,9 +1,0 @@
-- type: Component
-  fields:
-    title: String
-- type: Page
-  node: true
-  fields:
-    component_map:
-      type: map
-      name: Component

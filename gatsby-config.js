@@ -13,24 +13,16 @@ module.exports = {
       options: {
         aliases: {
           "@components": `./src/components`,
+          "@content": `./src/content`,
           "@layout": `./src/layout`,
           "@plugins": `./plugins`,
           "@root": `./`,
           "@snippets": `./src/snippets`,
-          "@src": `./src`
+          "@src": `./src`,
+          "@templates": `./src/templates`
         }
       }
     },
-    // TODO: Remove if using Forestry or no CMS, otherwise uncomment.
-    // {
-    //   resolve: `gatsby-ample-importer`,
-    //   options: {
-    //     config: path.join(__dirname, "importer.config.js")
-    //   }
-    // },
-    `gatsby-ample-schema`,
-    `gatsby-ample-pages`,
-    // TODO: fix gatsby-ample-seo to work with Gatsby 3
     // `gatsby-ample-seo`,
     `gatsby-ample-debuggers`,
     {
@@ -48,25 +40,12 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-ample-redirects`,
-      options: {
-        disable: process.env.GATSBY_REDIRECTS_DISABLED === "true"
-      }
-    },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `uploads`,
-        path: path.join(__dirname, "static/uploads")
-      }
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: path.join(__dirname, "src/content")
+        name: `data`,
+        path: path.join(__dirname, "src/data")
       }
     },
     {
@@ -76,33 +55,23 @@ module.exports = {
         path: path.join(__dirname, "src/images")
       }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `static`,
+        path: path.join(__dirname, "static")
+      }
+    },
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: `Json`
+      }
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`
-      // options: {
-      //   plugins: [
-      //     {
-      //       resolve: `gatsby-remark-relative-images`
-      //     },
-      //     {
-      //       resolve: `gatsby-remark-images`,
-      //       options: {
-      //         maxWidth: 1440
-      //       }
-      //     }
-      //   ]
-      // }
-    },
-    {
-      resolve: `gatsby-remark-ample`,
-      options: {
-        imageSrc: path.join(__dirname, "static"),
-        plugins: ["gatsby-ample-pages"],
-        projectRoot: path.join(__dirname)
-      }
-    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-catch-links`,
     {
       resolve: "gatsby-plugin-anchor-links",

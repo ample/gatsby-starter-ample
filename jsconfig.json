@@ -3,11 +3,13 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@content/*": ["./src/content/*"],
       "@layout/*": ["./src/layout/*"],
       "@plugins/*": ["./plugins/*"],
       "@root/*": ["./*"],
       "@snippets/*": ["./src/snippets/*"],
-      "@src/*": ["./src/*"]
+      "@src/*": ["./src/*"],
+      "@templates/*": ["./src/templates/*"]
     }
   },
   "exclude": ["node_modules", "public"]

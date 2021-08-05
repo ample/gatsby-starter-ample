@@ -17,7 +17,7 @@ const Image = ({ alt, className, src, ...props }) => {
   const classes = classNames(image, { [className]: className })
 
   // ---------------------------------------- | Gatsby Image
-  const gatsbyImageData = dig(src, "gatsbyImageData")
+  const gatsbyImageData = dig(src, "childImageSharp", "gatsbyImageData")
   if (gatsbyImageData) {
     const gImage = getImage(src)
     const imageName = dig(gatsbyImageData, "images", "fallback", "src")

@@ -1,15 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Block from "@root/src/layout/block"
-import Layout from "@src/layout"
+import Block from "@layout/block"
+import Layout from "@layout/index"
 
 const FlexiblePage = ({ children, blocks }) => (
   <Layout>
     {children}
-    {blocks.map((block, idx) => (
-      <Block key={idx} {...block} />
-    ))}
+    {blocks && blocks.map((block, idx) => <Block key={idx} {...block} />)}
   </Layout>
 )
 
@@ -24,8 +22,6 @@ FlexiblePage.propTypes = {
   children: PropTypes.node
 }
 
-FlexiblePage.defaultProps = {
-  containers: []
-}
+FlexiblePage.defaultProps = {}
 
 export default FlexiblePage
