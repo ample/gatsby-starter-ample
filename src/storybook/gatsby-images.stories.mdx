@@ -41,29 +41,31 @@ yarn develop
 
 ### Retrieving data needed for `src`
 
-1. Grab the `gatsbyImageData` object (see JSON block below for example) and use that as the `src` for the `<Image />` component.
+1. Grab the `childImageSharp` object (see JSON block below for example) and use that as the `src` for the `<Image />` component.
 2. Change all references of `/static` to be `/storybook`.
 
 ```json
-"gatsbyImageData": {
-  "layout": "constrained",
-  "backgroundColor": "#d8e8f8",
-  "images": {
-    "fallback": {
-      "src": "/static/9e01fe059bae0bedd117446c113abf11/b44b0/large-dark.jpg",
-      "srcSet": "/static/9e01fe059bae0bedd117446c113abf11/f782f/large-dark.jpg 250w,\n/static/9e01fe059bae0bedd117446c113abf11/24d85/large-dark.jpg 500w,\n/static/9e01fe059bae0bedd117446c113abf11/b44b0/large-dark.jpg 1000w,\n/static/9e01fe059bae0bedd117446c113abf11/8ba2d/large-dark.jpg 2000w",
-      "sizes": "(min-width: 1000px) 1000px, 100vw"
-    },
-    "sources": [
-      {
-        "srcSet": "/static/9e01fe059bae0bedd117446c113abf11/2a4db/large-dark.webp 250w,\n/static/9e01fe059bae0bedd117446c113abf11/c0386/large-dark.webp 500w,\n/static/9e01fe059bae0bedd117446c113abf11/e8e37/large-dark.webp 1000w,\n/static/9e01fe059bae0bedd117446c113abf11/9dca3/large-dark.webp 2000w",
-        "type": "image/webp",
+"childImageSharp": {
+  "gatsbyImageData": {
+    "layout": "constrained",
+    "backgroundColor": "#d8e8f8",
+    "images": {
+      "fallback": {
+        "src": "/static/9e01fe059bae0bedd117446c113abf11/b44b0/large-dark.jpg",
+        "srcSet": "/static/9e01fe059bae0bedd117446c113abf11/f782f/large-dark.jpg 250w,\n/static/9e01fe059bae0bedd117446c113abf11/24d85/large-dark.jpg 500w,\n/static/9e01fe059bae0bedd117446c113abf11/b44b0/large-dark.jpg 1000w,\n/static/9e01fe059bae0bedd117446c113abf11/8ba2d/large-dark.jpg 2000w",
         "sizes": "(min-width: 1000px) 1000px, 100vw"
-      }
-    ]
-  },
-  "width": 1000,
-  "height": 414.99999999999994
+      },
+      "sources": [
+        {
+          "srcSet": "/static/9e01fe059bae0bedd117446c113abf11/2a4db/large-dark.webp 250w,\n/static/9e01fe059bae0bedd117446c113abf11/c0386/large-dark.webp 500w,\n/static/9e01fe059bae0bedd117446c113abf11/e8e37/large-dark.webp 1000w,\n/static/9e01fe059bae0bedd117446c113abf11/9dca3/large-dark.webp 2000w",
+          "type": "image/webp",
+          "sizes": "(min-width: 1000px) 1000px, 100vw"
+        }
+      ]
+    },
+    "width": 1000,
+    "height": 414.99999999999994
+  }
 }
 ```
 

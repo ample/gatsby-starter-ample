@@ -49,13 +49,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `uploads`,
-        path: path.join(__dirname, "static/uploads")
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -63,10 +56,10 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `blueprint-images`,
-        path: path.join(__dirname, "src/images/blueprint")
+        name: `static`,
+        path: path.join(__dirname, "static")
       }
     },
     {
