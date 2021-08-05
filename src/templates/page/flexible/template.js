@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Block from "@layout/block"
-import Layout from "@layout"
+import Layout from "@layout/index"
 
 const FlexiblePage = ({ children, blocks }) => (
   <Layout>
