@@ -21,13 +21,6 @@ module.exports = {
         }
       }
     },
-    // TODO: Remove if using Forestry or no CMS, otherwise uncomment.
-    // {
-    //   resolve: `gatsby-ample-importer`,
-    //   options: {
-    //     config: path.join(__dirname, "importer.config.js")
-    //   }
-    // },
     `gatsby-ample-schema`,
     `gatsby-ample-pages`,
     // TODO: fix gatsby-ample-seo to work with Gatsby 3
@@ -79,22 +72,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`
-      // options: {
-      //   plugins: [
-      //     {
-      //       resolve: `gatsby-remark-relative-images`
-      //     },
-      //     {
-      //       resolve: `gatsby-remark-images`,
-      //       options: {
-      //         maxWidth: 1440
-      //       }
-      //     }
-      //   ]
-      // }
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-remark-ample`,
       options: {
