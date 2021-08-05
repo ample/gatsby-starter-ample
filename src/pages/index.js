@@ -1,10 +1,43 @@
 import React from "react"
 import FlexibleTemplate from "@templates/page/flexible"
-import data from "../data/index.json"
+import { graphql, useStaticQuery } from "gatsby"
 
-const homePage = () => (
-  <FlexibleTemplate blocks={data.blocks}>
-    <h1>{data.title}</h1>
-  </FlexibleTemplate>
-)
+const homePage = () => {
+  const data = useStaticQuery(graphql`
+    query pageQuery {
+      allJson {
+        edges {
+          node {
+            id
+            blocks {
+              template
+              title
+              blocks {
+                template
+                body
+                label
+                src
+                url
+              }
+              config {
+                margin_bottom
+                text_align
+                width
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const blocks = data.allJson.edges[0].node.blocks[0]
+
+  return (
+    <FlexibleTemplate blocks={[blocks]}>
+      <h1>{data.title}</h1>
+    </FlexibleTemplate>
+  )
+}
+
 export default homePage

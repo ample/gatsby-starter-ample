@@ -36,10 +36,6 @@ _Start the development server ([http://localhost:8000](http://localhost:8000))_
 yarn develop
 ```
 
-## Content Management System
-
-Use markdown files in `src/content` directly.
-
 ## Generator
 
 Generate new Components, Templates and Fragments with boilerplate code to speed up the development process. Run the following command to bring up the help menu.

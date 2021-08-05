@@ -16,7 +16,7 @@
         },
         {
           "template": "component-content",
-          "body": "WIP: <h1>This is the home page.</h1><p>It shows an example of adding multiple components to a section within the page.</p><p>To see a basic content page, with all types of content, click the button below.</p>"
+          "body": "<h1>This is the home page.</h1><p>It shows an example of adding multiple components to a section within the page.</p><p>To see a basic content page, with all types of content, click the button below.</p>"
         },
         {
           "template": "component-button",
