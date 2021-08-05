@@ -37,8 +37,6 @@ const homePage = () => {
 
   const blocks = data.allJson.edges[0].node.blocks[0]
 
-  console.log(blocks)
-
   return (
     <FlexibleTemplate blocks={[blocks]}>
       <h1>{data.title}</h1>
